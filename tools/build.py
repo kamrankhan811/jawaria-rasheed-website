@@ -582,11 +582,19 @@ def menu_html(items, cls="jr-menu", sub=False):
     return out + "</ul>"
 
 
+import hashlib as _hl
+
+
+def _ver(rel):
+    with open(os.path.join(ROOT, rel), "rb") as fh:
+        return _hl.md5(fh.read()).hexdigest()[:8]
+
+
 PREVIEW_SHELL = """<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex">
 <title>{title} — Preview</title>
 <link rel="icon" href="../wp-content/themes/jawaria-child/assets/images/favicon-32.png">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"><link rel="stylesheet" href="preview-base.css"><link rel="stylesheet" href="../wp-content/themes/jawaria-child/assets/css/site.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"><link rel="stylesheet" href="preview-base.css?v={v_base}"><link rel="stylesheet" href="../wp-content/themes/jawaria-child/assets/css/site.css?v={v_css}">
 </head><body>
 <div class="jr-pv-banner">Design preview — the real site is built in WordPress. Sample contact details shown.</div>
 <div class="jr-topbar"><div class="jr-topbar__inner"><span class="jr-topbar__item">Bahawalpur · Mon – Sat, by appointment</span><span class="jr-topbar__links"><a href="#">&#9742; Call 0300 0000000</a><a href="#">WhatsApp 0300 0000000</a></span></div></div>
@@ -608,8 +616,8 @@ PREVIEW_SHELL = """<!doctype html><html lang="en"><head><meta charset="utf-8"><m
 <div class="jr-footer__legal"><p class="jr-footer__note">Information on this website is for general education and does not replace a consultation. In an emergency, go to the nearest hospital emergency department.</p>
 <div class="jr-footer__bottom"><span>&copy; 2026 Dr. Jawaria Rasheed. All rights reserved.</span><span class="jr-footer__policies"><a href="privacy-policy.html">Privacy Policy</a><a href="medical-disclaimer.html">Medical Disclaimer</a><a href="#">Sitemap</a></span></div></div></footer>
 <div class="jr-floats"><a class="jr-float jr-float--call" href="#"><span>&#9742;</span></a><a class="jr-float jr-float--wa" href="#"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2z"/></svg></a></div>
-<script src="../wp-content/themes/jawaria-child/assets/js/nav.js"></script>
-<script src="../wp-content/plugins/jawaria-clinic/assets/js/slider.js"></script>
+<script src="../wp-content/themes/jawaria-child/assets/js/nav.js?v={v_nav}"></script>
+<script src="../wp-content/plugins/jawaria-clinic/assets/js/slider.js?v={v_sl}"></script>
 </body></html>"""
 
 
@@ -632,7 +640,12 @@ def render_slider_preview():
     return out + "</div></section>"
 
 
+VERS = {}
+
+
 def write_preview(pages):
+    VERS.update(v_css=_ver("wp-content/themes/jawaria-child/assets/css/site.css"), v_nav=_ver("wp-content/themes/jawaria-child/assets/js/nav.js"),
+                v_sl=_ver("wp-content/plugins/jawaria-clinic/assets/js/slider.js"), v_base=_ver("preview/preview-base.css"))
     out_dir = os.path.join(ROOT, "preview")
     os.makedirs(out_dir, exist_ok=True)
     media = {"doctor": "../wp-content/plugins/jawaria-clinic/assets/images/doctor-placeholder.jpg",
@@ -644,7 +657,7 @@ def write_preview(pages):
         name = "index" if p["slug"] == "home" else p["slug"]
         body = render_preview(p["elementor"], sc, media)
         body = re.sub(r'href="/(?:services/)?([a-z-]+)/"', lambda m: f'href="{m.group(1)}.html"', body)
-        html_doc = PREVIEW_SHELL.format(title=p["title"], body=body, info=sc("jr_clinic_info", ""), menu_top=menu_html(MENU_TOP), menu_services=menu_html(MENU_SERVICES), foot_services=menu_html(MENU_FOOT_SERVICES, "jr-footer__links"), foot_links=menu_html(MENU_FOOT_LINKS, "jr-footer__links"))
+        html_doc = PREVIEW_SHELL.format(title=p["title"], body=body, info=sc("jr_clinic_info", ""), menu_top=menu_html(MENU_TOP), menu_services=menu_html(MENU_SERVICES), foot_services=menu_html(MENU_FOOT_SERVICES, "jr-footer__links"), foot_links=menu_html(MENU_FOOT_LINKS, "jr-footer__links"), **VERS)
         with open(os.path.join(out_dir, name + ".html"), "w", encoding="utf-8") as f:
             f.write(html_doc)
 
@@ -658,7 +671,7 @@ def write_blog_preview():
             f'<div class="elementor-widget"><div class="elementor-widget-container"><h1 class="elementor-heading-title">Health articles</h1></div></div></div></div></div></section>'
             f'<section class="elementor-section jr-section"><div class="elementor-container"><div class="elementor-column" style="--pv-w:100%"><div class="elementor-widget-wrap"><div class="jr-posts-grid">{cards}</div></div></div></div></section>')
     sc = lambda n, a: fake_shortcode(n, a, [])
-    html_doc = PREVIEW_SHELL.format(title="Blog", body=body, info=sc("jr_clinic_info", ""), menu_top=menu_html(MENU_TOP), menu_services=menu_html(MENU_SERVICES), foot_services=menu_html(MENU_FOOT_SERVICES, "jr-footer__links"), foot_links=menu_html(MENU_FOOT_LINKS, "jr-footer__links"))
+    html_doc = PREVIEW_SHELL.format(title="Blog", body=body, info=sc("jr_clinic_info", ""), menu_top=menu_html(MENU_TOP), menu_services=menu_html(MENU_SERVICES), foot_services=menu_html(MENU_FOOT_SERVICES, "jr-footer__links"), foot_links=menu_html(MENU_FOOT_LINKS, "jr-footer__links"), **VERS)
     with open(os.path.join(ROOT, "preview", "blog.html"), "w", encoding="utf-8") as f:
         f.write(html_doc)
 

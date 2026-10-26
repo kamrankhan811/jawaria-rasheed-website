@@ -31,10 +31,11 @@
 		if (next) next.addEventListener('click', function () { go(cur + 1); start(); });
 		dots.forEach(function (d) { d.addEventListener('click', function () { go(+d.getAttribute('data-jr-dot')); start(); }); });
 
-		root.addEventListener('mouseenter', function () { paused = true; stop(); });
-		root.addEventListener('mouseleave', function () { paused = false; start(); });
-		root.addEventListener('focusin', function () { paused = true; stop(); });
-		root.addEventListener('focusout', function () { paused = false; start(); });
+		// Pause only for a real mouse hover or keyboard focus (not taps on phones).
+		root.addEventListener('pointerenter', function (e) { if (e.pointerType === 'mouse') { paused = true; stop(); } });
+		root.addEventListener('pointerleave', function (e) { if (e.pointerType === 'mouse') { paused = false; start(); } });
+		root.addEventListener('focusin', function (e) { var kb = true; try { kb = e.target.matches(':focus-visible'); } catch (x) {} if (kb) { paused = true; stop(); } });
+		root.addEventListener('focusout', function () { if (paused) { paused = false; start(); } });
 		document.addEventListener('visibilitychange', function () { if (document.hidden) stop(); else start(); });
 		root.addEventListener('keydown', function (e) {
 			if (e.key === 'ArrowLeft') { go(cur - 1); } else if (e.key === 'ArrowRight') { go(cur + 1); }
