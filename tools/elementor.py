@@ -87,10 +87,12 @@ def column(widgets, size=100, cls=""):
     return {"id": eid("col"), "elType": "column", "settings": s, "elements": widgets, "isInner": False}
 
 
-def section(columns, cls="jr-section", middle=False):
+def section(columns, cls="jr-section", middle=False, full=False):
     if columns and columns[0].get("elType") == "widget":
         columns = [column(columns)]
     s = {"css_classes": cls, "gap": "extended"}
+    if full:
+        s.update({"layout": "full_width", "gap": "no"})
     if middle:
         s["content_position"] = "middle"
     return {"id": eid("sec"), "elType": "section", "settings": s, "elements": columns, "isInner": False}

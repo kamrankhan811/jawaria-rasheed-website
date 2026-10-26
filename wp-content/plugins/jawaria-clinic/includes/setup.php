@@ -93,6 +93,7 @@ function jr_run_setup() {
 	$report = array_merge( $report, jr_setup_site_options() );
 	$report = array_merge( $report, jr_setup_menus( $overwrite ) );
 	$report = array_merge( $report, jr_setup_posts( $media ) );
+	$report = array_merge( $report, jr_setup_slides( $media ) );
 
 	if ( class_exists( '\Elementor\Plugin' ) ) {
 		\Elementor\Plugin::$instance->files_manager->clear_cache();
@@ -138,6 +139,10 @@ function jr_setup_media() {
 		'clinic' => 'clinic-placeholder.jpg',
 		'logo'   => 'logo.png',
 		'icon'   => 'site-icon.png',
+		'slide1' => 'slide-1.webp',
+		'slide2' => 'slide-2.webp',
+		'slide3' => 'slide-3.webp',
+		'slide4' => 'slide-4.webp',
 	);
 	$out = array();
 	foreach ( $files as $key => $file ) {
@@ -156,7 +161,7 @@ function jr_setup_media() {
 		$id = wp_insert_attachment(
 			array(
 				'post_mime_type' => wp_check_filetype( $file )['type'],
-				'post_title'     => in_array( $key, array( 'logo', 'icon' ), true ) ? 'Dr. Jawaria Rasheed ' . $key : ucfirst( $key ) . ' photo (placeholder — replace)',
+				'post_title'     => in_array( $key, array( 'logo', 'icon' ), true ) ? 'Dr. Jawaria Rasheed ' . $key : ( 0 === strpos( $key, 'slide' ) ? 'Home banner ' . substr( $key, 5 ) . ' (replace with a clinic photo if you like)' : ucfirst( $key ) . ' photo (placeholder — replace)' ),
 				'post_status'    => 'inherit',
 			),
 			$upload['file']
@@ -487,4 +492,43 @@ function jr_setup_remove_samples() {
 		$out[] = 'Moved "Hello world!" to trash.';
 	}
 	return $out;
+}
+
+/**
+ * Default home banner slides (only when no slides exist yet).
+ *
+ * @param array $media Imported images.
+ * @return string[]
+ */
+function jr_setup_slides( array $media ) {
+	if ( get_posts( array( 'post_type' => 'jr_slide', 'post_status' => 'any', 'posts_per_page' => 1, 'fields' => 'ids' ) ) ) {
+		return array( 'Home slides already exist — kept.' );
+	}
+	$slides = jr_setup_load_json( 'slides.json' );
+	foreach ( $slides as $i => $sl ) {
+		$id = wp_insert_post(
+			wp_slash(
+				array(
+					'post_type'    => 'jr_slide',
+					'post_status'  => 'publish',
+					'post_title'   => $sl['title'],
+					'post_excerpt' => $sl['text'],
+					'menu_order'   => $i,
+				)
+			)
+		);
+		if ( ! $id || is_wp_error( $id ) ) {
+			continue;
+		}
+		update_post_meta( $id, '_jr_eyebrow', $sl['eyebrow'] );
+		update_post_meta( $id, '_jr_b1_label', $sl['b1_label'] );
+		update_post_meta( $id, '_jr_b1_url', $sl['b1_url'] );
+		update_post_meta( $id, '_jr_b2_label', $sl['b2_label'] );
+		update_post_meta( $id, '_jr_b2_url', $sl['b2_url'] );
+		$key = 'slide' . ( $i + 1 );
+		if ( ! empty( $media[ $key ]['id'] ) ) {
+			set_post_thumbnail( $id, (int) $media[ $key ]['id'] );
+		}
+	}
+	return array( sprintf( '%d home banner slides created (Dashboard → Home Slides).', count( $slides ) ) );
 }

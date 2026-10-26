@@ -60,6 +60,7 @@ It is built with WordPress, the free **Astra** theme and free **Elementor**. Pag
 | Logo and site icon | Appearance → Customize → Site Identity |
 | Appointment requests | Appointments |
 | Patient reviews | Patient Reviews |
+| Home page banner slider (images, headings, buttons, order) | **Home Slides** (speed: Settings → Clinic Info) |
 | SEO titles and descriptions | Rank Math box under each page |
 
 See also `docs/seo-guide.md` (ranking in Bahawalpur and South Punjab) and `docs/security.md`.

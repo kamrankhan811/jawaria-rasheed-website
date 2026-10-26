@@ -20,6 +20,7 @@ from elementor import (button, checklist, column, fallback_text, heading, image,
                        render_preview, section, shortcode, text, toggle)
 from content_services import SERVICES  # noqa: E402
 from content_posts import POSTS  # noqa: E402
+from content_slides import SLIDES  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PLUGIN = os.path.join(ROOT, "wp-content", "plugins", "jawaria-clinic")
@@ -54,16 +55,8 @@ def home():
             ("pregnancy-care", "Pregnancy Care"), ("pcos", "PCOS"), ("endometriosis", "Endometriosis"),
             ("fibroids", "Fibroids"), ("menopause", "Menopause")])
     return [
-        # 1. Hero with highlight-number cards
-        section([
-            column([
-                heading("Consultant Gynecologist · Women’s Health &amp; IUI Specialist".replace("&amp;", "&"), "p", "jr-eyebrow"),
-                heading("Expert gynecology and fertility care for every stage of a woman’s life", "h1"),
-                text("<p>Compassionate, personalised and professional care from Dr. Jawaria Rasheed — with more than [jr_experience] years of experience in gynecology, women’s health and IUI.</p>", "jr-lead"),
-                shortcode("[jr_cta_buttons]"),
-            ], 58),
-            column([image("doctor", "Dr. Jawaria Rasheed")], 42, "jr-hero-photo"),
-        ], "jr-hero", middle=True),
+        # 1. Banner slider (slides are managed in Dashboard → Home Slides)
+        section([shortcode("[jr_slider]")], "jr-slider-section", full=True),
         section([shortcode("[jr_stats]")], "jr-section jr-section--stats"),
 
         # 2. Intro with pull-quote
@@ -522,6 +515,8 @@ def fake_shortcode(name, args, pages):
                 '<li><strong>Timings</strong>Mon – Sat, by appointment</li></ul>')
     if name == "jr_hours":
         return '<table class="jr-hours"><tbody>' + "".join(f"<tr><td>{a}</td><td>{b}</td></tr>" for a, b in s["hours"]) + "</tbody></table>"
+    if name == "jr_slider":
+        return render_slider_preview()
     if name == "jr_areas":
         return '<ul class="jr-areas">' + "".join(f"<li>{c}</li>" for c in ["Bahawalpur", "Multan", "Rahim Yar Khan", "Bahawalnagar", "Lodhran", "Vehari", "Ahmedpur East", "Hasilpur", "Khanpur", "Liaquatpur"]) + "</ul>"
     if name == "jr_rating":
@@ -614,7 +609,27 @@ PREVIEW_SHELL = """<!doctype html><html lang="en"><head><meta charset="utf-8"><m
 <div class="jr-footer__bottom"><span>&copy; 2026 Dr. Jawaria Rasheed. All rights reserved.</span><span class="jr-footer__policies"><a href="privacy-policy.html">Privacy Policy</a><a href="medical-disclaimer.html">Medical Disclaimer</a><a href="#">Sitemap</a></span></div></div></footer>
 <div class="jr-floats"><a class="jr-float jr-float--call" href="#"><span>&#9742;</span></a><a class="jr-float jr-float--wa" href="#"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2z"/></svg></a></div>
 <script src="../wp-content/themes/jawaria-child/assets/js/nav.js"></script>
+<script src="../wp-content/plugins/jawaria-clinic/assets/js/slider.js"></script>
 </body></html>"""
+
+
+def render_slider_preview():
+    import html as _h
+    out = '<section class="jr-slider" data-jr-slider data-interval="6000" aria-roledescription="carousel" aria-label="Highlights"><div class="jr-slider__track">'
+    for i, sl in enumerate(SLIDES):
+        link = lambda u: "#" if u in ("whatsapp", "call") else (u.strip("/").split("/")[-1] + ".html" if u != "/" else "index.html")
+        tag = "h1" if i == 0 else "h2"
+        b2cls = "jr-btn--whatsapp" if sl["b2_url"] == "whatsapp" else "jr-btn--light"
+        out += (f'<div class="jr-slide{" is-active" if i == 0 else ""}"{"" if i == 0 else " aria-hidden=\"true\""}>'
+                f'<img class="jr-slide__img" src="../wp-content/plugins/jawaria-clinic/assets/images/{sl["image"]}" alt="" loading="{"eager" if i == 0 else "lazy"}">'
+                f'<div class="jr-slide__inner"><div class="jr-slide__content"><p class="jr-slide__eyebrow">{_h.escape(sl["eyebrow"])}</p>'
+                f'<{tag} class="jr-slide__title">{_h.escape(sl["title"])}</{tag}><p class="jr-slide__text">{_h.escape(sl["text"])}</p>'
+                f'<div class="jr-btn-row"><a class="jr-btn jr-btn--primary" href="{link(sl["b1_url"])}">{_h.escape(sl["b1_label"])}</a>'
+                f'<a class="jr-btn {b2cls}" href="{link(sl["b2_url"])}">{_h.escape(sl["b2_label"])}</a></div></div></div></div>')
+    out += '</div><button class="jr-slider__arrow jr-slider__arrow--prev" type="button" data-jr-prev aria-label="Previous slide"><span>&#8249;</span></button>'
+    out += '<button class="jr-slider__arrow jr-slider__arrow--next" type="button" data-jr-next aria-label="Next slide"><span>&#8250;</span></button><div class="jr-slider__dots">'
+    out += "".join(f'<button type="button" class="jr-slider__dot{" is-active" if i == 0 else ""}" data-jr-dot="{i}" aria-label="Go to slide {i+1}"></button>' for i in range(len(SLIDES)))
+    return out + "</div></section>"
 
 
 def write_preview(pages):
@@ -655,6 +670,8 @@ def main():
         json.dump(pages, f, ensure_ascii=False, indent=1)
     with open(os.path.join(PLUGIN, "content", "posts.json"), "w", encoding="utf-8") as f:
         json.dump(POSTS, f, ensure_ascii=False, indent=1)
+    with open(os.path.join(PLUGIN, "content", "slides.json"), "w", encoding="utf-8") as f:
+        json.dump(SLIDES, f, ensure_ascii=False, indent=1)
     write_preview(pages)
     write_blog_preview()
     print(f"{len(pages)} pages, {len(POSTS)} posts written.")

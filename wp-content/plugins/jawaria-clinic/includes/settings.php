@@ -43,6 +43,7 @@ function jr_settings_fields() {
 			'video_consult_url' => array( 'Video consultation link', 'url', 'Optional. If filled, a "Video Consultation" button appears in the header.' ),
 		),
 		'Homepage'        => array(
+			'slider_seconds' => array( 'Banner slider: seconds per slide', 'text', 'Default 6. Slides themselves are edited under Home Slides.' ),
 			'stats'          => array( 'Highlight numbers (hero cards)', 'textarea', 'One per line: Number | Label. Use only real, verified numbers, e.g. 1500+ | IUI procedures.' ),
 			'google_rating'  => array( 'Google rating', 'text', 'e.g. 4.9 — only if it is her real Google rating. Leave empty to hide.' ),
 			'google_reviews' => array( 'Google reviews link', 'url', '' ),
