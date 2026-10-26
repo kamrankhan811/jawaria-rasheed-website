@@ -22,37 +22,37 @@
       "id": "ddf91ed",
       "elType": "column",
       "settings": {
-       "_column_size": 55,
+       "_column_size": 58,
        "_inline_size": null
       },
       "elements": [
        {
-        "id": "ccea027",
+        "id": "92049fe",
         "elType": "widget",
         "widgetType": "heading",
         "settings": {
-         "title": "Consultant Gynecologist · IUI Specialist",
+         "title": "Consultant Gynecologist · Women’s Health & IUI Specialist",
          "header_size": "p",
          "_css_classes": "jr-eyebrow"
         },
         "elements": []
        },
        {
-        "id": "0c6e4b2",
+        "id": "f011bb5",
         "elType": "widget",
         "widgetType": "heading",
         "settings": {
-         "title": "Caring, expert support for every stage of a woman’s life",
+         "title": "Expert gynecology and fertility care for every stage of a woman’s life",
          "header_size": "h1"
         },
         "elements": []
        },
        {
-        "id": "1d9b3c2",
+        "id": "32c5093",
         "elType": "widget",
         "widgetType": "text-editor",
         "settings": {
-         "editor": "<p>Dr. Jawaria Rasheed brings more than [jr_experience] years of experience in gynecology, women’s health and fertility care, including IUI. Every consultation is private, respectful and explained in plain language.</p>",
+         "editor": "<p>Compassionate, personalised and professional care from Dr. Jawaria Rasheed — with more than [jr_experience] years of experience in gynecology, women’s health and IUI.</p>",
          "_css_classes": "jr-lead"
         },
         "elements": []
@@ -73,7 +73,7 @@
       "id": "1762cb3",
       "elType": "column",
       "settings": {
-       "_column_size": 45,
+       "_column_size": 42,
        "_inline_size": null,
        "css_classes": "jr-hero-photo"
       },
@@ -104,7 +104,7 @@
     "id": "47db334",
     "elType": "section",
     "settings": {
-     "css_classes": "jr-section jr-section--tight",
+     "css_classes": "jr-section jr-section--stats",
      "gap": "extended"
     },
     "elements": [
@@ -132,16 +132,15 @@
     "isInner": false
    },
    {
-    "id": "0e081a4",
+    "id": "93d7632",
     "elType": "section",
     "settings": {
      "css_classes": "jr-section",
-     "gap": "extended",
-     "content_position": "middle"
+     "gap": "extended"
     },
     "elements": [
      {
-      "id": "5378b73",
+      "id": "5e976b7",
       "elType": "column",
       "settings": {
        "_column_size": 45,
@@ -149,18 +148,24 @@
       },
       "elements": [
        {
-        "id": "ca1b2e4",
+        "id": "83be287",
         "elType": "widget",
-        "widgetType": "image",
+        "widgetType": "heading",
         "settings": {
-         "image": {
-          "url": "{{img:clinic:url}}",
-          "id": "{{img:clinic:id}}",
-          "alt": "Clinic consultation room",
-          "source": "library"
-         },
-         "image_size": "large",
-         "_css_classes": "jr-photo jr-photo--wide"
+         "title": "Welcome",
+         "header_size": "p",
+         "_css_classes": "jr-eyebrow"
+        },
+        "elements": []
+       },
+       {
+        "id": "7c0bb54",
+        "elType": "widget",
+        "widgetType": "heading",
+        "settings": {
+         "title": "Helping women understand their health and make informed decisions",
+         "header_size": "h2",
+         "_css_classes": "jr-h2"
         },
         "elements": []
        }
@@ -168,7 +173,7 @@
       "isInner": false
      },
      {
-      "id": "1c9367a",
+      "id": "2d92b2b",
       "elType": "column",
       "settings": {
        "_column_size": 55,
@@ -176,24 +181,11 @@
       },
       "elements": [
        {
-        "id": "02ffc0b",
+        "id": "d37339b",
         "elType": "widget",
-        "widgetType": "heading",
+        "widgetType": "text-editor",
         "settings": {
-         "title": "About Dr. Jawaria",
-         "header_size": "p",
-         "_css_classes": "jr-eyebrow"
-        },
-        "elements": []
-       },
-       {
-        "id": "32451bd",
-        "elType": "widget",
-        "widgetType": "heading",
-        "settings": {
-         "title": "Compassionate, personalised care you can trust",
-         "header_size": "h2",
-         "_css_classes": "jr-h2"
+         "editor": "<blockquote class=\"jr-quote\">“Every woman deserves to be listened to, to understand her options and to receive care that fits her life.”</blockquote>"
         },
         "elements": []
        },
@@ -202,59 +194,16 @@
         "elType": "widget",
         "widgetType": "text-editor",
         "settings": {
-         "editor": "<p>Dr. Jawaria Rasheed is a consultant gynecologist with over [jr_experience] years of experience in gynecology, women’s healthcare and Intrauterine Insemination (IUI). She helps women understand their health, make informed decisions and receive treatment tailored to their needs.</p>"
+         "editor": "<p>Dr. Jawaria Rasheed is an experienced gynecologist dedicated to compassionate, personalised and professional care for women at every stage of life — from first periods to pregnancy, fertility and menopause.</p><p>She believes in building trust through clear communication, respectful care and a patient-centred approach.</p>"
         },
         "elements": []
        },
        {
-        "id": "c16c604",
-        "elType": "widget",
-        "widgetType": "icon-list",
-        "settings": {
-         "icon_list": [
-          {
-           "_id": "87f35e7",
-           "text": "Clear explanations, no rushed decisions",
-           "selected_icon": {
-            "value": "fas fa-check-circle",
-            "library": "fa-solid"
-           }
-          },
-          {
-           "_id": "813947f",
-           "text": "Private, respectful consultations with a female specialist",
-           "selected_icon": {
-            "value": "fas fa-check-circle",
-            "library": "fa-solid"
-           }
-          },
-          {
-           "_id": "256512c",
-           "text": "Fertility support for couples, including IUI",
-           "selected_icon": {
-            "value": "fas fa-check-circle",
-            "library": "fa-solid"
-           }
-          },
-          {
-           "_id": "2238b0b",
-           "text": "Care from adolescence through menopause",
-           "selected_icon": {
-            "value": "fas fa-check-circle",
-            "library": "fa-solid"
-           }
-          }
-         ],
-         "_css_classes": "jr-checks"
-        },
-        "elements": []
-       },
-       {
-        "id": "748fbd3",
+        "id": "9b62f76",
         "elType": "widget",
         "widgetType": "button",
         "settings": {
-         "text": "More about Dr. Jawaria",
+         "text": "Read her full story",
          "link": {
           "url": "/about/",
           "is_external": "",
@@ -272,76 +221,128 @@
     "isInner": false
    },
    {
-    "id": "0cc5d3c",
+    "id": "1a19d78",
     "elType": "section",
     "settings": {
      "css_classes": "jr-section jr-section--tint",
-     "gap": "extended"
+     "gap": "extended",
+     "content_position": "middle"
     },
     "elements": [
      {
-      "id": "c1ff53d",
+      "id": "a1167b7",
       "elType": "column",
       "settings": {
-       "_column_size": 100,
+       "_column_size": 55,
        "_inline_size": null
       },
       "elements": [
        {
-        "id": "e1354e6",
+        "id": "2b6dec3",
         "elType": "widget",
         "widgetType": "heading",
         "settings": {
-         "title": "Services",
+         "title": "Areas of focus",
          "header_size": "p",
-         "_css_classes": "jr-eyebrow jr-center"
+         "_css_classes": "jr-eyebrow"
         },
         "elements": []
        },
        {
-        "id": "95c197c",
+        "id": "e53d473",
         "elType": "widget",
         "widgetType": "heading",
         "settings": {
-         "title": "How Dr. Jawaria can help",
+         "title": "Complete care in gynecology and fertility",
          "header_size": "h2",
-         "_css_classes": "jr-h2 jr-center"
+         "_css_classes": "jr-h2"
         },
         "elements": []
        },
        {
-        "id": "d80eca4",
+        "id": "7dd2981",
+        "elType": "widget",
+        "widgetType": "icon-list",
+        "settings": {
+         "icon_list": [
+          {
+           "_id": "6f2765b",
+           "text": "Gynecological consultations",
+           "selected_icon": {
+            "value": "fas fa-check-circle",
+            "library": "fa-solid"
+           }
+          },
+          {
+           "_id": "21d1df1",
+           "text": "Reproductive health",
+           "selected_icon": {
+            "value": "fas fa-check-circle",
+            "library": "fa-solid"
+           }
+          },
+          {
+           "_id": "7e213f0",
+           "text": "Fertility evaluation for couples",
+           "selected_icon": {
+            "value": "fas fa-check-circle",
+            "library": "fa-solid"
+           }
+          },
+          {
+           "_id": "8df2571",
+           "text": "IUI (Intrauterine Insemination)",
+           "selected_icon": {
+            "value": "fas fa-check-circle",
+            "library": "fa-solid"
+           }
+          },
+          {
+           "_id": "d8a5b45",
+           "text": "Women’s wellness, from adolescence to menopause",
+           "selected_icon": {
+            "value": "fas fa-check-circle",
+            "library": "fa-solid"
+           }
+          }
+         ],
+         "_css_classes": "jr-checks"
+        },
+        "elements": []
+       },
+       {
+        "id": "c71261e",
         "elType": "widget",
         "widgetType": "text-editor",
         "settings": {
-         "editor": "<p>From routine check-ups to fertility treatment — choose a service to learn what it involves.</p>",
-         "_css_classes": "jr-lead jr-center jr-narrow"
+         "editor": "<p>Each plan starts with careful listening and the right tests, so treatment is tailored to your needs — never one-size-fits-all.</p>"
         },
         "elements": []
-       },
+       }
+      ],
+      "isInner": false
+     },
+     {
+      "id": "2964019",
+      "elType": "column",
+      "settings": {
+       "_column_size": 45,
+       "_inline_size": null
+      },
+      "elements": [
        {
-        "id": "0484ec0",
+        "id": "70adbfc",
         "elType": "widget",
-        "widgetType": "shortcode",
+        "widgetType": "image",
         "settings": {
-         "shortcode": "[jr_services_grid limit=\"6\"]"
-        },
-        "elements": []
-       },
-       {
-        "id": "1743907",
-        "elType": "widget",
-        "widgetType": "button",
-        "settings": {
-         "text": "View all services",
-         "link": {
-          "url": "/services/",
-          "is_external": "",
-          "nofollow": "",
-          "custom_attributes": ""
+         "image": {
+          "url": "{{img:clinic:url}}",
+          "id": "{{img:clinic:id}}",
+          "alt": "Clinic consultation room",
+          "source": "library"
          },
-         "_css_classes": "jr-btn-ghost",
-         "align": "center"
+         "image_size": "large",
+         "_css_classes": "jr-photo jr-photo--wide"
         },
         "elements": []
        }
@@ -352,7 +353,7 @@
     "isInner": false
    },
    {
-    "id": "192907a",
+    "id": "44840b7",
     "elType": "section",
     "settings": {
      "css_classes": "jr-section",
@@ -361,26 +362,26 @@
     },
     "elements": [
      {
-      "id": "823f833",
+      "id": "4c99825",
       "elType": "column",
       "settings": {
-       "_column_size": 50,
+       "_column_size": 55,
        "_inline_size": null
       },
       "elements": [
        {
-        "id": "9215cc9",
+        "id": "49f7eb5",
         "elType": "widget",
         "widgetType": "heading",
         "settings": {
-         "title": "Fertility care",
+         "title": "Fertility & IUI",
          "header_size": "p",
          "_css_classes": "jr-eyebrow"
         },
         "elements": []
        },
        {
-        "id": "032fcb0",
+        "id": "eceac31",
         "elType": "widget",
         "widgetType": "heading",
         "settings": {
@@ -391,20 +392,20 @@
         "elements": []
        },
        {
-        "id": "1e944d4",
+        "id": "4cab48f",
         "elType": "widget",
         "widgetType": "text-editor",
         "settings": {
-         "editor": "<p>Fertility concerns can feel overwhelming. Dr. Jawaria first evaluates both partners, then recommends the simplest effective step — from ovulation support to IUI — and refers for IVF when that is the better option.</p>"
+         "editor": "<p>Fertility concerns can feel overwhelming. Dr. Jawaria evaluates both partners, then recommends the simplest effective step — from ovulation support and follicle monitoring to IUI. When another option such as IVF is more suitable, she will explain why and guide you.</p>"
         },
         "elements": []
        },
        {
-        "id": "7a776f6",
+        "id": "474a265",
         "elType": "widget",
         "widgetType": "button",
         "settings": {
-         "text": "Read about IUI",
+         "text": "Learn about IUI",
          "link": {
           "url": "/services/iui-treatment/",
           "is_external": "",
@@ -419,16 +420,16 @@
       "isInner": false
      },
      {
-      "id": "1d1cc78",
+      "id": "c33c000",
       "elType": "column",
       "settings": {
-       "_column_size": 50,
+       "_column_size": 45,
        "_inline_size": null,
        "css_classes": "jr-card"
       },
       "elements": [
        {
-        "id": "6d5f4e7",
+        "id": "30f99b8",
         "elType": "widget",
         "widgetType": "heading",
         "settings": {
@@ -438,21 +439,21 @@
         "elements": []
        },
        {
-        "id": "4f292a7",
+        "id": "7617f8f",
         "elType": "widget",
         "widgetType": "icon-list",
         "settings": {
          "icon_list": [
           {
-           "_id": "2b10dc3",
-           "text": "1. Consultation and history for both partners",
+           "_id": "3845db4",
+           "text": "1. Consultation for both partners",
            "selected_icon": {
             "value": "fas fa-check-circle",
             "library": "fa-solid"
            }
           },
           {
-           "_id": "73f9ca5",
+           "_id": "762229d",
            "text": "2. Tests: hormones, ultrasound, semen analysis",
            "selected_icon": {
             "value": "fas fa-check-circle",
@@ -460,15 +461,15 @@
            }
           },
           {
-           "_id": "45ebce7",
-           "text": "3. A personalised plan explained to you",
+           "_id": "9d80ced",
+           "text": "3. A personalised plan, explained clearly",
            "selected_icon": {
             "value": "fas fa-check-circle",
             "library": "fa-solid"
            }
           },
           {
-           "_id": "c8a3700",
+           "_id": "91610b2",
            "text": "4. Treatment such as ovulation induction or IUI",
            "selected_icon": {
             "value": "fas fa-check-circle",
@@ -476,7 +477,7 @@
            }
           },
           {
-           "_id": "c9e4854",
+           "_id": "d736e76",
            "text": "5. Follow-up and support at every step",
            "selected_icon": {
             "value": "fas fa-check-circle",
@@ -495,7 +496,7 @@
     "isInner": false
    },
    {
-    "id": "1801ad7",
+    "id": "a570902",
     "elType": "section",
     "settings": {
      "css_classes": "jr-section jr-section--surface",
@@ -503,7 +504,7 @@
     },
     "elements": [
      {
-      "id": "1cb6485",
+      "id": "5781532",
       "elType": "column",
       "settings": {
        "_column_size": 100,
@@ -511,33 +512,42 @@
       },
       "elements": [
        {
-        "id": "4a880ba",
+        "id": "461534d",
         "elType": "widget",
         "widgetType": "heading",
         "settings": {
-         "title": "Why patients choose us",
+         "title": "Our services",
          "header_size": "p",
          "_css_classes": "jr-eyebrow jr-center"
         },
         "elements": []
        },
        {
-        "id": "f3f54e6",
+        "id": "37da865",
         "elType": "widget",
         "widgetType": "heading",
         "settings": {
-         "title": "Care built on trust",
+         "title": "How Dr. Jawaria can help",
          "header_size": "h2",
          "_css_classes": "jr-h2 jr-center"
         },
         "elements": []
        },
        {
-        "id": "b66e33c",
+        "id": "ecc796d",
         "elType": "widget",
         "widgetType": "text-editor",
         "settings": {
-         "editor": "<div class=\"jr-mini-cards\"><div class=\"jr-mini-card\"><h3>Experience</h3><p>More than [jr_experience] years of focused work in gynecology and fertility care.</p></div><div class=\"jr-mini-card\"><h3>Privacy</h3><p>Your concerns are discussed confidentially, in a respectful setting.</p></div><div class=\"jr-mini-card\"><h3>Clear communication</h3><p>You leave knowing your diagnosis, your options and the next step.</p></div></div>"
+         "editor": "<div class=\"jr-pills jr-center\"><a class=\"jr-pill\" href=\"/services/gynecology-consultation/\">Gynecology</a><a class=\"jr-pill\" href=\"/services/infertility-evaluation/\">Fertility &amp; IUI</a><a class=\"jr-pill\" href=\"/services/pregnancy-care/\">Pregnancy Care</a><a class=\"jr-pill\" href=\"/services/pcos/\">PCOS</a><a class=\"jr-pill\" href=\"/services/endometriosis/\">Endometriosis</a><a class=\"jr-pill\" href=\"/services/fibroids/\">Fibroids</a><a class=\"jr-pill\" href=\"/services/menopause/\">Menopause</a></div>"
+        },
+        "elements": []
+       },
+       {
+        "id": "a2613bf",
+        "elType": "widget",
+        "widgetType": "shortcode",
+        "settings": {
+         "shortcode": "[jr_services_grid]"
         },
         "elements": []
        }
@@ -548,15 +558,130 @@
     "isInner": false
    },
    {
-    "id": "d270edc",
+    "id": "493b6ea",
     "elType": "section",
     "settings": {
      "css_classes": "jr-section",
-     "gap": "extended"
+     "gap": "extended",
+     "content_position": "middle"
     },
     "elements": [
      {
       "id": "b4e6fa6",
+      "elType": "column",
+      "settings": {
+       "_column_size": 40,
+       "_inline_size": null
+      },
+      "elements": [
+       {
+        "id": "f6780c7",
+        "elType": "widget",
+        "widgetType": "image",
+        "settings": {
+         "image": {
+          "url": "{{img:doctor:url}}",
+          "id": "{{img:doctor:id}}",
+          "alt": "Dr. Jawaria Rasheed",
+          "source": "library"
+         },
+         "image_size": "large",
+         "_css_classes": "jr-photo"
+        },
+        "elements": []
+       }
+      ],
+      "isInner": false
+     },
+     {
+      "id": "d149460",
+      "elType": "column",
+      "settings": {
+       "_column_size": 60,
+       "_inline_size": null
+      },
+      "elements": [
+       {
+        "id": "02b0bff",
+        "elType": "widget",
+        "widgetType": "heading",
+        "settings": {
+         "title": "Meet your doctor",
+         "header_size": "p",
+         "_css_classes": "jr-eyebrow"
+        },
+        "elements": []
+       },
+       {
+        "id": "cb5e052",
+        "elType": "widget",
+        "widgetType": "heading",
+        "settings": {
+         "title": "Dr. Jawaria Rasheed",
+         "header_size": "h2",
+         "_css_classes": "jr-h2"
+        },
+        "elements": []
+       },
+       {
+        "id": "baf055e",
+        "elType": "widget",
+        "widgetType": "text-editor",
+        "settings": {
+         "editor": "<p class=\"jr-credentials\">Consultant Gynecologist | Women’s Health &amp; IUI Specialist<br>[jr_qualifications]</p>"
+        },
+        "elements": []
+       },
+       {
+        "id": "1dab205",
+        "elType": "widget",
+        "widgetType": "text-editor",
+        "settings": {
+         "editor": "<p>With over [jr_experience] years of experience in gynecology, women’s healthcare and IUI, Dr. Jawaria’s mission is to support women’s health, improve reproductive well-being and help couples navigate their fertility journey with confidence and care.</p>"
+        },
+        "elements": []
+       },
+       {
+        "id": "fa38f43",
+        "elType": "widget",
+        "widgetType": "shortcode",
+        "settings": {
+         "shortcode": "[jr_rating]"
+        },
+        "elements": []
+       },
+       {
+        "id": "de39203",
+        "elType": "widget",
+        "widgetType": "button",
+        "settings": {
+         "text": "Know more",
+         "link": {
+          "url": "/about/",
+          "is_external": "",
+          "nofollow": "",
+          "custom_attributes": ""
+         },
+         "_css_classes": "jr-btn-primary"
+        },
+        "elements": []
+       }
+      ],
+      "isInner": false
+     }
+    ],
+    "isInner": false
+   },
+   {
+    "id": "058804a",
+    "elType": "section",
+    "settings": {
+     "css_classes": "jr-section jr-section--tint",
+     "gap": "extended"
+    },
+    "elements": [
+     {
+      "id": "f98cab9",
       "elType": "column",
       "settings": {
        "_column_size": 100,
@@ -564,7 +689,140 @@
       },
       "elements": [
        {
-        "id": "46851b2",
+        "id": "a79a329",
+        "elType": "widget",
+        "widgetType": "heading",
+        "settings": {
+         "title": "Patient reviews",
+         "header_size": "p",
+         "_css_classes": "jr-eyebrow jr-center"
+        },
+        "elements": []
+       },
+       {
+        "id": "b16b0f8",
+        "elType": "widget",
+        "widgetType": "heading",
+        "settings": {
+         "title": "What our patients say",
+         "header_size": "h2",
+         "_css_classes": "jr-h2 jr-center"
+        },
+        "elements": []
+       },
+       {
+        "id": "4b31c42",
+        "elType": "widget",
+        "widgetType": "shortcode",
+        "settings": {
+         "shortcode": "[jr_reviews count=\"3\"]"
+        },
+        "elements": []
+       },
+       {
+        "id": "f8a8932",
+        "elType": "widget",
+        "widgetType": "button",
+        "settings": {
+         "text": "See all reviews",
+         "link": {
+          "url": "/reviews/",
+          "is_external": "",
+          "nofollow": "",
+          "custom_attributes": ""
+         },
+         "_css_classes": "jr-btn-ghost",
+         "align": "center"
+        },
+        "elements": []
+       }
+      ],
+      "isInner": false
+     }
+    ],
+    "isInner": false
+   },
+   {
+    "id": "11a23c6",
+    "elType": "section",
+    "settings": {
+     "css_classes": "jr-section",
+     "gap": "extended"
+    },
+    "elements": [
+     {
+      "id": "6de7ff6",
+      "elType": "column",
+      "settings": {
+       "_column_size": 100,
+       "_inline_size": null
+      },
+      "elements": [
+       {
+        "id": "f623c87",
+        "elType": "widget",
+        "widgetType": "heading",
+        "settings": {
+         "title": "Videos",
+         "header_size": "p",
+         "_css_classes": "jr-eyebrow jr-center"
+        },
+        "elements": []
+       },
+       {
+        "id": "8b53410",
+        "elType": "widget",
+        "widgetType": "heading",
+        "settings": {
+         "title": "Learn from Dr. Jawaria on YouTube",
+         "header_size": "h2",
+         "_css_classes": "jr-h2 jr-center"
+        },
+        "elements": []
+       },
+       {
+        "id": "5480865",
+        "elType": "widget",
+        "widgetType": "text-editor",
+        "settings": {
+         "editor": "<p>Short, simple videos on women’s health, fertility and pregnancy.</p>",
+         "_css_classes": "jr-lead jr-center"
+        },
+        "elements": []
+       },
+       {
+        "id": "dab7d81",
+        "elType": "widget",
+        "widgetType": "shortcode",
+        "settings": {
+         "shortcode": "[jr_videos count=\"3\"]"
+        },
+        "elements": []
+       }
+      ],
+      "isInner": false
+     }
+    ],
+    "isInner": false
+   },
+   {
+    "id": "8edfa43",
+    "elType": "section",
+    "settings": {
+     "css_classes": "jr-section jr-section--surface",
+     "gap": "extended"
+    },
+    "elements": [
+     {
+      "id": "1c57309",
+      "elType": "column",
+      "settings": {
+       "_column_size": 100,
+       "_inline_size": null
+      },
+      "elements": [
+       {
+        "id": "8410a14",
         "elType": "widget",
         "widgetType": "heading",
         "settings": {
@@ -575,22 +833,39 @@
         "elements": []
        },
        {
-        "id": "f8fead3",
+        "id": "4ccc59a",
         "elType": "widget",
         "widgetType": "heading",
         "settings": {
-         "title": "Learn about your health",
+         "title": "Featured articles",
          "header_size": "h2",
          "_css_classes": "jr-h2 jr-center"
         },
         "elements": []
        },
        {
-        "id": "2b1fec4",
+        "id": "b25d410",
         "elType": "widget",
         "widgetType": "shortcode",
         "settings": {
          "shortcode": "[jr_latest_posts count=\"3\"]"
+        },
+        "elements": []
+       },
+       {
+        "id": "05e6851",
+        "elType": "widget",
+        "widgetType": "button",
+        "settings": {
+         "text": "View all articles",
+         "link": {
+          "url": "/blog/",
+          "is_external": "",
+          "nofollow": "",
+          "custom_attributes": ""
+         },
+         "_css_classes": "jr-btn-ghost",
+         "align": "center"
         },
         "elements": []
        }
@@ -601,7 +876,7 @@
     "isInner": false
    },
    {
-    "id": "96a721e",
+    "id": "c3ffc8e",
     "elType": "section",
     "settings": {
      "css_classes": "jr-cta-band",
@@ -609,7 +884,7 @@
     },
     "elements": [
      {
-      "id": "67fb389",
+      "id": "881f4e6",
       "elType": "column",
       "settings": {
        "_column_size": 100,
@@ -617,7 +892,7 @@
       },
       "elements": [
        {
-        "id": "f6c69ed",
+        "id": "bff73a6",
         "elType": "widget",
         "widgetType": "heading",
         "settings": {
@@ -628,7 +903,7 @@
         "elements": []
        },
        {
-        "id": "cf9ce71",
+        "id": "c533b83",
         "elType": "widget",
         "widgetType": "heading",
         "settings": {
@@ -639,7 +914,7 @@
         "elements": []
        },
        {
-        "id": "1e0232b",
+        "id": "546d641",
         "elType": "widget",
         "widgetType": "text-editor",
         "settings": {
@@ -649,7 +924,7 @@
         "elements": []
        },
        {
-        "id": "73d0c55",
+        "id": "2677ce8",
         "elType": "widget",
         "widgetType": "shortcode",
         "settings": {
@@ -662,9 +937,91 @@
      }
     ],
     "isInner": false
+   },
+   {
+    "id": "9cd2380",
+    "elType": "section",
+    "settings": {
+     "css_classes": "jr-section",
+     "gap": "extended"
+    },
+    "elements": [
+     {
+      "id": "94b28df",
+      "elType": "column",
+      "settings": {
+       "_column_size": 40,
+       "_inline_size": null
+      },
+      "elements": [
+       {
+        "id": "8c2d125",
+        "elType": "widget",
+        "widgetType": "heading",
+        "settings": {
+         "title": "Location",
+         "header_size": "p",
+         "_css_classes": "jr-eyebrow"
+        },
+        "elements": []
+       },
+       {
+        "id": "48221e2",
+        "elType": "widget",
+        "widgetType": "heading",
+        "settings": {
+         "title": "Visit the clinic",
+         "header_size": "h2",
+         "_css_classes": "jr-h2"
+        },
+        "elements": []
+       },
+       {
+        "id": "2ab9863",
+        "elType": "widget",
+        "widgetType": "shortcode",
+        "settings": {
+         "shortcode": "[jr_clinic_info]"
+        },
+        "elements": []
+       },
+       {
+        "id": "0cdc4eb",
+        "elType": "widget",
+        "widgetType": "shortcode",
+        "settings": {
+         "shortcode": "[jr_hours]"
+        },
+        "elements": []
+       }
+      ],
+      "isInner": false
+     },
+     {
+      "id": "b41fcc0",
+      "elType": "column",
+      "settings": {
+       "_column_size": 60,
+       "_inline_size": null
+      },
+      "elements": [
+       {
+        "id": "904b3c7",
+        "elType": "widget",
+        "widgetType": "shortcode",
+        "settings": {
+         "shortcode": "[jr_map]"
+        },
+        "elements": []
+       }
+      ],
+      "isInner": false
+     }
+    ],
+    "isInner": false
    }
   ],
-  "fallback": "<p>Consultant Gynecologist · IUI Specialist</p>\n<h1>Caring, expert support for every stage of a woman’s life</h1>\n<p>Dr. Jawaria Rasheed brings more than  years of experience in gynecology, women’s health and fertility care, including IUI. Every consultation is private, respectful and explained in plain language.</p>\n<p>About Dr. Jawaria</p>\n<h2>Compassionate, personalised care you can trust</h2>\n<p>Dr. Jawaria Rasheed is a consultant gynecologist with over  years of experience in gynecology, women’s healthcare and Intrauterine Insemination (IUI). She helps women understand their health, make informed decisions and receive treatment tailored to their needs.</p>\n<ul><li>Clear explanations, no rushed decisions</li><li>Private, respectful consultations with a female specialist</li><li>Fertility support for couples, including IUI</li><li>Care from adolescence through menopause</li></ul>\n<p>Services</p>\n<h2>How Dr. Jawaria can help</h2>\n<p>From routine check-ups to fertility treatment — choose a service to learn what it involves.</p>\n<p>Fertility care</p>\n<h2>Trying to conceive? Start with clear answers.</h2>\n<p>Fertility concerns can feel overwhelming. Dr. Jawaria first evaluates both partners, then recommends the simplest effective step — from ovulation support to IUI — and refers for IVF when that is the better option.</p>\n<h3>Your fertility journey</h3>\n<ul><li>1. Consultation and history for both partners</li><li>2. Tests: hormones, ultrasound, semen analysis</li><li>3. A personalised plan explained to you</li><li>4. Treatment such as ovulation induction or IUI</li><li>5. Follow-up and support at every step</li></ul>\n<p>Why patients choose us</p>\n<h2>Care built on trust</h2>\n<div class=\"jr-mini-cards\"><div class=\"jr-mini-card\"><h3>Experience</h3><p>More than  years of focused work in gynecology and fertility care.</p></div><div class=\"jr-mini-card\"><h3>Privacy</h3><p>Your concerns are discussed confidentially, in a respectful setting.</p></div><div class=\"jr-mini-card\"><h3>Clear communication</h3><p>You leave knowing your diagnosis, your options and the next step.</p></div></div>\n<p>Health articles</p>\n<h2>Learn about your health</h2>\n<p>Appointments</p>\n<h2>Ready to talk to Dr. Jawaria?</h2>\n<p>Send an appointment request online or message the clinic on WhatsApp. Our team will confirm a time with you.</p>"
+  "fallback": "<p>Consultant Gynecologist · Women’s Health &amp; IUI Specialist</p>\n<h1>Expert gynecology and fertility care for every stage of a woman’s life</h1>\n<p>Compassionate, personalised and professional care from Dr. Jawaria Rasheed — with more than  years of experience in gynecology, women’s health and IUI.</p>\n<p>Welcome</p>\n<h2>Helping women understand their health and make informed decisions</h2>\n<blockquote class=\"jr-quote\">“Every woman deserves to be listened to, to understand her options and to receive care that fits her life.”</blockquote>\n<p>Dr. Jawaria Rasheed is an experienced gynecologist dedicated to compassionate, personalised and professional care for women at every stage of life — from first periods to pregnancy, fertility and menopause.</p><p>She believes in building trust through clear communication, respectful care and a patient-centred approach.</p>\n<p>Areas of focus</p>\n<h2>Complete care in gynecology and fertility</h2>\n<ul><li>Gynecological consultations</li><li>Reproductive health</li><li>Fertility evaluation for couples</li><li>IUI (Intrauterine Insemination)</li><li>Women’s wellness, from adolescence to menopause</li></ul>\n<p>Each plan starts with careful listening and the right tests, so treatment is tailored to your needs — never one-size-fits-all.</p>\n<p>Fertility &amp; IUI</p>\n<h2>Trying to conceive? Start with clear answers.</h2>\n<p>Fertility concerns can feel overwhelming. Dr. Jawaria evaluates both partners, then recommends the simplest effective step — from ovulation support and follicle monitoring to IUI. When another option such as IVF is more suitable, she will explain why and guide you.</p>\n<h3>Your fertility journey</h3>\n<ul><li>1. Consultation for both partners</li><li>2. Tests: hormones, ultrasound, semen analysis</li><li>3. A personalised plan, explained clearly</li><li>4. Treatment such as ovulation induction or IUI</li><li>5. Follow-up and support at every step</li></ul>\n<p>Our services</p>\n<h2>How Dr. Jawaria can help</h2>\n<div class=\"jr-pills jr-center\"><a class=\"jr-pill\" href=\"/services/gynecology-consultation/\">Gynecology</a><a class=\"jr-pill\" href=\"/services/infertility-evaluation/\">Fertility &amp; IUI</a><a class=\"jr-pill\" href=\"/services/pregnancy-care/\">Pregnancy Care</a><a class=\"jr-pill\" href=\"/services/pcos/\">PCOS</a><a class=\"jr-pill\" href=\"/services/endometriosis/\">Endometriosis</a><a class=\"jr-pill\" href=\"/services/fibroids/\">Fibroids</a><a class=\"jr-pill\" href=\"/services/menopause/\">Menopause</a></div>\n<p>Meet your doctor</p>\n<h2>Dr. Jawaria Rasheed</h2>\n<p class=\"jr-credentials\">Consultant Gynecologist | Women’s Health &amp; IUI Specialist<br></p>\n<p>With over  years of experience in gynecology, women’s healthcare and IUI, Dr. Jawaria’s mission is to support women’s health, improve reproductive well-being and help couples navigate their fertility journey with confidence and care.</p>\n<p>Patient reviews</p>\n<h2>What our patients say</h2>\n<p>Videos</p>\n<h2>Learn from Dr. Jawaria on YouTube</h2>\n<p>Short, simple videos on women’s health, fertility and pregnancy.</p>\n<p>Health articles</p>\n<h2>Featured articles</h2>\n<p>Appointments</p>\n<h2>Ready to talk to Dr. Jawaria?</h2>\n<p>Send an appointment request online or message the clinic on WhatsApp. Our team will confirm a time with you.</p>\n<p>Location</p>\n<h2>Visit the clinic</h2>"
  },
  {
   "slug": "about",
@@ -677,7 +1034,7 @@
   "seo_description": "About Dr. Jawaria Rasheed — consultant gynecologist and IUI specialist with over 15 years of experience in women’s health and fertility care.",
   "elementor": [
    {
-    "id": "28f612c",
+    "id": "98602c4",
     "elType": "section",
     "settings": {
      "css_classes": "jr-page-hero",
@@ -686,7 +1043,7 @@
     },
     "elements": [
      {
-      "id": "f98cab9",
+      "id": "0fde84b",
       "elType": "column",
       "settings": {
        "_column_size": 55,
@@ -694,7 +1051,7 @@
       },
       "elements": [
        {
-        "id": "e12afb5",
+        "id": "a465327",
         "elType": "widget",
         "widgetType": "heading",
         "settings": {
@@ -705,7 +1062,7 @@
         "elements": []
        },
        {
-        "id": "a33fda7",
+        "id": "5598e33",
         "elType": "widget",
         "widgetType": "heading",
         "settings": {
@@ -715,7 +1072,7 @@
         "elements": []
        },
        {
-        "id": "63bb154",
+        "id": "427c49d",
         "elType": "widget",
         "widgetType": "text-editor",
         "settings": {
@@ -725,7 +1082,7 @@
         "elements": []
        },
        {
-        "id": "f7e52e0",
+        "id": "8495f6f",
         "elType": "widget",
         "widgetType": "text-editor",
         "settings": {
@@ -734,7 +1091,7 @@
         "elements": []
        },
        {
-        "id": "ea92294",
+        "id": "34d5545",
         "elType": "widget",
         "widgetType": "shortcode",
         "settings": {
@@ -746,7 +1103,7 @@
       "isInner": false
      },
      {
-      "id": "b047a03",
+      "id": "2d87916",
       "elType": "column",
       "settings": {
        "_column_size": 45,
@@ -754,7 +1111,7 @@
       },
       "elements": [
        {
-        "id": "6f174ed",
+        "id": "bcf9fd1",
         "elType": "widget",
         "widgetType": "image",
         "settings": {
@@ -776,7 +1133,7 @@
     "isInner": false
    },
    {
-    "id": "3c28b8a",
+    "id": "afa71cd",
     "elType": "section",
     "settings": {
      "css_classes": "jr-section",
@@ -784,7 +1141,7 @@
     },
     "elements": [
      {
-      "id": "d81fba4",
+      "id": "aa5766e",
       "elType": "column",
       "settings": {
        "_column_size": 60,
@@ -792,7 +1149,7 @@
       },
       "elements": [
        {
-        "id": "b1020ef",
+        "id": "4091647",
         "elType": "widget",
         "widgetType": "heading",
         "settings": {
@@ -803,7 +1160,7 @@
         "elements": []
        },
        {
-        "id": "857a1d8",
+        "id": "ab042fd",
         "elType": "widget",
         "widgetType": "text-editor",
         "settings": {
@@ -813,7 +1170,7 @@
         "elements": []
        },
        {
-        "id": "765cae4",
+        "id": "e6c875e",
         "elType": "widget",
         "widgetType": "heading",
         "settings": {
@@ -823,13 +1180,13 @@
         "elements": []
        },
        {
-        "id": "2bde7f2",
+        "id": "62bad91",
         "elType": "widget",
         "widgetType": "icon-list",
         "settings": {
          "icon_list": [
           {
-           "_id": "4ec8b30",
+           "_id": "b91c96d",
            "text": "Gynecological consultations",
            "selected_icon": {
             "value": "fas fa-check-circle",
@@ -837,7 +1194,7 @@
            }
           },
           {
-           "_id": "fc3e0f4",
+           "_id": "4848fe2",
            "text": "Reproductive health",
            "selected_icon": {
             "value": "fas fa-check-circle",
@@ -845,7 +1202,7 @@
            }
           },
           {
-           "_id": "806a3ed",
+           "_id": "d73e3ef",
            "text": "Fertility evaluation",
            "selected_icon": {
             "value": "fas fa-check-circle",
@@ -853,7 +1210,7 @@
            }
           },
           {
-           "_id": "4463b8d",
+           "_id": "d39d334",
            "text": "IUI procedures",
            "selected_icon": {
             "value": "fas fa-check-circle",
@@ -861,7 +1218,7 @@
            }
           },
           {
-           "_id": "38d4093",
+           "_id": "26fb29b",
            "text": "Women’s wellness",
            "selected_icon": {
             "value": "fas fa-check-circle",
@@ -877,7 +1234,7 @@
       "isInner": false
      },
      {
-      "id": "3764758",
+      "id": "899af0f",
       "elType": "column",
       "settings": {
        "_column_size": 40,
@@ -886,7 +1243,7 @@
       },
       "elements": [
        {
-        "id": "a48aa34",
+        "id": "0e2ad20",
         "elType": "widget",
         "widgetType": "heading",
         "settings": {
@@ -896,7 +1253,7 @@
         "elements": []
        },
        {
-        "id": "c2c221a",
+        "id": "f979777",
         "elType": "widget",
         "widgetType": "text-editor",
         "settings": {
@@ -906,7 +1263,7 @@
         "elements": []
        },
        {
-        "id": "c23a389",
+        "id": "fb88f10",
         "elType": "widget",
         "widgetType": "button",
         "settings": {
@@ -928,7 +1285,7 @@
     "isInner": false
    },
    {
-    "id": "5d0780d",
+    "id": "346a991",
     "elType": "section",
     "settings": {
      "css_classes": "jr-section jr-section--tint",
@@ -936,7 +1293,7 @@
     },
     "elements": [
      {
-      "id": "8d71139",
+      "id": "5895b1c",
       "elType": "column",
       "settings": {
        "_column_size": 100,
@@ -944,7 +1301,7 @@
       },
       "elements": [
        {
-        "id": "d1cb96f",
+        "id": "91bb766",
         "elType": "widget",
         "widgetType": "heading",
         "settings": {
@@ -955,7 +1312,7 @@
         "elements": []
        },
        {
-        "id": "768ff6b",
+        "id": "f6d2ac4",
         "elType": "widget",
         "widgetType": "heading",
         "settings": {
@@ -966,7 +1323,7 @@
         "elements": []
        },
        {
-        "id": "91edd9e",
+        "id": "1a184c7",
         "elType": "widget",
         "widgetType": "text-editor",
         "settings": {
@@ -981,7 +1338,7 @@
     "isInner": false
    },
    {
-    "id": "eedec1f",
+    "id": "76dc928",
     "elType": "section",
     "settings": {
      "css_classes": "jr-cta-band",
@@ -989,7 +1346,7 @@
     },
     "elements": [
      {
-      "id": "d4aa410",
+      "id": "621fe27",
       "elType": "column",
       "settings": {
        "_column_size": 100,
@@ -997,7 +1354,7 @@
       },
       "elements": [
        {
-        "id": "a90bdca",
+        "id": "37aa537",
         "elType": "widget",
         "widgetType": "heading",
         "settings": {
@@ -1008,7 +1365,7 @@
         "elements": []
        },
        {
-        "id": "269d833",
+        "id": "9eb4054",
         "elType": "widget",
         "widgetType": "heading",
         "settings": {
@@ -1019,7 +1376,7 @@
         "elements": []
        },
        {
-        "id": "925ddbd",
+        "id": "4bfbfc5",
         "elType": "widget",
         "widgetType": "text-editor",
         "settings": {
@@ -1029,7 +1386,7 @@
         "elements": []
        },
        {
-        "id": "fcf4a88",
+        "id": "1dc7358",
         "elType": "widget",
         "widgetType": "shortcode",
         "settings": {
@@ -1057,7 +1414,7 @@
   "seo_description": "Gynecology, pregnancy care, infertility evaluation, IUI, PCOS, menopause and more with Dr. Jawaria Rasheed.",
   "elementor": [
    {
-    "id": "fa4429f",
+    "id": "d977c05",
     "elType": "section",
     "settings": {
      "css_classes": "jr-page-hero",
@@ -1065,7 +1422,7 @@
     },
     "elements": [
      {
-      "id": "df5cb12",
+      "id": "b38568a",
       "elType": "column",
       "settings": {
        "_column_size": 100,
@@ -1073,7 +1430,7 @@
       },
       "elements": [
        {
-        "id": "0f7096a",
+        "id": "fffd6c7",
         "elType": "widget",
         "widgetType": "heading",
         "settings": {
@@ -1084,7 +1441,7 @@
         "elements": []
        },
        {
-        "id": "ed2cb53",
+        "id": "86050de",
         "elType": "widget",
         "widgetType": "heading",
         "settings": {
@@ -1094,7 +1451,7 @@
         "elements": []
        },
        {
-        "id": "512f1d4",
+        "id": "7676a7d",
         "elType": "widget",
         "widgetType": "text-editor",
         "settings": {
@@ -1104,7 +1461,7 @@
         "elements": []
        },
        {
-        "id": "20998fb",
+        "id": "c50ea47",
         "elType": "widget",
         "widgetType": "shortcode",
         "settings": {
@@ -1119,7 +1476,7 @@
     "isInner": false
    },
    {
-    "id": "67cc900",
+    "id": "ff6da92",
     "elType": "section",
     "settings": {
      "css_classes": "jr-section",
@@ -1127,7 +1484,7 @@
     },
     "elements": [
      {
-      "id": "5692b1a",
+      "id": "829b1fb",
       "elType": "column",
       "settings": {
        "_column_size": 100,
@@ -1135,7 +1492,7 @@
       },
       "elements": [
        {
-        "id": "e943539",
+        "id": "924c7b8",
         "elType": "widget",
         "widgetType": "shortcode",
         "settings": {
@@ -1150,7 +1507,7 @@
     "isInner": false
    },
    {
-    "id": "80a1fa8",
+    "id": "55abf0f",
     "elType": "section",
     "settings": {
      "css_classes": "jr-section jr-section--beige",
@@ -1159,7 +1516,7 @@
     },
     "elements": [
      {
-      "id": "390f3a0",
+      "id": "b3e5d1e",
       "elType": "column",
       "settings": {
        "_column_size": 60,
@@ -1167,7 +1524,7 @@
       },
       "elements": [
        {
-        "id": "7aecba9",
+        "id": "724a42c",
         "elType": "widget",
         "widgetType": "heading",
         "settings": {
@@ -1178,7 +1535,7 @@
         "elements": []
        },
        {
-        "id": "4788869",
+        "id": "8288dfc",
         "elType": "widget",
         "widgetType": "text-editor",
         "settings": {
@@ -1190,7 +1547,7 @@
       "isInner": false
      },
      {
-      "id": "eadcf4c",
+      "id": "7ef7c80",
       "elType": "column",
       "settings": {
        "_column_size": 40,
@@ -1198,7 +1555,7 @@
       },
       "elements": [
        {
-        "id": "b3a22d8",
+        "id": "ef94df7",
         "elType": "widget",
         "widgetType": "shortcode",
         "settings": {
@@ -1226,7 +1583,7 @@
   "seo_description": "Private, unhurried check-ups and advice for women’s health concerns at every age. Dr. Jawaria Rasheed, consultant gynecologist.",
   "elementor": [
    {
-    "id": "55040b3",
+    "id": "bc42a99",
     "elType": "section",
     "settings": {
      "css_classes": "jr-page-hero",
@@ -1234,7 +1591,7 @@
     },
     "elements": [
      {
-      "id": "1d81cd9",
+      "id": "8a19e1b",
       "elType": "column",
       "settings": {
        "_column_size": 100,
@@ -1242,7 +1599,7 @@
       },
       "elements": [
        {
-        "id": "d9496ad",
+        "id": "054bc51",
         "elType": "widget",
         "widgetType": "heading",
         "settings": {
@@ -1253,7 +1610,7 @@
         "elements": []
        },
        {
-        "id": "bef6ee7",
+        "id": "4587334",
         "elType": "widget",
         "widgetType": "heading",
         "settings": {
@@ -1263,7 +1620,7 @@
         "elements": []
        },
        {
-        "id": "5600922",
+        "id": "2466336",
         "elType": "widget",
         "widgetType": "text-editor",
         "settings": {
@@ -1273,7 +1630,7 @@
         "elements": []
        },
        {
-        "id": "6d86b9c",
+        "id": "7c98088",
         "elType": "widget",
         "widgetType": "shortcode",
         "settings": {
@@ -1288,7 +1645,7 @@
     "isInner": false
    },
    {
-    "id": "9a0a590",
+    "id": "23c0db8",
     "elType": "section",
     "settings": {
      "css_classes": "jr-section",
@@ -1296,7 +1653,7 @@
     },
     "elements": [
      {
-      "id": "b38568a",
+      "id": "4b85b94",
       "elType": "column",
       "settings": {
        "_column_size": 62,
@@ -1304,7 +1661,7 @@
       },
       "elements": [
        {
-        "id": "17367d7",
+        "id": "abca7f5",
         "elType": "widget",
         "widgetType": "heading",
         "settings": {
@@ -1315,13 +1672,13 @@
         "elements": []
        },
        {
-        "id": "610a5b3",
+        "id": "11ff7d6",
         "elType": "widget",
         "widgetType": "icon-list",
         "settings": {
          "icon_list": [
           {
-           "_id": "20c606f",
+           "_id": "fe80810",
            "text": "Irregular, painful or very heavy periods",
            "selected_icon": {
             "value": "fas fa-check-circle",
@@ -1329,7 +1686,7 @@
            }
           },
           {
-           "_id": "b3c5581",
+           "_id": "e1808e9",
            "text": "Vaginal discharge, itching or discomfort",
            "selected_icon": {
             "value": "fas fa-check-circle",
@@ -1337,7 +1694,7 @@
            }
           },
           {
-           "_id": "3fc1551",
+           "_id": "309ae59",
            "text": "Lower abdominal or pelvic pain",
            "selected_icon": {
             "value": "fas fa-check-circle",
@@ -1345,7 +1702,7 @@
            }
           },
           {
-           "_id": "b6c826f",
+           "_id": "7af6dea",
            "text": "Questions about hormones, contraception or planning a pregnancy",
            "selected_icon": {
             "value": "fas fa-check-circle",
@@ -1353,7 +1710,7 @@
            }
           },
           {
-           "_id": "9572d3b",
+           "_id": "f6a9590",
            "text": "A routine women’s health check-up",
            "selected_icon": {
             "value": "fas fa-check-circle",
@@ -1366,7 +1723,7 @@
         "elements": []
        },
        {
-        "id": "f172257",
+        "id": "190036f",
         "elType": "widget",
         "widgetType": "heading",
         "settings": {
@@ -1377,7 +1734,7 @@
         "elements": []
        },
        {
-        "id": "b2a739c",
+        "id": "e608e51",
         "elType": "widget",
         "widgetType": "text-editor",
         "settings": {
@@ -1390,7 +1747,7 @@
       "isInner": false
      },
      {
-      "id": "92b1da4",
+      "id": "daab5e8",
       "elType": "column",
       "settings": {
        "_column_size": 38,
@@ -1399,7 +1756,7 @@
       },
       "elements": [
        {
-        "id": "32dbbbc",
+        "id": "b536d2a",
         "elType": "widget",
         "widgetType": "heading",
         "settings": {
@@ -1409,13 +1766,13 @@
         "elements": []
        },
        {
-        "id": "e4b1b17",
+        "id": "5bdb9a0",
         "elType": "widget",
         "widgetType": "icon-list",
         "settings": {
          "icon_list": [
           {
-           "_id": "3e02163",
+           "_id": "962c3c5",
            "text": "A conversation about your symptoms and medical history",
            "selected_icon": {
             "value": "fas fa-check-circle",
@@ -1423,7 +1780,7 @@
            }
           },
           {
-           "_id": "f61ec99",
+           "_id": "7308264",
            "text": "An examination, only if needed and with your permission",
            "selected_icon": {
             "value": "fas fa-check-circle",
@@ -1431,7 +1788,7 @@
            }
           },
           {
-           "_id": "0a567b2",
+           "_id": "a8c5106",
            "text": "Ultrasound or lab tests where they will help",
            "selected_icon": {
             "value": "fas fa-check-circle",
@@ -1439,7 +1796,7 @@
            }
           },
           {
-           "_id": "5f3d724",
+           "_id": "a75fd83",
            "text": "A clear explanation of the findings and your options",
            "selected_icon": {
             "value": "fas fa-check-circle",
@@ -1452,7 +1809,7 @@
         "elements": []
        },
        {
-        "id": "f56f9db",
+        "id": "67d470c",
         "elType": "widget",
         "widgetType": "button",
         "settings": {
@@ -1474,7 +1831,7 @@
     "isInner": false
    },
    {
-    "id": "3494cb5",
+    "id": "fb62b22",
     "elType": "section",
     "settings": {
      "css_classes": "jr-section jr-section--tint",
@@ -1482,7 +1839,7 @@
     },
     "elements": [
      {
-      "id": "b3e5d1e",
+      "id": "2799ca4",
       "elType": "column",
       "settings": {
        "_column_size": 100,
@@ -1490,7 +1847,7 @@
       },
       "elements": [
        {
-        "id": "96a013e",
+        "id": "411582d",
         "elType": "widget",
         "widgetType": "heading",
         "settings": {
@@ -1501,18 +1858,18 @@
         "elements": []
        },
        {
-        "id": "1f766e8",
+        "id": "f7b4ae9",
         "elType": "widget",
         "widgetType": "toggle",
         "settings": {
          "tabs": [
           {
-           "_id": "d9cfd73",
+           "_id": "52fbfbb",
            "tab_title": "Do I need to prepare for my first visit?",
            "tab_content": "<p>No special preparation is needed. Note the date of your last period and bring previous reports if you have them.</p>"
           },
           {
-           "_id": "c25a843",
+           "_id": "4425488",
            "tab_title": "Can I come during my period?",
            "tab_content": "<p>Yes, for most consultations. If a specific test is planned, the clinic will tell you the best day to come.</p>"
           }
@@ -1528,7 +1885,7 @@
     "isInner": false
    },
    {
-    "id": "209da10",
+    "id": "c2bcb3e",
     "elType": "section",
     "settings": {
      "css_classes": "jr-section jr-section--tight",
@@ -1536,7 +1893,7 @@
     },
     "elements": [
      {
-      "id": "534318a",
+      "id": "8e00ea9",
       "elType": "column",
       "settings": {
        "_column_size": 100,
@@ -1544,7 +1901,7 @@
       },
       "elements": [
        {
-        "id": "723b347",
+        "id": "3b635c9",
         "elType": "widget",
         "widgetType": "text-editor",
         "settings": {
@@ -1560,7 +1917,7 @@
     "isInner": false
    },
    {
-    "id": "4cf7513",
+    "id": "2967445",
     "elType": "section",
     "settings": {
      "css_classes": "jr-cta-band",
@@ -1568,7 +1925,7 @@
     },
     "elements": [
      {
-      "id": "4eab39b",
+      "id": "8bdddc1",
       "elType": "column",
       "settings": {
        "_column_size": 100,
@@ -1576,7 +1933,7 @@
       },
       "elements": [
        {
-        "id": "b22602b",
+        "id": "39e6194",
         "elType": "widget",
         "widgetType": "heading",
         "settings": {
@@ -1587,7 +1944,7 @@
         "elements": []
        },
        {
-        "id": "975705a",
+        "id": "8631bb7",
         "elType": "widget",
         "widgetType": "heading",
         "settings": {
@@ -1598,7 +1955,7 @@
         "elements": []
        },
        {
-        "id": "f7a9d92",
+        "id": "170ef2e",
         "elType": "widget",
         "widgetType": "text-editor",
         "settings": {
@@ -1608,7 +1965,7 @@
         "elements": []
        },
        {
-        "id": "b6c0bab",
+        "id": "a69d2df",
         "elType": "widget",
         "widgetType": "shortcode",
         "settings": {
@@ -1636,7 +1993,7 @@
   "seo_description": "Regular check-ups, scans and guidance from early pregnancy until delivery. Dr. Jawaria Rasheed, consultant gynecologist.",
   "elementor": [
    {
-    "id": "f9f729d",
+    "id": "230ae9d",
     "elType": "section",
     "settings": {
      "css_classes": "jr-page-hero",
@@ -1644,7 +2001,7 @@
     },
     "elements": [
      {
-      "id": "dd0a995",
+      "id": "de3d9f6",
       "elType": "column",
       "settings": {
        "_column_size": 100,
@@ -1652,7 +2009,7 @@
       },
       "elements": [
        {
-        "id": "937b640",
+        "id": "d8c6b61",
         "elType": "widget",
         "widgetType": "heading",
         "settings": {
@@ -1663,7 +2020,7 @@
         "elements": []
        },
        {
-        "id": "cda588a",
+        "id": "533b665",
         "elType": "widget",
         "widgetType": "heading",
         "settings": {
@@ -1673,7 +2030,7 @@
         "elements": []
        },
        {
-        "id": "413e1a9",
+        "id": "7aea0ff",
         "elType": "widget",
         "widgetType": "text-editor",
         "settings": {
@@ -1683,7 +2040,7 @@
         "elements": []
        },
        {
-        "id": "7fb32dd",
+        "id": "3b610b3",
         "elType": "widget",
         "widgetType": "shortcode",
         "settings": {
@@ -1698,7 +2055,7 @@
     "isInner": false
    },
    {
-    "id": "8e79297",
+    "id": "fdcb7a3",
     "elType": "section",
     "settings": {
      "css_classes": "jr-section",
@@ -1706,7 +2063,7 @@
     },
     "elements": [
      {
-      "id": "2799ca4",
+      "id": "dc556be",
       "elType": "column",
       "settings": {
        "_column_size": 62,
@@ -1714,7 +2071,7 @@
       },
       "elements": [
        {
-        "id": "58f8408",
+        "id": "c2d77f6",
         "elType": "widget",
         "widgetType": "heading",
         "settings": {
@@ -1725,13 +2082,13 @@
         "elements": []
        },
        {
-        "id": "57ed466",
+        "id": "7b7c355",
         "elType": "widget",
         "widgetType": "icon-list",
         "settings": {
          "icon_list": [
           {
-           "_id": "e0392a6",
+           "_id": "1d2130c",
            "text": "You have a positive pregnancy test",
            "selected_icon": {
             "value": "fas fa-check-circle",
@@ -1739,7 +2096,7 @@
            }
           },
           {
-           "_id": "ed29b78",
+           "_id": "9d2ad19",
            "text": "You are planning a pregnancy and want advice beforehand",
            "selected_icon": {
             "value": "fas fa-check-circle",
@@ -1747,7 +2104,7 @@
            }
           },
           {
-           "_id": "6f1dd55",
+           "_id": "18ef443",
            "text": "You had complications in a previous pregnancy",
            "selected_icon": {
             "value": "fas fa-check-circle",
@@ -1755,7 +2112,7 @@
            }
           },
           {
-           "_id": "c55dff5",
+           "_id": "924e377",
            "text": "You have diabetes, high blood pressure, thyroid or another condition",
            "selected_icon": {
             "value": "fas fa-check-circle",
@@ -1768,7 +2125,7 @@
         "elements": []
        },
        {
-        "id": "b3c6915",
+        "id": "1f20ba9",
         "elType": "widget",
         "widgetType": "heading",
         "settings": {
@@ -1779,7 +2136,7 @@
         "elements": []
        },
        {
-        "id": "62224d7",
+        "id": "1a35b23",
         "elType": "widget",
         "widgetType": "text-editor",
         "settings": {
@@ -1789,7 +2146,7 @@
         "elements": []
        },
        {
-        "id": "f394541",
+        "id": "f09ea3b",
         "elType": "widget",
         "widgetType": "text-editor",
         "settings": {
@@ -1802,7 +2159,7 @@
       "isInner": false
      },
      {
-      "id": "882431c",
+      "id": "5a0bf78",
       "elType": "column",
       "settings": {
        "_column_size": 38,
@@ -1811,7 +2168,7 @@
       },
       "elements": [
        {
-        "id": "bf8af3a",
+        "id": "df8bc6b",
         "elType": "widget",
         "widgetType": "heading",
         "settings": {
@@ -1821,13 +2178,13 @@
         "elements": []
        },
        {
-        "id": "6670b89",
+        "id": "ed4f782",
         "elType": "widget",
         "widgetType": "icon-list",
         "settings": {
          "icon_list": [
           {
-           "_id": "845f3fa",
+           "_id": "f4aeebc",
            "text": "Confirmation of pregnancy and expected due date",
            "selected_icon": {
             "value": "fas fa-check-circle",
@@ -1835,7 +2192,7 @@
            }
           },
           {
-           "_id": "44eb313",
+           "_id": "d90e785",
            "text": "Routine blood tests and ultrasound scans at the right stages",
            "selected_icon": {
             "value": "fas fa-check-circle",
@@ -1843,7 +2200,7 @@
            }
           },
           {
-           "_id": "4f42d4e",
+           "_id": "b5be42e",
            "text": "Blood pressure, weight and baby’s growth checks",
            "selected_icon": {
             "value": "fas fa-check-circle",
@@ -1851,7 +2208,7 @@
            }
           },
           {
-           "_id": "21f5a16",
+           "_id": "86c1be7",
            "text": "Advice on diet, supplements, activity and warning signs",
            "selected_icon": {
             "value": "fas fa-check-circle",
@@ -1864,7 +2221,7 @@
         "elements": []
        },
        {
-        "id": "ab279ac",
+        "id": "fcb1a7f",
         "elType": "widget",
         "widgetType": "button",
         "settings": {
@@ -1886,7 +2243,7 @@
     "isInner": false
    },
    {
-    "id": "898eebe",
+    "id": "23f49a6",
     "elType": "section",
     "settings": {
      "css_classes": "jr-section jr-section--tint",
@@ -1894,7 +2251,7 @@
     },
     "elements": [
      {
-      "id": "e1766df",
+      "id": "03d96cc",
       "elType": "column",
       "settings": {
        "_column_size": 100,
@@ -1902,7 +2259,7 @@
       },
       "elements": [
        {
-        "id": "c49f856",
+        "id": "3be196f",
         "elType": "widget",
         "widgetType": "heading",
         "settings": {
@@ -1913,18 +2270,18 @@
         "elements": []
        },
        {
-        "id": "7e7373b",
+        "id": "d4ef886",
         "elType": "widget",
         "widgetType": "toggle",
         "settings": {
          "tabs": [
           {
-           "_id": "5a8a1d0",
+           "_id": "e3171f6",
            "tab_title": "When should I have my first antenatal visit?",
            "tab_content": "<p>Ideally soon after a positive pregnancy test, usually in the first 8–10 weeks.</p>"
           },
           {
-           "_id": "7def207",
+           "_id": "bcec518",
            "tab_title": "Which supplements should I take?",
            "tab_content": "<p>Folic acid is usually advised before and in early pregnancy. Your doctor will advise on iron, calcium and other supplements based on your tests.</p>"
           }
@@ -1940,7 +2297,7 @@
     "isInner": false
    },
    {
-    "id": "1d8d076",
+    "id": "5ca09e7",
     "elType": "section",
     "settings": {
      "css_classes": "jr-section jr-section--tight",
@@ -1948,7 +2305,7 @@
     },
     "elements": [
      {
-      "id": "c9c272d",
+      "id": "912fa10",
       "elType": "column",
       "settings": {
        "_column_size": 100,
@@ -1956,7 +2313,7 @@
       },
       "elements": [
        {
-        "id": "fa644f1",
+        "id": "dc63843",
         "elType": "widget",
         "widgetType": "text-editor",
         "settings": {
@@ -1972,7 +2329,7 @@
     "isInner": false
    },
    {
-    "id": "83e0424",
+    "id": "79f4a64",
     "elType": "section",
     "settings": {
      "css_classes": "jr-cta-band",
@@ -1980,7 +2337,7 @@
     },
     "elements": [
      {
-      "id": "f18be95",
+      "id": "d76fcae",
       "elType": "column",
       "settings": {
        "_column_size": 100,
@@ -1988,7 +2345,7 @@
       },
       "elements": [
        {
-        "id": "9db5c4b",
+        "id": "8c3cac0",
         "elType": "widget",
         "widgetType": "heading",
         "settings": {
@@ -1999,7 +2356,7 @@
         "elements": []
        },
        {
-        "id": "952f0a0",
+        "id": "3288637",
         "elType": "widget",
         "widgetType": "heading",
         "settings": {
@@ -2010,7 +2367,7 @@
         "elements": []
        },
        {
-        "id": "8651ac3",
+        "id": "066aa69",
         "elType": "widget",
         "widgetType": "text-editor",
         "settings": {
@@ -2020,7 +2377,7 @@
         "elements": []
        },
        {
-        "id": "b78bc93",
+        "id": "f97a50d",
         "elType": "widget",
         "widgetType": "shortcode",
         "settings": {
@@ -2048,7 +2405,7 @@
   "seo_description": "A step-by-step assessment for couples who are trying to conceive. Dr. Jawaria Rasheed, consultant gynecologist.",
   "elementor": [
    {
-    "id": "b087c97",
+    "id": "de6ea7d",
     "elType": "section",
     "settings": {
      "css_classes": "jr-page-hero",
@@ -2056,7 +2413,7 @@
     },
     "elements": [
      {
-      "id": "83839da",
+      "id": "eb6f595",
       "elType": "column",
       "settings": {
        "_column_size": 100,
@@ -2064,7 +2421,7 @@
       },
       "elements": [
        {
-        "id": "c607bc4",
+        "id": "5194e17",
         "elType": "widget",
         "widgetType": "heading",
         "settings": {
@@ -2075,7 +2432,7 @@
         "elements": []
        },
        {
-        "id": "02c101d",
+        "id": "94e91ca",
         "elType": "widget",
         "widgetType": "heading",
         "settings": {
@@ -2085,7 +2442,7 @@
         "elements": []
        },
        {
-        "id": "a7e41d3",
+        "id": "f7095d5",
         "elType": "widget",
         "widgetType": "text-editor",
         "settings": {
@@ -2095,7 +2452,7 @@
         "elements": []
        },
        {
-        "id": "157c01b",
+        "id": "3f41dd0",
         "elType": "widget",
         "widgetType": "shortcode",
         "settings": {
@@ -2110,7 +2467,7 @@
     "isInner": false
    },
    {
-    "id": "6e14bbe",
+    "id": "136cf76",
     "elType": "section",
     "settings": {
      "css_classes": "jr-section",
@@ -2118,7 +2475,7 @@
     },
     "elements": [
      {
-      "id": "03d96cc",
+      "id": "45f77b1",
       "elType": "column",
       "settings": {
        "_column_size": 62,
@@ -2126,7 +2483,7 @@
       },
       "elements": [
        {
-        "id": "6cff7ed",
+        "id": "a67b948",
         "elType": "widget",
         "widgetType": "heading",
         "settings": {
@@ -2137,13 +2494,13 @@
         "elements": []
        },
        {
-        "id": "57a3525",
+        "id": "668cae6",
         "elType": "widget",
         "widgetType": "icon-list",
         "settings": {
          "icon_list": [
           {
-           "_id": "1900b7f",
+           "_id": "6d99f62",
            "text": "No pregnancy after 12 months of regular, unprotected intercourse",
            "selected_icon": {
             "value": "fas fa-check-circle",
@@ -2151,7 +2508,7 @@
            }
           },
           {
-           "_id": "538b048",
+           "_id": "4507f1b",
            "text": "After 6 months if the woman is 35 or older",
            "selected_icon": {
             "value": "fas fa-check-circle",
@@ -2159,7 +2516,7 @@
            }
           },
           {
-           "_id": "b92de93",
+           "_id": "e0abd63",
            "text": "Irregular or absent periods",
            "selected_icon": {
             "value": "fas fa-check-circle",
@@ -2167,7 +2524,7 @@
            }
           },
           {
-           "_id": "c2eb0ba",
+           "_id": "41bea8d",
            "text": "Known PCOS, endometriosis, or previous pelvic surgery or infection",
            "selected_icon": {
             "value": "fas fa-check-circle",
@@ -2175,7 +2532,7 @@
            }
           },
           {
-           "_id": "03304de",
+           "_id": "195ce07",
            "text": "Repeated miscarriages",
            "selected_icon": {
             "value": "fas fa-check-circle",
@@ -2188,7 +2545,7 @@
         "elements": []
        },
        {
-        "id": "ee14f8c",
+        "id": "677933f",
         "elType": "widget",
         "widgetType": "heading",
         "settings": {
@@ -2199,7 +2556,7 @@
         "elements": []
        },
        {
-        "id": "f8388b8",
+        "id": "1f035ee",
         "elType": "widget",
         "widgetType": "text-editor",
         "settings": {
@@ -2212,7 +2569,7 @@
       "isInner": false
      },
      {
-      "id": "fb05af0",
+      "id": "24eb81d",
       "elType": "column",
       "settings": {
        "_column_size": 38,
@@ -2221,7 +2578,7 @@
       },
       "elements": [
        {
-        "id": "c02cdd6",
+        "id": "d645b1b",
         "elType": "widget",
         "widgetType": "heading",
         "settings": {
@@ -2231,13 +2588,13 @@
         "elements": []
        },
        {
-        "id": "7b7c355",
+        "id": "ab59f9e",
         "elType": "widget",
         "widgetType": "icon-list",
         "settings": {
          "icon_list": [
           {
-           "_id": "7596b8b",
+           "_id": "379db0b",
            "text": "A detailed history for both partners",
            "selected_icon": {
             "value": "fas fa-check-circle",
@@ -2245,7 +2602,7 @@
            }
           },
           {
-           "_id": "aff826f",
+           "_id": "c6c6fe9",
            "text": "Hormone blood tests and an ultrasound scan",
            "selected_icon": {
             "value": "fas fa-check-circle",
@@ -2253,7 +2610,7 @@
            }
           },
           {
-           "_id": "78a5926",
+           "_id": "aaa6cf9",
            "text": "Tracking of ovulation",
            "selected_icon": {
             "value": "fas fa-check-circle",
@@ -2261,7 +2618,7 @@
            }
           },
           {
-           "_id": "19fee25",
+           "_id": "8eada9f",
            "text": "Semen analysis for the male partner",
            "selected_icon": {
             "value": "fas fa-check-circle",
@@ -2274,7 +2631,7 @@
         "elements": []
        },
        {
-        "id": "863cfef",
+        "id": "1528d63",
         "elType": "widget",
         "widgetType": "button",
         "settings": {
@@ -2296,7 +2653,7 @@
     "isInner": false
    },
    {
-    "id": "ada5a52",
+    "id": "060838d",
     "elType": "section",
     "settings": {
      "css_classes": "jr-section jr-section--tint",
@@ -2304,7 +2661,7 @@
     },
     "elements": [
      {
-      "id": "8b6811c",
+      "id": "f827532",
       "elType": "column",
       "settings": {
        "_column_size": 100,
@@ -2312,7 +2669,7 @@
       },
       "elements": [
        {
-        "id": "6657a9e",
+        "id": "98a649b",
         "elType": "widget",
         "widgetType": "heading",
         "settings": {
@@ -2323,18 +2680,18 @@
         "elements": []
        },
        {
-        "id": "c79719c",
+        "id": "6f7cd1f",
         "elType": "widget",
         "widgetType": "toggle",
         "settings": {
          "tabs": [
           {
-           "_id": "0970348",
+           "_id": "c872c2b",
            "tab_title": "Do both partners need to come?",
            "tab_content": "<p>It is very helpful. Male factors are common, and a semen test is simple and important.</p>"
           },
           {
-           "_id": "771779c",
+           "_id": "9006c72",
            "tab_title": "Is every couple offered IUI?",
            "tab_content": "<p>No. Treatment depends on the results. Some couples need only ovulation support or lifestyle changes. Others are referred for IVF when that is the better option.</p>"
           }
@@ -2350,7 +2707,7 @@
     "isInner": false
    },
    {
-    "id": "0dc211c",
+    "id": "0d0f1a3",
     "elType": "section",
     "settings": {
      "css_classes": "jr-section jr-section--tight",
@@ -2358,7 +2715,7 @@
     },
     "elements": [
      {
-      "id": "b5202dd",
+      "id": "ebb1303",
       "elType": "column",
       "settings": {
        "_column_size": 100,
@@ -2366,7 +2723,7 @@
       },
       "elements": [
        {
-        "id": "28a684b",
+        "id": "7a1a23a",
         "elType": "widget",
         "widgetType": "text-editor",
         "settings": {
@@ -2382,7 +2739,7 @@
     "isInner": false
    },
    {
-    "id": "28bd19d",
+    "id": "6427847",
     "elType": "section",
     "settings": {
      "css_classes": "jr-cta-band",
@@ -2390,7 +2747,7 @@
     },
     "elements": [
      {
-      "id": "373f975",
+      "id": "66ab192",
       "elType": "column",
       "settings": {
        "_column_size": 100,
@@ -2398,7 +2755,7 @@
       },
       "elements": [
        {
-        "id": "9fbcde3",
+        "id": "0186e05",
         "elType": "widget",
         "widgetType": "heading",
         "settings": {
@@ -2409,7 +2766,7 @@
         "elements": []
        },
        {
-        "id": "db53cc5",
+        "id": "8a89637",
         "elType": "widget",
         "widgetType": "heading",
         "settings": {
@@ -2420,7 +2777,7 @@
         "elements": []
        },
        {
-        "id": "bfadd52",
+        "id": "d084665",
         "elType": "widget",
         "widgetType": "text-editor",
         "settings": {
@@ -2430,7 +2787,7 @@
         "elements": []
        },
        {
-        "id": "b7fc37c",
+        "id": "72ce538",
         "elType": "widget",
         "widgetType": "shortcode",
         "settings": {
@@ -2458,7 +2815,7 @@
   "seo_description": "A simple fertility treatment that places prepared sperm directly into the uterus at the time of ovulation. Dr. Jawaria Rasheed, consultant gynecologist.",
   "elementor": [
    {
-    "id": "1633224",
+    "id": "c870a8a",
     "elType": "section",
     "settings": {
      "css_classes": "jr-page-hero",
@@ -2466,7 +2823,7 @@
     },
     "elements": [
      {
-      "id": "a594276",
+      "id": "b086791",
       "elType": "column",
       "settings": {
        "_column_size": 100,
@@ -2474,7 +2831,7 @@
       },
       "elements": [
        {
-        "id": "9f4c88e",
+        "id": "4621741",
         "elType": "widget",
         "widgetType": "heading",
         "settings": {
@@ -2485,7 +2842,7 @@
         "elements": []
        },
        {
-        "id": "5d835de",
+        "id": "c348f6c",
         "elType": "widget",
         "widgetType": "heading",
         "settings": {
@@ -2495,7 +2852,7 @@
         "elements": []
        },
        {
-        "id": "4d2f201",
+        "id": "e8d5329",
         "elType": "widget",
         "widgetType": "text-editor",
         "settings": {
@@ -2505,7 +2862,7 @@
         "elements": []
        },
        {
-        "id": "c0bc1cf",
+        "id": "b983f93",
         "elType": "widget",
         "widgetType": "shortcode",
         "settings": {
@@ -2520,7 +2877,7 @@
     "isInner": false
    },
    {
-    "id": "51a2398",
+    "id": "c06ff4b",
     "elType": "section",
     "settings": {
      "css_classes": "jr-section",
@@ -2528,7 +2885,7 @@
     },
     "elements": [
      {
-      "id": "f827532",
+      "id": "dabc052",
       "elType": "column",
       "settings": {
        "_column_size": 62,
@@ -2536,7 +2893,7 @@
       },
       "elements": [
        {
-        "id": "677d623",
+        "id": "8987461",
         "elType": "widget",
         "widgetType": "heading",
         "settings": {
@@ -2547,13 +2904,13 @@
         "elements": []
        },
        {
-        "id": "6fc7d33",
+        "id": "fe29dae",
         "elType": "widget",
         "widgetType": "icon-list",
         "settings": {
          "icon_list": [
           {
-           "_id": "711240b",
+           "_id": "3fbe804",
            "text": "Unexplained infertility",
            "selected_icon": {
             "value": "fas fa-check-circle",
@@ -2561,7 +2918,7 @@
            }
           },
           {
-           "_id": "0b46534",
+           "_id": "2101b15",
            "text": "Mild male factor (slightly low count or movement)",
            "selected_icon": {
             "value": "fas fa-check-circle",
@@ -2569,7 +2926,7 @@
            }
           },
           {
-           "_id": "6bf8f2b",
+           "_id": "bba93fe",
            "text": "Ovulation problems such as PCOS, together with ovulation medicines",
            "selected_icon": {
             "value": "fas fa-check-circle",
@@ -2577,7 +2934,7 @@
            }
           },
           {
-           "_id": "33f0c34",
+           "_id": "ba57ed0",
            "text": "Problems with cervical mucus",
            "selected_icon": {
             "value": "fas fa-check-circle",
@@ -2585,7 +2942,7 @@
            }
           },
           {
-           "_id": "12349e8",
+           "_id": "805db09",
            "text": "Difficulties with intercourse",
            "selected_icon": {
             "value": "fas fa-check-circle",
@@ -2598,7 +2955,7 @@
         "elements": []
        },
        {
-        "id": "0af86c8",
+        "id": "a9eff6c",
         "elType": "widget",
         "widgetType": "heading",
         "settings": {
@@ -2609,7 +2966,7 @@
         "elements": []
        },
        {
-        "id": "5d198ea",
+        "id": "a56f340",
         "elType": "widget",
         "widgetType": "text-editor",
         "settings": {
@@ -2622,7 +2979,7 @@
       "isInner": false
      },
      {
-      "id": "0527dd0",
+      "id": "0a4edb0",
       "elType": "column",
       "settings": {
        "_column_size": 38,
@@ -2631,7 +2988,7 @@
       },
       "elements": [
        {
-        "id": "d55073d",
+        "id": "a9a6ddf",
         "elType": "widget",
         "widgetType": "heading",
         "settings": {
@@ -2641,13 +2998,13 @@
         "elements": []
        },
        {
-        "id": "bb0fcc5",
+        "id": "dcf45f0",
         "elType": "widget",
         "widgetType": "icon-list",
         "settings": {
          "icon_list": [
           {
-           "_id": "92721b8",
+           "_id": "57fb574",
            "text": "Ovulation is monitored by ultrasound, often with medicine to support egg growth",
            "selected_icon": {
             "value": "fas fa-check-circle",
@@ -2655,7 +3012,7 @@
            }
           },
           {
-           "_id": "5f26ed3",
+           "_id": "aa94c4a",
            "text": "A trigger injection may be given to time ovulation",
            "selected_icon": {
             "value": "fas fa-check-circle",
@@ -2663,7 +3020,7 @@
            }
           },
           {
-           "_id": "41923c6",
+           "_id": "5c41795",
            "text": "The partner’s semen sample is washed and prepared in the lab",
            "selected_icon": {
             "value": "fas fa-check-circle",
@@ -2671,7 +3028,7 @@
            }
           },
           {
-           "_id": "c8086de",
+           "_id": "a6ac021",
            "text": "The sperm are placed into the uterus with a thin, soft catheter — it takes a few minutes and is usually painless",
            "selected_icon": {
             "value": "fas fa-check-circle",
@@ -2684,7 +3041,7 @@
         "elements": []
        },
        {
-        "id": "132b3f7",
+        "id": "5f3168c",
         "elType": "widget",
         "widgetType": "button",
         "settings": {
@@ -2706,7 +3063,7 @@
     "isInner": false
    },
    {
-    "id": "851ba9a",
+    "id": "5275c0f",
     "elType": "section",
     "settings": {
      "css_classes": "jr-section jr-section--tint",
@@ -2714,7 +3071,7 @@
     },
     "elements": [
      {
-      "id": "5b0049b",
+      "id": "a6d3c31",
       "elType": "column",
       "settings": {
        "_column_size": 100,
@@ -2722,7 +3079,7 @@
       },
       "elements": [
        {
-        "id": "7a03039",
+        "id": "fda2904",
         "elType": "widget",
         "widgetType": "heading",
         "settings": {
@@ -2733,23 +3090,23 @@
         "elements": []
        },
        {
-        "id": "7357496",
+        "id": "36fa854",
         "elType": "widget",
         "widgetType": "toggle",
         "settings": {
          "tabs": [
           {
-           "_id": "35ce518",
+           "_id": "447acd5",
            "tab_title": "Is IUI painful?",
            "tab_content": "<p>Most women feel little or no pain — it is similar to a Pap smear. Mild cramps for a short time are possible.</p>"
           },
           {
-           "_id": "a2e66d6",
+           "_id": "a91a542",
            "tab_title": "Can I go back to normal activities afterwards?",
            "tab_content": "<p>Yes. Most women return to normal daily activities the same day.</p>"
           },
           {
-           "_id": "fd89c46",
+           "_id": "c03f1c2",
            "tab_title": "How many IUI cycles are advised?",
            "tab_content": "<p>This depends on your age and test results. Your doctor will review progress after each cycle and advise when another approach may be better.</p>"
           }
@@ -2765,7 +3122,7 @@
     "isInner": false
    },
    {
-    "id": "3c06855",
+    "id": "1e6eb54",
     "elType": "section",
     "settings": {
      "css_classes": "jr-section jr-section--tight",
@@ -2773,7 +3130,7 @@
     },
     "elements": [
      {
-      "id": "bda1e3f",
+      "id": "7bd70e7",
       "elType": "column",
       "settings": {
        "_column_size": 100,
@@ -2781,7 +3138,7 @@
       },
       "elements": [
        {
-        "id": "05dad68",
+        "id": "b3b2589",
         "elType": "widget",
         "widgetType": "text-editor",
         "settings": {
@@ -2797,7 +3154,7 @@
     "isInner": false
    },
    {
-    "id": "7b42c9d",
+    "id": "fc5801d",
     "elType": "section",
     "settings": {
      "css_classes": "jr-cta-band",
@@ -2805,7 +3162,7 @@
     },
     "elements": [
      {
-      "id": "a328a30",
+      "id": "4bd50fa",
       "elType": "column",
       "settings": {
        "_column_size": 100,
@@ -2813,7 +3170,7 @@
       },
       "elements": [
        {
-        "id": "ba9b921",
+        "id": "97587fd",
         "elType": "widget",
         "widgetType": "heading",
         "settings": {
@@ -2824,7 +3181,7 @@
         "elements": []
        },
        {
-        "id": "ebd9e87",
+        "id": "167ff11",
         "elType": "widget",
         "widgetType": "heading",
         "settings": {
@@ -2835,7 +3192,7 @@
         "elements": []
        },
        {
-        "id": "c50a6ed",
+        "id": "894991e",
         "elType": "widget",
         "widgetType": "text-editor",
         "settings": {
@@ -2845,7 +3202,7 @@
         "elements": []
        },
        {
-        "id": "58ea67f",
+        "id": "5624a2f",
         "elType": "widget",
         "widgetType": "shortcode",
         "settings": {
@@ -2873,7 +3230,7 @@
   "seo_description": "Medicines and ultrasound tracking to help regular, well-timed ovulation. Dr. Jawaria Rasheed, consultant gynecologist.",
   "elementor": [
    {
-    "id": "6b0a1a9",
+    "id": "28bc3f4",
     "elType": "section",
     "settings": {
      "css_classes": "jr-page-hero",
@@ -2881,7 +3238,7 @@
     },
     "elements": [
      {
-      "id": "325b84b",
+      "id": "0c48101",
       "elType": "column",
       "settings": {
        "_column_size": 100,
@@ -2889,7 +3246,7 @@
       },
       "elements": [
        {
-        "id": "1281183",
+        "id": "d256d30",
         "elType": "widget",
         "widgetType": "heading",
         "settings": {
@@ -2900,7 +3257,7 @@
         "elements": []
        },
        {
-        "id": "a116d12",
+        "id": "86e760e",
         "elType": "widget",
         "widgetType": "heading",
         "settings": {
@@ -2910,7 +3267,7 @@
         "elements": []
        },
        {
-        "id": "430822a",
+        "id": "0e67d30",
         "elType": "widget",
         "widgetType": "text-editor",
         "settings": {
@@ -2920,7 +3277,7 @@
         "elements": []
        },
        {
-        "id": "68cd2a1",
+        "id": "0e8674f",
         "elType": "widget",
         "widgetType": "shortcode",
         "settings": {
@@ -2935,7 +3292,7 @@
     "isInner": false
    },
    {
-    "id": "ac92bc1",
+    "id": "8fe8523",
     "elType": "section",
     "settings": {
      "css_classes": "jr-section",
@@ -2943,7 +3300,7 @@
     },
     "elements": [
      {
-      "id": "82b6970",
+      "id": "d652699",
       "elType": "column",
       "settings": {
        "_column_size": 62,
@@ -2951,7 +3308,7 @@
       },
       "elements": [
        {
-        "id": "fceb0d4",
+        "id": "f3fd384",
         "elType": "widget",
         "widgetType": "heading",
         "settings": {
@@ -2962,13 +3319,13 @@
         "elements": []
        },
        {
-        "id": "d3b945a",
+        "id": "0ed1359",
         "elType": "widget",
         "widgetType": "icon-list",
         "settings": {
          "icon_list": [
           {
-           "_id": "89fbbea",
+           "_id": "d674e2b",
            "text": "Irregular or absent ovulation, for example with PCOS",
            "selected_icon": {
             "value": "fas fa-check-circle",
@@ -2976,7 +3333,7 @@
            }
           },
           {
-           "_id": "6feac54",
+           "_id": "6553022",
            "text": "Before or together with IUI",
            "selected_icon": {
             "value": "fas fa-check-circle",
@@ -2984,7 +3341,7 @@
            }
           },
           {
-           "_id": "dbb785b",
+           "_id": "f39874b",
            "text": "Unexplained infertility",
            "selected_icon": {
             "value": "fas fa-check-circle",
@@ -2997,7 +3354,7 @@
         "elements": []
        },
        {
-        "id": "579578e",
+        "id": "a0c75c4",
         "elType": "widget",
         "widgetType": "heading",
         "settings": {
@@ -3008,7 +3365,7 @@
         "elements": []
        },
        {
-        "id": "a97032c",
+        "id": "74f80c9",
         "elType": "widget",
         "widgetType": "text-editor",
         "settings": {
@@ -3021,7 +3378,7 @@
       "isInner": false
      },
      {
-      "id": "6371391",
+      "id": "6e16f87",
       "elType": "column",
       "settings": {
        "_column_size": 38,
@@ -3030,7 +3387,7 @@
       },
       "elements": [
        {
-        "id": "ec34e0a",
+        "id": "1cf774e",
         "elType": "widget",
         "widgetType": "heading",
         "settings": {
@@ -3040,13 +3397,13 @@
         "elements": []
        },
        {
-        "id": "fe29dae",
+        "id": "21805b2",
         "elType": "widget",
         "widgetType": "icon-list",
         "settings": {
          "icon_list": [
           {
-           "_id": "8cf9df4",
+           "_id": "1010de6",
            "text": "Tablets or injections at the start of your cycle",
            "selected_icon": {
             "value": "fas fa-check-circle",
@@ -3054,7 +3411,7 @@
            }
           },
           {
-           "_id": "a4e7690",
+           "_id": "ba41338",
            "text": "Several short ultrasound scans to measure follicle growth",
            "selected_icon": {
             "value": "fas fa-check-circle",
@@ -3062,7 +3419,7 @@
            }
           },
           {
-           "_id": "e4f858a",
+           "_id": "6abfde8",
            "text": "Advice on the best days to try to conceive",
            "selected_icon": {
             "value": "fas fa-check-circle",
@@ -3070,7 +3427,7 @@
            }
           },
           {
-           "_id": "068eafb",
+           "_id": "23b3aa8",
            "text": "Careful dose adjustment to lower the chance of multiple eggs",
            "selected_icon": {
             "value": "fas fa-check-circle",
@@ -3083,7 +3440,7 @@
         "elements": []
        },
        {
-        "id": "2e57364",
+        "id": "3013b29",
         "elType": "widget",
         "widgetType": "button",
         "settings": {
@@ -3105,7 +3462,7 @@
     "isInner": false
    },
    {
-    "id": "069e676",
+    "id": "97830c1",
     "elType": "section",
     "settings": {
      "css_classes": "jr-section jr-section--tint",
@@ -3113,7 +3470,7 @@
     },
     "elements": [
      {
-      "id": "3358cae",
+      "id": "5f03bdf",
       "elType": "column",
       "settings": {
        "_column_size": 100,
@@ -3121,7 +3478,7 @@
       },
       "elements": [
        {
-        "id": "2f2b322",
+        "id": "42edab0",
         "elType": "widget",
         "widgetType": "heading",
         "settings": {
@@ -3132,13 +3489,13 @@
         "elements": []
        },
        {
-        "id": "8004ca6",
+        "id": "60956e3",
         "elType": "widget",
         "widgetType": "toggle",
         "settings": {
          "tabs": [
           {
-           "_id": "e043f55",
+           "_id": "ce9eaa6",
            "tab_title": "How many scans will I need?",
            "tab_content": "<p>Usually two to four scans in a cycle, a few days apart, depending on how the follicles grow.</p>"
           }
@@ -3154,7 +3511,7 @@
     "isInner": false
    },
    {
-    "id": "5a280e8",
+    "id": "19c774b",
     "elType": "section",
     "settings": {
      "css_classes": "jr-section jr-section--tight",
@@ -3162,7 +3519,7 @@
     },
     "elements": [
      {
-      "id": "2943bc7",
+      "id": "6a1f582",
       "elType": "column",
       "settings": {
        "_column_size": 100,
@@ -3170,7 +3527,7 @@
       },
       "elements": [
        {
-        "id": "ec04263",
+        "id": "31595c0",
         "elType": "widget",
         "widgetType": "text-editor",
         "settings": {
@@ -3186,7 +3543,7 @@
     "isInner": false
    },
    {
-    "id": "fac7072",
+    "id": "229e96d",
     "elType": "section",
     "settings": {
      "css_classes": "jr-cta-band",
@@ -3194,7 +3551,7 @@
     },
     "elements": [
      {
-      "id": "e17f8e8",
+      "id": "f0287b8",
       "elType": "column",
       "settings": {
        "_column_size": 100,
@@ -3202,7 +3559,7 @@
       },
       "elements": [
        {
-        "id": "bae1a6a",
+        "id": "dade2a9",
         "elType": "widget",
         "widgetType": "heading",
         "settings": {
@@ -3213,7 +3570,7 @@
         "elements": []
        },
        {
-        "id": "63d2ab9",
+        "id": "b915ba3",
         "elType": "widget",
         "widgetType": "heading",
         "settings": {
@@ -3224,7 +3581,7 @@
         "elements": []
        },
        {
-        "id": "6dd06cb",
+        "id": "202b1ed",
         "elType": "widget",
         "widgetType": "text-editor",
         "settings": {
@@ -3234,7 +3591,7 @@
         "elements": []
        },
        {
-        "id": "fd1c0f1",
+        "id": "a6a2787",
         "elType": "widget",
         "widgetType": "shortcode",
         "settings": {
@@ -3262,7 +3619,7 @@
   "seo_description": "Diagnosis and long-term management of polycystic ovary syndrome. Dr. Jawaria Rasheed, consultant gynecologist.",
   "elementor": [
    {
-    "id": "3664680",
+    "id": "a045c3f",
     "elType": "section",
     "settings": {
      "css_classes": "jr-page-hero",
@@ -3270,7 +3627,7 @@
     },
     "elements": [
      {
-      "id": "123aea6",
+      "id": "156af7a",
       "elType": "column",
       "settings": {
        "_column_size": 100,
@@ -3278,7 +3635,7 @@
       },
       "elements": [
        {
-        "id": "1c1d196",
+        "id": "e1260b2",
         "elType": "widget",
         "widgetType": "heading",
         "settings": {
@@ -3289,7 +3646,7 @@
         "elements": []
        },
        {
-        "id": "a35e56a",
+        "id": "f064022",
         "elType": "widget",
         "widgetType": "heading",
         "settings": {
@@ -3299,7 +3656,7 @@
         "elements": []
        },
        {
-        "id": "b12fdba",
+        "id": "6d03cbb",
         "elType": "widget",
         "widgetType": "text-editor",
         "settings": {
@@ -3309,7 +3666,7 @@
         "elements": []
        },
        {
-        "id": "4210457",
+        "id": "31d1187",
         "elType": "widget",
         "widgetType": "shortcode",
         "settings": {
@@ -3324,7 +3681,7 @@
     "isInner": false
    },
    {
-    "id": "97830c1",
+    "id": "ddde14a",
     "elType": "section",
     "settings": {
      "css_classes": "jr-section",
@@ -3332,7 +3689,7 @@
     },
     "elements": [
      {
-      "id": "d7be119",
+      "id": "e0a4909",
       "elType": "column",
       "settings": {
        "_column_size": 62,
@@ -3340,7 +3697,7 @@
       },
       "elements": [
        {
-        "id": "074621f",
+        "id": "78def65",
         "elType": "widget",
         "widgetType": "heading",
         "settings": {
@@ -3351,13 +3708,13 @@
         "elements": []
        },
        {
-        "id": "230a197",
+        "id": "e23c48a",
         "elType": "widget",
         "widgetType": "icon-list",
         "settings": {
          "icon_list": [
           {
-           "_id": "ae94bd4",
+           "_id": "8152c45",
            "text": "Periods that are irregular, infrequent or absent",
            "selected_icon": {
             "value": "fas fa-check-circle",
@@ -3365,7 +3722,7 @@
            }
           },
           {
-           "_id": "3b26c29",
+           "_id": "ff47278",
            "text": "Acne or unwanted facial or body hair",
            "selected_icon": {
             "value": "fas fa-check-circle",
@@ -3373,7 +3730,7 @@
            }
           },
           {
-           "_id": "03e70b2",
+           "_id": "ad0cd39",
            "text": "Difficulty losing weight",
            "selected_icon": {
             "value": "fas fa-check-circle",
@@ -3381,7 +3738,7 @@
            }
           },
           {
-           "_id": "3e5e519",
+           "_id": "0e04806",
            "text": "Trouble conceiving",
            "selected_icon": {
             "value": "fas fa-check-circle",
@@ -3394,7 +3751,7 @@
         "elements": []
        },
        {
-        "id": "87cc336",
+        "id": "e56bfc9",
         "elType": "widget",
         "widgetType": "heading",
         "settings": {
@@ -3405,7 +3762,7 @@
         "elements": []
        },
        {
-        "id": "02f41f0",
+        "id": "e2c3756",
         "elType": "widget",
         "widgetType": "text-editor",
         "settings": {
@@ -3418,7 +3775,7 @@
       "isInner": false
      },
      {
-      "id": "5f03bdf",
+      "id": "c0cb09c",
       "elType": "column",
       "settings": {
        "_column_size": 38,
@@ -3427,7 +3784,7 @@
       },
       "elements": [
        {
-        "id": "0bffc95",
+        "id": "ad9a5cf",
         "elType": "widget",
         "widgetType": "heading",
         "settings": {
@@ -3437,13 +3794,13 @@
         "elements": []
        },
        {
-        "id": "e4e3e31",
+        "id": "77b07ee",
         "elType": "widget",
         "widgetType": "icon-list",
         "settings": {
          "icon_list": [
           {
-           "_id": "4215534",
+           "_id": "af8a081",
            "text": "Diagnosis based on symptoms, blood tests and ultrasound",
            "selected_icon": {
             "value": "fas fa-check-circle",
@@ -3451,7 +3808,7 @@
            }
           },
           {
-           "_id": "69edbf6",
+           "_id": "eed8d8e",
            "text": "Checks for related risks such as blood sugar and cholesterol",
            "selected_icon": {
             "value": "fas fa-check-circle",
@@ -3459,7 +3816,7 @@
            }
           },
           {
-           "_id": "a55dfef",
+           "_id": "030d4ae",
            "text": "Lifestyle guidance that is realistic for you",
            "selected_icon": {
             "value": "fas fa-check-circle",
@@ -3467,7 +3824,7 @@
            }
           },
           {
-           "_id": "f83643c",
+           "_id": "8c28fb8",
            "text": "Treatment to regulate periods, manage symptoms or support ovulation",
            "selected_icon": {
             "value": "fas fa-check-circle",
@@ -3480,7 +3837,7 @@
         "elements": []
        },
        {
-        "id": "f222be1",
+        "id": "5fcf0e6",
         "elType": "widget",
         "widgetType": "button",
         "settings": {
@@ -3502,7 +3859,7 @@
     "isInner": false
    },
    {
-    "id": "3743d70",
+    "id": "1f988f0",
     "elType": "section",
     "settings": {
      "css_classes": "jr-section jr-section--tint",
@@ -3510,7 +3867,7 @@
     },
     "elements": [
      {
-      "id": "abc4ca5",
+      "id": "a8c64db",
       "elType": "column",
       "settings": {
        "_column_size": 100,
@@ -3518,7 +3875,7 @@
       },
       "elements": [
        {
-        "id": "a7838fc",
+        "id": "8725c7f",
         "elType": "widget",
         "widgetType": "heading",
         "settings": {
@@ -3529,13 +3886,13 @@
         "elements": []
        },
        {
-        "id": "731cf8e",
+        "id": "6170d13",
         "elType": "widget",
         "widgetType": "toggle",
         "settings": {
          "tabs": [
           {
-           "_id": "60e57b4",
+           "_id": "56dc75a",
            "tab_title": "Can women with PCOS get pregnant?",
            "tab_content": "<p>Yes, many do — sometimes naturally and sometimes with help such as ovulation induction.</p>"
           }
@@ -3551,7 +3908,7 @@
     "isInner": false
    },
    {
-    "id": "303f933",
+    "id": "19981f3",
     "elType": "section",
     "settings": {
      "css_classes": "jr-section jr-section--tight",
@@ -3559,7 +3916,7 @@
     },
     "elements": [
      {
-      "id": "419f492",
+      "id": "d183b25",
       "elType": "column",
       "settings": {
        "_column_size": 100,
@@ -3567,7 +3924,7 @@
       },
       "elements": [
        {
-        "id": "798aa9c",
+        "id": "4540c7b",
         "elType": "widget",
         "widgetType": "text-editor",
         "settings": {
@@ -3583,7 +3940,7 @@
     "isInner": false
    },
    {
-    "id": "8c5823b",
+    "id": "03f8bd5",
     "elType": "section",
     "settings": {
      "css_classes": "jr-cta-band",
@@ -3591,7 +3948,7 @@
     },
     "elements": [
      {
-      "id": "da690ab",
+      "id": "ee3a7d8",
       "elType": "column",
       "settings": {
        "_column_size": 100,
@@ -3599,7 +3956,7 @@
       },
       "elements": [
        {
-        "id": "3a07e00",
+        "id": "f832d39",
         "elType": "widget",
         "widgetType": "heading",
         "settings": {
@@ -3610,7 +3967,7 @@
         "elements": []
        },
        {
-        "id": "4e163cd",
+        "id": "2109d72",
         "elType": "widget",
         "widgetType": "heading",
         "settings": {
@@ -3621,7 +3978,7 @@
         "elements": []
        },
        {
-        "id": "b80d221",
+        "id": "f6a3d6d",
         "elType": "widget",
         "widgetType": "text-editor",
         "settings": {
@@ -3631,7 +3988,7 @@
         "elements": []
        },
        {
-        "id": "61d26e4",
+        "id": "057178f",
         "elType": "widget",
         "widgetType": "shortcode",
         "settings": {
@@ -3659,7 +4016,7 @@
   "seo_description": "Help for heavy, painful, irregular or missed periods. Dr. Jawaria Rasheed, consultant gynecologist.",
   "elementor": [
    {
-    "id": "cd88f2e",
+    "id": "ed67714",
     "elType": "section",
     "settings": {
      "css_classes": "jr-page-hero",
@@ -3667,7 +4024,7 @@
     },
     "elements": [
      {
-      "id": "534fd3a",
+      "id": "54d0705",
       "elType": "column",
       "settings": {
        "_column_size": 100,
@@ -3675,7 +4032,7 @@
       },
       "elements": [
        {
-        "id": "b5093bd",
+        "id": "538c90e",
         "elType": "widget",
         "widgetType": "heading",
         "settings": {
@@ -3686,7 +4043,7 @@
         "elements": []
        },
        {
-        "id": "1c27bb5",
+        "id": "a750287",
         "elType": "widget",
         "widgetType": "heading",
         "settings": {
@@ -3696,7 +4053,7 @@
         "elements": []
        },
        {
-        "id": "ca32564",
+        "id": "d1ce18e",
         "elType": "widget",
         "widgetType": "text-editor",
         "settings": {
@@ -3706,7 +4063,7 @@
         "elements": []
        },
        {
-        "id": "475e0ce",
+        "id": "253374e",
         "elType": "widget",
         "widgetType": "shortcode",
         "settings": {
@@ -3721,7 +4078,7 @@
     "isInner": false
    },
    {
-    "id": "0fd563c",
+    "id": "29938d5",
     "elType": "section",
     "settings": {
      "css_classes": "jr-section",
@@ -3729,7 +4086,7 @@
     },
     "elements": [
      {
-      "id": "a8c64db",
+      "id": "db33a2e",
       "elType": "column",
       "settings": {
        "_column_size": 62,
@@ -3737,7 +4094,7 @@
       },
       "elements": [
        {
-        "id": "208bde8",
+        "id": "1ad4fe6",
         "elType": "widget",
         "widgetType": "heading",
         "settings": {
@@ -3748,13 +4105,13 @@
         "elements": []
        },
        {
-        "id": "20be543",
+        "id": "571dc2d",
         "elType": "widget",
         "widgetType": "icon-list",
         "settings": {
          "icon_list": [
           {
-           "_id": "0bd6363",
+           "_id": "6b1dedd",
            "text": "Bleeding that soaks through pads quickly or lasts more than 7 days",
            "selected_icon": {
             "value": "fas fa-check-circle",
@@ -3762,7 +4119,7 @@
            }
           },
           {
-           "_id": "8531cf2",
+           "_id": "b8dfff5",
            "text": "Pain that stops you from daily activities",
            "selected_icon": {
             "value": "fas fa-check-circle",
@@ -3770,7 +4127,7 @@
            }
           },
           {
-           "_id": "11c8e33",
+           "_id": "493ee4a",
            "text": "Cycles shorter than 21 or longer than 35 days",
            "selected_icon": {
             "value": "fas fa-check-circle",
@@ -3778,7 +4135,7 @@
            }
           },
           {
-           "_id": "dffbc37",
+           "_id": "d27921d",
            "text": "Bleeding between periods or after intercourse",
            "selected_icon": {
             "value": "fas fa-check-circle",
@@ -3786,7 +4143,7 @@
            }
           },
           {
-           "_id": "fab6d6e",
+           "_id": "cf01814",
            "text": "Bleeding after menopause",
            "selected_icon": {
             "value": "fas fa-check-circle",
@@ -3799,7 +4156,7 @@
         "elements": []
        },
        {
-        "id": "869a110",
+        "id": "df3064d",
         "elType": "widget",
         "widgetType": "heading",
         "settings": {
@@ -3810,7 +4167,7 @@
         "elements": []
        },
        {
-        "id": "57b7041",
+        "id": "31bd9c0",
         "elType": "widget",
         "widgetType": "text-editor",
         "settings": {
@@ -3823,7 +4180,7 @@
       "isInner": false
      },
      {
-      "id": "de07a36",
+      "id": "225607a",
       "elType": "column",
       "settings": {
        "_column_size": 38,
@@ -3832,7 +4189,7 @@
       },
       "elements": [
        {
-        "id": "7aba455",
+        "id": "731c820",
         "elType": "widget",
         "widgetType": "heading",
         "settings": {
@@ -3842,13 +4199,13 @@
         "elements": []
        },
        {
-        "id": "baff392",
+        "id": "b1b514a",
         "elType": "widget",
         "widgetType": "icon-list",
         "settings": {
          "icon_list": [
           {
-           "_id": "e8bc8dc",
+           "_id": "9e4f7e5",
            "text": "Questions about your cycle (a period diary helps)",
            "selected_icon": {
             "value": "fas fa-check-circle",
@@ -3856,7 +4213,7 @@
            }
           },
           {
-           "_id": "daa318f",
+           "_id": "068e6c1",
            "text": "Blood tests, for example for anaemia and thyroid",
            "selected_icon": {
             "value": "fas fa-check-circle",
@@ -3864,7 +4221,7 @@
            }
           },
           {
-           "_id": "070e74e",
+           "_id": "5dce5ba",
            "text": "Pelvic ultrasound",
            "selected_icon": {
             "value": "fas fa-check-circle",
@@ -3872,7 +4229,7 @@
            }
           },
           {
-           "_id": "cd7fa1a",
+           "_id": "7dec8bc",
            "text": "Treatment options, from medicines to procedures if needed",
            "selected_icon": {
             "value": "fas fa-check-circle",
@@ -3885,7 +4242,7 @@
         "elements": []
        },
        {
-        "id": "a4cc8a5",
+        "id": "234f063",
         "elType": "widget",
         "widgetType": "button",
         "settings": {
@@ -3907,7 +4264,7 @@
     "isInner": false
    },
    {
-    "id": "5908052",
+    "id": "8e40974",
     "elType": "section",
     "settings": {
      "css_classes": "jr-section jr-section--tint",
@@ -3915,7 +4272,7 @@
     },
     "elements": [
      {
-      "id": "af14698",
+      "id": "dd7f2ab",
       "elType": "column",
       "settings": {
        "_column_size": 100,
@@ -3923,7 +4280,7 @@
       },
       "elements": [
        {
-        "id": "06e5b78",
+        "id": "4012e12",
         "elType": "widget",
         "widgetType": "heading",
         "settings": {
@@ -3934,13 +4291,13 @@
         "elements": []
        },
        {
-        "id": "54124b4",
+        "id": "400cda6",
         "elType": "widget",
         "widgetType": "toggle",
         "settings": {
          "tabs": [
           {
-           "_id": "c95807f",
+           "_id": "d35a163",
            "tab_title": "Should I track my periods before the visit?",
            "tab_content": "<p>Yes. Note the start and end dates and how heavy each day is — a phone app or notebook is fine.</p>"
           }
@@ -3956,7 +4313,7 @@
     "isInner": false
    },
    {
-    "id": "03f8bd5",
+    "id": "3af8e0f",
     "elType": "section",
     "settings": {
      "css_classes": "jr-section jr-section--tight",
@@ -3964,7 +4321,7 @@
     },
     "elements": [
      {
-      "id": "ee3a7d8",
+      "id": "5f5fe69",
       "elType": "column",
       "settings": {
        "_column_size": 100,
@@ -3972,7 +4329,7 @@
       },
       "elements": [
        {
-        "id": "ce7d0bc",
+        "id": "dfc109f",
         "elType": "widget",
         "widgetType": "text-editor",
         "settings": {
@@ -3988,7 +4345,7 @@
     "isInner": false
    },
    {
-    "id": "94e1141",
+    "id": "d9019a8",
     "elType": "section",
     "settings": {
      "css_classes": "jr-cta-band",
@@ -3996,7 +4353,7 @@
     },
     "elements": [
      {
-      "id": "066fc01",
+      "id": "234f2a1",
       "elType": "column",
       "settings": {
        "_column_size": 100,
@@ -4004,7 +4361,7 @@
       },
       "elements": [
        {
-        "id": "7680a76",
+        "id": "a4bbde6",
         "elType": "widget",
         "widgetType": "heading",
         "settings": {
@@ -4015,7 +4372,7 @@
         "elements": []
        },
        {
-        "id": "acbb2dc",
+        "id": "f1ac0be",
         "elType": "widget",
         "widgetType": "heading",
         "settings": {
@@ -4026,7 +4383,7 @@
         "elements": []
        },
        {
-        "id": "3671745",
+        "id": "6d06d4a",
         "elType": "widget",
         "widgetType": "text-editor",
         "settings": {
@@ -4036,7 +4393,7 @@
         "elements": []
        },
        {
-        "id": "2d1148e",
+        "id": "0bba1a2",
         "elType": "widget",
         "widgetType": "shortcode",
         "settings": {
@@ -4064,7 +4421,7 @@
   "seo_description": "Assessment and treatment options for non-cancerous growths of the uterus. Dr. Jawaria Rasheed, consultant gynecologist.",
   "elementor": [
    {
-    "id": "98a8f63",
+    "id": "5747e21",
     "elType": "section",
     "settings": {
      "css_classes": "jr-page-hero",
@@ -4072,7 +4429,7 @@
     },
     "elements": [
      {
-      "id": "ab1bef5",
+      "id": "91a66d5",
       "elType": "column",
       "settings": {
        "_column_size": 100,
@@ -4080,7 +4437,7 @@
       },
       "elements": [
        {
-        "id": "108db7a",
+        "id": "bf7e227",
         "elType": "widget",
         "widgetType": "heading",
         "settings": {
@@ -4091,7 +4448,7 @@
         "elements": []
        },
        {
-        "id": "ef0633a",
+        "id": "ba87f94",
         "elType": "widget",
         "widgetType": "heading",
         "settings": {
@@ -4101,7 +4458,7 @@
         "elements": []
        },
        {
-        "id": "9f7dc35",
+        "id": "2b0db12",
         "elType": "widget",
         "widgetType": "text-editor",
         "settings": {
@@ -4111,7 +4468,7 @@
         "elements": []
        },
        {
-        "id": "3d60b92",
+        "id": "cb819aa",
         "elType": "widget",
         "widgetType": "shortcode",
         "settings": {
@@ -4126,7 +4483,7 @@
     "isInner": false
    },
    {
-    "id": "a594a07",
+    "id": "62a1a54",
     "elType": "section",
     "settings": {
      "css_classes": "jr-section",
@@ -4134,7 +4491,7 @@
     },
     "elements": [
      {
-      "id": "88daf65",
+      "id": "9c348e4",
       "elType": "column",
       "settings": {
        "_column_size": 62,
@@ -4142,7 +4499,7 @@
       },
       "elements": [
        {
-        "id": "17a850c",
+        "id": "f3beace",
         "elType": "widget",
         "widgetType": "heading",
         "settings": {
@@ -4153,13 +4510,13 @@
         "elements": []
        },
        {
-        "id": "7c34c54",
+        "id": "3d02217",
         "elType": "widget",
         "widgetType": "icon-list",
         "settings": {
          "icon_list": [
           {
-           "_id": "4423661",
+           "_id": "928c6e3",
            "text": "Heavy or prolonged periods",
            "selected_icon": {
             "value": "fas fa-check-circle",
@@ -4167,7 +4524,7 @@
            }
           },
           {
-           "_id": "be3765b",
+           "_id": "1904b3e",
            "text": "Pelvic pressure, bloating or frequent urination",
            "selected_icon": {
             "value": "fas fa-check-circle",
@@ -4175,7 +4532,7 @@
            }
           },
           {
-           "_id": "234b62b",
+           "_id": "b1f7673",
            "text": "A fibroid found on a scan",
            "selected_icon": {
             "value": "fas fa-check-circle",
@@ -4183,7 +4540,7 @@
            }
           },
           {
-           "_id": "2f6e901",
+           "_id": "d2cb351",
            "text": "Difficulty conceiving or repeated miscarriage",
            "selected_icon": {
             "value": "fas fa-check-circle",
@@ -4196,7 +4553,7 @@
         "elements": []
        },
        {
-        "id": "d84185a",
+        "id": "50bbc7d",
         "elType": "widget",
         "widgetType": "heading",
         "settings": {
@@ -4207,7 +4564,7 @@
         "elements": []
        },
        {
-        "id": "0cbd7dd",
+        "id": "7cef2b6",
         "elType": "widget",
         "widgetType": "text-editor",
         "settings": {
@@ -4220,7 +4577,7 @@
       "isInner": false
      },
      {
-      "id": "078aa0b",
+      "id": "1972b91",
       "elType": "column",
       "settings": {
        "_column_size": 38,
@@ -4229,7 +4586,7 @@
       },
       "elements": [
        {
-        "id": "4e07597",
+        "id": "106ae61",
         "elType": "widget",
         "widgetType": "heading",
         "settings": {
@@ -4239,13 +4596,13 @@
         "elements": []
        },
        {
-        "id": "3453352",
+        "id": "5f1e20a",
         "elType": "widget",
         "widgetType": "icon-list",
         "settings": {
          "icon_list": [
           {
-           "_id": "bc40961",
+           "_id": "d8bce7e",
            "text": "Ultrasound to see the size and position of fibroids",
            "selected_icon": {
             "value": "fas fa-check-circle",
@@ -4253,7 +4610,7 @@
            }
           },
           {
-           "_id": "1d00783",
+           "_id": "2ea17c0",
            "text": "Treatment of anaemia if present",
            "selected_icon": {
             "value": "fas fa-check-circle",
@@ -4261,7 +4618,7 @@
            }
           },
           {
-           "_id": "24bc7c5",
+           "_id": "9010136",
            "text": "Options from monitoring and medicines to surgery, explained clearly",
            "selected_icon": {
             "value": "fas fa-check-circle",
@@ -4274,7 +4631,7 @@
         "elements": []
        },
        {
-        "id": "91a638a",
+        "id": "2ad512a",
         "elType": "widget",
         "widgetType": "button",
         "settings": {
@@ -4296,7 +4653,7 @@
     "isInner": false
    },
    {
-    "id": "2165eb9",
+    "id": "d7444ce",
     "elType": "section",
     "settings": {
      "css_classes": "jr-section jr-section--tint",
@@ -4304,7 +4661,7 @@
     },
     "elements": [
      {
-      "id": "49d99e2",
+      "id": "322e8e9",
       "elType": "column",
       "settings": {
        "_column_size": 100,
@@ -4312,7 +4669,7 @@
       },
       "elements": [
        {
-        "id": "b49b3d1",
+        "id": "76b1504",
         "elType": "widget",
         "widgetType": "heading",
         "settings": {
@@ -4323,13 +4680,13 @@
         "elements": []
        },
        {
-        "id": "7e19ec6",
+        "id": "82dc57d",
         "elType": "widget",
         "widgetType": "toggle",
         "settings": {
          "tabs": [
           {
-           "_id": "ed3017b",
+           "_id": "4e4a49d",
            "tab_title": "Do all fibroids need surgery?",
            "tab_content": "<p>No. Fibroids that cause no problems are often just monitored.</p>"
           }
@@ -4345,7 +4702,7 @@
     "isInner": false
    },
    {
-    "id": "4ecf982",
+    "id": "77bf225",
     "elType": "section",
     "settings": {
      "css_classes": "jr-section jr-section--tight",
@@ -4353,7 +4710,7 @@
     },
     "elements": [
      {
-      "id": "fb2ee44",
+      "id": "f73c5fd",
       "elType": "column",
       "settings": {
        "_column_size": 100,
@@ -4361,7 +4718,7 @@
       },
       "elements": [
        {
-        "id": "2aa579d",
+        "id": "96387f6",
         "elType": "widget",
         "widgetType": "text-editor",
         "settings": {
@@ -4377,7 +4734,7 @@
     "isInner": false
    },
    {
-    "id": "08577d7",
+    "id": "654361f",
     "elType": "section",
     "settings": {
      "css_classes": "jr-cta-band",
@@ -4385,7 +4742,7 @@
     },
     "elements": [
      {
-      "id": "9e90792",
+      "id": "7432460",
       "elType": "column",
       "settings": {
        "_column_size": 100,
@@ -4393,7 +4750,7 @@
       },
       "elements": [
        {
-        "id": "69f1890",
+        "id": "52a5f77",
         "elType": "widget",
         "widgetType": "heading",
         "settings": {
@@ -4404,7 +4761,7 @@
         "elements": []
        },
        {
-        "id": "2c3c624",
+        "id": "2b1871c",
         "elType": "widget",
         "widgetType": "heading",
         "settings": {
@@ -4415,7 +4772,7 @@
         "elements": []
        },
        {
-        "id": "4d16b62",
+        "id": "ab9ac7f",
         "elType": "widget",
         "widgetType": "text-editor",
         "settings": {
@@ -4425,7 +4782,7 @@
         "elements": []
        },
        {
-        "id": "96c0fe3",
+        "id": "63e539a",
         "elType": "widget",
         "widgetType": "shortcode",
         "settings": {
@@ -4453,7 +4810,7 @@
   "seo_description": "Care for painful periods, chronic pelvic pain and endometriosis. Dr. Jawaria Rasheed, consultant gynecologist.",
   "elementor": [
    {
-    "id": "00a5a6e",
+    "id": "9c79b97",
     "elType": "section",
     "settings": {
      "css_classes": "jr-page-hero",
@@ -4461,7 +4818,7 @@
     },
     "elements": [
      {
-      "id": "e2767d1",
+      "id": "37c9a90",
       "elType": "column",
       "settings": {
        "_column_size": 100,
@@ -4469,7 +4826,7 @@
       },
       "elements": [
        {
-        "id": "afc281e",
+        "id": "a0217b6",
         "elType": "widget",
         "widgetType": "heading",
         "settings": {
@@ -4480,7 +4837,7 @@
         "elements": []
        },
        {
-        "id": "d4c95b9",
+        "id": "90c069a",
         "elType": "widget",
         "widgetType": "heading",
         "settings": {
@@ -4490,7 +4847,7 @@
         "elements": []
        },
        {
-        "id": "d9a4235",
+        "id": "0a13c72",
         "elType": "widget",
         "widgetType": "text-editor",
         "settings": {
@@ -4500,7 +4857,7 @@
         "elements": []
        },
        {
-        "id": "278fb07",
+        "id": "9184e8a",
         "elType": "widget",
         "widgetType": "shortcode",
         "settings": {
@@ -4515,7 +4872,7 @@
     "isInner": false
    },
    {
-    "id": "d7444ce",
+    "id": "c5bdf0c",
     "elType": "section",
     "settings": {
      "css_classes": "jr-section",
@@ -4523,7 +4880,7 @@
     },
     "elements": [
      {
-      "id": "643e5d4",
+      "id": "8ddb143",
       "elType": "column",
       "settings": {
        "_column_size": 62,
@@ -4531,7 +4888,7 @@
       },
       "elements": [
        {
-        "id": "3c0f679",
+        "id": "84c83b6",
         "elType": "widget",
         "widgetType": "heading",
         "settings": {
@@ -4542,13 +4899,13 @@
         "elements": []
        },
        {
-        "id": "5f70e72",
+        "id": "ff4be0b",
         "elType": "widget",
         "widgetType": "icon-list",
         "settings": {
          "icon_list": [
           {
-           "_id": "ae8d2a3",
+           "_id": "84adc1e",
            "text": "Period pain that is severe or getting worse",
            "selected_icon": {
             "value": "fas fa-check-circle",
@@ -4556,7 +4913,7 @@
            }
           },
           {
-           "_id": "1779ebd",
+           "_id": "78d368b",
            "text": "Pelvic pain between periods",
            "selected_icon": {
             "value": "fas fa-check-circle",
@@ -4564,7 +4921,7 @@
            }
           },
           {
-           "_id": "6d838c5",
+           "_id": "358e410",
            "text": "Pain during intercourse",
            "selected_icon": {
             "value": "fas fa-check-circle",
@@ -4572,7 +4929,7 @@
            }
           },
           {
-           "_id": "72b7ae5",
+           "_id": "d93dba5",
            "text": "Trouble getting pregnant",
            "selected_icon": {
             "value": "fas fa-check-circle",
@@ -4585,7 +4942,7 @@
         "elements": []
        },
        {
-        "id": "687b717",
+        "id": "7d679fc",
         "elType": "widget",
         "widgetType": "heading",
         "settings": {
@@ -4596,7 +4953,7 @@
         "elements": []
        },
        {
-        "id": "e87b916",
+        "id": "1581b21",
         "elType": "widget",
         "widgetType": "text-editor",
         "settings": {
@@ -4609,7 +4966,7 @@
       "isInner": false
      },
      {
-      "id": "322e8e9",
+      "id": "c3a73e9",
       "elType": "column",
       "settings": {
        "_column_size": 38,
@@ -4618,7 +4975,7 @@
       },
       "elements": [
        {
-        "id": "860ae55",
+        "id": "e826478",
         "elType": "widget",
         "widgetType": "heading",
         "settings": {
@@ -4628,13 +4985,13 @@
         "elements": []
        },
        {
-        "id": "61aab4b",
+        "id": "f568f9f",
         "elType": "widget",
         "widgetType": "icon-list",
         "settings": {
          "icon_list": [
           {
-           "_id": "03c0e0c",
+           "_id": "e2583a5",
            "text": "A careful history and examination",
            "selected_icon": {
             "value": "fas fa-check-circle",
@@ -4642,7 +4999,7 @@
            }
           },
           {
-           "_id": "b08de71",
+           "_id": "26b6cc0",
            "text": "Ultrasound and other tests as needed",
            "selected_icon": {
             "value": "fas fa-check-circle",
@@ -4650,7 +5007,7 @@
            }
           },
           {
-           "_id": "3723ee4",
+           "_id": "7c15ce2",
            "text": "Pain relief and hormonal treatment options",
            "selected_icon": {
             "value": "fas fa-check-circle",
@@ -4658,7 +5015,7 @@
            }
           },
           {
-           "_id": "7d9c144",
+           "_id": "8133106",
            "text": "Referral for surgery when appropriate",
            "selected_icon": {
             "value": "fas fa-check-circle",
@@ -4671,7 +5028,7 @@
         "elements": []
        },
        {
-        "id": "525fa68",
+        "id": "dae14a0",
         "elType": "widget",
         "widgetType": "button",
         "settings": {
@@ -4693,7 +5050,7 @@
     "isInner": false
    },
    {
-    "id": "b2ddfdf",
+    "id": "f46634d",
     "elType": "section",
     "settings": {
      "css_classes": "jr-section jr-section--tint",
@@ -4701,7 +5058,7 @@
     },
     "elements": [
      {
-      "id": "d9a9cc7",
+      "id": "51ee1fa",
       "elType": "column",
       "settings": {
        "_column_size": 100,
@@ -4709,7 +5066,7 @@
       },
       "elements": [
        {
-        "id": "4c2d68d",
+        "id": "cd3d42f",
         "elType": "widget",
         "widgetType": "heading",
         "settings": {
@@ -4720,13 +5077,13 @@
         "elements": []
        },
        {
-        "id": "fa3f655",
+        "id": "59f9c6d",
         "elType": "widget",
         "widgetType": "toggle",
         "settings": {
          "tabs": [
           {
-           "_id": "1601924",
+           "_id": "5146f1a",
            "tab_title": "Does endometriosis always cause infertility?",
            "tab_content": "<p>No. Many women with endometriosis conceive. Some need fertility treatment, which your doctor can discuss.</p>"
           }
@@ -4742,7 +5099,7 @@
     "isInner": false
    },
    {
-    "id": "a16ea56",
+    "id": "a1666a5",
     "elType": "section",
     "settings": {
      "css_classes": "jr-section jr-section--tight",
@@ -4750,7 +5107,7 @@
     },
     "elements": [
      {
-      "id": "e32d5a8",
+      "id": "3989fb6",
       "elType": "column",
       "settings": {
        "_column_size": 100,
@@ -4758,7 +5115,7 @@
       },
       "elements": [
        {
-        "id": "3d592db",
+        "id": "c8485d0",
         "elType": "widget",
         "widgetType": "text-editor",
         "settings": {
@@ -4774,7 +5131,7 @@
     "isInner": false
    },
    {
-    "id": "3a8805f",
+    "id": "6821e2c",
     "elType": "section",
     "settings": {
      "css_classes": "jr-cta-band",
@@ -4782,7 +5139,7 @@
     },
     "elements": [
      {
-      "id": "c10d648",
+      "id": "b529f67",
       "elType": "column",
       "settings": {
        "_column_size": 100,
@@ -4790,7 +5147,7 @@
       },
       "elements": [
        {
-        "id": "85993ff",
+        "id": "31ec0f4",
         "elType": "widget",
         "widgetType": "heading",
         "settings": {
@@ -4801,7 +5158,7 @@
         "elements": []
        },
        {
-        "id": "e67bd39",
+        "id": "4927b20",
         "elType": "widget",
         "widgetType": "heading",
         "settings": {
@@ -4812,7 +5169,7 @@
         "elements": []
        },
        {
-        "id": "bb1230e",
+        "id": "4bb9ea7",
         "elType": "widget",
         "widgetType": "text-editor",
         "settings": {
@@ -4822,7 +5179,7 @@
         "elements": []
        },
        {
-        "id": "5dba063",
+        "id": "0c9bb8d",
         "elType": "widget",
         "widgetType": "shortcode",
         "settings": {
@@ -4850,7 +5207,7 @@
   "seo_description": "Support for hot flushes, sleep, mood and bone health around menopause. Dr. Jawaria Rasheed, consultant gynecologist.",
   "elementor": [
    {
-    "id": "465769a",
+    "id": "a38ce4f",
     "elType": "section",
     "settings": {
      "css_classes": "jr-page-hero",
@@ -4858,7 +5215,7 @@
     },
     "elements": [
      {
-      "id": "a7f765e",
+      "id": "b8f6be9",
       "elType": "column",
       "settings": {
        "_column_size": 100,
@@ -4866,7 +5223,7 @@
       },
       "elements": [
        {
-        "id": "8af38c3",
+        "id": "49b4925",
         "elType": "widget",
         "widgetType": "heading",
         "settings": {
@@ -4877,7 +5234,7 @@
         "elements": []
        },
        {
-        "id": "9875f8b",
+        "id": "43fba4a",
         "elType": "widget",
         "widgetType": "heading",
         "settings": {
@@ -4887,7 +5244,7 @@
         "elements": []
        },
        {
-        "id": "24a43b6",
+        "id": "563859e",
         "elType": "widget",
         "widgetType": "text-editor",
         "settings": {
@@ -4897,7 +5254,7 @@
         "elements": []
        },
        {
-        "id": "581e6f1",
+        "id": "6724c69",
         "elType": "widget",
         "widgetType": "shortcode",
         "settings": {
@@ -4912,7 +5269,7 @@
     "isInner": false
    },
    {
-    "id": "f46634d",
+    "id": "eb78759",
     "elType": "section",
     "settings": {
      "css_classes": "jr-section",
@@ -4920,7 +5277,7 @@
     },
     "elements": [
      {
-      "id": "1aa7945",
+      "id": "b94b702",
       "elType": "column",
       "settings": {
        "_column_size": 62,
@@ -4928,7 +5285,7 @@
       },
       "elements": [
        {
-        "id": "33e0aff",
+        "id": "8a9ad4f",
         "elType": "widget",
         "widgetType": "heading",
         "settings": {
@@ -4939,13 +5296,13 @@
         "elements": []
        },
        {
-        "id": "688d437",
+        "id": "e540cba",
         "elType": "widget",
         "widgetType": "icon-list",
         "settings": {
          "icon_list": [
           {
-           "_id": "dc96aa8",
+           "_id": "26fb394",
            "text": "Hot flushes or night sweats affecting daily life",
            "selected_icon": {
             "value": "fas fa-check-circle",
@@ -4953,7 +5310,7 @@
            }
           },
           {
-           "_id": "1868d4e",
+           "_id": "3de3ea1",
            "text": "Irregular periods in your 40s",
            "selected_icon": {
             "value": "fas fa-check-circle",
@@ -4961,7 +5318,7 @@
            }
           },
           {
-           "_id": "b9212ff",
+           "_id": "c94ab79",
            "text": "Vaginal dryness or discomfort",
            "selected_icon": {
             "value": "fas fa-check-circle",
@@ -4969,7 +5326,7 @@
            }
           },
           {
-           "_id": "5ddd808",
+           "_id": "1007651",
            "text": "Questions about bone health and staying healthy after menopause",
            "selected_icon": {
             "value": "fas fa-check-circle",
@@ -4982,7 +5339,7 @@
         "elements": []
        },
        {
-        "id": "569bf52",
+        "id": "7e01b11",
         "elType": "widget",
         "widgetType": "heading",
         "settings": {
@@ -4993,7 +5350,7 @@
         "elements": []
        },
        {
-        "id": "d50c450",
+        "id": "a4e204b",
         "elType": "widget",
         "widgetType": "text-editor",
         "settings": {
@@ -5006,7 +5363,7 @@
       "isInner": false
      },
      {
-      "id": "51ee1fa",
+      "id": "6b5198e",
       "elType": "column",
       "settings": {
        "_column_size": 38,
@@ -5015,7 +5372,7 @@
       },
       "elements": [
        {
-        "id": "12f10b8",
+        "id": "9b49ef6",
         "elType": "widget",
         "widgetType": "heading",
         "settings": {
@@ -5025,13 +5382,13 @@
         "elements": []
        },
        {
-        "id": "9667d47",
+        "id": "9b6dcdd",
         "elType": "widget",
         "widgetType": "icon-list",
         "settings": {
          "icon_list": [
           {
-           "_id": "b5e2264",
+           "_id": "d19525a",
            "text": "Discussion of your symptoms and health risks",
            "selected_icon": {
             "value": "fas fa-check-circle",
@@ -5039,7 +5396,7 @@
            }
           },
           {
-           "_id": "9a77c4d",
+           "_id": "b457899",
            "text": "Advice on lifestyle, diet and exercise",
            "selected_icon": {
             "value": "fas fa-check-circle",
@@ -5047,7 +5404,7 @@
            }
           },
           {
-           "_id": "ba4423e",
+           "_id": "24bd45e",
            "text": "Treatment options, including hormonal and non-hormonal choices",
            "selected_icon": {
             "value": "fas fa-check-circle",
@@ -5055,7 +5412,7 @@
            }
           },
           {
-           "_id": "bbffb06",
+           "_id": "5c52b2d",
            "text": "Screening advice suited to your age",
            "selected_icon": {
             "value": "fas fa-check-circle",
@@ -5068,7 +5425,7 @@
         "elements": []
        },
        {
-        "id": "14418bc",
+        "id": "9ecd14b",
         "elType": "widget",
         "widgetType": "button",
         "settings": {
@@ -5090,7 +5447,7 @@
     "isInner": false
    },
    {
-    "id": "9594347",
+    "id": "77b9020",
     "elType": "section",
     "settings": {
      "css_classes": "jr-section jr-section--tint",
@@ -5098,7 +5455,7 @@
     },
     "elements": [
      {
-      "id": "9e33eef",
+      "id": "c830962",
       "elType": "column",
       "settings": {
        "_column_size": 100,
@@ -5106,7 +5463,7 @@
       },
       "elements": [
        {
-        "id": "2fa6637",
+        "id": "b21f639",
         "elType": "widget",
         "widgetType": "heading",
         "settings": {
@@ -5117,13 +5474,13 @@
         "elements": []
        },
        {
-        "id": "de47a4f",
+        "id": "2b977aa",
         "elType": "widget",
         "widgetType": "toggle",
         "settings": {
          "tabs": [
           {
-           "_id": "5081fcb",
+           "_id": "3c20682",
            "tab_title": "Is hormone therapy safe?",
            "tab_content": "<p>It is suitable for many women, but not for everyone. Your doctor will look at your personal health history before advising.</p>"
           }
@@ -5139,7 +5496,7 @@
     "isInner": false
    },
    {
-    "id": "11a0ab7",
+    "id": "f7aa64c",
     "elType": "section",
     "settings": {
      "css_classes": "jr-section jr-section--tight",
@@ -5147,7 +5504,7 @@
     },
     "elements": [
      {
-      "id": "b8407e2",
+      "id": "2414f07",
       "elType": "column",
       "settings": {
        "_column_size": 100,
@@ -5155,7 +5512,7 @@
       },
       "elements": [
        {
-        "id": "e5be7ad",
+        "id": "52e023b",
         "elType": "widget",
         "widgetType": "text-editor",
         "settings": {
@@ -5171,7 +5528,7 @@
     "isInner": false
    },
    {
-    "id": "af20a48",
+    "id": "1a44854",
     "elType": "section",
     "settings": {
      "css_classes": "jr-cta-band",
@@ -5179,7 +5536,7 @@
     },
     "elements": [
      {
-      "id": "e406165",
+      "id": "3978a90",
       "elType": "column",
       "settings": {
        "_column_size": 100,
@@ -5187,7 +5544,7 @@
       },
       "elements": [
        {
-        "id": "41355ef",
+        "id": "51eb2a1",
         "elType": "widget",
         "widgetType": "heading",
         "settings": {
@@ -5198,7 +5555,7 @@
         "elements": []
        },
        {
-        "id": "256bf7e",
+        "id": "0d5a900",
         "elType": "widget",
         "widgetType": "heading",
         "settings": {
@@ -5209,7 +5566,7 @@
         "elements": []
        },
        {
-        "id": "2c56430",
+        "id": "f93f909",
         "elType": "widget",
         "widgetType": "text-editor",
         "settings": {
@@ -5219,7 +5576,7 @@
         "elements": []
        },
        {
-        "id": "590d49f",
+        "id": "d40535b",
         "elType": "widget",
         "widgetType": "shortcode",
         "settings": {
@@ -5247,7 +5604,7 @@
   "seo_description": "A quick screening test to find early changes in the cervix. Dr. Jawaria Rasheed, consultant gynecologist.",
   "elementor": [
    {
-    "id": "eb78759",
+    "id": "6160279",
     "elType": "section",
     "settings": {
      "css_classes": "jr-page-hero",
@@ -5255,7 +5612,7 @@
     },
     "elements": [
      {
-      "id": "6b5198e",
+      "id": "c5dbe34",
       "elType": "column",
       "settings": {
        "_column_size": 100,
@@ -5263,7 +5620,7 @@
       },
       "elements": [
        {
-        "id": "252be65",
+        "id": "657cee2",
         "elType": "widget",
         "widgetType": "heading",
         "settings": {
@@ -5274,7 +5631,7 @@
         "elements": []
        },
        {
-        "id": "e436292",
+        "id": "440c8b2",
         "elType": "widget",
         "widgetType": "heading",
         "settings": {
@@ -5284,7 +5641,7 @@
         "elements": []
        },
        {
-        "id": "1de6ca3",
+        "id": "8d599a1",
         "elType": "widget",
         "widgetType": "text-editor",
         "settings": {
@@ -5294,7 +5651,7 @@
         "elements": []
        },
        {
-        "id": "b6effe6",
+        "id": "5187f2b",
         "elType": "widget",
         "widgetType": "shortcode",
         "settings": {
@@ -5309,7 +5666,7 @@
     "isInner": false
    },
    {
-    "id": "ad53c93",
+    "id": "f3730cb",
     "elType": "section",
     "settings": {
      "css_classes": "jr-section",
@@ -5317,7 +5674,7 @@
     },
     "elements": [
      {
-      "id": "8d6449f",
+      "id": "90cccc1",
       "elType": "column",
       "settings": {
        "_column_size": 62,
@@ -5325,7 +5682,7 @@
       },
       "elements": [
        {
-        "id": "94259b4",
+        "id": "85803db",
         "elType": "widget",
         "widgetType": "heading",
         "settings": {
@@ -5336,13 +5693,13 @@
         "elements": []
        },
        {
-        "id": "ac99a79",
+        "id": "b1010a4",
         "elType": "widget",
         "widgetType": "icon-list",
         "settings": {
          "icon_list": [
           {
-           "_id": "ff3ecc8",
+           "_id": "b63eb05",
            "text": "Routine screening for sexually active women, as advised by your doctor",
            "selected_icon": {
             "value": "fas fa-check-circle",
@@ -5350,7 +5707,7 @@
            }
           },
           {
-           "_id": "3babf50",
+           "_id": "115c7b1",
            "text": "Abnormal bleeding or discharge (needs examination, not just screening)",
            "selected_icon": {
             "value": "fas fa-check-circle",
@@ -5358,7 +5715,7 @@
            }
           },
           {
-           "_id": "40184c6",
+           "_id": "57e3c6d",
            "text": "Follow-up after an earlier abnormal result",
            "selected_icon": {
             "value": "fas fa-check-circle",
@@ -5371,7 +5728,7 @@
         "elements": []
        },
        {
-        "id": "27479c4",
+        "id": "c69241b",
         "elType": "widget",
         "widgetType": "heading",
         "settings": {
@@ -5382,7 +5739,7 @@
         "elements": []
        },
        {
-        "id": "64dc59c",
+        "id": "7e18f82",
         "elType": "widget",
         "widgetType": "text-editor",
         "settings": {
@@ -5395,7 +5752,7 @@
       "isInner": false
      },
      {
-      "id": "af958af",
+      "id": "7e798c2",
       "elType": "column",
       "settings": {
        "_column_size": 38,
@@ -5404,7 +5761,7 @@
       },
       "elements": [
        {
-        "id": "ec71bc7",
+        "id": "f38236c",
         "elType": "widget",
         "widgetType": "heading",
         "settings": {
@@ -5414,13 +5771,13 @@
         "elements": []
        },
        {
-        "id": "39a6fe7",
+        "id": "d25afd8",
         "elType": "widget",
         "widgetType": "icon-list",
         "settings": {
          "icon_list": [
           {
-           "_id": "c3a0afb",
+           "_id": "e69fdbb",
            "text": "A short examination in privacy with a female doctor",
            "selected_icon": {
             "value": "fas fa-check-circle",
@@ -5428,7 +5785,7 @@
            }
           },
           {
-           "_id": "5d229b8",
+           "_id": "ba6b87f",
            "text": "The test takes a few minutes and may feel slightly uncomfortable",
            "selected_icon": {
             "value": "fas fa-check-circle",
@@ -5436,7 +5793,7 @@
            }
           },
           {
-           "_id": "713491b",
+           "_id": "f3692fd",
            "text": "Results and next steps explained to you",
            "selected_icon": {
             "value": "fas fa-check-circle",
@@ -5449,7 +5806,7 @@
         "elements": []
        },
        {
-        "id": "4cfeb29",
+        "id": "c216cbf",
         "elType": "widget",
         "widgetType": "button",
         "settings": {
@@ -5471,7 +5828,7 @@
     "isInner": false
    },
    {
-    "id": "f7aa64c",
+    "id": "f5c9e43",
     "elType": "section",
     "settings": {
      "css_classes": "jr-section jr-section--tint",
@@ -5479,7 +5836,7 @@
     },
     "elements": [
      {
-      "id": "2414f07",
+      "id": "f02889b",
       "elType": "column",
       "settings": {
        "_column_size": 100,
@@ -5487,7 +5844,7 @@
       },
       "elements": [
        {
-        "id": "5c25952",
+        "id": "d1c8d7e",
         "elType": "widget",
         "widgetType": "heading",
         "settings": {
@@ -5498,13 +5855,13 @@
         "elements": []
        },
        {
-        "id": "9458afb",
+        "id": "1651f14",
         "elType": "widget",
         "widgetType": "toggle",
         "settings": {
          "tabs": [
           {
-           "_id": "07e630c",
+           "_id": "112ce81",
            "tab_title": "How often should I have a Pap smear?",
            "tab_content": "<p>It depends on your age and previous results. Your doctor will advise a schedule that suits you.</p>"
           }
@@ -5520,7 +5877,7 @@
     "isInner": false
    },
    {
-    "id": "2fb8bcb",
+    "id": "a914aff",
     "elType": "section",
     "settings": {
      "css_classes": "jr-section jr-section--tight",
@@ -5528,7 +5885,7 @@
     },
     "elements": [
      {
-      "id": "30cdf57",
+      "id": "4e1e57e",
       "elType": "column",
       "settings": {
        "_column_size": 100,
@@ -5536,7 +5893,7 @@
       },
       "elements": [
        {
-        "id": "880a14e",
+        "id": "8deee5e",
         "elType": "widget",
         "widgetType": "text-editor",
         "settings": {
@@ -5552,7 +5909,7 @@
     "isInner": false
    },
    {
-    "id": "89f7d8b",
+    "id": "87bd084",
     "elType": "section",
     "settings": {
      "css_classes": "jr-cta-band",
@@ -5560,7 +5917,7 @@
     },
     "elements": [
      {
-      "id": "8ef7c69",
+      "id": "1b2fe42",
       "elType": "column",
       "settings": {
        "_column_size": 100,
@@ -5568,7 +5925,7 @@
       },
       "elements": [
        {
-        "id": "2713133",
+        "id": "e7efe04",
         "elType": "widget",
         "widgetType": "heading",
         "settings": {
@@ -5579,7 +5936,7 @@
         "elements": []
        },
        {
-        "id": "8a4c5d8",
+        "id": "8cc85d7",
         "elType": "widget",
         "widgetType": "heading",
         "settings": {
@@ -5590,7 +5947,7 @@
         "elements": []
        },
        {
-        "id": "5c0dfad",
+        "id": "cd1379a",
         "elType": "widget",
         "widgetType": "text-editor",
         "settings": {
@@ -5600,7 +5957,7 @@
         "elements": []
        },
        {
-        "id": "ec1c46f",
+        "id": "9302d16",
         "elType": "widget",
         "widgetType": "shortcode",
         "settings": {
@@ -5628,7 +5985,7 @@
   "seo_description": "Advice on choosing the right method to space or plan pregnancies. Dr. Jawaria Rasheed, consultant gynecologist.",
   "elementor": [
    {
-    "id": "1fadd4e",
+    "id": "4d5c8c2",
     "elType": "section",
     "settings": {
      "css_classes": "jr-page-hero",
@@ -5636,7 +5993,7 @@
     },
     "elements": [
      {
-      "id": "a84ff89",
+      "id": "dcb849f",
       "elType": "column",
       "settings": {
        "_column_size": 100,
@@ -5644,7 +6001,7 @@
       },
       "elements": [
        {
-        "id": "ea650fb",
+        "id": "100c9df",
         "elType": "widget",
         "widgetType": "heading",
         "settings": {
@@ -5655,7 +6012,7 @@
         "elements": []
        },
        {
-        "id": "32114ea",
+        "id": "fe671d6",
         "elType": "widget",
         "widgetType": "heading",
         "settings": {
@@ -5665,7 +6022,7 @@
         "elements": []
        },
        {
-        "id": "24f2da7",
+        "id": "06d3f71",
         "elType": "widget",
         "widgetType": "text-editor",
         "settings": {
@@ -5675,7 +6032,7 @@
         "elements": []
        },
        {
-        "id": "2f2f351",
+        "id": "586884f",
         "elType": "widget",
         "widgetType": "shortcode",
         "settings": {
@@ -5690,7 +6047,7 @@
     "isInner": false
    },
    {
-    "id": "f5c9e43",
+    "id": "1a0c655",
     "elType": "section",
     "settings": {
      "css_classes": "jr-section",
@@ -5698,7 +6055,7 @@
     },
     "elements": [
      {
-      "id": "9f55819",
+      "id": "d2c4899",
       "elType": "column",
       "settings": {
        "_column_size": 62,
@@ -5706,7 +6063,7 @@
       },
       "elements": [
        {
-        "id": "7eb6aa8",
+        "id": "3cd23d6",
         "elType": "widget",
         "widgetType": "heading",
         "settings": {
@@ -5717,13 +6074,13 @@
         "elements": []
        },
        {
-        "id": "0a057ab",
+        "id": "bcd4016",
         "elType": "widget",
         "widgetType": "icon-list",
         "settings": {
          "icon_list": [
           {
-           "_id": "c0c28ff",
+           "_id": "31c958d",
            "text": "After childbirth, to space the next pregnancy",
            "selected_icon": {
             "value": "fas fa-check-circle",
@@ -5731,7 +6088,7 @@
            }
           },
           {
-           "_id": "fc7885c",
+           "_id": "3c919fc",
            "text": "Choosing or changing a contraceptive method",
            "selected_icon": {
             "value": "fas fa-check-circle",
@@ -5739,7 +6096,7 @@
            }
           },
           {
-           "_id": "e0b8ba4",
+           "_id": "df45b36",
            "text": "Side effects from a current method",
            "selected_icon": {
             "value": "fas fa-check-circle",
@@ -5747,7 +6104,7 @@
            }
           },
           {
-           "_id": "05016fb",
+           "_id": "6781624",
            "text": "Planning a pregnancy after stopping contraception",
            "selected_icon": {
             "value": "fas fa-check-circle",
@@ -5760,7 +6117,7 @@
         "elements": []
        },
        {
-        "id": "4a40e6c",
+        "id": "1e7b25b",
         "elType": "widget",
         "widgetType": "heading",
         "settings": {
@@ -5771,7 +6128,7 @@
         "elements": []
        },
        {
-        "id": "96f16a2",
+        "id": "6057ead",
         "elType": "widget",
         "widgetType": "text-editor",
         "settings": {
@@ -5784,7 +6141,7 @@
       "isInner": false
      },
      {
-      "id": "f02889b",
+      "id": "9504a74",
       "elType": "column",
       "settings": {
        "_column_size": 38,
@@ -5793,7 +6150,7 @@
       },
       "elements": [
        {
-        "id": "3f929dd",
+        "id": "c20f2a2",
         "elType": "widget",
         "widgetType": "heading",
         "settings": {
@@ -5803,13 +6160,13 @@
         "elements": []
        },
        {
-        "id": "63bb48e",
+        "id": "ad00c07",
         "elType": "widget",
         "widgetType": "icon-list",
         "settings": {
          "icon_list": [
           {
-           "_id": "eb92b82",
+           "_id": "c45dd51",
            "text": "A private discussion of the options",
            "selected_icon": {
             "value": "fas fa-check-circle",
@@ -5817,7 +6174,7 @@
            }
           },
           {
-           "_id": "3e393e3",
+           "_id": "a8f7600",
            "text": "Checks to make sure the method is safe for you",
            "selected_icon": {
             "value": "fas fa-check-circle",
@@ -5825,7 +6182,7 @@
            }
           },
           {
-           "_id": "af44fb4",
+           "_id": "d02a769",
            "text": "Placement or removal of IUCDs (coils) and implants where offered",
            "selected_icon": {
             "value": "fas fa-check-circle",
@@ -5833,7 +6190,7 @@
            }
           },
           {
-           "_id": "29fd7ec",
+           "_id": "1cd3349",
            "text": "Follow-up advice",
            "selected_icon": {
             "value": "fas fa-check-circle",
@@ -5846,7 +6203,7 @@
         "elements": []
        },
        {
-        "id": "1117fc3",
+        "id": "a482090",
         "elType": "widget",
         "widgetType": "button",
         "settings": {
@@ -5868,7 +6225,7 @@
     "isInner": false
    },
    {
-    "id": "2615213",
+    "id": "d7e6ae7",
     "elType": "section",
     "settings": {
      "css_classes": "jr-section jr-section--tint",
@@ -5876,7 +6233,7 @@
     },
     "elements": [
      {
-      "id": "983cb31",
+      "id": "52d4dd1",
       "elType": "column",
       "settings": {
        "_column_size": 100,
@@ -5884,7 +6241,7 @@
       },
       "elements": [
        {
-        "id": "fd709ec",
+        "id": "401855a",
         "elType": "widget",
         "widgetType": "heading",
         "settings": {
@@ -5895,13 +6252,13 @@
         "elements": []
        },
        {
-        "id": "8992b06",
+        "id": "aee4aa0",
         "elType": "widget",
         "widgetType": "toggle",
         "settings": {
          "tabs": [
           {
-           "_id": "e3110b1",
+           "_id": "1b3f053",
            "tab_title": "Will contraception affect my future fertility?",
            "tab_content": "<p>For most methods, fertility returns soon after stopping. Your doctor can explain the timing for each method.</p>"
           }
@@ -5917,7 +6274,7 @@
     "isInner": false
    },
    {
-    "id": "51447de",
+    "id": "e375ff0",
     "elType": "section",
     "settings": {
      "css_classes": "jr-section jr-section--tight",
@@ -5925,7 +6282,7 @@
     },
     "elements": [
      {
-      "id": "7067091",
+      "id": "be388b3",
       "elType": "column",
       "settings": {
        "_column_size": 100,
@@ -5933,7 +6290,7 @@
       },
       "elements": [
        {
-        "id": "2dd9bdf",
+        "id": "83f871f",
         "elType": "widget",
         "widgetType": "text-editor",
         "settings": {
@@ -5949,7 +6306,7 @@
     "isInner": false
    },
    {
-    "id": "94c0505",
+    "id": "0eb4714",
     "elType": "section",
     "settings": {
      "css_classes": "jr-cta-band",
@@ -5957,7 +6314,7 @@
     },
     "elements": [
      {
-      "id": "d535ed9",
+      "id": "4e56a36",
       "elType": "column",
       "settings": {
        "_column_size": 100,
@@ -5965,7 +6322,7 @@
       },
       "elements": [
        {
-        "id": "56894ad",
+        "id": "a1483fe",
         "elType": "widget",
         "widgetType": "heading",
         "settings": {
@@ -5976,7 +6333,7 @@
         "elements": []
        },
        {
-        "id": "cdabf8f",
+        "id": "6c60c39",
         "elType": "widget",
         "widgetType": "heading",
         "settings": {
@@ -5987,7 +6344,7 @@
         "elements": []
        },
        {
-        "id": "02c26ae",
+        "id": "3a6ae57",
         "elType": "widget",
         "widgetType": "text-editor",
         "settings": {
@@ -5997,7 +6354,7 @@
         "elements": []
        },
        {
-        "id": "d640405",
+        "id": "650ce67",
         "elType": "widget",
         "widgetType": "shortcode",
         "settings": {
@@ -6025,7 +6382,7 @@
   "seo_description": "Answers to common questions about appointments, IUI and women’s health care with Dr. Jawaria Rasheed.",
   "elementor": [
    {
-    "id": "2a991fd",
+    "id": "57dcb4b",
     "elType": "section",
     "settings": {
      "css_classes": "jr-page-hero",
@@ -6033,7 +6390,7 @@
     },
     "elements": [
      {
-      "id": "5708299",
+      "id": "b672509",
       "elType": "column",
       "settings": {
        "_column_size": 100,
@@ -6041,7 +6398,7 @@
       },
       "elements": [
        {
-        "id": "ab02dd0",
+        "id": "8cebd7b",
         "elType": "widget",
         "widgetType": "heading",
         "settings": {
@@ -6052,7 +6409,7 @@
         "elements": []
        },
        {
-        "id": "98e0f9b",
+        "id": "23e5dfb",
         "elType": "widget",
         "widgetType": "heading",
         "settings": {
@@ -6062,7 +6419,7 @@
         "elements": []
        },
        {
-        "id": "c581557",
+        "id": "ef5f970",
         "elType": "widget",
         "widgetType": "text-editor",
         "settings": {
@@ -6078,7 +6435,7 @@
     "isInner": false
    },
    {
-    "id": "1af0a06",
+    "id": "904cd0d",
     "elType": "section",
     "settings": {
      "css_classes": "jr-section jr-narrow-section",
@@ -6086,7 +6443,7 @@
     },
     "elements": [
      {
-      "id": "0878e31",
+      "id": "5e50a4f",
       "elType": "column",
       "settings": {
        "_column_size": 100,
@@ -6094,43 +6451,43 @@
       },
       "elements": [
        {
-        "id": "74b32ac",
+        "id": "c65ae9d",
         "elType": "widget",
         "widgetType": "toggle",
         "settings": {
          "tabs": [
           {
-           "_id": "ae4db92",
+           "_id": "67252be",
            "tab_title": "How do I book an appointment?",
            "tab_content": "<p>Use the <a href=\"/book-appointment/\">online request form</a>, call the clinic or send a WhatsApp message. The clinic will confirm your date and time.</p>"
           },
           {
-           "_id": "de9e69c",
+           "_id": "c4d94af",
            "tab_title": "Is my appointment confirmed when I submit the form?",
            "tab_content": "<p>Not yet. The form sends a request. Your appointment is confirmed when the clinic contacts you.</p>"
           },
           {
-           "_id": "adc71a3",
+           "_id": "6605ff3",
            "tab_title": "Can my husband or a family member come with me?",
            "tab_content": "<p>Yes. For fertility consultations it is especially helpful if both partners attend.</p>"
           },
           {
-           "_id": "c73a1b6",
+           "_id": "13a6633",
            "tab_title": "What should I bring to my first visit?",
            "tab_content": "<p>Previous reports and scans, a list of your medicines and the date of your last period.</p>"
           },
           {
-           "_id": "cd6145b",
+           "_id": "ac31599",
            "tab_title": "Is IUI the same as IVF?",
            "tab_content": "<p>No. In IUI, prepared sperm are placed in the uterus and fertilisation happens naturally inside the body. In IVF, eggs are collected and fertilised in a laboratory. IUI is simpler and less invasive. IVF may be advised in other situations.</p>"
           },
           {
-           "_id": "8aecae7",
+           "_id": "1b1833e",
            "tab_title": "Are consultations private?",
            "tab_content": "<p>Yes. Your concerns are discussed confidentially, and examinations are done only with your consent.</p>"
           },
           {
-           "_id": "d5892d2",
+           "_id": "68ea9cc",
            "tab_title": "Do you provide emergency care?",
            "tab_content": "<p>No. For heavy bleeding, severe pain or other emergencies, please go to the nearest hospital emergency department.</p>"
           }
@@ -6146,7 +6503,7 @@
     "isInner": false
    },
    {
-    "id": "6cb20ce",
+    "id": "97c1426",
     "elType": "section",
     "settings": {
      "css_classes": "jr-cta-band",
@@ -6154,7 +6511,7 @@
     },
     "elements": [
      {
-      "id": "185c37d",
+      "id": "ec5efa2",
       "elType": "column",
       "settings": {
        "_column_size": 100,
@@ -6162,7 +6519,7 @@
       },
       "elements": [
        {
-        "id": "efa5989",
+        "id": "2075b98",
         "elType": "widget",
         "widgetType": "heading",
         "settings": {
@@ -6173,7 +6530,7 @@
         "elements": []
        },
        {
-        "id": "7c73d8f",
+        "id": "2c5958f",
         "elType": "widget",
         "widgetType": "heading",
         "settings": {
@@ -6184,7 +6541,7 @@
         "elements": []
        },
        {
-        "id": "c6b1a83",
+        "id": "27d15e3",
         "elType": "widget",
         "widgetType": "text-editor",
         "settings": {
@@ -6194,7 +6551,7 @@
         "elements": []
        },
        {
-        "id": "dee2b44",
+        "id": "6bc8345",
         "elType": "widget",
         "widgetType": "shortcode",
         "settings": {
@@ -6212,6 +6569,326 @@
   "fallback": "<p>Patient guide</p>\n<h1>Frequently asked questions</h1>\n<p>Answers to common questions about appointments and care.</p>\n<h3>How do I book an appointment?</h3><p>Use the <a href=\"/book-appointment/\">online request form</a>, call the clinic or send a WhatsApp message. The clinic will confirm your date and time.</p>\n<h3>Is my appointment confirmed when I submit the form?</h3><p>Not yet. The form sends a request. Your appointment is confirmed when the clinic contacts you.</p>\n<h3>Can my husband or a family member come with me?</h3><p>Yes. For fertility consultations it is especially helpful if both partners attend.</p>\n<h3>What should I bring to my first visit?</h3><p>Previous reports and scans, a list of your medicines and the date of your last period.</p>\n<h3>Is IUI the same as IVF?</h3><p>No. In IUI, prepared sperm are placed in the uterus and fertilisation happens naturally inside the body. In IVF, eggs are collected and fertilised in a laboratory. IUI is simpler and less invasive. IVF may be advised in other situations.</p>\n<h3>Are consultations private?</h3><p>Yes. Your concerns are discussed confidentially, and examinations are done only with your consent.</p>\n<h3>Do you provide emergency care?</h3><p>No. For heavy bleeding, severe pain or other emergencies, please go to the nearest hospital emergency department.</p>\n<p>Appointments</p>\n<h2>Ready to talk to Dr. Jawaria?</h2>\n<p>Send an appointment request online or message the clinic on WhatsApp. Our team will confirm a time with you.</p>"
  },
  {
+  "slug": "reviews",
+  "title": "Patient Reviews",
+  "parent": "",
+  "order": 3,
+  "excerpt": "",
+  "icon": "",
+  "seo_title": "",
+  "seo_description": "Patient reviews for Dr. Jawaria Rasheed, consultant gynecologist and IUI specialist.",
+  "elementor": [
+   {
+    "id": "6492b4e",
+    "elType": "section",
+    "settings": {
+     "css_classes": "jr-page-hero",
+     "gap": "extended"
+    },
+    "elements": [
+     {
+      "id": "1a8d2d3",
+      "elType": "column",
+      "settings": {
+       "_column_size": 100,
+       "_inline_size": null
+      },
+      "elements": [
+       {
+        "id": "fc3a5a8",
+        "elType": "widget",
+        "widgetType": "heading",
+        "settings": {
+         "title": "Patient Guide",
+         "header_size": "p",
+         "_css_classes": "jr-eyebrow"
+        },
+        "elements": []
+       },
+       {
+        "id": "8fd1045",
+        "elType": "widget",
+        "widgetType": "heading",
+        "settings": {
+         "title": "Patient reviews",
+         "header_size": "h1"
+        },
+        "elements": []
+       },
+       {
+        "id": "d85cf98",
+        "elType": "widget",
+        "widgetType": "text-editor",
+        "settings": {
+         "editor": "<p>Feedback shared by patients, published with their permission.</p>",
+         "_css_classes": "jr-lead jr-narrow-left"
+        },
+        "elements": []
+       }
+      ],
+      "isInner": false
+     }
+    ],
+    "isInner": false
+   },
+   {
+    "id": "ebcdc2e",
+    "elType": "section",
+    "settings": {
+     "css_classes": "jr-section",
+     "gap": "extended"
+    },
+    "elements": [
+     {
+      "id": "306b4c2",
+      "elType": "column",
+      "settings": {
+       "_column_size": 100,
+       "_inline_size": null
+      },
+      "elements": [
+       {
+        "id": "262f403",
+        "elType": "widget",
+        "widgetType": "shortcode",
+        "settings": {
+         "shortcode": "[jr_reviews count=\"0\"]"
+        },
+        "elements": []
+       }
+      ],
+      "isInner": false
+     }
+    ],
+    "isInner": false
+   },
+   {
+    "id": "8a31577",
+    "elType": "section",
+    "settings": {
+     "css_classes": "jr-cta-band",
+     "gap": "extended"
+    },
+    "elements": [
+     {
+      "id": "61fc666",
+      "elType": "column",
+      "settings": {
+       "_column_size": 100,
+       "_inline_size": null
+      },
+      "elements": [
+       {
+        "id": "c72880c",
+        "elType": "widget",
+        "widgetType": "heading",
+        "settings": {
+         "title": "Appointments",
+         "header_size": "p",
+         "_css_classes": "jr-eyebrow jr-center"
+        },
+        "elements": []
+       },
+       {
+        "id": "34e3860",
+        "elType": "widget",
+        "widgetType": "heading",
+        "settings": {
+         "title": "Ready to talk to Dr. Jawaria?",
+         "header_size": "h2",
+         "_css_classes": "jr-h2 jr-center"
+        },
+        "elements": []
+       },
+       {
+        "id": "0546e1a",
+        "elType": "widget",
+        "widgetType": "text-editor",
+        "settings": {
+         "editor": "<p>Send an appointment request online or message the clinic on WhatsApp. Our team will confirm a time with you.</p>",
+         "_css_classes": "jr-center jr-narrow"
+        },
+        "elements": []
+       },
+       {
+        "id": "2fcd3f1",
+        "elType": "widget",
+        "widgetType": "shortcode",
+        "settings": {
+         "shortcode": "[jr_cta_buttons style=\"light\" align=\"center\"]"
+        },
+        "elements": []
+       }
+      ],
+      "isInner": false
+     }
+    ],
+    "isInner": false
+   }
+  ],
+  "fallback": "<p>Patient Guide</p>\n<h1>Patient reviews</h1>\n<p>Feedback shared by patients, published with their permission.</p>\n<p>Appointments</p>\n<h2>Ready to talk to Dr. Jawaria?</h2>\n<p>Send an appointment request online or message the clinic on WhatsApp. Our team will confirm a time with you.</p>"
+ },
+ {
+  "slug": "videos",
+  "title": "Videos",
+  "parent": "",
+  "order": 3,
+  "excerpt": "",
+  "icon": "",
+  "seo_title": "",
+  "seo_description": "Health videos by Dr. Jawaria Rasheed on women’s health, fertility, IUI and pregnancy.",
+  "elementor": [
+   {
+    "id": "87191c1",
+    "elType": "section",
+    "settings": {
+     "css_classes": "jr-page-hero",
+     "gap": "extended"
+    },
+    "elements": [
+     {
+      "id": "2d949e9",
+      "elType": "column",
+      "settings": {
+       "_column_size": 100,
+       "_inline_size": null
+      },
+      "elements": [
+       {
+        "id": "f93e2aa",
+        "elType": "widget",
+        "widgetType": "heading",
+        "settings": {
+         "title": "Patient Guide",
+         "header_size": "p",
+         "_css_classes": "jr-eyebrow"
+        },
+        "elements": []
+       },
+       {
+        "id": "d2c0c85",
+        "elType": "widget",
+        "widgetType": "heading",
+        "settings": {
+         "title": "Videos",
+         "header_size": "h1"
+        },
+        "elements": []
+       },
+       {
+        "id": "18b2446",
+        "elType": "widget",
+        "widgetType": "text-editor",
+        "settings": {
+         "editor": "<p>Short, simple videos from Dr. Jawaria on women’s health, fertility and pregnancy.</p>",
+         "_css_classes": "jr-lead jr-narrow-left"
+        },
+        "elements": []
+       }
+      ],
+      "isInner": false
+     }
+    ],
+    "isInner": false
+   },
+   {
+    "id": "d7f981b",
+    "elType": "section",
+    "settings": {
+     "css_classes": "jr-section",
+     "gap": "extended"
+    },
+    "elements": [
+     {
+      "id": "ecd6286",
+      "elType": "column",
+      "settings": {
+       "_column_size": 100,
+       "_inline_size": null
+      },
+      "elements": [
+       {
+        "id": "224f933",
+        "elType": "widget",
+        "widgetType": "shortcode",
+        "settings": {
+         "shortcode": "[jr_videos count=\"0\"]"
+        },
+        "elements": []
+       }
+      ],
+      "isInner": false
+     }
+    ],
+    "isInner": false
+   },
+   {
+    "id": "f516e6e",
+    "elType": "section",
+    "settings": {
+     "css_classes": "jr-cta-band",
+     "gap": "extended"
+    },
+    "elements": [
+     {
+      "id": "c2df8b7",
+      "elType": "column",
+      "settings": {
+       "_column_size": 100,
+       "_inline_size": null
+      },
+      "elements": [
+       {
+        "id": "5a1288e",
+        "elType": "widget",
+        "widgetType": "heading",
+        "settings": {
+         "title": "Appointments",
+         "header_size": "p",
+         "_css_classes": "jr-eyebrow jr-center"
+        },
+        "elements": []
+       },
+       {
+        "id": "adb9865",
+        "elType": "widget",
+        "widgetType": "heading",
+        "settings": {
+         "title": "Ready to talk to Dr. Jawaria?",
+         "header_size": "h2",
+         "_css_classes": "jr-h2 jr-center"
+        },
+        "elements": []
+       },
+       {
+        "id": "4d24cc8",
+        "elType": "widget",
+        "widgetType": "text-editor",
+        "settings": {
+         "editor": "<p>Send an appointment request online or message the clinic on WhatsApp. Our team will confirm a time with you.</p>",
+         "_css_classes": "jr-center jr-narrow"
+        },
+        "elements": []
+       },
+       {
+        "id": "eb7fff9",
+        "elType": "widget",
+        "widgetType": "shortcode",
+        "settings": {
+         "shortcode": "[jr_cta_buttons style=\"light\" align=\"center\"]"
+        },
+        "elements": []
+       }
+      ],
+      "isInner": false
+     }
+    ],
+    "isInner": false
+   }
+  ],
+  "fallback": "<p>Patient Guide</p>\n<h1>Videos</h1>\n<p>Short, simple videos from Dr. Jawaria on women’s health, fertility and pregnancy.</p>\n<p>Appointments</p>\n<h2>Ready to talk to Dr. Jawaria?</h2>\n<p>Send an appointment request online or message the clinic on WhatsApp. Our team will confirm a time with you.</p>"
+ },
+ {
   "slug": "contact",
   "title": "Contact",
   "parent": "",
@@ -6222,7 +6899,7 @@
   "seo_description": "Clinic address, phone, WhatsApp and timings for Dr. Jawaria Rasheed.",
   "elementor": [
    {
-    "id": "a24072a",
+    "id": "5fb513c",
     "elType": "section",
     "settings": {
      "css_classes": "jr-page-hero",
@@ -6230,7 +6907,7 @@
     },
     "elements": [
      {
-      "id": "588971f",
+      "id": "4e25738",
       "elType": "column",
       "settings": {
        "_column_size": 100,
@@ -6238,7 +6915,7 @@
       },
       "elements": [
        {
-        "id": "8f4a183",
+        "id": "34d1d44",
         "elType": "widget",
         "widgetType": "heading",
         "settings": {
@@ -6249,7 +6926,7 @@
         "elements": []
        },
        {
-        "id": "8411344",
+        "id": "d903e79",
         "elType": "widget",
         "widgetType": "heading",
         "settings": {
@@ -6259,7 +6936,7 @@
         "elements": []
        },
        {
-        "id": "bbb86a4",
+        "id": "17479be",
         "elType": "widget",
         "widgetType": "text-editor",
         "settings": {
@@ -6275,7 +6952,7 @@
     "isInner": false
    },
    {
-    "id": "7013b93",
+    "id": "89b1f9a",
     "elType": "section",
     "settings": {
      "css_classes": "jr-section",
@@ -6283,7 +6960,7 @@
     },
     "elements": [
      {
-      "id": "40e66f4",
+      "id": "97623b6",
       "elType": "column",
       "settings": {
        "_column_size": 50,
@@ -6292,7 +6969,7 @@
       },
       "elements": [
        {
-        "id": "8385b27",
+        "id": "be4341a",
         "elType": "widget",
         "widgetType": "heading",
         "settings": {
@@ -6303,7 +6980,7 @@
         "elements": []
        },
        {
-        "id": "4dbf24c",
+        "id": "5bfe1c9",
         "elType": "widget",
         "widgetType": "shortcode",
         "settings": {
@@ -6312,7 +6989,7 @@
         "elements": []
        },
        {
-        "id": "d8caaa5",
+        "id": "8c603a4",
         "elType": "widget",
         "widgetType": "shortcode",
         "settings": {
@@ -6324,7 +7001,7 @@
       "isInner": false
      },
      {
-      "id": "0162383",
+      "id": "ab6698f",
       "elType": "column",
       "settings": {
        "_column_size": 50,
@@ -6333,7 +7010,7 @@
       },
       "elements": [
        {
-        "id": "15c0a0c",
+        "id": "e8366e6",
         "elType": "widget",
         "widgetType": "heading",
         "settings": {
@@ -6344,7 +7021,7 @@
         "elements": []
        },
        {
-        "id": "fb67431",
+        "id": "685be4f",
         "elType": "widget",
         "widgetType": "shortcode",
         "settings": {
@@ -6353,7 +7030,7 @@
         "elements": []
        },
        {
-        "id": "4248d7d",
+        "id": "7af5a6d",
         "elType": "widget",
         "widgetType": "text-editor",
         "settings": {
@@ -6368,7 +7045,7 @@
     "isInner": false
    },
    {
-    "id": "57dcb4b",
+    "id": "0c748bf",
     "elType": "section",
     "settings": {
      "css_classes": "jr-section jr-section--tight",
@@ -6376,7 +7053,7 @@
     },
     "elements": [
      {
-      "id": "b672509",
+      "id": "3376c54",
       "elType": "column",
       "settings": {
        "_column_size": 100,
@@ -6384,7 +7061,7 @@
       },
       "elements": [
        {
-        "id": "4a9d0aa",
+        "id": "5f4af82",
         "elType": "widget",
         "widgetType": "shortcode",
         "settings": {
@@ -6399,7 +7076,7 @@
     "isInner": false
    },
    {
-    "id": "b5cd4ff",
+    "id": "c836865",
     "elType": "section",
     "settings": {
      "css_classes": "jr-section jr-section--tight",
@@ -6407,7 +7084,7 @@
     },
     "elements": [
      {
-      "id": "9e18bbe",
+      "id": "5bdef94",
       "elType": "column",
       "settings": {
        "_column_size": 100,
@@ -6415,7 +7092,7 @@
       },
       "elements": [
        {
-        "id": "25d5273",
+        "id": "474f78f",
         "elType": "widget",
         "widgetType": "text-editor",
         "settings": {
@@ -6444,7 +7121,7 @@
   "seo_description": "Request an appointment with Dr. Jawaria Rasheed online. The clinic will call or WhatsApp you to confirm.",
   "elementor": [
    {
-    "id": "6f28959",
+    "id": "5e02b5f",
     "elType": "section",
     "settings": {
      "css_classes": "jr-page-hero",
@@ -6452,7 +7129,7 @@
     },
     "elements": [
      {
-      "id": "387fc1b",
+      "id": "8e6aa15",
       "elType": "column",
       "settings": {
        "_column_size": 100,
@@ -6460,7 +7137,7 @@
       },
       "elements": [
        {
-        "id": "0f01fe8",
+        "id": "9afdfdf",
         "elType": "widget",
         "widgetType": "heading",
         "settings": {
@@ -6471,7 +7148,7 @@
         "elements": []
        },
        {
-        "id": "2a37ac2",
+        "id": "c444e61",
         "elType": "widget",
         "widgetType": "heading",
         "settings": {
@@ -6481,7 +7158,7 @@
         "elements": []
        },
        {
-        "id": "fa000bd",
+        "id": "25b6fe9",
         "elType": "widget",
         "widgetType": "text-editor",
         "settings": {
@@ -6497,7 +7174,7 @@
     "isInner": false
    },
    {
-    "id": "67fe7a0",
+    "id": "b6a1fcc",
     "elType": "section",
     "settings": {
      "css_classes": "jr-section",
@@ -6505,7 +7182,7 @@
     },
     "elements": [
      {
-      "id": "2b76ecd",
+      "id": "7691f5d",
       "elType": "column",
       "settings": {
        "_column_size": 62,
@@ -6513,7 +7190,7 @@
       },
       "elements": [
        {
-        "id": "93a5fbb",
+        "id": "65385e4",
         "elType": "widget",
         "widgetType": "shortcode",
         "settings": {
@@ -6525,7 +7202,7 @@
       "isInner": false
      },
      {
-      "id": "046128c",
+      "id": "0015929",
       "elType": "column",
       "settings": {
        "_column_size": 38,
@@ -6534,7 +7211,7 @@
       },
       "elements": [
        {
-        "id": "fcdb04b",
+        "id": "98679eb",
         "elType": "widget",
         "widgetType": "heading",
         "settings": {
@@ -6544,7 +7221,7 @@
         "elements": []
        },
        {
-        "id": "d3d47ca",
+        "id": "c25ca59",
         "elType": "widget",
         "widgetType": "text-editor",
         "settings": {
@@ -6553,7 +7230,7 @@
         "elements": []
        },
        {
-        "id": "b80e296",
+        "id": "e7953bd",
         "elType": "widget",
         "widgetType": "shortcode",
         "settings": {
@@ -6562,7 +7239,7 @@
         "elements": []
        },
        {
-        "id": "ba6bf6c",
+        "id": "5e0fa24",
         "elType": "widget",
         "widgetType": "heading",
         "settings": {
@@ -6572,7 +7249,7 @@
         "elements": []
        },
        {
-        "id": "3d0bd7a",
+        "id": "856568e",
         "elType": "widget",
         "widgetType": "shortcode",
         "settings": {
@@ -6581,7 +7258,7 @@
         "elements": []
        },
        {
-        "id": "53c590b",
+        "id": "fd57d54",
         "elType": "widget",
         "widgetType": "heading",
         "settings": {
@@ -6591,13 +7268,13 @@
         "elements": []
        },
        {
-        "id": "f3ea3e6",
+        "id": "c37ee1d",
         "elType": "widget",
         "widgetType": "icon-list",
         "settings": {
          "icon_list": [
           {
-           "_id": "3d56d6e",
+           "_id": "b5785d6",
            "text": "Previous reports and ultrasound scans",
            "selected_icon": {
             "value": "fas fa-check-circle",
@@ -6605,7 +7282,7 @@
            }
           },
           {
-           "_id": "8ae1baf",
+           "_id": "369b7f5",
            "text": "A list of medicines you take",
            "selected_icon": {
             "value": "fas fa-check-circle",
@@ -6613,7 +7290,7 @@
            }
           },
           {
-           "_id": "cedbd70",
+           "_id": "e4a86d0",
            "text": "For fertility visits: both partners, if possible",
            "selected_icon": {
             "value": "fas fa-check-circle",
@@ -6645,7 +7322,7 @@
   "seo_description": "",
   "elementor": [
    {
-    "id": "4f5e3b6",
+    "id": "7e45d9f",
     "elType": "section",
     "settings": {
      "css_classes": "jr-page-hero",
@@ -6653,7 +7330,7 @@
     },
     "elements": [
      {
-      "id": "1418758",
+      "id": "50684cf",
       "elType": "column",
       "settings": {
        "_column_size": 100,
@@ -6661,7 +7338,7 @@
       },
       "elements": [
        {
-        "id": "b6b78fc",
+        "id": "98530c7",
         "elType": "widget",
         "widgetType": "heading",
         "settings": {
@@ -6672,7 +7349,7 @@
         "elements": []
        },
        {
-        "id": "7408679",
+        "id": "17cbb54",
         "elType": "widget",
         "widgetType": "heading",
         "settings": {
@@ -6682,7 +7359,7 @@
         "elements": []
        },
        {
-        "id": "cc16f77",
+        "id": "3cb95d5",
         "elType": "widget",
         "widgetType": "text-editor",
         "settings": {
@@ -6698,7 +7375,7 @@
     "isInner": false
    },
    {
-    "id": "8a31577",
+    "id": "2c3605b",
     "elType": "section",
     "settings": {
      "css_classes": "jr-section",
@@ -6706,7 +7383,7 @@
     },
     "elements": [
      {
-      "id": "61fc666",
+      "id": "77001f3",
       "elType": "column",
       "settings": {
        "_column_size": 100,
@@ -6714,7 +7391,7 @@
       },
       "elements": [
        {
-        "id": "fdf6707",
+        "id": "5de32da",
         "elType": "widget",
         "widgetType": "text-editor",
         "settings": {
@@ -6743,7 +7420,7 @@
   "seo_description": "",
   "elementor": [
    {
-    "id": "87191c1",
+    "id": "43493b8",
     "elType": "section",
     "settings": {
      "css_classes": "jr-page-hero",
@@ -6751,7 +7428,7 @@
     },
     "elements": [
      {
-      "id": "2d949e9",
+      "id": "f402eed",
       "elType": "column",
       "settings": {
        "_column_size": 100,
@@ -6759,7 +7436,7 @@
       },
       "elements": [
        {
-        "id": "b2a9009",
+        "id": "0dad421",
         "elType": "widget",
         "widgetType": "heading",
         "settings": {
@@ -6770,7 +7447,7 @@
         "elements": []
        },
        {
-        "id": "99a5130",
+        "id": "d4d771a",
         "elType": "widget",
         "widgetType": "heading",
         "settings": {
@@ -6780,7 +7457,7 @@
         "elements": []
        },
        {
-        "id": "2df23f3",
+        "id": "d9344ba",
         "elType": "widget",
         "widgetType": "text-editor",
         "settings": {
@@ -6796,7 +7473,7 @@
     "isInner": false
    },
    {
-    "id": "d7f981b",
+    "id": "0b8b166",
     "elType": "section",
     "settings": {
      "css_classes": "jr-section",
@@ -6804,7 +7481,7 @@
     },
     "elements": [
      {
-      "id": "ecd6286",
+      "id": "1e1fb40",
       "elType": "column",
       "settings": {
        "_column_size": 100,
@@ -6812,7 +7489,7 @@
       },
       "elements": [
        {
-        "id": "8339649",
+        "id": "c4befd2",
         "elType": "widget",
         "widgetType": "text-editor",
         "settings": {

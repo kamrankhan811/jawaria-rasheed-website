@@ -10,6 +10,7 @@ Run:  python tools/build.py
 """
 
 import json
+import re
 import os
 import sys
 
@@ -46,81 +47,150 @@ def page_hero(eyebrow, title, lead, buttons=True):
 # ------------------------------------------------------------------ pages
 
 def home():
-    featured = ["iui-treatment", "infertility-evaluation", "pcos", "pregnancy-care", "gynecology-consultation", "menstrual-problems"]
+    """Homepage — section order follows the reference layout."""
+    pills = "".join(
+        f'<a class="jr-pill" href="/services/{slug}/">{label}</a>' for slug, label in [
+            ("gynecology-consultation", "Gynecology"), ("infertility-evaluation", "Fertility &amp; IUI"),
+            ("pregnancy-care", "Pregnancy Care"), ("pcos", "PCOS"), ("endometriosis", "Endometriosis"),
+            ("fibroids", "Fibroids"), ("menopause", "Menopause")])
     return [
+        # 1. Hero with highlight-number cards
         section([
             column([
-                heading("Consultant Gynecologist · IUI Specialist", "p", "jr-eyebrow"),
-                heading("Caring, expert support for every stage of a woman’s life", "h1"),
-                text("<p>Dr. Jawaria Rasheed brings more than [jr_experience] years of experience in gynecology, women’s health and fertility care, including IUI. Every consultation is private, respectful and explained in plain language.</p>", "jr-lead"),
+                heading("Consultant Gynecologist · Women’s Health &amp; IUI Specialist".replace("&amp;", "&"), "p", "jr-eyebrow"),
+                heading("Expert gynecology and fertility care for every stage of a woman’s life", "h1"),
+                text("<p>Compassionate, personalised and professional care from Dr. Jawaria Rasheed — with more than [jr_experience] years of experience in gynecology, women’s health and IUI.</p>", "jr-lead"),
                 shortcode("[jr_cta_buttons]"),
-            ], 55),
-            column([image("doctor", "Dr. Jawaria Rasheed")], 45, "jr-hero-photo"),
+            ], 58),
+            column([image("doctor", "Dr. Jawaria Rasheed")], 42, "jr-hero-photo"),
         ], "jr-hero", middle=True),
+        section([shortcode("[jr_stats]")], "jr-section jr-section--stats"),
 
-        section([shortcode("[jr_stats]")], "jr-section jr-section--tight"),
-
+        # 2. Intro with pull-quote
         section([
-            column([image("clinic", "Clinic consultation room", "jr-photo jr-photo--wide")], 45),
             column([
-                heading("About Dr. Jawaria", "p", "jr-eyebrow"),
-                heading("Compassionate, personalised care you can trust", "h2", "jr-h2"),
-                text("<p>Dr. Jawaria Rasheed is a consultant gynecologist with over [jr_experience] years of experience in gynecology, women’s healthcare and Intrauterine Insemination (IUI). She helps women understand their health, make informed decisions and receive treatment tailored to their needs.</p>"),
-                checklist([
-                    "Clear explanations, no rushed decisions",
-                    "Private, respectful consultations with a female specialist",
-                    "Fertility support for couples, including IUI",
-                    "Care from adolescence through menopause",
-                ]),
-                button("More about Dr. Jawaria", "/about/", "jr-btn-ghost"),
+                heading("Welcome", "p", "jr-eyebrow"),
+                heading("Helping women understand their health and make informed decisions", "h2", "jr-h2"),
+            ], 45),
+            column([
+                text("<blockquote class=\"jr-quote\">“Every woman deserves to be listened to, to understand her options and to receive care that fits her life.”</blockquote>"),
+                text("<p>Dr. Jawaria Rasheed is an experienced gynecologist dedicated to compassionate, personalised and professional care for women at every stage of life — from first periods to pregnancy, fertility and menopause.</p><p>She believes in building trust through clear communication, respectful care and a patient-centred approach.</p>"),
+                button("Read her full story", "/about/", "jr-btn-ghost"),
             ], 55),
-        ], "jr-section", middle=True),
+        ], "jr-section"),
 
-        section([
-            heading("Services", "p", "jr-eyebrow jr-center"),
-            heading("How Dr. Jawaria can help", "h2", "jr-h2 jr-center"),
-            text("<p>From routine check-ups to fertility treatment — choose a service to learn what it involves.</p>", "jr-lead jr-center jr-narrow"),
-            shortcode("[jr_services_grid limit=\"6\"]"),
-            button("View all services", "/services/", "jr-btn-ghost", "center"),
-        ], "jr-section jr-section--tint"),
-
+        # 3+4. Areas of focus + photo
         section([
             column([
-                heading("Fertility care", "p", "jr-eyebrow"),
+                heading("Areas of focus", "p", "jr-eyebrow"),
+                heading("Complete care in gynecology and fertility", "h2", "jr-h2"),
+                checklist([
+                    "Gynecological consultations",
+                    "Reproductive health",
+                    "Fertility evaluation for couples",
+                    "IUI (Intrauterine Insemination)",
+                    "Women’s wellness, from adolescence to menopause",
+                ]),
+                text("<p>Each plan starts with careful listening and the right tests, so treatment is tailored to your needs — never one-size-fits-all.</p>"),
+            ], 55),
+            column([image("clinic", "Clinic consultation room", "jr-photo jr-photo--wide")], 45),
+        ], "jr-section jr-section--tint", middle=True),
+
+        # 5. Feature: fertility & IUI
+        section([
+            column([
+                heading("Fertility &amp; IUI".replace("&amp;", "&"), "p", "jr-eyebrow"),
                 heading("Trying to conceive? Start with clear answers.", "h2", "jr-h2"),
-                text("<p>Fertility concerns can feel overwhelming. Dr. Jawaria first evaluates both partners, then recommends the simplest effective step — from ovulation support to IUI — and refers for IVF when that is the better option.</p>"),
-                button("Read about IUI", "/services/iui-treatment/", "jr-btn-primary"),
-            ], 50),
+                text("<p>Fertility concerns can feel overwhelming. Dr. Jawaria evaluates both partners, then recommends the simplest effective step — from ovulation support and follicle monitoring to IUI. When another option such as IVF is more suitable, she will explain why and guide you.</p>"),
+                button("Learn about IUI", "/services/iui-treatment/", "jr-btn-primary"),
+            ], 55),
             column([
                 heading("Your fertility journey", "h3"),
                 checklist([
-                    "1. Consultation and history for both partners",
+                    "1. Consultation for both partners",
                     "2. Tests: hormones, ultrasound, semen analysis",
-                    "3. A personalised plan explained to you",
+                    "3. A personalised plan, explained clearly",
                     "4. Treatment such as ovulation induction or IUI",
                     "5. Follow-up and support at every step",
                 ]),
-            ], 50, "jr-card"),
+            ], 45, "jr-card"),
         ], "jr-section", middle=True),
 
+        # 6+7. Category links + service cards
         section([
-            heading("Why patients choose us", "p", "jr-eyebrow jr-center"),
-            heading("Care built on trust", "h2", "jr-h2 jr-center"),
-            section_cards([
-                ("Experience", "More than [jr_experience] years of focused work in gynecology and fertility care."),
-                ("Privacy", "Your concerns are discussed confidentially, in a respectful setting."),
-                ("Clear communication", "You leave knowing your diagnosis, your options and the next step."),
-            ]),
+            heading("Our services", "p", "jr-eyebrow jr-center"),
+            heading("How Dr. Jawaria can help", "h2", "jr-h2 jr-center"),
+            text(f'<div class="jr-pills jr-center">{pills}</div>'),
+            shortcode("[jr_services_grid]"),
         ], "jr-section jr-section--surface"),
 
+        # 8. Doctor profile
         section([
-            heading("Health articles", "p", "jr-eyebrow jr-center"),
-            heading("Learn about your health", "h2", "jr-h2 jr-center"),
-            shortcode('[jr_latest_posts count="3"]'),
+            column([image("doctor", "Dr. Jawaria Rasheed")], 40),
+            column([
+                heading("Meet your doctor", "p", "jr-eyebrow"),
+                heading("Dr. Jawaria Rasheed", "h2", "jr-h2"),
+                text("<p class=\"jr-credentials\">Consultant Gynecologist | Women’s Health &amp; IUI Specialist<br>[jr_qualifications]</p>"),
+                text("<p>With over [jr_experience] years of experience in gynecology, women’s healthcare and IUI, Dr. Jawaria’s mission is to support women’s health, improve reproductive well-being and help couples navigate their fertility journey with confidence and care.</p>"),
+                shortcode("[jr_rating]"),
+                button("Know more", "/about/", "jr-btn-primary"),
+            ], 60),
+        ], "jr-section", middle=True),
+
+        # 9. Patient reviews
+        section([
+            heading("Patient reviews", "p", "jr-eyebrow jr-center"),
+            heading("What our patients say", "h2", "jr-h2 jr-center"),
+            shortcode('[jr_reviews count="3"]'),
+            button("See all reviews", "/reviews/", "jr-btn-ghost", "center"),
+        ], "jr-section jr-section--tint"),
+
+        # 10. YouTube
+        section([
+            heading("Videos", "p", "jr-eyebrow jr-center"),
+            heading("Learn from Dr. Jawaria on YouTube", "h2", "jr-h2 jr-center"),
+            text("<p>Short, simple videos on women’s health, fertility and pregnancy.</p>", "jr-lead jr-center"),
+            shortcode('[jr_videos count="3"]'),
         ], "jr-section"),
 
+        # 11. Blogs
+        section([
+            heading("Health articles", "p", "jr-eyebrow jr-center"),
+            heading("Featured articles", "h2", "jr-h2 jr-center"),
+            shortcode('[jr_latest_posts count="3"]'),
+            button("View all articles", "/blog/", "jr-btn-ghost", "center"),
+        ], "jr-section jr-section--surface"),
+
+        # 12. CTA
         cta_band(),
-    ], featured
+
+        # 13. Location
+        section([
+            column([
+                heading("Location", "p", "jr-eyebrow"),
+                heading("Visit the clinic", "h2", "jr-h2"),
+                shortcode("[jr_clinic_info]"),
+                shortcode("[jr_hours]"),
+            ], 40),
+            column([shortcode("[jr_map]")], 60),
+        ], "jr-section"),
+    ], None
+
+
+def reviews_page():
+    return [
+        page_hero("Patient Guide", "Patient reviews", "Feedback shared by patients, published with their permission.", buttons=False),
+        section([shortcode('[jr_reviews count="0"]')], "jr-section"),
+        cta_band(),
+    ]
+
+
+def videos_page():
+    return [
+        page_hero("Patient Guide", "Videos", "Short, simple videos from Dr. Jawaria on women’s health, fertility and pregnancy.", buttons=False),
+        section([shortcode('[jr_videos count="0"]')], "jr-section"),
+        cta_band(),
+    ]
 
 
 def section_cards(cards):
@@ -349,6 +419,8 @@ def build_pages():
         add(s["slug"], s["title"], service_page(s), parent="services", order=i, excerpt=s["excerpt"], icon=s["icon"],
             seo_desc=s["excerpt"] + " Dr. Jawaria Rasheed, consultant gynecologist.")
     add("faqs", "FAQs", faqs(), order=3, seo_desc="Answers to common questions about appointments, IUI and women’s health care with Dr. Jawaria Rasheed.")
+    add("reviews", "Patient Reviews", reviews_page(), order=3, seo_desc="Patient reviews for Dr. Jawaria Rasheed, consultant gynecologist and IUI specialist.")
+    add("videos", "Videos", videos_page(), order=3, seo_desc="Health videos by Dr. Jawaria Rasheed on women’s health, fertility, IUI and pregnancy.")
     add("contact", "Contact", contact(), order=4, seo_desc="Clinic address, phone, WhatsApp and timings for Dr. Jawaria Rasheed.")
     add("book-appointment", "Book an Appointment", book(), order=5, seo_desc="Request an appointment with Dr. Jawaria Rasheed online. The clinic will call or WhatsApp you to confirm.")
     add("privacy-policy", "Privacy Policy", legal("Privacy policy", PRIVACY), order=8)
@@ -385,9 +457,8 @@ def fake_shortcode(name, args, pages):
         out += btn("jr-btn--light" if light else "jr-btn--ghost", f"Call {s['phone']}")
         return out + "</div>"
     if name == "jr_stats":
-        return ('<div class="jr-stats"><div class="jr-stat"><span class="jr-stat__num">15+</span><span class="jr-stat__label">Years in women’s health</span></div>'
-                '<div class="jr-stat"><span class="jr-stat__num">IUI</span><span class="jr-stat__label">Fertility treatment offered</span></div>'
-                '<div class="jr-stat"><span class="jr-stat__num">1:1</span><span class="jr-stat__label">Private, female-led consultations</span></div></div>')
+        rows = [("15+", "Years of experience"), ("IUI", "Fertility treatment offered"), ("PCOS", "Specialised care"), ("1:1", "Private consultations")]
+        return '<div class="jr-stats">' + "".join(f'<div class="jr-stat"><span class="jr-stat__num">{a}</span><span class="jr-stat__label">{b}</span></div>' for a, b in rows) + '</div>'
     if name == "jr_services_grid":
         limit = 6 if 'limit="6"' in args else 99
         out = '<div class="jr-services-grid">'
@@ -407,6 +478,12 @@ def fake_shortcode(name, args, pages):
                 '<li><strong>Timings</strong>Mon – Sat, by appointment</li></ul>')
     if name == "jr_hours":
         return '<table class="jr-hours"><tbody>' + "".join(f"<tr><td>{a}</td><td>{b}</td></tr>" for a, b in s["hours"]) + "</tbody></table>"
+    if name == "jr_rating":
+        return '<span class="jr-rating jr-pv-note">★★★★★ Google rating shows here once added in Clinic Info</span>'
+    if name == "jr_reviews":
+        return '<div class="jr-reviews">' + "".join('<figure class="jr-review jr-review--empty"><span class="jr-review__stars">★★★★★</span><p class="jr-review__head">Real patient review</p><blockquote class="jr-review__text"><p>Reviews are added under Patient Reviews, only with the patient’s permission.</p></blockquote><figcaption class="jr-review__name">Patient name</figcaption></figure>' for _ in range(3)) + '</div>'
+    if name == "jr_videos":
+        return '<div class="jr-videos">' + "".join(f'<a class="jr-video" href="#"><span class="jr-video__thumb jr-video__thumb--empty"><span class="jr-video__play">▶</span></span><span class="jr-video__title">YouTube video {i} (add link in Clinic Info)</span></a>' for i in (1, 2, 3)) + '</div><p class="jr-center"><a class="jr-btn jr-btn--ghost" href="#">Visit our YouTube channel</a></p>'
     if name == "jr_map":
         return '<div class="jr-map"><div style="height:280px;border-radius:14px;background:#e3eeee;display:grid;place-items:center;color:#5b6b70">Google Map appears here once the embed link is added in Clinic Info</div></div>'
     if name == "jr_appointment_form":
@@ -424,21 +501,72 @@ def fake_shortcode(name, args, pages):
     return ""
 
 
+# Menus for the preview — mirror jr_menu_specs() in includes/setup.php.
+_T = {sv["slug"]: sv["title"] for sv in SERVICES}
+_T.update({"about": "About Dr. Jawaria", "reviews": "Patient Reviews", "blog": "Health Articles", "videos": "Videos",
+           "faqs": "FAQs", "contact": "Contact Us", "book-appointment": "Book Appointment", "services": "Services"})
+
+
+def P(slug, title=None, cls="", children=None):
+    return (slug + ".html" if slug != "blog" else "#", title or _T.get(slug, slug), cls, children or [])
+
+
+def H(title, children):
+    return ("#", title, "jr-col-head", children)
+
+
+MENU_TOP = [P("about"), ("#", "Patient Guide", "", [P("reviews"), P("blog"), P("videos"), P("faqs")]), P("contact")]
+MENU_SERVICES = [
+    P("services", "Gynecology", "", [P("gynecology-consultation"), P("menstrual-problems"), P("cervical-screening"), P("family-planning"), P("menopause")]),
+    P("infertility-evaluation", "Fertility & IUI", "jr-mega", [
+        H("Fertility Assessment", [P("infertility-evaluation"), P("ovulation-induction", "Follicle Monitoring")]),
+        H("Fertility Treatment", [P("iui-treatment"), P("ovulation-induction", "Ovulation Induction")]),
+        H("Related Conditions", [P("pcos"), P("endometriosis"), P("fibroids")]),
+    ]),
+    P("pregnancy-care", "Pregnancy Care"), P("pcos", "PCOS"), P("endometriosis", "Endometriosis"),
+    P("fibroids", "Fibroids"), P("menopause", "Menopause"), P("about", "Dr. Jawaria Rasheed", "jr-menu-doctor"),
+]
+MENU_FOOT_SERVICES = [P("iui-treatment", "IUI Treatment"), P("infertility-evaluation"), P("pcos"), P("pregnancy-care"), P("endometriosis"), P("fibroids"), P("menopause"), P("cervical-screening")]
+MENU_FOOT_LINKS = [P("about"), P("reviews"), P("blog"), P("videos"), P("faqs"), P("contact"), P("book-appointment")]
+
+
+def menu_html(items, cls="jr-menu", sub=False):
+    out = f'<ul class="{"sub-menu" if sub else cls}">'
+    for href, title, c, kids in items:
+        classes = "menu-item " + c + (" menu-item-has-children" if kids else "")
+        out += f'<li class="{classes.strip()}"><a href="{href}">{title.replace("&", "&amp;")}</a>'
+        if kids:
+            out += menu_html(kids, sub=True)
+        out += "</li>"
+    return out + "</ul>"
+
+
 PREVIEW_SHELL = """<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{title} — Preview</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap">
 <link rel="stylesheet" href="preview-base.css"><link rel="stylesheet" href="../wp-content/themes/jawaria-child/assets/css/site.css">
 </head><body>
 <div class="jr-pv-banner">Design preview — the real site is built in WordPress. Sample contact details shown.</div>
-<div class="jr-topbar"><div class="jr-topbar__inner"><span class="jr-topbar__item">Mon – Sat, by appointment</span><span class="jr-topbar__links"><a href="#">0300 0000000</a><a href="#">WhatsApp</a><a class="jr-topbar__cta" href="book-appointment.html">Book appointment</a></span></div></div>
-<header class="jr-pv-header"><a class="jr-pv-logo" href="index.html">Dr. Jawaria Rasheed<small>Consultant Gynecologist &amp; IUI Specialist</small></a>
-<nav class="jr-pv-nav"><a href="index.html">Home</a><a href="about.html">About Dr. Jawaria</a><a href="services.html">Services</a><a href="faqs.html">FAQs</a><a href="contact.html">Contact</a><a class="jr-pv-book" href="book-appointment.html">Book Appointment</a></nav></header>
+<div class="jr-topbar"><div class="jr-topbar__inner"><span class="jr-topbar__item">City · Mon – Sat, by appointment</span><span class="jr-topbar__links"><a href="#">&#9742; Call 0300 0000000</a><a href="#">WhatsApp 0300 0000000</a></span></div></div>
+<header class="jr-header" data-jr-header>
+ <div class="jr-header__main">
+  <div class="jr-header__brand"><a class="jr-logo" href="index.html"><span class="jr-logo__mark">JR</span><span class="jr-logo__text"><span class="jr-logo__name">Dr. Jawaria Rasheed</span><span class="jr-logo__tag">Consultant Gynecologist &amp; IUI Specialist</span></span></a></div>
+  <nav class="jr-nav jr-nav--top">{menu_top}</nav>
+  <div class="jr-header__actions"><a class="jr-header__call" href="#"><span class="jr-header__call-label">Call us</span><span class="jr-header__call-num">0300 0000000</span></a><a class="jr-btn jr-btn--primary jr-btn--sm" href="book-appointment.html">Book<span class="jr-hide-sm">&nbsp;An Appointment</span></a><button class="jr-burger" type="button" aria-expanded="false" data-jr-burger><span></span><span></span><span></span></button></div>
+ </div>
+ <div class="jr-header__services"><nav class="jr-nav jr-nav--services">{menu_services}</nav></div>
+</header>
 <main>{body}</main>
-<footer class="jr-footer"><div class="jr-footer__grid"><div><p class="jr-footer__name">Dr. Jawaria Rasheed</p><p class="jr-footer__tag">Consultant Gynecologist &amp; IUI Specialist</p></div>
-<div><p class="jr-footer__heading">Quick links</p><ul class="jr-footer__links"><li><a href="about.html">About Dr. Jawaria</a></li><li><a href="services.html">Services</a></li><li><a href="book-appointment.html">Book Appointment</a></li><li><a href="contact.html">Contact</a></li></ul></div>
-<div><p class="jr-footer__heading">Visit the clinic</p>{info}</div></div>
-<div class="jr-footer__legal"><p>Information on this website is for general education and does not replace a consultation. In an emergency, go to the nearest hospital emergency department.</p><p>&copy; Dr. Jawaria Rasheed · <a href="privacy-policy.html">Privacy policy</a> · <a href="medical-disclaimer.html">Medical disclaimer</a></p></div></footer>
-<a class="jr-wa-float" href="#"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/></svg><span>WhatsApp us</span></a>
+<footer class="jr-footer"><div class="jr-footer__grid">
+ <div class="jr-footer__col jr-footer__brand"><p class="jr-footer__name">Dr. Jawaria Rasheed</p><p class="jr-footer__tag">Consultant Gynecologist &amp; IUI Specialist</p><p class="jr-footer__about">Compassionate, personalised care in gynecology, women’s health and fertility, including IUI — at every stage of life.</p><div class="jr-social"><a class="jr-social__link" href="#">f</a><a class="jr-social__link" href="#">ig</a><a class="jr-social__link" href="#">▶</a></div></div>
+ <div class="jr-footer__col"><p class="jr-footer__heading">Our Services</p>{foot_services}</div>
+ <div class="jr-footer__col"><p class="jr-footer__heading">Quick Links</p>{foot_links}</div>
+ <div class="jr-footer__col"><p class="jr-footer__heading">Get In Touch</p>{info}<p><a class="jr-btn jr-btn--light jr-btn--sm" href="book-appointment.html">Book Online</a></p></div>
+</div>
+<div class="jr-footer__legal"><p class="jr-footer__note">Information on this website is for general education and does not replace a consultation. In an emergency, go to the nearest hospital emergency department.</p>
+<div class="jr-footer__bottom"><span>&copy; 2026 Dr. Jawaria Rasheed. All rights reserved.</span><span class="jr-footer__policies"><a href="privacy-policy.html">Privacy Policy</a><a href="medical-disclaimer.html">Medical Disclaimer</a><a href="#">Sitemap</a></span></div></div></footer>
+<div class="jr-floats"><a class="jr-float jr-float--call" href="#"><span>&#9742;</span></a><a class="jr-float jr-float--wa" href="#"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2z"/></svg></a></div>
+<script src="../wp-content/themes/jawaria-child/assets/js/nav.js"></script>
 </body></html>"""
 
 
@@ -453,8 +581,8 @@ def write_preview(pages):
             continue
         name = "index" if p["slug"] == "home" else p["slug"]
         body = render_preview(p["elementor"], sc, media)
-        body = body.replace('href="/book-appointment/"', 'href="book-appointment.html"')
-        html_doc = PREVIEW_SHELL.format(title=p["title"], body=body, info=sc("jr_clinic_info", ""))
+        body = re.sub(r'href="/(?:services/)?([a-z-]+)/"', lambda m: f'href="{m.group(1)}.html"', body)
+        html_doc = PREVIEW_SHELL.format(title=p["title"], body=body, info=sc("jr_clinic_info", ""), menu_top=menu_html(MENU_TOP), menu_services=menu_html(MENU_SERVICES), foot_services=menu_html(MENU_FOOT_SERVICES, "jr-footer__links"), foot_links=menu_html(MENU_FOOT_LINKS, "jr-footer__links"))
         with open(os.path.join(out_dir, name + ".html"), "w", encoding="utf-8") as f:
             f.write(html_doc)
 

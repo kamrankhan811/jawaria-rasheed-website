@@ -39,6 +39,20 @@ function jr_settings_fields() {
 			'notify_email' => array( 'Send new appointment requests to', 'text', 'Staff email. Defaults to the site admin email.' ),
 			'wa_message'   => array( 'WhatsApp greeting', 'textarea', 'Pre-filled text when a patient taps the WhatsApp button.' ),
 			'wa_float'     => array( 'Show floating WhatsApp button', 'checkbox', '' ),
+			'call_float'   => array( 'Show floating Call button', 'checkbox', '' ),
+			'video_consult_url' => array( 'Video consultation link', 'url', 'Optional. If filled, a "Video Consultation" button appears in the header.' ),
+		),
+		'Homepage'        => array(
+			'stats'          => array( 'Highlight numbers (hero cards)', 'textarea', 'One per line: Number | Label. Use only real, verified numbers, e.g. 1500+ | IUI procedures.' ),
+			'google_rating'  => array( 'Google rating', 'text', 'e.g. 4.9 — only if it is her real Google rating. Leave empty to hide.' ),
+			'google_reviews' => array( 'Google reviews link', 'url', '' ),
+			'videos'         => array( 'YouTube videos', 'textarea', 'One per line: YouTube link | Title. Shown in the Videos section.' ),
+		),
+		'Social media'    => array(
+			'facebook'  => array( 'Facebook page', 'url', '' ),
+			'instagram' => array( 'Instagram', 'url', '' ),
+			'youtube'   => array( 'YouTube channel', 'url', '' ),
+			'tiktok'    => array( 'TikTok', 'url', '' ),
 		),
 	);
 }
@@ -86,6 +100,9 @@ function jr_sanitize_options( $input ) {
 			switch ( $def[1] ) {
 				case 'checkbox':
 					$out[ $key ] = $val ? '1' : '';
+					break;
+				case 'url':
+					$out[ $key ] = esc_url_raw( $val );
 					break;
 				case 'textarea':
 					$out[ $key ] = sanitize_textarea_field( $val );

@@ -1,6 +1,10 @@
 <?php
 /**
- * Site footer: clinic details, quick links, services, medical disclaimer.
+ * Four-column footer + bottom bar + floating call/WhatsApp buttons.
+ *   1. Brand, short intro, social links
+ *   2. Our Services   (menu: "Footer – Our Services")
+ *   3. Quick Links    (menu: "Footer – Quick Links")
+ *   4. Get In Touch   (Settings → Clinic Info)
  *
  * @package jawaria-child
  */
@@ -14,43 +18,62 @@ $jr_has = function_exists( 'jr_opt' );
 		<div class="jr-footer__col jr-footer__brand">
 			<p class="jr-footer__name"><?php echo esc_html( $jr_has ? jr_opt( 'doctor_name' ) : get_bloginfo( 'name' ) ); ?></p>
 			<p class="jr-footer__tag"><?php echo esc_html( get_bloginfo( 'description' ) ); ?></p>
-			<?php if ( $jr_has ) : ?>
-				<p><?php echo esc_html( jr_opt( 'qualifications' ) ); ?></p>
-			<?php endif; ?>
-		</div>
-
-		<div class="jr-footer__col">
-			<p class="jr-footer__heading"><?php esc_html_e( 'Quick links', 'jawaria-child' ); ?></p>
+			<p class="jr-footer__about"><?php esc_html_e( 'Compassionate, personalised care in gynecology, women’s health and fertility, including IUI — at every stage of life.', 'jawaria-child' ); ?></p>
 			<?php
-			if ( has_nav_menu( 'jr_footer' ) ) {
-				wp_nav_menu(
-					array(
-						'theme_location' => 'jr_footer',
-						'container'      => false,
-						'menu_class'     => 'jr-footer__links',
-						'depth'          => 1,
-					)
-				);
+			if ( $jr_has ) {
+				echo jr_social_links_html(); // phpcs:ignore WordPress.Security.EscapeOutput -- escaped inside.
 			}
 			?>
 		</div>
 
-		<?php if ( $jr_has ) : ?>
 		<div class="jr-footer__col">
-			<p class="jr-footer__heading"><?php esc_html_e( 'Visit the clinic', 'jawaria-child' ); ?></p>
-			<?php echo jr_clinic_info_html(); // phpcs:ignore WordPress.Security.EscapeOutput -- escaped inside. ?>
+			<p class="jr-footer__heading"><?php esc_html_e( 'Our Services', 'jawaria-child' ); ?></p>
+			<?php
+			wp_nav_menu(
+				array(
+					'theme_location' => 'jr_footer_services',
+					'container'      => false,
+					'menu_class'     => 'jr-footer__links',
+					'depth'          => 1,
+					'fallback_cb'    => false,
+				)
+			);
+			?>
 		</div>
-		<?php endif; ?>
+
+		<div class="jr-footer__col">
+			<p class="jr-footer__heading"><?php esc_html_e( 'Quick Links', 'jawaria-child' ); ?></p>
+			<?php
+			wp_nav_menu(
+				array(
+					'theme_location' => 'jr_footer',
+					'container'      => false,
+					'menu_class'     => 'jr-footer__links',
+					'depth'          => 1,
+					'fallback_cb'    => false,
+				)
+			);
+			?>
+		</div>
+
+		<div class="jr-footer__col">
+			<p class="jr-footer__heading"><?php esc_html_e( 'Get In Touch', 'jawaria-child' ); ?></p>
+			<?php if ( $jr_has ) : ?>
+				<?php echo jr_clinic_info_html(); // phpcs:ignore WordPress.Security.EscapeOutput -- escaped inside. ?>
+			<?php endif; ?>
+			<p><a class="jr-btn jr-btn--light jr-btn--sm" href="<?php echo esc_url( home_url( '/book-appointment/' ) ); ?>"><?php esc_html_e( 'Book Online', 'jawaria-child' ); ?></a></p>
+		</div>
 	</div>
 
 	<div class="jr-footer__legal">
-		<p>
-			<?php esc_html_e( 'Information on this website is for general education and does not replace a consultation. In an emergency, go to the nearest hospital emergency department.', 'jawaria-child' ); ?>
-		</p>
-		<p>
-			&copy; <?php echo esc_html( gmdate( 'Y' ) ); ?> <?php echo esc_html( get_bloginfo( 'name' ) ); ?> &middot;
-			<a href="<?php echo esc_url( home_url( '/privacy-policy/' ) ); ?>"><?php esc_html_e( 'Privacy policy', 'jawaria-child' ); ?></a> &middot;
-			<a href="<?php echo esc_url( home_url( '/medical-disclaimer/' ) ); ?>"><?php esc_html_e( 'Medical disclaimer', 'jawaria-child' ); ?></a>
-		</p>
+		<p class="jr-footer__note"><?php esc_html_e( 'Information on this website is for general education and does not replace a consultation. In an emergency, go to the nearest hospital emergency department.', 'jawaria-child' ); ?></p>
+		<div class="jr-footer__bottom">
+			<span>&copy; <?php echo esc_html( gmdate( 'Y' ) ); ?> <?php echo esc_html( get_bloginfo( 'name' ) ); ?>. <?php esc_html_e( 'All rights reserved.', 'jawaria-child' ); ?></span>
+			<span class="jr-footer__policies">
+				<a href="<?php echo esc_url( home_url( '/privacy-policy/' ) ); ?>"><?php esc_html_e( 'Privacy Policy', 'jawaria-child' ); ?></a>
+				<a href="<?php echo esc_url( home_url( '/medical-disclaimer/' ) ); ?>"><?php esc_html_e( 'Medical Disclaimer', 'jawaria-child' ); ?></a>
+				<a href="<?php echo esc_url( home_url( '/sitemap_index.xml' ) ); ?>"><?php esc_html_e( 'Sitemap', 'jawaria-child' ); ?></a>
+			</span>
+		</div>
 	</div>
 </footer>

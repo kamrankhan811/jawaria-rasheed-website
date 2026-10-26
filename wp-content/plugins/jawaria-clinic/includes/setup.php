@@ -280,97 +280,134 @@ function jr_setup_site_options() {
 }
 
 /**
- * Build menus.
+ * Menu structure (mirrors the reference layout: top row, services row with a
+ * mega menu, footer services + quick links). Edit later in Appearance → Menus.
+ *
+ * Item: [ 'page' => slug | 'url' => '#', 'title' => '', 'class' => '', 'children' => [] ]
+ *
+ * @return array location => [ menu name, items ]
+ */
+function jr_menu_specs() {
+	$p = fn( $slug, $title = '', $class = '', $children = array() ) => array( 'page' => $slug, 'title' => $title, 'class' => $class, 'children' => $children );
+	$h = fn( $title, $children ) => array( 'url' => '#', 'title' => $title, 'class' => 'jr-col-head', 'children' => $children );
+	return array(
+		'jr_top'             => array(
+			'Header – top row',
+			array(
+				$p( 'about', 'About Dr. Jawaria' ),
+				array(
+					'url'      => '#',
+					'title'    => 'Patient Guide',
+					'class'    => '',
+					'children' => array( $p( 'reviews', 'Patient Reviews' ), $p( 'blog', 'Health Articles' ), $p( 'videos', 'Videos' ), $p( 'faqs', 'FAQs' ) ),
+				),
+				$p( 'contact', 'Contact Us' ),
+			),
+		),
+		'jr_services'        => array(
+			'Header – services row',
+			array(
+				$p(
+					'services',
+					'Gynecology',
+					'',
+					array( $p( 'gynecology-consultation' ), $p( 'menstrual-problems' ), $p( 'cervical-screening' ), $p( 'family-planning' ), $p( 'menopause' ) )
+				),
+				$p(
+					'infertility-evaluation',
+					'Fertility & IUI',
+					'jr-mega',
+					array(
+						$h( 'Fertility Assessment', array( $p( 'infertility-evaluation' ), $p( 'ovulation-induction', 'Follicle Monitoring' ) ) ),
+						$h( 'Fertility Treatment', array( $p( 'iui-treatment' ), $p( 'ovulation-induction', 'Ovulation Induction' ) ) ),
+						$h( 'Related Conditions', array( $p( 'pcos' ), $p( 'endometriosis' ), $p( 'fibroids' ) ) ),
+					)
+				),
+				$p( 'pregnancy-care', 'Pregnancy Care' ),
+				$p( 'pcos', 'PCOS' ),
+				$p( 'endometriosis', 'Endometriosis' ),
+				$p( 'fibroids', 'Fibroids' ),
+				$p( 'menopause', 'Menopause' ),
+				$p( 'about', 'Dr. Jawaria Rasheed', 'jr-menu-doctor' ),
+			),
+		),
+		'jr_footer_services' => array(
+			'Footer – Our Services',
+			array( $p( 'iui-treatment', 'IUI Treatment' ), $p( 'infertility-evaluation' ), $p( 'pcos' ), $p( 'pregnancy-care' ), $p( 'endometriosis' ), $p( 'fibroids' ), $p( 'menopause' ), $p( 'cervical-screening' ) ),
+		),
+		'jr_footer'          => array(
+			'Footer – Quick Links',
+			array( $p( 'about', 'About Dr. Jawaria' ), $p( 'reviews', 'Patient Reviews' ), $p( 'blog', 'Health Articles' ), $p( 'videos', 'Videos' ), $p( 'faqs', 'FAQs' ), $p( 'contact', 'Contact Us' ), $p( 'book-appointment', 'Book Appointment' ) ),
+		),
+	);
+}
+
+/**
+ * Add menu items recursively.
+ *
+ * @param int   $menu_id Menu.
+ * @param array $items   Item specs.
+ * @param int   $parent  Parent menu item ID.
+ * @param array $ids     slug => page ID.
+ * @param int   $pos     Position counter.
+ */
+function jr_add_menu_items( $menu_id, array $items, $parent, array $ids, &$pos ) {
+	foreach ( $items as $item ) {
+		$args = array(
+			'menu-item-status'    => 'publish',
+			'menu-item-parent-id' => $parent,
+			'menu-item-position'  => ++$pos,
+			'menu-item-title'     => $item['title'],
+			'menu-item-classes'   => $item['class'],
+		);
+		if ( isset( $item['page'] ) ) {
+			if ( empty( $ids[ $item['page'] ] ) ) {
+				continue;
+			}
+			$args['menu-item-object-id'] = $ids[ $item['page'] ];
+			$args['menu-item-object']    = 'page';
+			$args['menu-item-type']      = 'post_type';
+		} else {
+			$args['menu-item-url']  = $item['url'];
+			$args['menu-item-type'] = 'custom';
+		}
+		$item_id = wp_update_nav_menu_item( $menu_id, 0, $args );
+		if ( ! is_wp_error( $item_id ) && ! empty( $item['children'] ) ) {
+			jr_add_menu_items( $menu_id, $item['children'], $item_id, $ids, $pos );
+		}
+	}
+}
+
+/**
+ * Build menus and assign them to the theme's locations.
  *
  * @param bool $overwrite Rebuild existing menus.
  * @return string[]
  */
 function jr_setup_menus( $overwrite ) {
-	$ids    = (array) get_option( 'jr_page_ids', array() );
-	$report = array();
+	$ids       = (array) get_option( 'jr_page_ids', array() );
+	$report    = array();
+	$locations = (array) get_theme_mod( 'nav_menu_locations', array() );
 
-	$build = function ( $name, array $items ) use ( $ids, $overwrite, &$report ) {
+	foreach ( jr_menu_specs() as $location => $spec ) {
+		list( $name, $items ) = $spec;
 		$menu = wp_get_nav_menu_object( $name );
 		if ( $menu && ! $overwrite ) {
-			$report[] = "Menu \"$name\" already exists — kept.";
-			return (int) $menu->term_id;
+			$report[]               = "Menu \"$name\" already exists — kept.";
+			$locations[ $location ] = (int) $menu->term_id;
+			continue;
 		}
 		$menu_id = $menu ? (int) $menu->term_id : wp_create_nav_menu( $name );
 		if ( is_wp_error( $menu_id ) ) {
-			return 0;
+			continue;
 		}
 		foreach ( (array) wp_get_nav_menu_items( $menu_id ) as $old ) {
 			wp_delete_post( $old->ID, true );
 		}
 		$pos = 0;
-		foreach ( $items as $item ) {
-			$slug = $item[0];
-			if ( empty( $ids[ $slug ] ) ) {
-				continue;
-			}
-			$parent_item = wp_update_nav_menu_item(
-				$menu_id,
-				0,
-				array(
-					'menu-item-object-id' => $ids[ $slug ],
-					'menu-item-object'    => 'page',
-					'menu-item-type'      => 'post_type',
-					'menu-item-status'    => 'publish',
-					'menu-item-title'     => isset( $item[1] ) ? $item[1] : '',
-					'menu-item-classes'   => isset( $item[2] ) ? $item[2] : '',
-					'menu-item-position'  => ++$pos,
-				)
-			);
-			if ( ! empty( $item[3] ) && 'children' === $item[3] ) {
-				foreach ( jr_service_pages() as $child ) {
-					wp_update_nav_menu_item(
-						$menu_id,
-						0,
-						array(
-							'menu-item-object-id' => $child->ID,
-							'menu-item-object'    => 'page',
-							'menu-item-type'      => 'post_type',
-							'menu-item-status'    => 'publish',
-							'menu-item-parent-id' => $parent_item,
-							'menu-item-position'  => ++$pos,
-						)
-					);
-				}
-			}
-		}
-		$report[] = "Menu \"$name\" created.";
-		return $menu_id;
-	};
-
-	$main = $build(
-		'Main menu',
-		array(
-			array( 'home', 'Home' ),
-			array( 'about', 'About Dr. Jawaria' ),
-			array( 'services', 'Services', '', 'children' ),
-			array( 'blog', 'Health Articles' ),
-			array( 'contact', 'Contact' ),
-			array( 'book-appointment', 'Book Appointment', 'jr-menu-book' ),
-		)
-	);
-	$footer = $build(
-		'Footer links',
-		array(
-			array( 'about', 'About Dr. Jawaria' ),
-			array( 'services', 'Services' ),
-			array( 'blog', 'Health Articles' ),
-			array( 'book-appointment', 'Book Appointment' ),
-			array( 'contact', 'Contact' ),
-		)
-	);
-
-	$locations = (array) get_theme_mod( 'nav_menu_locations', array() );
-	if ( $main ) {
-		$locations['primary']     = $main;
-		$locations['mobile_menu'] = $main;
-	}
-	if ( $footer ) {
-		$locations['jr_footer'] = $footer;
+		jr_add_menu_items( $menu_id, $items, 0, $ids, $pos );
+		$locations[ $location ] = $menu_id;
+		$report[]               = "Menu \"$name\" created.";
 	}
 	set_theme_mod( 'nav_menu_locations', $locations );
 	return $report;

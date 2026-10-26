@@ -131,23 +131,6 @@ add_shortcode(
 );
 
 add_shortcode(
-	'jr_stats',
-	function () {
-		$stats = array();
-		if ( jr_opt( 'experience_years' ) ) {
-			$stats[] = array( jr_opt( 'experience_years' ) . '+', __( 'Years in women’s health', 'jawaria-clinic' ) );
-		}
-		$stats[] = array( 'IUI', __( 'Fertility treatment offered', 'jawaria-clinic' ) );
-		$stats[] = array( '1:1', __( 'Private, female-led consultations', 'jawaria-clinic' ) );
-		$html    = '<div class="jr-stats">';
-		foreach ( $stats as $s ) {
-			$html .= '<div class="jr-stat"><span class="jr-stat__num">' . esc_html( $s[0] ) . '</span><span class="jr-stat__label">' . esc_html( $s[1] ) . '</span></div>';
-		}
-		return $html . '</div>';
-	}
-);
-
-add_shortcode(
 	'jr_services_grid',
 	function ( $atts ) {
 		$a     = shortcode_atts( array( 'limit' => '0' ), $atts );

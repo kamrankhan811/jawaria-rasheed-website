@@ -2,15 +2,19 @@
 /**
  * Jawaria Rasheed Clinic — Astra child theme.
  *
+ * Astra provides the base (page layouts, blog, accessibility). This child theme
+ * replaces Astra's header and footer with the clinic's own two-row header,
+ * mega menu and four-column footer.
+ *
  * @package jawaria-child
  */
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'JR_CHILD_VERSION', '1.0.0' );
+define( 'JR_CHILD_VERSION', '1.1.0' );
 
 /**
- * Load fonts, parent style and the site design system.
+ * Fonts, parent style, design system, header script.
  */
 add_action(
 	'wp_enqueue_scripts',
@@ -28,12 +32,19 @@ add_action(
 			array( 'astra-parent', 'jr-fonts' ),
 			filemtime( get_stylesheet_directory() . '/assets/css/site.css' )
 		);
+		wp_enqueue_script(
+			'jr-nav',
+			get_stylesheet_directory_uri() . '/assets/js/nav.js',
+			array(),
+			filemtime( get_stylesheet_directory() . '/assets/js/nav.js' ),
+			true
+		);
 	},
 	20
 );
 
 /**
- * Make the same design visible inside the Elementor editor preview.
+ * Same design inside the Elementor editor preview.
  */
 add_action(
 	'elementor/preview/enqueue_styles',
@@ -43,36 +54,47 @@ add_action(
 );
 
 /**
- * Theme supports.
+ * Theme supports and menu locations.
  */
 add_action(
 	'after_setup_theme',
 	function () {
 		add_theme_support( 'custom-logo', array( 'height' => 80, 'width' => 260, 'flex-width' => true, 'flex-height' => true ) );
 		add_post_type_support( 'page', 'excerpt' );
-		register_nav_menus( array( 'jr_footer' => __( 'Footer quick links', 'jawaria-child' ) ) );
-	}
+		register_nav_menus(
+			array(
+				'jr_top'             => __( 'Header – top row', 'jawaria-child' ),
+				'jr_services'        => __( 'Header – services row', 'jawaria-child' ),
+				'jr_footer_services' => __( 'Footer – Our Services', 'jawaria-child' ),
+				'jr_footer'          => __( 'Footer – Quick Links', 'jawaria-child' ),
+			)
+		);
+	},
+	20
 );
 
 /**
- * Footer: clinic details, quick links, disclaimer. Replaces Astra's default footer bar.
+ * Swap Astra's header and footer for ours.
  */
-add_action(
-	'astra_footer',
-	function () {
-		get_template_part( 'template-parts/site-footer' );
-	},
-	5
-);
-add_filter( 'astra_footer_copyright', '__return_false' );
 add_action(
 	'wp',
 	function () {
-		if ( class_exists( 'Astra_Builder_Footer' ) ) {
-			remove_action( 'astra_footer', array( Astra_Builder_Footer::get_instance(), 'footer_markup' ), 10 );
-		}
+		remove_all_actions( 'astra_header' );
+		remove_all_actions( 'astra_footer' );
+		add_action(
+			'astra_header',
+			function () {
+				get_template_part( 'template-parts/site-header' );
+			}
+		);
+		add_action(
+			'astra_footer',
+			function () {
+				get_template_part( 'template-parts/site-footer' );
+			}
+		);
 	},
-	20
+	99
 );
 
 /**

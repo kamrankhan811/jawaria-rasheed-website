@@ -33,6 +33,16 @@ function jr_default_options() {
 		'time_slots'       => "Any time\nMorning\nAfternoon\nEvening",
 		'wa_message'       => 'Assalam o Alaikum, I would like to book an appointment with Dr. Jawaria Rasheed.',
 		'wa_float'         => '1',
+		'call_float'       => '1',
+		'stats'            => "15+ | Years of experience\nIUI | Fertility treatment offered\nPCOS | Specialised care\n1:1 | Private consultations",
+		'google_rating'    => '',
+		'google_reviews'   => '',
+		'facebook'         => '',
+		'instagram'        => '',
+		'youtube'          => '',
+		'tiktok'           => '',
+		'videos'           => '',
+		'video_consult_url' => '',
 	);
 }
 
