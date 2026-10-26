@@ -1,0 +1,17 @@
+# OS / editor
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+
+# Python
+__pycache__/
+*.pyc
+
+# Never commit secrets or WordPress core/uploads
+wp-config.php
+.env
+wp-content/uploads/
+*.sql
+*.log

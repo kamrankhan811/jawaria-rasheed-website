@@ -1,0 +1,49 @@
+"""Starter health articles — created as DRAFTS for Dr. Jawaria to review."""
+
+POSTS = [
+    {
+        "slug": "what-is-iui-step-by-step-guide",
+        "title": "What is IUI? A step-by-step guide for couples",
+        "categories": ["Fertility"],
+        "excerpt": "How intrauterine insemination works, who it may help, and what to expect during a treatment cycle.",
+        "seo_description": "A simple guide to IUI (intrauterine insemination): who it may help, the steps of a cycle and what to expect.",
+        "content": """<!-- wp:paragraph --><p>Intrauterine insemination (IUI) is one of the simplest fertility treatments. Prepared sperm are placed directly inside the uterus around the time of ovulation, so that more healthy sperm reach the egg.</p><!-- /wp:paragraph -->
+<!-- wp:heading --><h2>Who may benefit from IUI?</h2><!-- /wp:heading -->
+<!-- wp:list --><ul><li>Couples with unexplained infertility</li><li>Mild male factor problems</li><li>Women with ovulation problems such as PCOS, together with ovulation medicines</li><li>Problems with cervical mucus or difficulties with intercourse</li></ul><!-- /wp:list -->
+<!-- wp:paragraph --><p>Before IUI, the doctor checks that at least one fallopian tube is open and that the semen sample is suitable.</p><!-- /wp:paragraph -->
+<!-- wp:heading --><h2>The steps of an IUI cycle</h2><!-- /wp:heading -->
+<!-- wp:list {"ordered":true} --><ol><li><strong>Monitoring:</strong> ultrasound scans follow the growth of the egg follicle. Medicines may be used to support it.</li><li><strong>Trigger:</strong> an injection may be given to time ovulation.</li><li><strong>Sperm preparation:</strong> the semen sample is washed in the lab to select the most active sperm.</li><li><strong>Insemination:</strong> the sperm are placed into the uterus through a thin, soft catheter. It takes a few minutes.</li><li><strong>Pregnancy test:</strong> about two weeks later.</li></ol><!-- /wp:list -->
+<!-- wp:heading --><h2>Is it painful?</h2><!-- /wp:heading -->
+<!-- wp:paragraph --><p>Most women feel little or no pain — similar to a Pap smear. You can usually return to normal activities the same day.</p><!-- /wp:paragraph -->
+<!-- wp:paragraph --><p><em>Every couple is different. Talk to your doctor about whether IUI is right for you and how many cycles may be advised.</em></p><!-- /wp:paragraph -->""",
+    },
+    {
+        "slug": "pcos-signs-and-management",
+        "title": "PCOS: common signs and how it is managed",
+        "categories": ["Women's Health"],
+        "excerpt": "Irregular periods, acne and weight changes can be signs of PCOS. Here is how it is diagnosed and managed.",
+        "seo_description": "Learn the common signs of PCOS (polycystic ovary syndrome), how it is diagnosed and the main ways it is managed.",
+        "content": """<!-- wp:paragraph --><p>Polycystic ovary syndrome (PCOS) is one of the most common hormonal conditions in women of reproductive age. It affects periods, skin, weight and fertility in different ways for different women.</p><!-- /wp:paragraph -->
+<!-- wp:heading --><h2>Common signs</h2><!-- /wp:heading -->
+<!-- wp:list --><ul><li>Irregular, infrequent or absent periods</li><li>Acne or oily skin</li><li>Extra hair on the face or body</li><li>Weight gain or difficulty losing weight</li><li>Difficulty getting pregnant</li></ul><!-- /wp:list -->
+<!-- wp:heading --><h2>How is it diagnosed?</h2><!-- /wp:heading -->
+<!-- wp:paragraph --><p>Diagnosis is based on your symptoms, blood tests and an ultrasound scan, after other causes have been ruled out.</p><!-- /wp:paragraph -->
+<!-- wp:heading --><h2>How is it managed?</h2><!-- /wp:heading -->
+<!-- wp:list --><ul><li>Healthy eating and regular activity — even modest weight loss, when appropriate, can help</li><li>Medicines to regulate periods or manage acne and hair growth</li><li>Ovulation support for women trying to conceive</li><li>Regular checks of blood sugar and cholesterol</li></ul><!-- /wp:list -->
+<!-- wp:paragraph --><p><em>If you think you may have PCOS, book a consultation for a proper assessment.</em></p><!-- /wp:paragraph -->""",
+    },
+    {
+        "slug": "first-gynecologist-visit-what-to-expect",
+        "title": "Your first visit to a gynecologist: what to expect",
+        "categories": ["Women's Health"],
+        "excerpt": "Feeling nervous about seeing a gynecologist? Here is what usually happens and how to prepare.",
+        "seo_description": "What happens at a first gynecology appointment, how to prepare, and questions you may want to ask.",
+        "content": """<!-- wp:paragraph --><p>Many women feel hesitant about their first gynecology appointment. Knowing what to expect can make it much easier.</p><!-- /wp:paragraph -->
+<!-- wp:heading --><h2>Before the visit</h2><!-- /wp:heading -->
+<!-- wp:list --><ul><li>Note the date of your last period and how regular your cycles are</li><li>Bring previous reports, scans and a list of medicines</li><li>Write down your questions so you don’t forget them</li></ul><!-- /wp:list -->
+<!-- wp:heading --><h2>During the visit</h2><!-- /wp:heading -->
+<!-- wp:paragraph --><p>The doctor will ask about your symptoms, periods and general health. An examination or ultrasound is done only if it is needed, and only with your consent. You can bring a family member with you.</p><!-- /wp:paragraph -->
+<!-- wp:heading --><h2>After the visit</h2><!-- /wp:heading -->
+<!-- wp:paragraph --><p>You should leave knowing what the doctor thinks is happening, which tests are needed and what the next step is. If anything is unclear, ask — that is what the consultation is for.</p><!-- /wp:paragraph -->""",
+    },
+]
