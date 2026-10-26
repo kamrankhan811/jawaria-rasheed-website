@@ -46,6 +46,8 @@ function jr_settings_fields() {
 			'stats'          => array( 'Highlight numbers (hero cards)', 'textarea', 'One per line: Number | Label. Use only real, verified numbers, e.g. 1500+ | IUI procedures.' ),
 			'google_rating'  => array( 'Google rating', 'text', 'e.g. 4.9 — only if it is her real Google rating. Leave empty to hide.' ),
 			'google_reviews' => array( 'Google reviews link', 'url', '' ),
+			'google_reviews_count' => array( 'Number of Google reviews', 'text', 'Only the real number from Google. Used with the rating for search results.' ),
+			'areas'          => array( 'Areas served (local SEO)', 'textarea', 'One city per line. Used in search-engine data and the "Patients from" list.' ),
 			'videos'         => array( 'YouTube videos', 'textarea', 'One per line: YouTube link | Title. Shown in the Videos section.' ),
 		),
 		'Social media'    => array(

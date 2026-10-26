@@ -172,7 +172,11 @@ def home():
                 shortcode("[jr_clinic_info]"),
                 shortcode("[jr_hours]"),
             ], 40),
-            column([shortcode("[jr_map]")], 60),
+            column([
+                shortcode("[jr_map]"),
+                heading("Patients visit us from across South Punjab", "h3"),
+                shortcode("[jr_areas]"),
+            ], 60),
         ], "jr-section"),
     ], None
 
@@ -264,30 +268,64 @@ def services_hub():
 
 
 def service_page(s):
-    right = [
-        heading("At a glance", "h3"),
-        checklist(s["expect"][:4] if len(s["expect"]) > 4 else s["expect"]),
-        button("Book an appointment", "/book-appointment/", "jr-btn-primary"),
-    ]
+    by_slug = {x["slug"]: x for x in SERVICES}
+    related = [by_slug[r] for r in s.get("related", []) if r in by_slug]
+
     left = [
-        heading("Who may need this?", "h2", "jr-h2"),
-        checklist(s["when"]),
-        heading("What to expect", "h2", "jr-h2"),
-        text("<ul>" + "".join(f"<li>{e}</li>" for e in s["expect"]) + "</ul>" + s["body"], "jr-prose"),
+        heading(f"About {s['title']}", "h2", "jr-h2"),
+        text(s["overview"], "jr-prose"),
+        heading(s["signs_title"], "h2", "jr-h2"),
+        checklist(s["signs"]),
     ]
-    if s.get("note"):
-        left.append(text(f"<p><strong>When to seek urgent care:</strong> {s['note']}</p>", "jr-note"))
+    if s.get("causes"):
+        left += [heading(s["causes_title"], "h2", "jr-h2"), text(s["causes"], "jr-prose")]
+    left += [
+        heading(s["diagnosis_title"], "h2", "jr-h2"),
+        text("<ul>" + "".join(f"<li>{d}</li>" for d in s["diagnosis"]) + "</ul>", "jr-prose"),
+        heading(s["treatment_title"], "h2", "jr-h2"),
+        text('<div class="jr-steps">' + "".join(
+            f'<div class="jr-step"><h3>{t}</h3><p>{d}</p></div>' for t, d in s["treatment"]) + "</div>"),
+        heading(s["aftercare_title"], "h2", "jr-h2"),
+        text(s["aftercare"], "jr-prose"),
+    ]
+    for mt, mh in s.get("more", []):
+        left += [heading(mt, "h2", "jr-h2"), text(mh, "jr-prose")]
+    if s.get("urgent"):
+        left.append(text(f"<p><strong>When to seek urgent care:</strong> {s['urgent']}</p>", "jr-note"))
+    left += [
+        heading("Why choose Dr. Jawaria Rasheed in Bahawalpur?", "h2", "jr-h2"),
+        text(f"<p>{s['why']}</p>", "jr-prose"),
+    ]
+
+    rel_links = "".join(f'<li><a href="/services/{r["slug"]}/">{r["title"]}</a></li>' for r in related)
+    right = [
+        heading("Book a consultation", "h3"),
+        text("<p>See <strong>Dr. Jawaria Rasheed</strong>, Consultant Gynecologist &amp; IUI Specialist, in Bahawalpur.</p>"),
+        button("Book an appointment", "/book-appointment/", "jr-btn-primary"),
+        shortcode('[jr_cta_buttons book="0"]'),
+        heading("Related services", "h3"),
+        text(f'<ul class="jr-related-links">{rel_links}</ul>'),
+    ]
+
     secs = [
-        page_hero("Services", s["title"], s["intro"]),
-        section([column(left, 62), column(right, 38, "jr-card jr-sticky")], "jr-section"),
-    ]
-    if s.get("faqs"):
-        secs.append(section([
-            heading("Common questions", "h2", "jr-h2"),
+        page_hero("Services · Bahawalpur", s["title"], s["intro"]),
+        section([column(left, 64), column(right, 36, "jr-card jr-sticky")], "jr-section"),
+        section([
+            heading("Frequently asked questions", "h2", "jr-h2"),
             toggle(s["faqs"]),
-        ], "jr-section jr-section--tint"))
+        ], "jr-section jr-section--tint"),
+    ]
+    if related:
+        cards = "".join(
+            f'<a class="jr-service-card" href="/services/{r["slug"]}/"><span class="jr-service-card__icon" aria-hidden="true">{r["icon"]}</span>'
+            f'<h3 class="jr-service-card__title">{r["title"]}</h3><p class="jr-service-card__text">{r["excerpt"]}</p>'
+            '<span class="jr-service-card__more">Learn more &rarr;</span></a>' for r in related)
+        secs.append(section([
+            heading("You may also want to read", "h2", "jr-h2"),
+            text(f'<div class="jr-services-grid">{cards}</div>'),
+        ], "jr-section"))
     secs.append(section([
-        text("<p><em>This page is general information and does not replace a consultation. Your treatment plan depends on your individual examination and test results.</em></p>", "jr-small"),
+        text("<p><em>This page is general information and does not replace a consultation. Your treatment plan depends on your individual examination and test results. Content reviewed by Dr. Jawaria Rasheed.</em></p>", "jr-small"),
     ], "jr-section jr-section--tight"))
     secs.append(cta_band())
     return secs
@@ -309,6 +347,11 @@ def contact():
             ], 50, "jr-card"),
         ], "jr-section"),
         section([shortcode("[jr_map]")], "jr-section jr-section--tight"),
+        section([
+            heading("Areas we serve", "h2", "jr-h2"),
+            text("<p>Dr. Jawaria Rasheed sees patients from Bahawalpur and across South Punjab.</p>"),
+            shortcode("[jr_areas]"),
+        ], "jr-section jr-section--tint"),
         section([
             text("<p><strong>Emergency?</strong> This clinic does not provide emergency care. If you have heavy bleeding, severe pain or another emergency, please go to the nearest hospital emergency department.</p>", "jr-note"),
         ], "jr-section jr-section--tight"),
@@ -417,7 +460,8 @@ def build_pages():
         seo_desc="Gynecology, pregnancy care, infertility evaluation, IUI, PCOS, menopause and more with Dr. Jawaria Rasheed.")
     for i, s in enumerate(SERVICES):
         add(s["slug"], s["title"], service_page(s), parent="services", order=i, excerpt=s["excerpt"], icon=s["icon"],
-            seo_desc=s["excerpt"] + " Dr. Jawaria Rasheed, consultant gynecologist.")
+            seo_title=s["seo_title"],
+            seo_desc=s["excerpt"] + " Consultant gynecologist Dr. Jawaria Rasheed in Bahawalpur.")
     add("faqs", "FAQs", faqs(), order=3, seo_desc="Answers to common questions about appointments, IUI and women’s health care with Dr. Jawaria Rasheed.")
     add("reviews", "Patient Reviews", reviews_page(), order=3, seo_desc="Patient reviews for Dr. Jawaria Rasheed, consultant gynecologist and IUI specialist.")
     add("videos", "Videos", videos_page(), order=3, seo_desc="Health videos by Dr. Jawaria Rasheed on women’s health, fertility, IUI and pregnancy.")
@@ -426,7 +470,7 @@ def build_pages():
     add("privacy-policy", "Privacy Policy", legal("Privacy policy", PRIVACY), order=8)
     add("medical-disclaimer", "Medical Disclaimer", legal("Medical disclaimer", DISCLAIMER), order=9)
     # Blog page: no Elementor layout — WordPress lists posts on it.
-    pages.append({"slug": "blog", "title": "Health Articles", "parent": "", "order": 6, "excerpt": "", "icon": "",
+    pages.append({"slug": "blog", "title": "Blog", "parent": "", "order": 6, "excerpt": "", "icon": "",
                   "seo_title": "", "seo_description": "Health articles by Dr. Jawaria Rasheed on women’s health, fertility, pregnancy and gynecology.",
                   "elementor": [], "fallback": ""})
     return pages
@@ -436,7 +480,7 @@ def build_pages():
 
 SAMPLE = {
     "doctor_name": "Dr. Jawaria Rasheed", "experience": "15", "qualifications": "MBBS, FCPS (Obstetrics &amp; Gynaecology) — sample, replace",
-    "phone": "0300 0000000", "address": "Clinic address, City (sample)", "hours": [("Monday – Saturday", "5:00 pm – 9:00 pm (sample)"), ("Sunday", "Closed")],
+    "phone": "0300 0000000", "address": "Clinic address, Bahawalpur (sample)", "hours": [("Monday – Saturday", "5:00 pm – 9:00 pm (sample)"), ("Sunday", "Closed")],
 }
 
 
@@ -478,6 +522,8 @@ def fake_shortcode(name, args, pages):
                 '<li><strong>Timings</strong>Mon – Sat, by appointment</li></ul>')
     if name == "jr_hours":
         return '<table class="jr-hours"><tbody>' + "".join(f"<tr><td>{a}</td><td>{b}</td></tr>" for a, b in s["hours"]) + "</tbody></table>"
+    if name == "jr_areas":
+        return '<ul class="jr-areas">' + "".join(f"<li>{c}</li>" for c in ["Bahawalpur", "Multan", "Rahim Yar Khan", "Bahawalnagar", "Lodhran", "Vehari", "Ahmedpur East", "Hasilpur", "Khanpur", "Liaquatpur"]) + "</ul>"
     if name == "jr_rating":
         return '<span class="jr-rating jr-pv-note">★★★★★ Google rating shows here once added in Clinic Info</span>'
     if name == "jr_reviews":
@@ -508,14 +554,14 @@ _T.update({"about": "About Dr. Jawaria", "reviews": "Patient Reviews", "blog": "
 
 
 def P(slug, title=None, cls="", children=None):
-    return (slug + ".html" if slug != "blog" else "#", title or _T.get(slug, slug), cls, children or [])
+    return (slug + ".html", title or _T.get(slug, slug), cls, children or [])
 
 
 def H(title, children):
     return ("#", title, "jr-col-head", children)
 
 
-MENU_TOP = [P("about"), ("#", "Patient Guide", "", [P("reviews"), P("blog"), P("videos"), P("faqs")]), P("contact")]
+MENU_TOP = [P("about"), ("#", "Patient Guide", "", [P("reviews"), P("videos"), P("faqs"), P("book-appointment")]), ("blog.html", "Blog", "", []), P("contact")]
 MENU_SERVICES = [
     P("services", "Gynecology", "", [P("gynecology-consultation"), P("menstrual-problems"), P("cervical-screening"), P("family-planning"), P("menopause")]),
     P("infertility-evaluation", "Fertility & IUI", "jr-mega", [
@@ -527,7 +573,7 @@ MENU_SERVICES = [
     P("fibroids", "Fibroids"), P("menopause", "Menopause"), P("about", "Dr. Jawaria Rasheed", "jr-menu-doctor"),
 ]
 MENU_FOOT_SERVICES = [P("iui-treatment", "IUI Treatment"), P("infertility-evaluation"), P("pcos"), P("pregnancy-care"), P("endometriosis"), P("fibroids"), P("menopause"), P("cervical-screening")]
-MENU_FOOT_LINKS = [P("about"), P("reviews"), P("blog"), P("videos"), P("faqs"), P("contact"), P("book-appointment")]
+MENU_FOOT_LINKS = [P("about"), ("blog.html", "Blog", "", []), P("reviews"), P("videos"), P("faqs"), P("contact"), P("book-appointment")]
 
 
 def menu_html(items, cls="jr-menu", sub=False):
@@ -544,21 +590,21 @@ def menu_html(items, cls="jr-menu", sub=False):
 PREVIEW_SHELL = """<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{title} — Preview</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap">
-<link rel="stylesheet" href="preview-base.css"><link rel="stylesheet" href="../wp-content/themes/jawaria-child/assets/css/site.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"><link rel="stylesheet" href="preview-base.css"><link rel="stylesheet" href="../wp-content/themes/jawaria-child/assets/css/site.css">
 </head><body>
 <div class="jr-pv-banner">Design preview — the real site is built in WordPress. Sample contact details shown.</div>
-<div class="jr-topbar"><div class="jr-topbar__inner"><span class="jr-topbar__item">City · Mon – Sat, by appointment</span><span class="jr-topbar__links"><a href="#">&#9742; Call 0300 0000000</a><a href="#">WhatsApp 0300 0000000</a></span></div></div>
+<div class="jr-topbar"><div class="jr-topbar__inner"><span class="jr-topbar__item">Bahawalpur · Mon – Sat, by appointment</span><span class="jr-topbar__links"><a href="#">&#9742; Call 0300 0000000</a><a href="#">WhatsApp 0300 0000000</a></span></div></div>
 <header class="jr-header" data-jr-header>
  <div class="jr-header__main">
   <div class="jr-header__brand"><a class="jr-logo" href="index.html"><span class="jr-logo__mark">JR</span><span class="jr-logo__text"><span class="jr-logo__name">Dr. Jawaria Rasheed</span><span class="jr-logo__tag">Consultant Gynecologist &amp; IUI Specialist</span></span></a></div>
   <nav class="jr-nav jr-nav--top">{menu_top}</nav>
-  <div class="jr-header__actions"><a class="jr-header__call" href="#"><span class="jr-header__call-label">Call us</span><span class="jr-header__call-num">0300 0000000</span></a><a class="jr-btn jr-btn--primary jr-btn--sm" href="book-appointment.html">Book<span class="jr-hide-sm">&nbsp;An Appointment</span></a><button class="jr-burger" type="button" aria-expanded="false" data-jr-burger><span></span><span></span><span></span></button></div>
+  <div class="jr-header__actions"><a class="jr-header__call" href="#"><span class="jr-header__call-label">Call us</span><span class="jr-header__call-num">0300 0000000</span></a><a class="jr-btn jr-btn--primary jr-btn--sm" href="book-appointment.html">Book<span class="jr-hide-sm">An Appointment</span></a><button class="jr-burger" type="button" aria-expanded="false" data-jr-burger><span></span><span></span><span></span></button></div>
  </div>
  <div class="jr-header__services"><nav class="jr-nav jr-nav--services">{menu_services}</nav></div>
 </header>
 <main>{body}</main>
 <footer class="jr-footer"><div class="jr-footer__grid">
- <div class="jr-footer__col jr-footer__brand"><p class="jr-footer__name">Dr. Jawaria Rasheed</p><p class="jr-footer__tag">Consultant Gynecologist &amp; IUI Specialist</p><p class="jr-footer__about">Compassionate, personalised care in gynecology, women’s health and fertility, including IUI — at every stage of life.</p><div class="jr-social"><a class="jr-social__link" href="#">f</a><a class="jr-social__link" href="#">ig</a><a class="jr-social__link" href="#">▶</a></div></div>
+ <div class="jr-footer__col jr-footer__brand"><p class="jr-footer__name">Dr. Jawaria Rasheed</p><p class="jr-footer__tag">Consultant Gynecologist &amp; IUI Specialist</p><p class="jr-footer__about">Compassionate, personalised care in gynecology, women’s health and fertility, including IUI — at every stage of life.</p><div class="jr-social"><a class="jr-social__link jr-social__link--facebook" href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a><a class="jr-social__link jr-social__link--instagram" href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a><a class="jr-social__link jr-social__link--youtube" href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a><a class="jr-social__link jr-social__link--tiktok" href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a></div></div>
  <div class="jr-footer__col"><p class="jr-footer__heading">Our Services</p>{foot_services}</div>
  <div class="jr-footer__col"><p class="jr-footer__heading">Quick Links</p>{foot_links}</div>
  <div class="jr-footer__col"><p class="jr-footer__heading">Get In Touch</p>{info}<p><a class="jr-btn jr-btn--light jr-btn--sm" href="book-appointment.html">Book Online</a></p></div>
@@ -587,6 +633,20 @@ def write_preview(pages):
             f.write(html_doc)
 
 
+def write_blog_preview():
+    cards = "".join(
+        f'<article class="jr-post-card"><div class="jr-post-card__body"><h3 class="jr-post-card__title"><a href="#">{p["title"]}</a></h3>'
+        f'<p class="jr-post-card__meta">{", ".join(p["categories"])} · Draft</p><p>{p["excerpt"]}</p></div></article>' for p in POSTS)
+    body = (f'<section class="elementor-section jr-page-hero"><div class="elementor-container"><div class="elementor-column" style="--pv-w:100%"><div class="elementor-widget-wrap">'
+            f'<div class="elementor-widget jr-eyebrow"><div class="elementor-widget-container"><p class="elementor-heading-title">Blog</p></div></div>'
+            f'<div class="elementor-widget"><div class="elementor-widget-container"><h1 class="elementor-heading-title">Health articles</h1></div></div></div></div></div></section>'
+            f'<section class="elementor-section jr-section"><div class="elementor-container"><div class="elementor-column" style="--pv-w:100%"><div class="elementor-widget-wrap"><div class="jr-posts-grid">{cards}</div></div></div></div></section>')
+    sc = lambda n, a: fake_shortcode(n, a, [])
+    html_doc = PREVIEW_SHELL.format(title="Blog", body=body, info=sc("jr_clinic_info", ""), menu_top=menu_html(MENU_TOP), menu_services=menu_html(MENU_SERVICES), foot_services=menu_html(MENU_FOOT_SERVICES, "jr-footer__links"), foot_links=menu_html(MENU_FOOT_LINKS, "jr-footer__links"))
+    with open(os.path.join(ROOT, "preview", "blog.html"), "w", encoding="utf-8") as f:
+        f.write(html_doc)
+
+
 def main():
     pages = build_pages()
     os.makedirs(os.path.join(PLUGIN, "content"), exist_ok=True)
@@ -595,6 +655,7 @@ def main():
     with open(os.path.join(PLUGIN, "content", "posts.json"), "w", encoding="utf-8") as f:
         json.dump(POSTS, f, ensure_ascii=False, indent=1)
     write_preview(pages)
+    write_blog_preview()
     print(f"{len(pages)} pages, {len(POSTS)} posts written.")
 
 

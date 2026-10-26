@@ -456,3 +456,46 @@ a:hover, a:focus { color: var(--jr-primary-dark); }
 .jr-float--wa { background: #1f8f4e; }
 .jr-float svg { width: 28px; height: 28px; fill: #fff; }
 .jr-float:hover { transform: scale(1.06); }
+
+/* ---------- Service page blocks (v1.2) ---------- */
+.jr-steps { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 14px; }
+.jr-step { background: var(--jr-surface); border: 1px solid var(--jr-border); border-left: 4px solid var(--jr-secondary); border-radius: var(--jr-radius-sm); padding: 16px 18px; }
+.jr-step h3 { font-size: 1.02rem; margin: 0 0 6px; color: var(--jr-primary-dark); }
+.jr-step p { margin: 0; font-size: 15.5px; color: var(--jr-muted); }
+.jr-related-links { list-style: none; margin: 0; padding: 0; }
+.jr-related-links li { border-bottom: 1px solid var(--jr-border); }
+.jr-related-links a { display: block; padding: 10px 0; font-weight: 600; text-decoration: none; }
+.jr-related-links a::after { content: " →"; }
+.jr-prose p, .jr-prose li { color: var(--jr-text); }
+
+/* ---------- Areas served & social brand colours (v1.2) ---------- */
+.jr-areas { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+.jr-areas li { padding: 6px 14px; border-radius: 999px; background: var(--jr-tint); color: var(--jr-primary-dark); font-weight: 600; font-size: 14.5px; }
+.jr-social__link { font-size: 17px; transition: background .15s ease; }
+.jr-social__link--facebook:hover { background: #1877f2; }
+.jr-social__link--instagram:hover { background: #c13584; }
+.jr-social__link--youtube:hover { background: #e62117; }
+.jr-social__link--tiktok:hover { background: #000; }
+
+/* ---------- Large screens (iMac / 2K+) ---------- */
+@media (min-width: 1800px) {
+	:root { --jr-max: 1320px; }
+	body { font-size: 18px; }
+	.jr-section .elementor-container, .jr-hero .elementor-container, .jr-page-hero .elementor-container, .jr-cta-band .elementor-container { max-width: var(--jr-max); }
+}
+/* Tablet tweaks */
+@media (min-width: 768px) and (max-width: 1024px) {
+	.jr-section { padding: 56px 24px; }
+	.jr-hero { padding: 64px 24px 72px; }
+}
+
+/* ---------- Header fit on laptops (v1.2) ---------- */
+.jr-btn, .jr-nav--top .jr-menu > li > a, .jr-header__call-num { white-space: nowrap; }
+.jr-btn .jr-hide-sm { margin-left: -4px; }
+@media (min-width: 1025px) and (max-width: 1400px) {
+	.jr-header__main { gap: 14px; }
+	.jr-header__call { display: none; }
+	.jr-nav--top { margin-left: 0; }
+	.jr-nav--top .jr-menu > li > a { padding: 10px 9px; font-size: 15px; }
+	.jr-nav--services .jr-menu > li > a { padding: 12px 6px; font-size: 14.5px; }
+}

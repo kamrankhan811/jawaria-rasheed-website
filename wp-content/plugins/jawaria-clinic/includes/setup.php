@@ -299,8 +299,9 @@ function jr_menu_specs() {
 					'url'      => '#',
 					'title'    => 'Patient Guide',
 					'class'    => '',
-					'children' => array( $p( 'reviews', 'Patient Reviews' ), $p( 'blog', 'Health Articles' ), $p( 'videos', 'Videos' ), $p( 'faqs', 'FAQs' ) ),
+					'children' => array( $p( 'reviews', 'Patient Reviews' ), $p( 'videos', 'Videos' ), $p( 'faqs', 'FAQs' ), $p( 'book-appointment', 'Book Appointment' ) ),
 				),
+				$p( 'blog', 'Blog' ),
 				$p( 'contact', 'Contact Us' ),
 			),
 		),
@@ -337,7 +338,7 @@ function jr_menu_specs() {
 		),
 		'jr_footer'          => array(
 			'Footer – Quick Links',
-			array( $p( 'about', 'About Dr. Jawaria' ), $p( 'reviews', 'Patient Reviews' ), $p( 'blog', 'Health Articles' ), $p( 'videos', 'Videos' ), $p( 'faqs', 'FAQs' ), $p( 'contact', 'Contact Us' ), $p( 'book-appointment', 'Book Appointment' ) ),
+			array( $p( 'about', 'About Dr. Jawaria' ), $p( 'blog', 'Blog' ), $p( 'reviews', 'Patient Reviews' ), $p( 'videos', 'Videos' ), $p( 'faqs', 'FAQs' ), $p( 'contact', 'Contact Us' ), $p( 'book-appointment', 'Book Appointment' ) ),
 		),
 	);
 }

@@ -48,10 +48,26 @@ It is built with WordPress, the free **Astra** theme and free **Elementor**. Pag
 - **Videos, highlight numbers, Google rating, social links:** **Settings → Clinic Info**.
 - **Appointment requests:** the **Appointments** menu. Phone and WhatsApp links are built in, so call the patient and then set the **Status** to *Confirmed* with the date and time.
 
+## Everything is managed in WordPress
+
+| What | Where in WordPress |
+|---|---|
+| Page text, images, sections | Pages → Edit with Elementor |
+| Add or remove a service page | Pages → Add New (Parent: Services) |
+| Blog articles | Posts → Add New |
+| Phone, WhatsApp, address, timings, areas served, social links, videos, highlight numbers | Settings → Clinic Info |
+| Header and footer menus | Appearance → Menus |
+| Logo and site icon | Appearance → Customize → Site Identity |
+| Appointment requests | Appointments |
+| Patient reviews | Patient Reviews |
+| SEO titles and descriptions | Rank Math box under each page |
+
+See also `docs/seo-guide.md` (ranking in Bahawalpur and South Punjab) and `docs/security.md`.
+
 ## Shortcodes (use in an Elementor "Shortcode" widget)
 
 `[jr_cta_buttons]` `[jr_appointment_form]` `[jr_services_grid limit="6"]` `[jr_latest_posts count="3"]`
-`[jr_clinic_info]` `[jr_hours]` `[jr_map]` `[jr_stats]` `[jr_experience]` `[jr_qualifications]` `[jr_phone]`
+`[jr_clinic_info]` `[jr_hours]` `[jr_map]` `[jr_stats]` `[jr_areas]` `[jr_reviews]` `[jr_videos]` `[jr_rating]` `[jr_social]` `[jr_experience]` `[jr_qualifications]` `[jr_phone]`
 
 ## Before going live (Phase 1 finish)
 

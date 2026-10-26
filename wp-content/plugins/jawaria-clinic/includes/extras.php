@@ -53,19 +53,35 @@ add_shortcode(
  */
 function jr_social_links_html() {
 	$nets = array(
-		'facebook'  => array( 'Facebook', 'f' ),
-		'instagram' => array( 'Instagram', 'ig' ),
-		'youtube'   => array( 'YouTube', '▶' ),
-		'tiktok'    => array( 'TikTok', '♪' ),
+		'facebook'  => array( 'Facebook', 'fab fa-facebook-f' ),
+		'instagram' => array( 'Instagram', 'fab fa-instagram' ),
+		'youtube'   => array( 'YouTube', 'fab fa-youtube' ),
+		'tiktok'    => array( 'TikTok', 'fab fa-tiktok' ),
 	);
 	$html = '';
 	foreach ( $nets as $key => $n ) {
 		if ( jr_opt( $key ) ) {
-			$html .= '<a class="jr-social__link" href="' . esc_url( jr_opt( $key ) ) . '" target="_blank" rel="noopener" aria-label="' . esc_attr( $n[0] ) . '"><span aria-hidden="true">' . esc_html( $n[1] ) . '</span></a>';
+			$html .= '<a class="jr-social__link jr-social__link--' . esc_attr( $key ) . '" href="' . esc_url( jr_opt( $key ) ) . '" target="_blank" rel="noopener me" aria-label="' . esc_attr( $n[0] ) . '"><i class="' . esc_attr( $n[1] ) . '" aria-hidden="true"></i></a>';
 		}
+	}
+	if ( ! $html && current_user_can( 'manage_options' ) ) {
+		return '<p class="jr-empty">' . esc_html__( 'Add Facebook, Instagram, YouTube and TikTok links in Settings → Clinic Info to show the icons here.', 'jawaria-clinic' ) . '</p>';
 	}
 	return $html ? '<div class="jr-social">' . $html . '</div>' : '';
 }
+
+/**
+ * Brand icons come from the Font Awesome library bundled with Elementor.
+ */
+add_action(
+	'wp_enqueue_scripts',
+	function () {
+		if ( wp_style_is( 'elementor-icons-fa-brands', 'registered' ) ) {
+			wp_enqueue_style( 'elementor-icons-fa-brands' );
+		}
+	},
+	30
+);
 add_shortcode( 'jr_social', 'jr_social_links_html' );
 
 /* ---------------------------------------------------------------- reviews */
