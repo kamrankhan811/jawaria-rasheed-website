@@ -106,3 +106,30 @@ add_action(
 		get_template_part( 'template-parts/top-bar' );
 	}
 );
+
+/**
+ * Logo used in the header: the Customizer logo if one is set, otherwise the bundled clinic logo.
+ *
+ * @return string
+ */
+function jr_child_logo_url() {
+	$id = get_theme_mod( 'custom_logo' );
+	$url = $id ? wp_get_attachment_image_url( $id, 'medium' ) : '';
+	return $url ? $url : get_stylesheet_directory_uri() . '/assets/images/logo-mark.png';
+}
+
+/**
+ * Favicon fallback until a Site Icon is set in Appearance → Customize → Site Identity.
+ */
+add_action(
+	'wp_head',
+	function () {
+		if ( has_site_icon() ) {
+			return;
+		}
+		$base = get_stylesheet_directory_uri() . '/assets/images/';
+		echo '<link rel="icon" type="image/png" sizes="32x32" href="' . esc_url( $base . 'favicon-32.png' ) . '">' . "\n";
+		echo '<link rel="apple-touch-icon" href="' . esc_url( $base . 'apple-touch-icon.png' ) . '">' . "\n";
+	},
+	2
+);

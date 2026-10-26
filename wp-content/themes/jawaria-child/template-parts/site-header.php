@@ -15,17 +15,13 @@ $jr_has = function_exists( 'jr_opt' );
 <header class="jr-header" id="masthead" data-jr-header>
 	<div class="jr-header__main">
 		<div class="jr-header__brand">
-			<?php if ( has_custom_logo() ) : ?>
-				<?php the_custom_logo(); ?>
-			<?php else : ?>
-				<a class="jr-logo" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-					<span class="jr-logo__mark" aria-hidden="true">JR</span>
-					<span class="jr-logo__text">
-						<span class="jr-logo__name"><?php echo esc_html( $jr_has ? jr_opt( 'doctor_name' ) : get_bloginfo( 'name' ) ); ?></span>
-						<span class="jr-logo__tag"><?php echo esc_html( get_bloginfo( 'description' ) ); ?></span>
-					</span>
-				</a>
-			<?php endif; ?>
+			<a class="jr-logo" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+				<img class="jr-logo__img" src="<?php echo esc_url( jr_child_logo_url() ); ?>" width="56" height="56" alt="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?> logo">
+				<span class="jr-logo__text">
+					<span class="jr-logo__name"><?php echo esc_html( $jr_has ? jr_opt( 'doctor_name' ) : get_bloginfo( 'name' ) ); ?></span>
+					<span class="jr-logo__tag"><?php echo esc_html( get_bloginfo( 'description' ) ); ?></span>
+				</span>
+			</a>
 		</div>
 
 		<nav class="jr-nav jr-nav--top" aria-label="<?php esc_attr_e( 'Main', 'jawaria-child' ); ?>">

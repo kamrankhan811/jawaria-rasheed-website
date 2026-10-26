@@ -16,6 +16,7 @@ $jr_has = function_exists( 'jr_opt' );
 <footer class="jr-footer" role="contentinfo">
 	<div class="jr-footer__grid">
 		<div class="jr-footer__col jr-footer__brand">
+			<img class="jr-footer__logo" src="<?php echo esc_url( get_stylesheet_directory_uri() . '/assets/images/logo-mark-white.png' ); ?>" width="64" height="64" alt="" loading="lazy">
 			<p class="jr-footer__name"><?php echo esc_html( $jr_has ? jr_opt( 'doctor_name' ) : get_bloginfo( 'name' ) ); ?></p>
 			<p class="jr-footer__tag"><?php echo esc_html( get_bloginfo( 'description' ) ); ?></p>
 			<p class="jr-footer__about"><?php esc_html_e( 'Compassionate, personalised care in gynecology, women’s health and fertility, including IUI — at every stage of life.', 'jawaria-child' ); ?></p>

@@ -589,6 +589,7 @@ def menu_html(items, cls="jr-menu", sub=False):
 
 PREVIEW_SHELL = """<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{title} — Preview</title>
+<link rel="icon" href="../wp-content/themes/jawaria-child/assets/images/favicon-32.png">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"><link rel="stylesheet" href="preview-base.css"><link rel="stylesheet" href="../wp-content/themes/jawaria-child/assets/css/site.css">
 </head><body>
@@ -596,7 +597,7 @@ PREVIEW_SHELL = """<!doctype html><html lang="en"><head><meta charset="utf-8"><m
 <div class="jr-topbar"><div class="jr-topbar__inner"><span class="jr-topbar__item">Bahawalpur · Mon – Sat, by appointment</span><span class="jr-topbar__links"><a href="#">&#9742; Call 0300 0000000</a><a href="#">WhatsApp 0300 0000000</a></span></div></div>
 <header class="jr-header" data-jr-header>
  <div class="jr-header__main">
-  <div class="jr-header__brand"><a class="jr-logo" href="index.html"><span class="jr-logo__mark">JR</span><span class="jr-logo__text"><span class="jr-logo__name">Dr. Jawaria Rasheed</span><span class="jr-logo__tag">Consultant Gynecologist &amp; IUI Specialist</span></span></a></div>
+  <div class="jr-header__brand"><a class="jr-logo" href="index.html"><img class="jr-logo__img" src="../wp-content/themes/jawaria-child/assets/images/logo-mark.png" alt="Dr. Jawaria Rasheed logo"><span class="jr-logo__text"><span class="jr-logo__name">Dr. Jawaria Rasheed</span><span class="jr-logo__tag">Consultant Gynecologist &amp; IUI Specialist</span></span></a></div>
   <nav class="jr-nav jr-nav--top">{menu_top}</nav>
   <div class="jr-header__actions"><a class="jr-header__call" href="#"><span class="jr-header__call-label">Call us</span><span class="jr-header__call-num">0300 0000000</span></a><a class="jr-btn jr-btn--primary jr-btn--sm" href="book-appointment.html">Book<span class="jr-hide-sm">An Appointment</span></a><button class="jr-burger" type="button" aria-expanded="false" data-jr-burger><span></span><span></span><span></span></button></div>
  </div>
@@ -604,7 +605,7 @@ PREVIEW_SHELL = """<!doctype html><html lang="en"><head><meta charset="utf-8"><m
 </header>
 <main>{body}</main>
 <footer class="jr-footer"><div class="jr-footer__grid">
- <div class="jr-footer__col jr-footer__brand"><p class="jr-footer__name">Dr. Jawaria Rasheed</p><p class="jr-footer__tag">Consultant Gynecologist &amp; IUI Specialist</p><p class="jr-footer__about">Compassionate, personalised care in gynecology, women’s health and fertility, including IUI — at every stage of life.</p><div class="jr-social"><a class="jr-social__link jr-social__link--facebook" href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a><a class="jr-social__link jr-social__link--instagram" href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a><a class="jr-social__link jr-social__link--youtube" href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a><a class="jr-social__link jr-social__link--tiktok" href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a></div></div>
+ <div class="jr-footer__col jr-footer__brand"><img class="jr-footer__logo" src="../wp-content/themes/jawaria-child/assets/images/logo-mark-white.png" alt=""><p class="jr-footer__name">Dr. Jawaria Rasheed</p><p class="jr-footer__tag">Consultant Gynecologist &amp; IUI Specialist</p><p class="jr-footer__about">Compassionate, personalised care in gynecology, women’s health and fertility, including IUI — at every stage of life.</p><div class="jr-social"><a class="jr-social__link jr-social__link--facebook" href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a><a class="jr-social__link jr-social__link--instagram" href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a><a class="jr-social__link jr-social__link--youtube" href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a><a class="jr-social__link jr-social__link--tiktok" href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a></div></div>
  <div class="jr-footer__col"><p class="jr-footer__heading">Our Services</p>{foot_services}</div>
  <div class="jr-footer__col"><p class="jr-footer__heading">Quick Links</p>{foot_links}</div>
  <div class="jr-footer__col"><p class="jr-footer__heading">Get In Touch</p>{info}<p><a class="jr-btn jr-btn--light jr-btn--sm" href="book-appointment.html">Book Online</a></p></div>

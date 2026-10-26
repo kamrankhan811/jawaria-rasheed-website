@@ -499,3 +499,9 @@ a:hover, a:focus { color: var(--jr-primary-dark); }
 	.jr-nav--top .jr-menu > li > a { padding: 10px 9px; font-size: 15px; }
 	.jr-nav--services .jr-menu > li > a { padding: 12px 6px; font-size: 14.5px; }
 }
+
+/* ---------- Logo (v1.3) ---------- */
+.jr-logo__img { width: 56px; height: 56px; object-fit: contain; flex: 0 0 auto; }
+.jr-footer__logo { width: 64px; height: 64px; object-fit: contain; margin-bottom: 10px; }
+@media (max-width: 480px) { .jr-logo__img { width: 46px; height: 46px; } }
+.jr-footer a.jr-btn--light { color: var(--jr-primary-dark); }

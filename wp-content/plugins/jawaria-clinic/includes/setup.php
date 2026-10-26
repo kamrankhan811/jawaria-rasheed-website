@@ -136,6 +136,8 @@ function jr_setup_media() {
 	$files  = array(
 		'doctor' => 'doctor-placeholder.jpg',
 		'clinic' => 'clinic-placeholder.jpg',
+		'logo'   => 'logo.png',
+		'icon'   => 'site-icon.png',
 	);
 	$out = array();
 	foreach ( $files as $key => $file ) {
@@ -153,14 +155,14 @@ function jr_setup_media() {
 		}
 		$id = wp_insert_attachment(
 			array(
-				'post_mime_type' => 'image/jpeg',
-				'post_title'     => ucfirst( $key ) . ' photo (placeholder — replace)',
+				'post_mime_type' => wp_check_filetype( $file )['type'],
+				'post_title'     => in_array( $key, array( 'logo', 'icon' ), true ) ? 'Dr. Jawaria Rasheed ' . $key : ucfirst( $key ) . ' photo (placeholder — replace)',
 				'post_status'    => 'inherit',
 			),
 			$upload['file']
 		);
 		wp_update_attachment_metadata( $id, wp_generate_attachment_metadata( $id, $upload['file'] ) );
-		update_post_meta( $id, '_wp_attachment_image_alt', 'clinic' === $key ? 'Clinic consultation room' : 'Dr. Jawaria Rasheed' );
+		update_post_meta( $id, '_wp_attachment_image_alt', 'clinic' === $key ? 'Clinic consultation room' : ( 'doctor' === $key ? 'Dr. Jawaria Rasheed' : 'Dr. Jawaria Rasheed logo' ) );
 		$stored[ $key ] = $id;
 		$out[ $key ]    = array( 'id' => $id, 'url' => $upload['url'] );
 	}
@@ -265,6 +267,13 @@ function jr_setup_site_options() {
 	}
 	if ( ! empty( $ids['privacy-policy'] ) ) {
 		update_option( 'wp_page_for_privacy_policy', (int) $ids['privacy-policy'] );
+	}
+	$media = (array) get_option( 'jr_media', array() );
+	if ( ! empty( $media['logo'] ) && ! get_theme_mod( 'custom_logo' ) ) {
+		set_theme_mod( 'custom_logo', (int) $media['logo'] );
+	}
+	if ( ! empty( $media['icon'] ) && ! get_option( 'site_icon' ) ) {
+		update_option( 'site_icon', (int) $media['icon'] );
 	}
 	update_option( 'blogname', 'Dr. Jawaria Rasheed' );
 	update_option( 'blogdescription', 'Consultant Gynecologist & IUI Specialist' );
