@@ -18,7 +18,7 @@ function jr_settings_fields() {
 		'Doctor'          => array(
 			'doctor_name'      => array( 'Doctor name', 'text', '' ),
 			'title'            => array( 'Title / specialty line', 'text', 'Shown under the name.' ),
-			'qualifications'   => array( 'Qualifications', 'text', 'e.g. MBBS, FCPS (Obstetrics & Gynaecology). Leave empty until confirmed.' ),
+			'qualifications'   => array( 'Qualifications', 'textarea', 'One line per row, e.g. MBBS, FCPS (Obstetrics & Gynaecology). Shown wherever Dr. Jawaria is introduced.' ),
 			'experience_years' => array( 'Years of experience', 'text', 'Number only, e.g. 15.' ),
 		),
 		'Clinic & contact' => array(

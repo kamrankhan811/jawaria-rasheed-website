@@ -19,7 +19,7 @@ add_shortcode(
 	'jr_qualifications',
 	function () {
 		$q = jr_opt( 'qualifications' );
-		return $q ? esc_html( $q ) : '';
+		return $q ? nl2br( esc_html( $q ), false ) : '';
 	}
 );
 add_shortcode(

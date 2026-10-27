@@ -99,6 +99,7 @@ function jr_schema_graph() {
 	}
 	$logo = has_custom_logo() ? wp_get_attachment_image_url( get_theme_mod( 'custom_logo' ), 'full' ) : '';
 
+	$clean_q = trim( preg_replace( '/\s*\n\s*/', '; ', jr_opt( 'qualifications' ) ) );
 	$doctor = array_filter(
 		array(
 			'@type'            => 'Physician',
@@ -113,7 +114,7 @@ function jr_schema_graph() {
 			'image'            => $logo,
 			'sameAs'           => $same,
 			'knowsAbout'       => array( 'Gynecology', 'Infertility', 'Intrauterine insemination (IUI)', 'PCOS', 'Pregnancy care', 'Menopause', 'Endometriosis', 'Uterine fibroids' ),
-			'hasCredential'    => jr_opt( 'qualifications' ) ? jr_opt( 'qualifications' ) : null,
+			'hasCredential'    => jr_opt( 'qualifications' ) ? $clean_q : null,
 			'worksFor'         => array( '@id' => $cl_id ),
 		)
 	);
@@ -312,7 +313,7 @@ function jr_llms_txt() {
 	$lines[] = '## Clinic';
 	foreach (
 		array(
-			'Qualifications' => jr_opt( 'qualifications' ),
+			'Qualifications' => $clean( str_replace( "\n", '; ', jr_opt( 'qualifications' ) ) ),
 			'Address'        => $clean( jr_opt( 'address' ) ),
 			'WhatsApp'       => jr_opt( 'whatsapp' ),
 			'Email'          => jr_opt( 'email' ),

@@ -18,7 +18,7 @@ function jr_default_options() {
 	return array(
 		'doctor_name'      => 'Dr. Jawaria Rasheed',
 		'title'            => 'Consultant Gynecologist & IUI Specialist',
-		'qualifications'   => '',
+		'qualifications'   => "MBBS, FCPS (Obstetrics & Gynaecology)\nICMT, PGD, DipLM, & PGDip Sexual and Reproductive Medicine",
 		'experience_years' => '15',
 		'city'             => 'Bahawalpur',
 		'address'          => 'House No. 1/1, Gulzar-e-Sadiq Road, Bahawalpur',

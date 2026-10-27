@@ -301,7 +301,7 @@ def service_page(s):
     rel_links = "".join(f'<li><a href="/services/{r["slug"]}/">{r["title"]}</a></li>' for r in related)
     right = [
         heading("Book a consultation", "h3"),
-        text("<p>See <strong>Dr. Jawaria Rasheed</strong>, Consultant Gynecologist &amp; IUI Specialist, in Bahawalpur.</p>"),
+        text("<p>See <strong>Dr. Jawaria Rasheed</strong>, Consultant Gynecologist &amp; IUI Specialist, in Bahawalpur.</p><p class=\"jr-small\">[jr_qualifications]</p>"),
         button("Book an Appointment", "/book-appointment/", "jr-btn-primary"),
         shortcode('[jr_cta_buttons book="0"]'),
         heading("Related services", "h3"),
@@ -549,7 +549,7 @@ from urllib.parse import quote as _q
 
 WA_ICON = '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3z"/></svg>'
 SAMPLE = {
-    "doctor_name": "Dr. Jawaria Rasheed", "experience": "15", "qualifications": "MBBS, FCPS (Obstetrics &amp; Gynaecology) — sample, replace",
+    "doctor_name": "Dr. Jawaria Rasheed", "experience": "15", "qualifications": "MBBS, FCPS (Obstetrics &amp; Gynaecology)<br>ICMT, PGD, DipLM, &amp; PGDip Sexual and Reproductive Medicine",
     "whatsapp": "0300 0610903", "email": "info@drjawariarasheed.com",
     "address": "House No. 1/1, Gulzar-e-Sadiq Road, Bahawalpur",
     "hours": [("Monday – Friday", "3:00 pm – 7:00 pm"), ("Saturday – Sunday", "Closed")], "hours_short": "Mon – Fri, 3:00 pm – 7:00 pm",
