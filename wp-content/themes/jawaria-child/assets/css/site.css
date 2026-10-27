@@ -338,7 +338,7 @@ a:hover, a:focus { color: var(--jr-primary-dark); }
 	.jr-nav--services .jr-menu > li > a:hover,
 	.jr-nav--services .jr-menu > li:focus-within > a { color: #f0d9b5; }
 }
-.jr-nav--services .jr-menu > li.jr-menu-doctor > a { background: var(--jr-accent); color: #fff; border-radius: 999px; padding: 6px 16px; margin: 6px 0; }
+.jr-nav--services .jr-menu > li.jr-menu-doctor > a { background: var(--jr-accent-text); color: #fff; border-radius: 999px; padding: 6px 16px; margin: 6px 0; }
 
 /* Dropdown arrows */
 .jr-menu > li.menu-item-has-children > a::after { content: ""; display: inline-block; width: 6px; height: 6px; margin-left: 8px; border-right: 2px solid currentColor; border-bottom: 2px solid currentColor; transform: translateY(-3px) rotate(45deg); }
@@ -577,3 +577,28 @@ a:hover, a:focus { color: var(--jr-primary-dark); }
 .jr-slider__pause:focus-visible, .jr-slider__dot:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
 .jr-header__actions .jr-btn--sm { min-height: 44px; min-width: 44px; justify-content: center; }
 .jr-slider__dot, .jr-slider__dot.is-active { background-clip: content-box; }
+
+/* ---------- Photo gallery + lightbox (v1.5) ---------- */
+.jr-gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 16px; }
+.jr-gallery__item { margin: 0; }
+.jr-gallery__item a { display: block; border-radius: var(--jr-radius); overflow: hidden; background: var(--jr-tint); }
+.jr-gallery__item img { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; object-position: center 25%; transition: transform .25s ease; }
+.jr-gallery__item a:hover img, .jr-gallery__item a:focus-visible img { transform: scale(1.04); }
+.jr-gallery__item a:focus-visible { outline: 3px solid var(--jr-primary); outline-offset: 2px; }
+.jr-gallery__item figcaption { margin-top: 8px; font-size: 15px; color: var(--jr-muted); }
+.jr-lightbox { border: 0; padding: 0; background: transparent; max-width: min(92vw, 1100px); max-height: 92vh; overflow: visible; }
+.jr-lightbox::backdrop { background: rgba(6, 30, 32, .88); }
+.jr-lightbox figure { margin: 0; text-align: center; }
+.jr-lightbox img { display: block; max-width: 100%; max-height: 82vh; margin: 0 auto; border-radius: 10px; }
+.jr-lightbox figcaption { color: #fff; margin-top: 10px; }
+.jr-lightbox__close, .jr-lightbox__nav { position: fixed; z-index: 2; width: 48px; height: 48px; border-radius: 50%; border: 1px solid rgba(255, 255, 255, .5); background: rgba(0, 0, 0, .35); color: #fff; font-size: 30px; line-height: 1; cursor: pointer; display: grid; place-items: center; }
+.jr-lightbox__close { top: 16px; right: 16px; }
+.jr-lightbox__nav--prev { left: 12px; top: 50%; transform: translateY(-50%); }
+.jr-lightbox__nav--next { right: 12px; top: 50%; transform: translateY(-50%); }
+.jr-lightbox__close:focus-visible, .jr-lightbox__nav:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+@media (prefers-reduced-motion: reduce) { .jr-gallery__item img { transition: none; } }
+@media (min-width: 1025px) and (max-width: 1180px) {
+	.jr-nav--services .jr-menu > li > a { padding: 12px 4px; font-size: 13.5px; }
+	.jr-nav--services .jr-menu > li.jr-menu-doctor > a { padding: 6px 10px; }
+	.jr-header__actions .jr-hide-sm { display: none; }
+}

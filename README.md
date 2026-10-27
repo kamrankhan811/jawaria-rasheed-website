@@ -32,7 +32,7 @@ It is built with WordPress, the free **Astra** theme and free **Elementor**. Pag
    **Plugins:** activate **Jawaria Clinic Toolkit**.
 5. **Settings → Clinic Info:** add the phone, WhatsApp, address, timings and qualifications. You can also do this later, and every page updates automatically.
 6. **Tools → Clinic Site Setup → "Create website pages & menus".** This creates:
-   - Home, About, Andrology & IUI Lab, Services plus 12 service pages, Patient Reviews, Videos, FAQs, Contact, Book an Appointment, Health Articles (blog), Privacy Policy and Medical Disclaimer
+   - Home, About, Andrology & IUI Lab, Services plus 12 service pages, Testimonials, Photo Gallery, Videos, FAQs, Contact, Book an Appointment, Health Articles (blog), Privacy Policy and Medical Disclaimer
    - the main menu and footer menu, the home page and blog settings, and clean URLs
    - 3 draft health articles (in **Posts → Drafts**, to review before publishing)
 7. Visit `http://jawaria.local`.
@@ -45,7 +45,8 @@ It is built with WordPress, the free **Astra** theme and free **Elementor**. Pag
 - **Add a new service:** **Pages → Add New**, set **Parent = Services**, write a short **Excerpt**, and publish. It appears automatically on the Services page and the booking form. The quickest way is to duplicate an existing service page in Elementor.
 - **Logo:** **Appearance → Customize → Site Identity → Logo** (replaces the "JR" badge in the header).
 - **Menus:** **Appearance → Menus** — "Header – top row", "Header – services row" (add the CSS class `jr-mega` to a top item to show its sub-items as a 3-column mega menu), "Footer – Our Services", "Footer – Quick Links".
-- **Patient reviews:** **Patient Reviews → Add New** — only shown when "patient gave permission" is ticked.
+- **Testimonials:** **Testimonials → Add New** — only shown when "patient gave permission" is ticked. The newest three show on the home page; all show on the Testimonials page.
+- **Photo gallery:** **Photo Gallery → Add photo**: type a caption, click **Choose photo**, publish. Delete a photo by moving it to Trash. Use **Order** to change the sequence.
 - **Videos, highlight numbers, Google rating, social links:** **Settings → Clinic Info**.
 - **Appointment requests:** the **Appointments** menu. Phone and WhatsApp links are built in, so contact the patient and then set the **Status** to *Confirmed* with the date and time.
 
@@ -60,7 +61,8 @@ It is built with WordPress, the free **Astra** theme and free **Elementor**. Pag
 | Header and footer menus | Appearance → Menus |
 | Logo and site icon | Appearance → Customize → Site Identity |
 | Appointment requests | Appointments |
-| Patient reviews | Patient Reviews |
+| Testimonials | Testimonials |
+| Gallery photos (add / delete) | Photo Gallery |
 | Home page banner slider (images, headings, buttons, order) | **Home Slides** (speed: Settings → Clinic Info) |
 | SEO titles and descriptions | Rank Math box under each page |
 
@@ -69,7 +71,7 @@ See also `docs/seo-guide.md` (ranking in Bahawalpur and South Punjab) and `docs/
 ## Shortcodes (use in an Elementor "Shortcode" widget)
 
 `[jr_cta_buttons]` `[jr_appointment_form]` `[jr_services_grid limit="6"]` `[jr_latest_posts count="3"]`
-`[jr_clinic_info]` `[jr_hours]` `[jr_map]` `[jr_stats]` `[jr_areas]` `[jr_reviews]` `[jr_videos]` `[jr_rating]` `[jr_social]` `[jr_experience]` `[jr_qualifications]` `[jr_phone]`
+`[jr_clinic_info]` `[jr_hours]` `[jr_map]` `[jr_stats]` `[jr_areas]` `[jr_reviews]` `[jr_gallery]` `[jr_videos]` `[jr_rating]` `[jr_social]` `[jr_experience]` `[jr_qualifications]` `[jr_phone]`
 
 ## Before going live (Phase 1 finish)
 

@@ -135,7 +135,7 @@ function jr_setup_media() {
 	require_once ABSPATH . 'wp-admin/includes/image.php';
 	$stored = (array) get_option( 'jr_media', array() );
 	$files  = array(
-		'doctor' => 'doctor-placeholder.jpg',
+		'doctor' => 'dr-jawaria-rasheed.jpg',
 		'clinic' => 'clinic-placeholder.jpg',
 		'logo'   => 'logo.png',
 		'icon'   => 'site-icon.png',
@@ -313,7 +313,7 @@ function jr_menu_specs() {
 					'url'      => '#',
 					'title'    => 'Patient Guide',
 					'class'    => '',
-					'children' => array( $p( 'reviews', 'Patient Reviews' ), $p( 'videos', 'Videos' ), $p( 'faqs', 'FAQs' ), $p( 'book-appointment', 'Book Appointment' ) ),
+					'children' => array( $p( 'testimonials', 'Testimonials' ), $p( 'gallery', 'Photo Gallery' ), $p( 'videos', 'Videos' ), $p( 'faqs', 'FAQs' ), $p( 'book-appointment', 'Book Appointment' ) ),
 				),
 				$p( 'blog', 'Blog' ),
 				$p( 'contact', 'Contact Us' ),
@@ -343,6 +343,7 @@ function jr_menu_specs() {
 				$p( 'endometriosis', 'Endometriosis' ),
 				$p( 'fibroids', 'Fibroids' ),
 				$p( 'menopause', 'Menopause' ),
+				$p( 'about', 'Dr. Jawaria Rasheed', 'jr-menu-doctor' ),
 			),
 		),
 		'jr_footer_services' => array(
@@ -351,7 +352,7 @@ function jr_menu_specs() {
 		),
 		'jr_footer'          => array(
 			'Footer – Quick Links',
-			array( $p( 'about', 'About Dr. Jawaria' ), $p( 'andrology-iui-lab', 'Andrology & IUI Lab' ), $p( 'blog', 'Blog' ), $p( 'reviews', 'Patient Reviews' ), $p( 'videos', 'Videos' ), $p( 'faqs', 'FAQs' ), $p( 'contact', 'Contact Us' ), $p( 'book-appointment', 'Book Appointment' ) ),
+			array( $p( 'about', 'About Dr. Jawaria' ), $p( 'andrology-iui-lab', 'Andrology & IUI Lab' ), $p( 'blog', 'Blog' ), $p( 'testimonials', 'Testimonials' ), $p( 'gallery', 'Photo Gallery' ), $p( 'videos', 'Videos' ), $p( 'faqs', 'FAQs' ), $p( 'contact', 'Contact Us' ), $p( 'book-appointment', 'Book Appointment' ) ),
 		),
 	);
 }

@@ -630,11 +630,11 @@
       },
       "elements": [
        {
-        "id": "284af40",
+        "id": "c208f09",
         "elType": "widget",
         "widgetType": "heading",
         "settings": {
-         "title": "Patient reviews",
+         "title": "Testimonials",
          "header_size": "p",
          "_css_classes": "jr-eyebrow jr-center"
         },
@@ -661,13 +661,13 @@
         "elements": []
        },
        {
-        "id": "ddffc18",
+        "id": "154e9d0",
         "elType": "widget",
         "widgetType": "button",
         "settings": {
-         "text": "See all reviews",
+         "text": "See all testimonials",
          "link": {
-          "url": "/reviews/",
+          "url": "/testimonials/",
           "is_external": "",
           "nofollow": "",
           "custom_attributes": ""
@@ -981,7 +981,7 @@
     "isInner": false
    }
   ],
-  "fallback": "<p>Welcome</p>\n<h2>Helping women understand their health and make informed decisions</h2>\n<blockquote class=\"jr-quote\">“Every woman deserves to be listened to, to understand her options and to receive care that fits her life.”</blockquote>\n<p>Dr. Jawaria Rasheed is an experienced gynecologist dedicated to compassionate, personalised and professional care for women at every stage of life — from first periods to pregnancy, fertility and menopause.</p><p>She believes in building trust through clear communication, respectful care and a patient-centred approach.</p>\n<p>Areas of focus</p>\n<h2>Complete care in gynecology and fertility</h2>\n<ul><li>Gynecological consultations</li><li>Reproductive health</li><li>Fertility evaluation for couples</li><li>IUI (Intrauterine Insemination)</li><li>Women’s wellness, from adolescence to menopause</li></ul>\n<p>Each plan starts with careful listening and the right tests, so treatment is tailored to your needs — never one-size-fits-all.</p>\n<p>Fertility &amp; IUI</p>\n<h2>Trying to conceive? Start with clear answers.</h2>\n<p>Fertility concerns can feel overwhelming. Dr. Jawaria evaluates both partners, then recommends the simplest effective step — from ovulation support and follicle monitoring to IUI. When another option such as IVF is more suitable, she will explain why and guide you.</p>\n<h3>Your fertility journey</h3>\n<ul><li>1. Consultation for both partners</li><li>2. Tests: hormones, ultrasound, semen analysis</li><li>3. A personalised plan, explained clearly</li><li>4. Treatment such as ovulation induction or IUI</li><li>5. Follow-up and support at every step</li></ul>\n<p>Our services</p>\n<h2>How Dr. Jawaria can help</h2>\n<div class=\"jr-pills jr-center\"><a class=\"jr-pill\" href=\"/services/gynecology-consultation/\">Gynecology</a><a class=\"jr-pill\" href=\"/services/infertility-evaluation/\">Fertility &amp; IUI</a><a class=\"jr-pill\" href=\"/services/pregnancy-care/\">Pregnancy Care</a><a class=\"jr-pill\" href=\"/services/pcos/\">PCOS</a><a class=\"jr-pill\" href=\"/services/endometriosis/\">Endometriosis</a><a class=\"jr-pill\" href=\"/services/fibroids/\">Fibroids</a><a class=\"jr-pill\" href=\"/services/menopause/\">Menopause</a></div>\n<p>Meet your doctor</p>\n<h2>Dr. Jawaria Rasheed</h2>\n<p class=\"jr-credentials\">Consultant Gynecologist | Women’s Health &amp; IUI Specialist<br></p>\n<p>With over  years of experience in gynecology, women’s healthcare and IUI, Dr. Jawaria’s mission is to support women’s health, improve reproductive well-being and help couples navigate their fertility journey with confidence and care.</p>\n<p>Patient reviews</p>\n<h2>What our patients say</h2>\n<p>Videos</p>\n<h2>Learn from Dr. Jawaria on YouTube</h2>\n<p>Short, simple videos on women’s health, fertility and pregnancy.</p>\n<p>Health articles</p>\n<h2>Featured articles</h2>\n<p>Appointments</p>\n<h2>Ready to talk to Dr. Jawaria?</h2>\n<p>Send an appointment request online or message the clinic on WhatsApp. Our team will confirm a time with you.</p>\n<p>Location</p>\n<h2>Visit the clinic</h2>\n<h3>Patients visit us from across South Punjab</h3>"
+  "fallback": "<p>Welcome</p>\n<h2>Helping women understand their health and make informed decisions</h2>\n<blockquote class=\"jr-quote\">“Every woman deserves to be listened to, to understand her options and to receive care that fits her life.”</blockquote>\n<p>Dr. Jawaria Rasheed is an experienced gynecologist dedicated to compassionate, personalised and professional care for women at every stage of life — from first periods to pregnancy, fertility and menopause.</p><p>She believes in building trust through clear communication, respectful care and a patient-centred approach.</p>\n<p>Areas of focus</p>\n<h2>Complete care in gynecology and fertility</h2>\n<ul><li>Gynecological consultations</li><li>Reproductive health</li><li>Fertility evaluation for couples</li><li>IUI (Intrauterine Insemination)</li><li>Women’s wellness, from adolescence to menopause</li></ul>\n<p>Each plan starts with careful listening and the right tests, so treatment is tailored to your needs — never one-size-fits-all.</p>\n<p>Fertility &amp; IUI</p>\n<h2>Trying to conceive? Start with clear answers.</h2>\n<p>Fertility concerns can feel overwhelming. Dr. Jawaria evaluates both partners, then recommends the simplest effective step — from ovulation support and follicle monitoring to IUI. When another option such as IVF is more suitable, she will explain why and guide you.</p>\n<h3>Your fertility journey</h3>\n<ul><li>1. Consultation for both partners</li><li>2. Tests: hormones, ultrasound, semen analysis</li><li>3. A personalised plan, explained clearly</li><li>4. Treatment such as ovulation induction or IUI</li><li>5. Follow-up and support at every step</li></ul>\n<p>Our services</p>\n<h2>How Dr. Jawaria can help</h2>\n<div class=\"jr-pills jr-center\"><a class=\"jr-pill\" href=\"/services/gynecology-consultation/\">Gynecology</a><a class=\"jr-pill\" href=\"/services/infertility-evaluation/\">Fertility &amp; IUI</a><a class=\"jr-pill\" href=\"/services/pregnancy-care/\">Pregnancy Care</a><a class=\"jr-pill\" href=\"/services/pcos/\">PCOS</a><a class=\"jr-pill\" href=\"/services/endometriosis/\">Endometriosis</a><a class=\"jr-pill\" href=\"/services/fibroids/\">Fibroids</a><a class=\"jr-pill\" href=\"/services/menopause/\">Menopause</a></div>\n<p>Meet your doctor</p>\n<h2>Dr. Jawaria Rasheed</h2>\n<p class=\"jr-credentials\">Consultant Gynecologist | Women’s Health &amp; IUI Specialist<br></p>\n<p>With over  years of experience in gynecology, women’s healthcare and IUI, Dr. Jawaria’s mission is to support women’s health, improve reproductive well-being and help couples navigate their fertility journey with confidence and care.</p>\n<p>Testimonials</p>\n<h2>What our patients say</h2>\n<p>Videos</p>\n<h2>Learn from Dr. Jawaria on YouTube</h2>\n<p>Short, simple videos on women’s health, fertility and pregnancy.</p>\n<p>Health articles</p>\n<h2>Featured articles</h2>\n<p>Appointments</p>\n<h2>Ready to talk to Dr. Jawaria?</h2>\n<p>Send an appointment request online or message the clinic on WhatsApp. Our team will confirm a time with you.</p>\n<p>Location</p>\n<h2>Visit the clinic</h2>\n<h3>Patients visit us from across South Punjab</h3>"
  },
  {
   "slug": "about",
@@ -9663,14 +9663,14 @@
   "fallback": "<p>Patient guide</p>\n<h1>Frequently asked questions</h1>\n<p>Answers to common questions about appointments and care.</p>\n<h3>How do I book an appointment?</h3><p>Use the <a href=\"/book-appointment/\">online request form</a> or send a WhatsApp message. The clinic will confirm your date and time.</p>\n<h3>Is my appointment confirmed when I submit the form?</h3><p>Not yet. The form sends a request. Your appointment is confirmed when the clinic contacts you.</p>\n<h3>Can my husband or a family member come with me?</h3><p>Yes. For fertility consultations it is especially helpful if both partners attend.</p>\n<h3>What should I bring to my first visit?</h3><p>Previous reports and scans, a list of your medicines and the date of your last period.</p>\n<h3>Is IUI the same as IVF?</h3><p>No. In IUI, prepared sperm are placed in the uterus and fertilisation happens naturally inside the body. In IVF, eggs are collected and fertilised in a laboratory. IUI is simpler and less invasive. IVF may be advised in other situations.</p>\n<h3>Are consultations private?</h3><p>Yes. Your concerns are discussed confidentially, and examinations are done only with your consent.</p>\n<h3>Do you provide emergency care?</h3><p>No. For heavy bleeding, severe pain or other emergencies, please go to the nearest hospital emergency department.</p>\n<p>Appointments</p>\n<h2>Ready to talk to Dr. Jawaria?</h2>\n<p>Send an appointment request online or message the clinic on WhatsApp. Our team will confirm a time with you.</p>"
  },
  {
-  "slug": "reviews",
-  "title": "Patient Reviews",
+  "slug": "testimonials",
+  "title": "Testimonials",
   "parent": "",
   "order": 3,
   "excerpt": "",
   "icon": "",
   "seo_title": "",
-  "seo_description": "Patient reviews for Dr. Jawaria Rasheed, consultant gynecologist and IUI specialist.",
+  "seo_description": "Patient testimonials for Dr. Jawaria Rasheed, consultant gynecologist and IUI specialist in Bahawalpur.",
   "elementor": [
    {
     "id": "ff78fe8",
@@ -9700,21 +9700,21 @@
         "elements": []
        },
        {
-        "id": "d9caa19",
+        "id": "0561c76",
         "elType": "widget",
         "widgetType": "heading",
         "settings": {
-         "title": "Patient reviews",
+         "title": "Testimonials",
          "header_size": "h1"
         },
         "elements": []
        },
        {
-        "id": "82b0b78",
+        "id": "1016274",
         "elType": "widget",
         "widgetType": "text-editor",
         "settings": {
-         "editor": "<p>Feedback shared by patients, published with their permission.</p>",
+         "editor": "<p>What patients say about their care with Dr. Jawaria Rasheed, shared with their permission.</p>",
          "_css_classes": "jr-lead jr-narrow-left"
         },
         "elements": []
@@ -9820,17 +9820,17 @@
     "isInner": false
    }
   ],
-  "fallback": "<p>Patient Guide</p>\n<h1>Patient reviews</h1>\n<p>Feedback shared by patients, published with their permission.</p>\n<p>Appointments</p>\n<h2>Ready to talk to Dr. Jawaria?</h2>\n<p>Send an appointment request online or message the clinic on WhatsApp. Our team will confirm a time with you.</p>"
+  "fallback": "<p>Patient Guide</p>\n<h1>Testimonials</h1>\n<p>What patients say about their care with Dr. Jawaria Rasheed, shared with their permission.</p>\n<p>Appointments</p>\n<h2>Ready to talk to Dr. Jawaria?</h2>\n<p>Send an appointment request online or message the clinic on WhatsApp. Our team will confirm a time with you.</p>"
  },
  {
-  "slug": "videos",
-  "title": "Videos",
+  "slug": "gallery",
+  "title": "Photo Gallery",
   "parent": "",
   "order": 3,
   "excerpt": "",
   "icon": "",
   "seo_title": "",
-  "seo_description": "Health videos by Dr. Jawaria Rasheed on women’s health, fertility, IUI and pregnancy.",
+  "seo_description": "Photos of Dr. Jawaria Rasheed’s gynecology and IUI clinic in Bahawalpur.",
   "elementor": [
    {
     "id": "1797328",
@@ -9860,21 +9860,21 @@
         "elements": []
        },
        {
-        "id": "15e3a69",
+        "id": "0f7a6ce",
         "elType": "widget",
         "widgetType": "heading",
         "settings": {
-         "title": "Videos",
+         "title": "Photo gallery",
          "header_size": "h1"
         },
         "elements": []
        },
        {
-        "id": "3927bcb",
+        "id": "2fb20f8",
         "elType": "widget",
         "widgetType": "text-editor",
         "settings": {
-         "editor": "<p>Short, simple videos from Dr. Jawaria on women’s health, fertility and pregnancy.</p>",
+         "editor": "<p>A look inside Dr. Jawaria Rasheed’s clinic in Bahawalpur.</p>",
          "_css_classes": "jr-lead jr-narrow-left"
         },
         "elements": []
@@ -9902,11 +9902,11 @@
       },
       "elements": [
        {
-        "id": "7b22ac0",
+        "id": "f4d8dc9",
         "elType": "widget",
         "widgetType": "shortcode",
         "settings": {
-         "shortcode": "[jr_videos count=\"0\"]"
+         "shortcode": "[jr_gallery count=\"0\"]"
         },
         "elements": []
        }
@@ -9980,17 +9980,17 @@
     "isInner": false
    }
   ],
-  "fallback": "<p>Patient Guide</p>\n<h1>Videos</h1>\n<p>Short, simple videos from Dr. Jawaria on women’s health, fertility and pregnancy.</p>\n<p>Appointments</p>\n<h2>Ready to talk to Dr. Jawaria?</h2>\n<p>Send an appointment request online or message the clinic on WhatsApp. Our team will confirm a time with you.</p>"
+  "fallback": "<p>Patient Guide</p>\n<h1>Photo gallery</h1>\n<p>A look inside Dr. Jawaria Rasheed’s clinic in Bahawalpur.</p>\n<p>Appointments</p>\n<h2>Ready to talk to Dr. Jawaria?</h2>\n<p>Send an appointment request online or message the clinic on WhatsApp. Our team will confirm a time with you.</p>"
  },
  {
-  "slug": "contact",
-  "title": "Contact",
+  "slug": "videos",
+  "title": "Videos",
   "parent": "",
-  "order": 4,
+  "order": 3,
   "excerpt": "",
   "icon": "",
   "seo_title": "",
-  "seo_description": "Clinic address, WhatsApp, email and timings for Dr. Jawaria Rasheed in Bahawalpur.",
+  "seo_description": "Health videos by Dr. Jawaria Rasheed on women’s health, fertility, IUI and pregnancy.",
   "elementor": [
    {
     "id": "c8bc32e",
@@ -10009,7 +10009,167 @@
       },
       "elements": [
        {
-        "id": "359257e",
+        "id": "f86f708",
+        "elType": "widget",
+        "widgetType": "heading",
+        "settings": {
+         "title": "Patient Guide",
+         "header_size": "p",
+         "_css_classes": "jr-eyebrow"
+        },
+        "elements": []
+       },
+       {
+        "id": "d81330f",
+        "elType": "widget",
+        "widgetType": "heading",
+        "settings": {
+         "title": "Videos",
+         "header_size": "h1"
+        },
+        "elements": []
+       },
+       {
+        "id": "106e132",
+        "elType": "widget",
+        "widgetType": "text-editor",
+        "settings": {
+         "editor": "<p>Short, simple videos from Dr. Jawaria on women’s health, fertility and pregnancy.</p>",
+         "_css_classes": "jr-lead jr-narrow-left"
+        },
+        "elements": []
+       }
+      ],
+      "isInner": false
+     }
+    ],
+    "isInner": false
+   },
+   {
+    "id": "56c97fc",
+    "elType": "section",
+    "settings": {
+     "css_classes": "jr-section",
+     "gap": "extended"
+    },
+    "elements": [
+     {
+      "id": "f6eee04",
+      "elType": "column",
+      "settings": {
+       "_column_size": 100,
+       "_inline_size": null
+      },
+      "elements": [
+       {
+        "id": "293c77f",
+        "elType": "widget",
+        "widgetType": "shortcode",
+        "settings": {
+         "shortcode": "[jr_videos count=\"0\"]"
+        },
+        "elements": []
+       }
+      ],
+      "isInner": false
+     }
+    ],
+    "isInner": false
+   },
+   {
+    "id": "0570596",
+    "elType": "section",
+    "settings": {
+     "css_classes": "jr-cta-band",
+     "gap": "extended"
+    },
+    "elements": [
+     {
+      "id": "f4176a9",
+      "elType": "column",
+      "settings": {
+       "_column_size": 100,
+       "_inline_size": null
+      },
+      "elements": [
+       {
+        "id": "a4de2dd",
+        "elType": "widget",
+        "widgetType": "heading",
+        "settings": {
+         "title": "Appointments",
+         "header_size": "p",
+         "_css_classes": "jr-eyebrow jr-center"
+        },
+        "elements": []
+       },
+       {
+        "id": "8a975b1",
+        "elType": "widget",
+        "widgetType": "heading",
+        "settings": {
+         "title": "Ready to talk to Dr. Jawaria?",
+         "header_size": "h2",
+         "_css_classes": "jr-h2 jr-center"
+        },
+        "elements": []
+       },
+       {
+        "id": "5712f23",
+        "elType": "widget",
+        "widgetType": "text-editor",
+        "settings": {
+         "editor": "<p>Send an appointment request online or message the clinic on WhatsApp. Our team will confirm a time with you.</p>",
+         "_css_classes": "jr-center jr-narrow"
+        },
+        "elements": []
+       },
+       {
+        "id": "da9b917",
+        "elType": "widget",
+        "widgetType": "shortcode",
+        "settings": {
+         "shortcode": "[jr_cta_buttons style=\"light\" align=\"center\"]"
+        },
+        "elements": []
+       }
+      ],
+      "isInner": false
+     }
+    ],
+    "isInner": false
+   }
+  ],
+  "fallback": "<p>Patient Guide</p>\n<h1>Videos</h1>\n<p>Short, simple videos from Dr. Jawaria on women’s health, fertility and pregnancy.</p>\n<p>Appointments</p>\n<h2>Ready to talk to Dr. Jawaria?</h2>\n<p>Send an appointment request online or message the clinic on WhatsApp. Our team will confirm a time with you.</p>"
+ },
+ {
+  "slug": "contact",
+  "title": "Contact",
+  "parent": "",
+  "order": 4,
+  "excerpt": "",
+  "icon": "",
+  "seo_title": "",
+  "seo_description": "Clinic address, WhatsApp, email and timings for Dr. Jawaria Rasheed in Bahawalpur.",
+  "elementor": [
+   {
+    "id": "d22dc82",
+    "elType": "section",
+    "settings": {
+     "css_classes": "jr-page-hero",
+     "gap": "extended"
+    },
+    "elements": [
+     {
+      "id": "5a5966f",
+      "elType": "column",
+      "settings": {
+       "_column_size": 100,
+       "_inline_size": null
+      },
+      "elements": [
+       {
+        "id": "585cb3e",
         "elType": "widget",
         "widgetType": "heading",
         "settings": {
@@ -10020,7 +10180,7 @@
         "elements": []
        },
        {
-        "id": "4e18c95",
+        "id": "e3e695a",
         "elType": "widget",
         "widgetType": "heading",
         "settings": {
@@ -10030,7 +10190,7 @@
         "elements": []
        },
        {
-        "id": "458769b",
+        "id": "4d47b85",
         "elType": "widget",
         "widgetType": "text-editor",
         "settings": {
@@ -10046,7 +10206,7 @@
     "isInner": false
    },
    {
-    "id": "0570596",
+    "id": "83e1e69",
     "elType": "section",
     "settings": {
      "css_classes": "jr-section",
@@ -10054,7 +10214,7 @@
     },
     "elements": [
      {
-      "id": "109fa95",
+      "id": "5553939",
       "elType": "column",
       "settings": {
        "_column_size": 50,
@@ -10063,7 +10223,7 @@
       },
       "elements": [
        {
-        "id": "161e805",
+        "id": "0e037e6",
         "elType": "widget",
         "widgetType": "heading",
         "settings": {
@@ -10074,7 +10234,7 @@
         "elements": []
        },
        {
-        "id": "842146c",
+        "id": "accb015",
         "elType": "widget",
         "widgetType": "shortcode",
         "settings": {
@@ -10083,7 +10243,7 @@
         "elements": []
        },
        {
-        "id": "4a90975",
+        "id": "fa585a7",
         "elType": "widget",
         "widgetType": "shortcode",
         "settings": {
@@ -10095,7 +10255,7 @@
       "isInner": false
      },
      {
-      "id": "f4176a9",
+      "id": "8cef1bb",
       "elType": "column",
       "settings": {
        "_column_size": 50,
@@ -10104,7 +10264,7 @@
       },
       "elements": [
        {
-        "id": "29216c7",
+        "id": "41e5def",
         "elType": "widget",
         "widgetType": "heading",
         "settings": {
@@ -10115,7 +10275,7 @@
         "elements": []
        },
        {
-        "id": "8bfe3a0",
+        "id": "785df23",
         "elType": "widget",
         "widgetType": "shortcode",
         "settings": {
@@ -10124,7 +10284,7 @@
         "elements": []
        },
        {
-        "id": "b45e777",
+        "id": "89b4c85",
         "elType": "widget",
         "widgetType": "text-editor",
         "settings": {
@@ -10139,7 +10299,7 @@
     "isInner": false
    },
    {
-    "id": "4b372ae",
+    "id": "be1865e",
     "elType": "section",
     "settings": {
      "css_classes": "jr-section jr-section--tight",
@@ -10147,7 +10307,7 @@
     },
     "elements": [
      {
-      "id": "7cf62ce",
+      "id": "4ba94c8",
       "elType": "column",
       "settings": {
        "_column_size": 100,
@@ -10155,7 +10315,7 @@
       },
       "elements": [
        {
-        "id": "d26807b",
+        "id": "7d6301e",
         "elType": "widget",
         "widgetType": "shortcode",
         "settings": {
@@ -10170,7 +10330,7 @@
     "isInner": false
    },
    {
-    "id": "4f9c586",
+    "id": "fa3fb15",
     "elType": "section",
     "settings": {
      "css_classes": "jr-section jr-section--tint",
@@ -10178,7 +10338,7 @@
     },
     "elements": [
      {
-      "id": "35658ab",
+      "id": "ad64fe5",
       "elType": "column",
       "settings": {
        "_column_size": 100,
@@ -10186,7 +10346,7 @@
       },
       "elements": [
        {
-        "id": "3d75650",
+        "id": "35274cd",
         "elType": "widget",
         "widgetType": "heading",
         "settings": {
@@ -10197,7 +10357,7 @@
         "elements": []
        },
        {
-        "id": "7b4bc61",
+        "id": "1ed3be1",
         "elType": "widget",
         "widgetType": "text-editor",
         "settings": {
@@ -10206,7 +10366,7 @@
         "elements": []
        },
        {
-        "id": "9f514a7",
+        "id": "7cd8630",
         "elType": "widget",
         "widgetType": "shortcode",
         "settings": {
@@ -10221,7 +10381,7 @@
     "isInner": false
    },
    {
-    "id": "39d3a93",
+    "id": "d0ef934",
     "elType": "section",
     "settings": {
      "css_classes": "jr-section jr-section--tight",
@@ -10229,7 +10389,7 @@
     },
     "elements": [
      {
-      "id": "e63bb9c",
+      "id": "dbb2779",
       "elType": "column",
       "settings": {
        "_column_size": 100,
@@ -10237,7 +10397,7 @@
       },
       "elements": [
        {
-        "id": "6b3a251",
+        "id": "9936250",
         "elType": "widget",
         "widgetType": "text-editor",
         "settings": {
@@ -10266,7 +10426,7 @@
   "seo_description": "Request an appointment with Dr. Jawaria Rasheed online. The clinic will contact you on WhatsApp to confirm.",
   "elementor": [
    {
-    "id": "e83eb7d",
+    "id": "9216c70",
     "elType": "section",
     "settings": {
      "css_classes": "jr-page-hero",
@@ -10274,7 +10434,7 @@
     },
     "elements": [
      {
-      "id": "ee47427",
+      "id": "c6cfb54",
       "elType": "column",
       "settings": {
        "_column_size": 100,
@@ -10282,7 +10442,7 @@
       },
       "elements": [
        {
-        "id": "6b4fe09",
+        "id": "ea9fa0a",
         "elType": "widget",
         "widgetType": "heading",
         "settings": {
@@ -10293,7 +10453,7 @@
         "elements": []
        },
        {
-        "id": "61eb1f5",
+        "id": "3227d38",
         "elType": "widget",
         "widgetType": "heading",
         "settings": {
@@ -10303,7 +10463,7 @@
         "elements": []
        },
        {
-        "id": "71b872a",
+        "id": "15ba48b",
         "elType": "widget",
         "widgetType": "text-editor",
         "settings": {
@@ -10319,7 +10479,7 @@
     "isInner": false
    },
    {
-    "id": "9216c70",
+    "id": "e597dea",
     "elType": "section",
     "settings": {
      "css_classes": "jr-section",
@@ -10327,7 +10487,7 @@
     },
     "elements": [
      {
-      "id": "b5d2a8a",
+      "id": "075b45d",
       "elType": "column",
       "settings": {
        "_column_size": 62,
@@ -10335,7 +10495,7 @@
       },
       "elements": [
        {
-        "id": "fa2ab4c",
+        "id": "6250c8a",
         "elType": "widget",
         "widgetType": "shortcode",
         "settings": {
@@ -10347,7 +10507,7 @@
       "isInner": false
      },
      {
-      "id": "c6cfb54",
+      "id": "8f9b6d8",
       "elType": "column",
       "settings": {
        "_column_size": 38,
@@ -10356,7 +10516,7 @@
       },
       "elements": [
        {
-        "id": "c3af655",
+        "id": "c4ec640",
         "elType": "widget",
         "widgetType": "heading",
         "settings": {
@@ -10366,7 +10526,7 @@
         "elements": []
        },
        {
-        "id": "7fb7701",
+        "id": "e5de95f",
         "elType": "widget",
         "widgetType": "text-editor",
         "settings": {
@@ -10375,7 +10535,7 @@
         "elements": []
        },
        {
-        "id": "5a1b623",
+        "id": "1e8e542",
         "elType": "widget",
         "widgetType": "shortcode",
         "settings": {
@@ -10384,7 +10544,7 @@
         "elements": []
        },
        {
-        "id": "2ad8325",
+        "id": "32513d4",
         "elType": "widget",
         "widgetType": "heading",
         "settings": {
@@ -10394,7 +10554,7 @@
         "elements": []
        },
        {
-        "id": "b34d974",
+        "id": "34ebb15",
         "elType": "widget",
         "widgetType": "shortcode",
         "settings": {
@@ -10403,7 +10563,7 @@
         "elements": []
        },
        {
-        "id": "d9b7a00",
+        "id": "2e47fec",
         "elType": "widget",
         "widgetType": "heading",
         "settings": {
@@ -10413,13 +10573,13 @@
         "elements": []
        },
        {
-        "id": "d7e72b3",
+        "id": "340784e",
         "elType": "widget",
         "widgetType": "icon-list",
         "settings": {
          "icon_list": [
           {
-           "_id": "dbe3a52",
+           "_id": "adf469f",
            "text": "Previous reports and ultrasound scans",
            "selected_icon": {
             "value": "fas fa-check-circle",
@@ -10427,7 +10587,7 @@
            }
           },
           {
-           "_id": "d0d82e0",
+           "_id": "4940ed1",
            "text": "A list of medicines you take",
            "selected_icon": {
             "value": "fas fa-check-circle",
@@ -10435,7 +10595,7 @@
            }
           },
           {
-           "_id": "4320da6",
+           "_id": "74ad3d4",
            "text": "For fertility visits: both partners, if possible",
            "selected_icon": {
             "value": "fas fa-check-circle",
@@ -10467,7 +10627,7 @@
   "seo_description": "",
   "elementor": [
    {
-    "id": "e4e63c9",
+    "id": "f10022f",
     "elType": "section",
     "settings": {
      "css_classes": "jr-page-hero",
@@ -10475,7 +10635,7 @@
     },
     "elements": [
      {
-      "id": "5062e3b",
+      "id": "1ab1789",
       "elType": "column",
       "settings": {
        "_column_size": 100,
@@ -10483,7 +10643,7 @@
       },
       "elements": [
        {
-        "id": "7037ccd",
+        "id": "84cdece",
         "elType": "widget",
         "widgetType": "heading",
         "settings": {
@@ -10494,7 +10654,7 @@
         "elements": []
        },
        {
-        "id": "5f4f2e5",
+        "id": "ac197fe",
         "elType": "widget",
         "widgetType": "heading",
         "settings": {
@@ -10504,7 +10664,7 @@
         "elements": []
        },
        {
-        "id": "4238bc7",
+        "id": "4da63d0",
         "elType": "widget",
         "widgetType": "text-editor",
         "settings": {
@@ -10520,7 +10680,7 @@
     "isInner": false
    },
    {
-    "id": "5f72076",
+    "id": "1c0d164",
     "elType": "section",
     "settings": {
      "css_classes": "jr-section",
@@ -10528,7 +10688,7 @@
     },
     "elements": [
      {
-      "id": "00b35a9",
+      "id": "4672a44",
       "elType": "column",
       "settings": {
        "_column_size": 100,
@@ -10536,7 +10696,7 @@
       },
       "elements": [
        {
-        "id": "7dd2262",
+        "id": "0d27330",
         "elType": "widget",
         "widgetType": "text-editor",
         "settings": {
@@ -10565,7 +10725,7 @@
   "seo_description": "",
   "elementor": [
    {
-    "id": "fe7fbd2",
+    "id": "7f78070",
     "elType": "section",
     "settings": {
      "css_classes": "jr-page-hero",
@@ -10573,7 +10733,7 @@
     },
     "elements": [
      {
-      "id": "318aeaf",
+      "id": "301b60f",
       "elType": "column",
       "settings": {
        "_column_size": 100,
@@ -10581,7 +10741,7 @@
       },
       "elements": [
        {
-        "id": "fcb4691",
+        "id": "c4bbe88",
         "elType": "widget",
         "widgetType": "heading",
         "settings": {
@@ -10592,7 +10752,7 @@
         "elements": []
        },
        {
-        "id": "76cee76",
+        "id": "2007204",
         "elType": "widget",
         "widgetType": "heading",
         "settings": {
@@ -10602,7 +10762,7 @@
         "elements": []
        },
        {
-        "id": "786a68e",
+        "id": "fd308e2",
         "elType": "widget",
         "widgetType": "text-editor",
         "settings": {
@@ -10618,7 +10778,7 @@
     "isInner": false
    },
    {
-    "id": "db63802",
+    "id": "5e732da",
     "elType": "section",
     "settings": {
      "css_classes": "jr-section",
@@ -10626,7 +10786,7 @@
     },
     "elements": [
      {
-      "id": "7f62b67",
+      "id": "2d68ec3",
       "elType": "column",
       "settings": {
        "_column_size": 100,
@@ -10634,7 +10794,7 @@
       },
       "elements": [
        {
-        "id": "8137ee2",
+        "id": "d3d0545",
         "elType": "widget",
         "widgetType": "text-editor",
         "settings": {

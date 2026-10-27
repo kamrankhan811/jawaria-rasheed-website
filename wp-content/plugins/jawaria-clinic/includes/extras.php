@@ -94,10 +94,10 @@ function jr_register_review_type() {
 		'jr_review',
 		array(
 			'labels'        => array(
-				'name'          => __( 'Patient Reviews', 'jawaria-clinic' ),
-				'singular_name' => __( 'Patient Review', 'jawaria-clinic' ),
-				'add_new_item'  => __( 'Add patient review', 'jawaria-clinic' ),
-				'edit_item'     => __( 'Edit patient review', 'jawaria-clinic' ),
+				'name'          => __( 'Testimonials', 'jawaria-clinic' ),
+				'singular_name' => __( 'Testimonial', 'jawaria-clinic' ),
+				'add_new_item'  => __( 'Add testimonial', 'jawaria-clinic' ),
+				'edit_item'     => __( 'Edit testimonial', 'jawaria-clinic' ),
 			),
 			'public'        => false,
 			'show_ui'       => true,
@@ -176,7 +176,7 @@ add_shortcode(
 			if ( jr_opt( 'google_reviews' ) ) {
 				return '<p class="jr-center"><a class="jr-btn jr-btn--ghost" href="' . esc_url( jr_opt( 'google_reviews' ) ) . '" target="_blank" rel="noopener">' . esc_html__( 'Read patient reviews on Google', 'jawaria-clinic' ) . '</a></p>';
 			}
-			return current_user_can( 'edit_pages' ) ? '<p class="jr-empty jr-center">' . esc_html__( 'Add reviews under Patient Reviews (with the patient’s permission) and they will appear here.', 'jawaria-clinic' ) . '</p>' : '';
+			return current_user_can( 'edit_pages' ) ? '<p class="jr-empty jr-center">' . esc_html__( 'Add testimonials under Testimonials (only with the patient’s permission) and they will appear here.', 'jawaria-clinic' ) . '</p>' : '';
 		}
 		$html = '<div class="jr-reviews">';
 		foreach ( $posts as $p ) {

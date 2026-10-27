@@ -92,7 +92,7 @@ add_action(
 		add_filter(
 			'wp_sitemaps_post_types',
 			function ( $types ) {
-				unset( $types['jr_appointment'], $types['jr_review'] );
+				unset( $types['jr_appointment'], $types['jr_review'], $types['jr_photo'] );
 				return $types;
 			}
 		);

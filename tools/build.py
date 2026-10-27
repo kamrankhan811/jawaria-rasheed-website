@@ -132,10 +132,10 @@ def home():
 
         # 9. Patient reviews
         section([
-            heading("Patient reviews", "p", "jr-eyebrow jr-center"),
+            heading("Testimonials", "p", "jr-eyebrow jr-center"),
             heading("What our patients say", "h2", "jr-h2 jr-center"),
             shortcode('[jr_reviews count="3"]'),
-            button("See all reviews", "/reviews/", "jr-btn-ghost", "center"),
+            button("See all testimonials", "/testimonials/", "jr-btn-ghost", "center"),
         ], "jr-section jr-section--tint"),
 
         # 10. YouTube
@@ -176,8 +176,16 @@ def home():
 
 def reviews_page():
     return [
-        page_hero("Patient Guide", "Patient reviews", "Feedback shared by patients, published with their permission.", buttons=False),
+        page_hero("Patient Guide", "Testimonials", "What patients say about their care with Dr. Jawaria Rasheed, shared with their permission.", buttons=False),
         section([shortcode('[jr_reviews count="0"]')], "jr-section"),
+        cta_band(),
+    ]
+
+
+def gallery_page():
+    return [
+        page_hero("Patient Guide", "Photo gallery", "A look inside Dr. Jawaria Rasheed’s clinic in Bahawalpur.", buttons=False),
+        section([shortcode('[jr_gallery count="0"]')], "jr-section"),
         cta_band(),
     ]
 
@@ -521,7 +529,8 @@ def build_pages():
             seo_title=s["seo_title"],
             seo_desc=s["excerpt"] + " Consultant gynecologist Dr. Jawaria Rasheed in Bahawalpur.")
     add("faqs", "FAQs", faqs(), order=3, seo_desc="Answers to common questions about appointments, IUI and women’s health care with Dr. Jawaria Rasheed.")
-    add("reviews", "Patient Reviews", reviews_page(), order=3, seo_desc="Patient reviews for Dr. Jawaria Rasheed, consultant gynecologist and IUI specialist.")
+    add("testimonials", "Testimonials", reviews_page(), order=3, seo_desc="Patient testimonials for Dr. Jawaria Rasheed, consultant gynecologist and IUI specialist in Bahawalpur.")
+    add("gallery", "Photo Gallery", gallery_page(), order=3, seo_desc="Photos of Dr. Jawaria Rasheed’s gynecology and IUI clinic in Bahawalpur.")
     add("videos", "Videos", videos_page(), order=3, seo_desc="Health videos by Dr. Jawaria Rasheed on women’s health, fertility, IUI and pregnancy.")
     add("contact", "Contact", contact(), order=4, seo_desc="Clinic address, WhatsApp, email and timings for Dr. Jawaria Rasheed in Bahawalpur.")
     add("book-appointment", "Book an Appointment", book(), order=5, seo_desc="Request an appointment with Dr. Jawaria Rasheed online. The clinic will contact you on WhatsApp to confirm.")
@@ -604,7 +613,14 @@ def fake_shortcode(name, args, pages):
     if name == "jr_rating":
         return '<span class="jr-rating jr-pv-note">★★★★★ Google rating shows here once added in Clinic Info</span>'
     if name == "jr_reviews":
-        return '<div class="jr-reviews">' + "".join('<figure class="jr-review jr-review--empty"><span class="jr-review__stars">★★★★★</span><p class="jr-review__head">Real patient review</p><blockquote class="jr-review__text"><p>Reviews are added under Patient Reviews, only with the patient’s permission.</p></blockquote><figcaption class="jr-review__name">Patient name</figcaption></figure>' for _ in range(3)) + '</div>'
+        return '<div class="jr-reviews">' + "".join('<figure class="jr-review jr-review--empty"><span class="jr-review__stars">★★★★★</span><p class="jr-review__head">Real patient testimonial</p><blockquote class="jr-review__text"><p>Testimonials are added in WordPress under Testimonials, only with the patient’s permission.</p></blockquote><figcaption class="jr-review__name">Patient name</figcaption></figure>' for _ in range(3)) + '</div>'
+    if name == "jr_gallery":
+        imgs = [("../wp-content/plugins/jawaria-clinic/assets/images/dr-jawaria-rasheed.jpg", "Dr. Jawaria Rasheed"),
+                ("../wp-content/plugins/jawaria-clinic/assets/images/clinic-placeholder.jpg", "Sample photo: consultation room")]
+        imgs += [(f"../wp-content/plugins/jawaria-clinic/assets/images/slide-{i}.webp", "Sample photo") for i in (1, 2, 3, 4)]
+        return ('<div class="jr-gallery" data-jr-gallery>' + "".join(
+            f'<figure class="jr-gallery__item"><a href="{u}" data-jr-gallery-link><img src="{u}" alt="{c}" loading="lazy"></a><figcaption>{c}</figcaption></figure>' for u, c in imgs)
+            + '</div><p class="jr-center jr-pv-note">Preview: real photos are added in WordPress under Photo Gallery.</p>')
     if name == "jr_videos":
         import html as _h
         return ('<div class="jr-videos">' + "".join(
@@ -631,7 +647,7 @@ def fake_shortcode(name, args, pages):
 
 # Menus for the preview — mirror jr_menu_specs() in includes/setup.php.
 _T = {sv["slug"]: sv["title"] for sv in SERVICES}
-_T.update({"about": "About Dr. Jawaria", "andrology-iui-lab": "Andrology & IUI Lab", "reviews": "Patient Reviews", "blog": "Health Articles", "videos": "Videos",
+_T.update({"about": "About Dr. Jawaria", "andrology-iui-lab": "Andrology & IUI Lab", "testimonials": "Testimonials", "gallery": "Photo Gallery", "blog": "Health Articles", "videos": "Videos",
            "faqs": "FAQs", "contact": "Contact Us", "book-appointment": "Book Appointment", "services": "Services"})
 
 
@@ -643,7 +659,7 @@ def H(title, children):
     return ("#", title, "jr-col-head", children)
 
 
-MENU_TOP = [P("andrology-iui-lab"), ("#", "Patient Guide", "", [P("reviews"), P("videos"), P("faqs"), P("book-appointment")]), ("blog.html", "Blog", "", []), P("contact")]
+MENU_TOP = [P("andrology-iui-lab"), ("#", "Patient Guide", "", [P("testimonials"), P("gallery"), P("videos"), P("faqs"), P("book-appointment")]), ("blog.html", "Blog", "", []), P("contact")]
 MENU_SERVICES = [
     P("services", "Gynecology", "", [P("gynecology-consultation"), P("menstrual-problems"), P("cervical-screening"), P("family-planning"), P("menopause")]),
     P("infertility-evaluation", "Fertility & IUI", "jr-mega", [
@@ -652,10 +668,10 @@ MENU_SERVICES = [
         H("Related Conditions", [P("pcos"), P("endometriosis"), P("fibroids")]),
     ]),
     P("pregnancy-care", "Pregnancy Care"), P("pcos", "PCOS"), P("endometriosis", "Endometriosis"),
-    P("fibroids", "Fibroids"), P("menopause", "Menopause"),
+    P("fibroids", "Fibroids"), P("menopause", "Menopause"), P("about", "Dr. Jawaria Rasheed", "jr-menu-doctor"),
 ]
 MENU_FOOT_SERVICES = [P("iui-treatment", "IUI Treatment"), P("infertility-evaluation"), P("pcos"), P("pregnancy-care"), P("endometriosis"), P("fibroids"), P("menopause"), P("cervical-screening")]
-MENU_FOOT_LINKS = [P("about"), P("andrology-iui-lab"), ("blog.html", "Blog", "", []), P("reviews"), P("videos"), P("faqs"), P("contact"), P("book-appointment")]
+MENU_FOOT_LINKS = [P("about"), P("andrology-iui-lab"), ("blog.html", "Blog", "", []), P("testimonials"), P("gallery"), P("videos"), P("faqs"), P("contact"), P("book-appointment")]
 
 
 def menu_html(items, cls="jr-menu", sub=False):
@@ -705,6 +721,7 @@ PREVIEW_SHELL = """<!doctype html><html lang="en"><head><meta charset="utf-8"><m
 <div class="jr-floats"><a class="jr-float jr-float--wa" href="{wa_url}" target="_blank" rel="noopener" aria-label="Chat with the clinic on WhatsApp">{wa_icon}</a></div>
 <script src="../wp-content/themes/jawaria-child/assets/js/nav.js?v={v_nav}"></script>
 <script src="../wp-content/plugins/jawaria-clinic/assets/js/slider.js?v={v_sl}"></script>
+<script src="../wp-content/plugins/jawaria-clinic/assets/js/gallery.js?v={v_gal}" defer></script>
 </body></html>"""
 
 
@@ -733,10 +750,10 @@ VERS = {}
 
 def write_preview(pages):
     VERS.update(wa_url=WA_URL, wa_icon=WA_ICON, footer_map=map_html("jr-map--footer"), v_css=_ver("wp-content/themes/jawaria-child/assets/css/site.css"), v_nav=_ver("wp-content/themes/jawaria-child/assets/js/nav.js"),
-                v_sl=_ver("wp-content/plugins/jawaria-clinic/assets/js/slider.js"), v_base=_ver("preview/preview-base.css"))
+                v_sl=_ver("wp-content/plugins/jawaria-clinic/assets/js/slider.js"), v_gal=_ver("wp-content/plugins/jawaria-clinic/assets/js/gallery.js"), v_base=_ver("preview/preview-base.css"))
     out_dir = os.path.join(ROOT, "preview")
     os.makedirs(out_dir, exist_ok=True)
-    media = {"doctor": "../wp-content/plugins/jawaria-clinic/assets/images/doctor-placeholder.jpg",
+    media = {"doctor": "../wp-content/plugins/jawaria-clinic/assets/images/dr-jawaria-rasheed.jpg",
              "clinic": "../wp-content/plugins/jawaria-clinic/assets/images/clinic-placeholder.jpg"}
     sc = lambda n, a: fake_shortcode(n, a, pages)
     for p in pages:
