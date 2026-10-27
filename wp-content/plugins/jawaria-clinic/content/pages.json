@@ -10234,11 +10234,11 @@
         "elements": []
        },
        {
-        "id": "accb015",
+        "id": "9396e1a",
         "elType": "widget",
         "widgetType": "shortcode",
         "settings": {
-         "shortcode": "[jr_clinic_info]"
+         "shortcode": "[jr_clinic_info icons=\"1\"]"
         },
         "elements": []
        },

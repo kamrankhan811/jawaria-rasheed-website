@@ -400,7 +400,7 @@ def contact():
         section([
             column([
                 heading("Clinic details", "h2", "jr-h2"),
-                shortcode("[jr_clinic_info]"),
+                shortcode('[jr_clinic_info icons="1"]'),
                 shortcode("[jr_cta_buttons]"),
             ], 50, "jr-card"),
             column([
