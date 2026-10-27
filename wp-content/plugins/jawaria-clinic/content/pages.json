@@ -1283,11 +1283,11 @@
         "elements": []
        },
        {
-        "id": "2755f0d",
+        "id": "1233e18",
         "elType": "widget",
         "widgetType": "text-editor",
         "settings": {
-         "editor": "<div class=\"jr-two\"><div>[jr_clinic_info]</div><div>[jr_hours]</div></div>"
+         "editor": "<div class=\"jr-two jr-visit\"><div>[jr_clinic_info icons=\"1\"]</div><div>[jr_map]</div></div>"
         },
         "elements": []
        }
@@ -1361,7 +1361,7 @@
     "isInner": false
    }
   ],
-  "fallback": "<p>About</p>\n<h1>Dr. Jawaria Rasheed</h1>\n<p><strong>Consultant Gynecologist | Women’s Health &amp; IUI Specialist</strong><br></p>\n<p>Dr. Jawaria Rasheed is an experienced gynecologist with over  years of experience in gynecology, women’s healthcare and Intrauterine Insemination (IUI). She is dedicated to providing compassionate, personalised and professional care to women at every stage of life.</p>\n<h2>Her approach</h2>\n<p>With extensive experience in gynecological care and fertility support, Dr. Jawaria focuses on helping women understand their health, make informed decisions and receive treatment tailored to their individual needs.</p><p>She believes in building trust through clear communication, respectful care and a patient-centred approach. Her mission is to support women’s health, improve reproductive well-being, and help individuals and couples navigate their fertility journey with confidence and care.</p>\n<h3>Areas of focus</h3>\n<ul><li>Gynecological consultations</li><li>Reproductive health</li><li>Fertility evaluation</li><li>IUI procedures</li><li>Women’s wellness</li></ul>\n<h3>Qualifications &amp; experience</h3>\n<p></p><ul><li>+ years in gynecology and women’s health</li><li>Add hospital appointments here</li><li>Add professional memberships here</li><li>Add training / certifications (e.g. IUI, ultrasound) here</li></ul>\n<p>Clinic</p>\n<h2>Where and when to see Dr. Jawaria</h2>\n<div class=\"jr-two\"><div></div><div></div></div>\n<p>Appointments</p>\n<h2>Ready to talk to Dr. Jawaria?</h2>\n<p>Send an appointment request online or message the clinic on WhatsApp. Our team will confirm a time with you.</p>"
+  "fallback": "<p>About</p>\n<h1>Dr. Jawaria Rasheed</h1>\n<p><strong>Consultant Gynecologist | Women’s Health &amp; IUI Specialist</strong><br></p>\n<p>Dr. Jawaria Rasheed is an experienced gynecologist with over  years of experience in gynecology, women’s healthcare and Intrauterine Insemination (IUI). She is dedicated to providing compassionate, personalised and professional care to women at every stage of life.</p>\n<h2>Her approach</h2>\n<p>With extensive experience in gynecological care and fertility support, Dr. Jawaria focuses on helping women understand their health, make informed decisions and receive treatment tailored to their individual needs.</p><p>She believes in building trust through clear communication, respectful care and a patient-centred approach. Her mission is to support women’s health, improve reproductive well-being, and help individuals and couples navigate their fertility journey with confidence and care.</p>\n<h3>Areas of focus</h3>\n<ul><li>Gynecological consultations</li><li>Reproductive health</li><li>Fertility evaluation</li><li>IUI procedures</li><li>Women’s wellness</li></ul>\n<h3>Qualifications &amp; experience</h3>\n<p></p><ul><li>+ years in gynecology and women’s health</li><li>Add hospital appointments here</li><li>Add professional memberships here</li><li>Add training / certifications (e.g. IUI, ultrasound) here</li></ul>\n<p>Clinic</p>\n<h2>Where and when to see Dr. Jawaria</h2>\n<div class=\"jr-two jr-visit\"><div></div><div></div></div>\n<p>Appointments</p>\n<h2>Ready to talk to Dr. Jawaria?</h2>\n<p>Send an appointment request online or message the clinic on WhatsApp. Our team will confirm a time with you.</p>"
  },
  {
   "slug": "andrology-iui-lab",

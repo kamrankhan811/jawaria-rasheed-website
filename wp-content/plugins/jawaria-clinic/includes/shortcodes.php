@@ -4,7 +4,7 @@
  *
  * [jr_doctor_name] [jr_qualifications] [jr_experience] [jr_phone] (WhatsApp number)
  * [jr_cta_buttons book="1" whatsapp="1" style="default|light" align="left|center"]
- * [jr_clinic_info] [jr_hours] [jr_map] [jr_stats]
+ * [jr_clinic_info icons="1"] [jr_hours] [jr_map] [jr_stats]
  * [jr_services_grid limit="0"] [jr_latest_posts count="3"]
  * [jr_appointment_form]  (see appointments.php)
  *
@@ -133,7 +133,7 @@ function jr_clinic_info_html( $icons = false ) {
 	}
 	return $html . '</ul>';
 }
-add_shortcode( 'jr_clinic_info', fn() => jr_clinic_info_html() );
+add_shortcode( 'jr_clinic_info', fn( $atts ) => jr_clinic_info_html( ! empty( $atts['icons'] ) ) );
 
 add_shortcode(
 	'jr_hours',

@@ -662,3 +662,8 @@ a:hover, a:focus { color: var(--jr-primary-dark); }
 	.jr-logo__name { font-size: .82rem; }
 	.jr-logo__img { width: 38px; height: 38px; }
 }
+/* About page "Where and when": icon contact list beside the map */
+.jr-info--icons .jr-info__ico { color: var(--jr-primary); }
+.jr-visit { align-items: start; }
+.jr-visit .jr-info--icons li { font-size: 1.05rem; padding: 12px 0; }
+.jr-visit .jr-map iframe { height: 320px; }

@@ -250,7 +250,7 @@ def about():
 
 
 def section_cols_info():
-    return text("<div class=\"jr-two\"><div>[jr_clinic_info]</div><div>[jr_hours]</div></div>")
+    return text("<div class=\"jr-two jr-visit\"><div>[jr_clinic_info icons=\"1\"]</div><div>[jr_map]</div></div>")
 
 
 def services_hub():
@@ -618,6 +618,8 @@ def fake_shortcode(name, args, pages):
         return out + "</div>"
     if name == "jr_latest_posts":
         return post_cards(POSTS[:4])
+    if name == "jr_clinic_info" and 'icons=' in args:
+        return footer_info()
     if name == "jr_clinic_info":
         return (f'<ul class="jr-info"><li><strong>Address</strong>{s["address"]}<br><a href="{MAP_LINK}" target="_blank" rel="noopener">Get directions</a></li>'
                 f'<li><strong>WhatsApp</strong><a class="jr-info__wa" href="{WA_URL}" target="_blank" rel="noopener">{WA_ICON}{s["whatsapp"]}</a></li>'
