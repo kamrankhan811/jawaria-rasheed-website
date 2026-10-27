@@ -21,8 +21,8 @@
 	--jr-radius: 14px;
 	--jr-radius-sm: 8px;
 	--jr-shadow: 0 6px 24px rgba(15, 94, 99, 0.08);
-	--jr-font-head: Calibri, "Carlito", "Segoe UI", system-ui, -apple-system, sans-serif;
-	--jr-font-body: Calibri, "Carlito", "Segoe UI", system-ui, -apple-system, "Segoe UI", sans-serif;
+	--jr-font-head: "Poppins", "Segoe UI", system-ui, -apple-system, sans-serif;
+	--jr-font-body: "Poppins", "Segoe UI", system-ui, -apple-system, sans-serif;
 	--jr-max: 1180px;
 }
 
@@ -674,12 +674,13 @@ a:hover, a:focus { color: var(--jr-primary-dark); }
 @media (max-width: 640px) { .jr-stat__icon { width: 42px; height: 42px; margin-bottom: 6px; } .jr-stat__icon .jr-ico { width: 21px; height: 21px; } }
 
 /* ---------- v1.8: less template-like look ---------- */
-/* Calibri-style smooth sans throughout (Calibri on Windows, Carlito — its free twin — elsewhere). Only 400/700 exist. */
-body { font-size: 20px; }
-h1, h2, h3, .elementor-heading-title, .jr-slider .jr-slide__title { font-weight: 700; letter-spacing: 0; }
+/* Poppins throughout: smooth, round letters; generous base size for phones and tablets. */
+body { font-size: 17px; line-height: 1.7; }
+@media (max-width: 767px) { body { font-size: 16.5px; } }
+h1, h2, h3, .elementor-heading-title, .jr-slider .jr-slide__title { font-weight: 600; letter-spacing: -0.01em; }
 .jr-eyebrow .elementor-heading-title, .jr-eyebrow { font-family: var(--jr-font-body) !important; }
-.jr-logo__name { font-weight: 700; }
-.jr-stat__num { font-weight: 700; }
+.jr-logo__name { font-weight: 600; }
+.jr-stat__num { font-weight: 600; }
 .jr-btn, .elementor-button { font-family: var(--jr-font-body); }
 /* Service cards: line icon instead of initials */
 .jr-service-card__icon svg { width: 26px; height: 26px; }

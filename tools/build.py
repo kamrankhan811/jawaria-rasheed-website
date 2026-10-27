@@ -700,17 +700,10 @@ def _ver(rel):
 PREVIEW_SHELL = """<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex">
 <title>{title} — Preview</title>
 <link rel="icon" href="../wp-content/themes/jawaria-child/assets/images/favicon-32.png">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Carlito:ital,wght@0,400;0,700;1,400&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"><link rel="stylesheet" href="preview-base.css?v={v_base}"><link rel="stylesheet" href="../wp-content/themes/jawaria-child/assets/css/site.css?v={v_css}">
 </head><body>
-<div class="jr-pv-banner">Design preview — the real site is built in WordPress. <label>Try a font: <select id="jr-pv-font" style="font:inherit;padding:2px 6px;border-radius:6px">
-<option value="">Calibri (current)</option><option value="Nunito">A · Nunito</option><option value="Poppins">B · Poppins</option><option value="Quicksand">C · Quicksand</option><option value="Mulish">D · Mulish</option></select></label></div>
-<script>/* preview only: switch the site font to compare options; remembered while browsing pages */
-(function(){{var sel=document.getElementById('jr-pv-font'),f='';try{{f=localStorage.getItem('jrPvFont')||'';}}catch(e){{}}
-function apply(n){{var r=document.documentElement.style;if(!n){{r.removeProperty('--jr-font-head');r.removeProperty('--jr-font-body');return;}}
-var id='jr-pv-gf';var l=document.getElementById(id);if(!l){{l=document.createElement('link');l.id=id;l.rel='stylesheet';document.head.appendChild(l);}}
-l.href='https://fonts.googleapis.com/css2?family='+n+':wght@400;600;700;800&display=swap';var v='"'+n+'", system-ui, sans-serif';r.setProperty('--jr-font-head',v);r.setProperty('--jr-font-body',v);}}
-sel.value=f;apply(f);sel.addEventListener('change',function(){{try{{localStorage.setItem('jrPvFont',sel.value);}}catch(e){{}}apply(sel.value);}});}})();</script>
+<div class="jr-pv-banner">Design preview — the real site is built in WordPress.</div>
 <div class="jr-topbar"><div class="jr-topbar__inner"><span class="jr-topbar__item">{ico_pin}Bahawalpur · Mon – Fri, 3:00 pm – 7:00 pm</span><span class="jr-topbar__links"><a class="jr-topbar__wa" href="{wa_url}" target="_blank" rel="noopener">{wa_icon} WhatsApp 0300 0610903</a><a href="mailto:info@drjawariarasheed.com">{ico_mail} info@drjawariarasheed.com</a></span></div></div>
 <header class="jr-header" data-jr-header>
  <div class="jr-header__main">
