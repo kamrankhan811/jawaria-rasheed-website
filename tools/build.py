@@ -700,7 +700,7 @@ def _ver(rel):
 PREVIEW_SHELL = """<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex">
 <title>{title} — Preview</title>
 <link rel="icon" href="../wp-content/themes/jawaria-child/assets/images/favicon-32.png">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Carlito:ital,wght@0,400;0,700;1,400&display=swap">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"><link rel="stylesheet" href="preview-base.css?v={v_base}"><link rel="stylesheet" href="../wp-content/themes/jawaria-child/assets/css/site.css?v={v_css}">
 </head><body>
 <div class="jr-pv-banner">Design preview — the real site is built in WordPress. Contact details as set for the clinic.</div>
