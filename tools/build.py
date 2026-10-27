@@ -689,7 +689,7 @@ PREVIEW_SHELL = """<!doctype html><html lang="en"><head><meta charset="utf-8"><m
  <div class="jr-header__main">
   <div class="jr-header__brand"><a class="jr-logo" href="index.html"><img class="jr-logo__img" src="../wp-content/themes/jawaria-child/assets/images/logo-mark.png" alt="Dr. Jawaria Rasheed logo"><span class="jr-logo__text"><span class="jr-logo__name">Dr. Jawaria Rasheed</span><span class="jr-logo__tag">Consultant Gynecologist &amp; IUI Specialist</span></span></a></div>
   <nav class="jr-nav jr-nav--top">{menu_top}</nav>
-  <div class="jr-header__actions"><a class="jr-header__wa" href="{wa_url}" target="_blank" rel="noopener" aria-label="WhatsApp the clinic on 0300 0610903"><span class="jr-header__wa-icon">{wa_icon}</span><span class="jr-header__wa-text"><span class="jr-header__wa-label">WhatsApp</span><span class="jr-header__wa-num">0300 0610903</span></span></a><a class="jr-btn jr-btn--primary jr-btn--sm" href="book-appointment.html">Book<span class="jr-hide-sm">An Appointment</span></a><button class="jr-burger" type="button" aria-expanded="false" data-jr-burger><span></span><span></span><span></span></button></div>
+  <div class="jr-header__actions"><a class="jr-header__wa" href="{wa_url}" target="_blank" rel="noopener" aria-label="WhatsApp the clinic on 0300 0610903"><span class="jr-header__wa-icon">{wa_icon}</span><span class="jr-header__wa-text"><span class="jr-header__wa-label">WhatsApp</span><span class="jr-header__wa-num">0300 0610903</span></span></a><a class="jr-btn jr-btn--primary jr-btn--sm" href="book-appointment.html">Book<span class="jr-hide-sm">An Appointment</span></a><button class="jr-burger" type="button" aria-expanded="false" aria-label="Menu" data-jr-burger><span></span><span></span><span></span></button></div>
  </div>
  <div class="jr-header__services"><nav class="jr-nav jr-nav--services">{menu_services}</nav></div>
 </header>
@@ -724,6 +724,7 @@ def render_slider_preview():
     out += '</div><button class="jr-slider__arrow jr-slider__arrow--prev" type="button" data-jr-prev aria-label="Previous slide"><span>&#8249;</span></button>'
     out += '<button class="jr-slider__arrow jr-slider__arrow--next" type="button" data-jr-next aria-label="Next slide"><span>&#8250;</span></button><div class="jr-slider__dots">'
     out += "".join(f'<button type="button" class="jr-slider__dot{" is-active" if i == 0 else ""}" data-jr-dot="{i}" aria-label="Go to slide {i+1}"></button>' for i in range(len(SLIDES)))
+    out += '<button type="button" class="jr-slider__pause" data-jr-pause aria-pressed="false" aria-label="Pause slides"><span aria-hidden="true"></span></button>'
     return out + "</div></section>"
 
 

@@ -209,6 +209,7 @@ function jr_render_slider() {
 		for ( $i = 0; $i < $count; $i++ ) {
 			$html .= '<button type="button" class="jr-slider__dot' . ( 0 === $i ? ' is-active' : '' ) . '" data-jr-dot="' . esc_attr( $i ) . '" aria-label="' . esc_attr( sprintf( /* translators: %d: slide number */ __( 'Go to slide %d', 'jawaria-clinic' ), $i + 1 ) ) . '"' . ( 0 === $i ? ' aria-current="true"' : '' ) . '></button>';
 		}
+		$html .= '<button type="button" class="jr-slider__pause" data-jr-pause aria-pressed="false" aria-label="' . esc_attr__( 'Pause slides', 'jawaria-clinic' ) . '"><span aria-hidden="true"></span></button>';
 		$html .= '</div>';
 	}
 	return $html . '</section>';

@@ -4,7 +4,7 @@
 		var slides = root.querySelectorAll('.jr-slide');
 		var dots = root.querySelectorAll('[data-jr-dot]');
 		if (slides.length < 2) return;
-		var cur = 0, timer = null, paused = false;
+		var cur = 0, timer = null, paused = false, stopped = false;
 		var interval = parseInt(root.getAttribute('data-interval'), 10) || 6000;
 		var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -23,13 +23,25 @@
 			slides[cur].querySelectorAll('a').forEach(function (a) { a.removeAttribute('tabindex'); });
 			if (dots[cur]) { dots[cur].classList.add('is-active'); dots[cur].setAttribute('aria-current', 'true'); }
 		}
-		function start() { stop(); if (!reduce && !paused) timer = setInterval(function () { go(cur + 1); }, interval); }
+		function start() { stop(); if (!reduce && !paused && !stopped) timer = setInterval(function () { go(cur + 1); }, interval); }
 		function stop() { if (timer) { clearInterval(timer); timer = null; } }
 
 		var prev = root.querySelector('[data-jr-prev]'), next = root.querySelector('[data-jr-next]');
 		if (prev) prev.addEventListener('click', function () { go(cur - 1); start(); });
 		if (next) next.addEventListener('click', function () { go(cur + 1); start(); });
 		dots.forEach(function (d) { d.addEventListener('click', function () { go(+d.getAttribute('data-jr-dot')); start(); }); });
+
+		// Pause button: visitors can stop auto-rotation (WCAG 2.2.2).
+		var pauseBtn = root.querySelector('[data-jr-pause]');
+		if (pauseBtn) {
+			if (reduce) pauseBtn.hidden = true;
+			pauseBtn.addEventListener('click', function () {
+				stopped = !stopped;
+				pauseBtn.setAttribute('aria-pressed', String(stopped));
+				pauseBtn.setAttribute('aria-label', stopped ? 'Play slides' : 'Pause slides');
+				start();
+			});
+		}
 
 		// Pause only for a real mouse hover or keyboard focus (not taps on phones).
 		root.addEventListener('pointerenter', function (e) { if (e.pointerType === 'mouse') { paused = true; stop(); } });
