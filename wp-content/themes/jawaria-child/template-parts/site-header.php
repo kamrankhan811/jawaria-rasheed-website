@@ -43,7 +43,6 @@ $jr_has = function_exists( 'jr_opt' );
 				<a class="jr-header__wa" href="<?php echo esc_url( jr_whatsapp_url() ); ?>" target="_blank" rel="noopener" aria-label="<?php echo esc_attr( sprintf( /* translators: %s: number */ __( 'WhatsApp the clinic on %s', 'jawaria-child' ), jr_opt( 'whatsapp' ) ) ); ?>">
 					<span class="jr-header__wa-icon"><?php echo jr_wa_icon(); // phpcs:ignore WordPress.Security.EscapeOutput -- static SVG. ?></span>
 					<span class="jr-header__wa-text">
-						<span class="jr-header__wa-label"><?php esc_html_e( 'WhatsApp', 'jawaria-child' ); ?></span>
 						<span class="jr-header__wa-num"><?php echo esc_html( jr_opt( 'whatsapp' ) ); ?></span>
 					</span>
 				</a>
