@@ -21,6 +21,7 @@ from elementor import (button, checklist, column, fallback_text, heading, image,
 from content_services import SERVICES  # noqa: E402
 from content_posts import POSTS  # noqa: E402
 from content_slides import SLIDES  # noqa: E402
+from service_icons import ICON_BY_SLUG, svg as service_svg  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PLUGIN = os.path.join(ROOT, "wp-content", "plugins", "jawaria-clinic")
@@ -31,7 +32,6 @@ CHILD = os.path.join(ROOT, "wp-content", "themes", "jawaria-child")
 
 def cta_band(title="Ready to talk to Dr. Jawaria?", sub="Send an appointment request online or message the clinic on WhatsApp. Our team will confirm a time with you."):
     return section([
-        heading("Appointments", "p", "jr-eyebrow jr-center"),
         heading(title, "h2", "jr-h2 jr-center"),
         text(f"<p>{sub}</p>", "jr-center jr-narrow"),
         shortcode('[jr_cta_buttons style="light" align="center"]'),
@@ -49,11 +49,6 @@ def page_hero(eyebrow, title, lead, buttons=True):
 
 def home():
     """Homepage — section order follows the reference layout."""
-    pills = "".join(
-        f'<a class="jr-pill" href="/services/{slug}/">{label}</a>' for slug, label in [
-            ("gynecology-consultation", "Gynecology"), ("infertility-evaluation", "Fertility &amp; IUI"),
-            ("pregnancy-care", "Pregnancy Care"), ("pcos", "PCOS"), ("endometriosis", "Endometriosis"),
-            ("fibroids", "Fibroids"), ("menopause", "Menopause")])
     return [
         # 1. Banner slider (slides are managed in Dashboard → Home Slides)
         section([shortcode("[jr_slider]")], "jr-slider-section", full=True),
@@ -62,12 +57,10 @@ def home():
         # 2. Intro with pull-quote
         section([
             column([
-                heading("Welcome", "p", "jr-eyebrow"),
                 heading("Helping women understand their health and make informed decisions", "h2", "jr-h2"),
             ], 45),
             column([
-                text("<blockquote class=\"jr-quote\">“Every woman deserves to be listened to, to understand her options and to receive care that fits her life.”</blockquote>"),
-                text("<p>Dr. Jawaria Rasheed is an experienced gynecologist dedicated to compassionate, personalised and professional care for women at every stage of life — from first periods to pregnancy, fertility and menopause.</p><p>She believes in building trust through clear communication, respectful care and a patient-centred approach.</p>"),
+                text("<p>Dr. Jawaria Rasheed is an experienced gynecologist dedicated to compassionate, personalised care for women at every stage of life: first periods, pregnancy, fertility and menopause.</p><p>She believes in building trust through clear communication, respectful care and a patient-centred approach.</p>"),
                 button("Read her full story", "/about/", "jr-btn-ghost"),
             ], 55),
         ], "jr-section"),
@@ -75,7 +68,6 @@ def home():
         # 3+4. Areas of focus + photo
         section([
             column([
-                heading("Areas of focus", "p", "jr-eyebrow"),
                 heading("Complete care in gynecology and fertility", "h2", "jr-h2"),
                 checklist([
                     "Gynecological consultations",
@@ -84,17 +76,16 @@ def home():
                     "IUI (Intrauterine Insemination)",
                     "Women’s wellness, from adolescence to menopause",
                 ]),
-                text("<p>Each plan starts with careful listening and the right tests, so treatment is tailored to your needs — never one-size-fits-all.</p>"),
+                text("<p>Each plan starts with careful listening and the right tests, so treatment fits your needs, not a template.</p>"),
             ], 55),
-            column([image("clinic", "Clinic consultation room", "jr-photo jr-photo--wide")], 45),
+            column([image("clinic", "Doctor consulting a patient", "jr-photo jr-photo--wide")], 45),
         ], "jr-section jr-section--tint", middle=True),
 
         # 5. Feature: fertility & IUI
         section([
             column([
-                heading("Fertility &amp; IUI".replace("&amp;", "&"), "p", "jr-eyebrow"),
-                heading("Trying to conceive? Start with clear answers.", "h2", "jr-h2"),
-                text("<p>Fertility concerns can feel overwhelming. Dr. Jawaria evaluates both partners, then recommends the simplest effective step — from ovulation support and follicle monitoring to IUI. When another option such as IVF is more suitable, she will explain why and guide you.</p>"),
+                                heading("Trying to conceive? Start with clear answers.", "h2", "jr-h2"),
+                text("<p>Fertility concerns can feel overwhelming. Dr. Jawaria evaluates both partners, then recommends the simplest step that can work, such as ovulation support, follicle monitoring or IUI. When another option such as IVF is more suitable, she will explain why and guide you.</p>"),
                 button("Learn about IUI", "/services/iui-treatment/", "jr-btn-primary"),
             ], 55),
             column([
@@ -111,9 +102,7 @@ def home():
 
         # 6+7. Category links + service cards
         section([
-            heading("Our services", "p", "jr-eyebrow jr-center"),
             heading("How Dr. Jawaria can help", "h2", "jr-h2 jr-center"),
-            text(f'<div class="jr-pills jr-center">{pills}</div>'),
             shortcode("[jr_services_grid]"),
         ], "jr-section jr-section--surface"),
 
@@ -132,7 +121,6 @@ def home():
 
         # 9. Patient reviews
         section([
-            heading("Testimonials", "p", "jr-eyebrow jr-center"),
             heading("What our patients say", "h2", "jr-h2 jr-center"),
             shortcode('[jr_reviews count="3"]'),
             button("See all testimonials", "/testimonials/", "jr-btn-ghost", "center"),
@@ -140,7 +128,6 @@ def home():
 
         # 10. YouTube
         section([
-            heading("Videos", "p", "jr-eyebrow jr-center"),
             heading("Learn from Dr. Jawaria on YouTube", "h2", "jr-h2 jr-center"),
             text("<p>Short, simple videos on women’s health, fertility and pregnancy.</p>", "jr-lead jr-center"),
             shortcode('[jr_videos count="3"]'),
@@ -148,7 +135,6 @@ def home():
 
         # 11. Blogs
         section([
-            heading("Health articles", "p", "jr-eyebrow jr-center"),
             heading("Featured articles", "h2", "jr-h2 jr-center"),
             shortcode('[jr_latest_posts count="4"]'),
             button("View all articles", "/blog/", "jr-btn-ghost", "center"),
@@ -160,10 +146,8 @@ def home():
         # 13. Location
         section([
             column([
-                heading("Location", "p", "jr-eyebrow"),
                 heading("Visit the clinic", "h2", "jr-h2"),
-                shortcode("[jr_clinic_info]"),
-                shortcode("[jr_hours]"),
+                shortcode('[jr_clinic_info icons="1"]'),
             ], 40),
             column([
                 shortcode("[jr_map]"),
@@ -240,7 +224,6 @@ def about():
         ], "jr-section"),
 
         section([
-            heading("Clinic", "p", "jr-eyebrow"),
             heading("Where and when to see Dr. Jawaria", "h2", "jr-h2"),
             section_cols_info(),
         ], "jr-section jr-section--tint"),
@@ -318,7 +301,7 @@ def service_page(s):
     ]
     if related:
         cards = "".join(
-            f'<a class="jr-service-card" href="/services/{r["slug"]}/"><span class="jr-service-card__icon" aria-hidden="true">{r["icon"]}</span>'
+            f'<a class="jr-service-card" href="/services/{r["slug"]}/"><span class="jr-service-card__icon" aria-hidden="true">{service_svg(ICON_BY_SLUG.get(r["slug"], r["icon"]))}</span>'
             f'<h3 class="jr-service-card__title">{r["title"]}</h3><p class="jr-service-card__text">{r["excerpt"]}</p>'
             '<span class="jr-service-card__more">Learn more &rarr;</span></a>' for r in related)
         secs.append(section([
@@ -525,7 +508,7 @@ def build_pages():
     add("services", "Services", services_hub(), order=2,
         seo_desc="Gynecology, pregnancy care, infertility evaluation, IUI, PCOS, menopause and more with Dr. Jawaria Rasheed.")
     for i, s in enumerate(SERVICES):
-        add(s["slug"], s["title"], service_page(s), parent="services", order=i, excerpt=s["excerpt"], icon=s["icon"],
+        add(s["slug"], s["title"], service_page(s), parent="services", order=i, excerpt=s["excerpt"], icon=ICON_BY_SLUG.get(s["slug"], s["icon"]),
             seo_title=s["seo_title"],
             seo_desc=s["excerpt"] + " Consultant gynecologist Dr. Jawaria Rasheed in Bahawalpur.")
     add("faqs", "FAQs", faqs(), order=3, seo_desc="Answers to common questions about appointments, IUI and women’s health care with Dr. Jawaria Rasheed.")
@@ -606,13 +589,13 @@ def fake_shortcode(name, args, pages):
         out += f'<a class="jr-btn jr-btn--whatsapp" href="{WA_URL}" target="_blank" rel="noopener">{WA_ICON}WhatsApp</a>'
         return out + "</div>"
     if name == "jr_stats":
-        rows = [("15+", "Years of experience"), ("IUI", "Fertility treatment offered"), ("PCOS", "Specialised care"), ("1:1", "Private consultations")]
+        rows = [("15+", "Years of experience"), ("FCPS", "Qualified gynaecologist"), ("IUI Lab", "Semen analysis on site"), ("3–7 pm", "Monday to Friday")]
         return '<div class="jr-stats">' + "".join(f'<div class="jr-stat"><span class="jr-stat__icon">{ico(n)}</span><span class="jr-stat__num">{a}</span><span class="jr-stat__label">{b}</span></div>' for (a, b), n in zip(rows, ["award", "heart", "flower", "shield"])) + '</div>'
     if name == "jr_services_grid":
         limit = 6 if 'limit="6"' in args else 99
         out = '<div class="jr-services-grid">'
         for sv in SERVICES[:limit]:
-            out += (f'<a class="jr-service-card" href="{sv["slug"]}.html"><span class="jr-service-card__icon">{sv["icon"]}</span>'
+            out += (f'<a class="jr-service-card" href="{sv["slug"]}.html"><span class="jr-service-card__icon">{service_svg(ICON_BY_SLUG.get(sv["slug"], sv["icon"]))}</span>'
                     f'<h3 class="jr-service-card__title">{sv["title"]}</h3><p class="jr-service-card__text">{sv["excerpt"]}</p>'
                     '<span class="jr-service-card__more">Learn more &rarr;</span></a>')
         return out + "</div>"
@@ -637,7 +620,7 @@ def fake_shortcode(name, args, pages):
         return '<div class="jr-reviews">' + "".join('<figure class="jr-review jr-review--empty"><span class="jr-review__stars">★★★★★</span><p class="jr-review__head">Real patient testimonial</p><blockquote class="jr-review__text"><p>Testimonials are added in WordPress under Testimonials, only with the patient’s permission.</p></blockquote><figcaption class="jr-review__name">Patient name</figcaption></figure>' for _ in range(3)) + '</div>'
     if name == "jr_gallery":
         imgs = [("../wp-content/plugins/jawaria-clinic/assets/images/dr-jawaria-rasheed.jpg", "Dr. Jawaria Rasheed"),
-                ("../wp-content/plugins/jawaria-clinic/assets/images/clinic-placeholder.jpg", "Sample photo: consultation room")]
+                ("../wp-content/plugins/jawaria-clinic/assets/images/consultation.jpg", "Consultation")]
         imgs += [(f"../wp-content/plugins/jawaria-clinic/assets/images/slide-{i}.webp", "Sample photo") for i in (1, 2, 3, 4)]
         return ('<div class="jr-gallery" data-jr-gallery>' + "".join(
             f'<figure class="jr-gallery__item"><a href="{u}" data-jr-gallery-link><img src="{u}" alt="{c}" loading="lazy"></a><figcaption>{c}</figcaption></figure>' for u, c in imgs)
@@ -717,7 +700,7 @@ def _ver(rel):
 PREVIEW_SHELL = """<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex">
 <title>{title} — Preview</title>
 <link rel="icon" href="../wp-content/themes/jawaria-child/assets/images/favicon-32.png">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&display=swap">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"><link rel="stylesheet" href="preview-base.css?v={v_base}"><link rel="stylesheet" href="../wp-content/themes/jawaria-child/assets/css/site.css?v={v_css}">
 </head><body>
 <div class="jr-pv-banner">Design preview — the real site is built in WordPress. Contact details as set for the clinic.</div>
@@ -775,7 +758,7 @@ def write_preview(pages):
     out_dir = os.path.join(ROOT, "preview")
     os.makedirs(out_dir, exist_ok=True)
     media = {"doctor": "../wp-content/plugins/jawaria-clinic/assets/images/dr-jawaria-rasheed.jpg",
-             "clinic": "../wp-content/plugins/jawaria-clinic/assets/images/clinic-placeholder.jpg"}
+             "clinic": "../wp-content/plugins/jawaria-clinic/assets/images/consultation.jpg"}
     sc = lambda n, a: fake_shortcode(n, a, pages)
     for p in pages:
         if not p["elementor"]:

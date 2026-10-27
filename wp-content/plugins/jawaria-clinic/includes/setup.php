@@ -136,7 +136,7 @@ function jr_setup_media() {
 	$stored = (array) get_option( 'jr_media', array() );
 	$files  = array(
 		'doctor' => 'dr-jawaria-rasheed.jpg',
-		'clinic' => 'clinic-placeholder.jpg',
+		'clinic' => 'consultation.jpg',
 		'logo'   => 'logo.png',
 		'icon'   => 'site-icon.png',
 		'slide1' => 'slide-1.webp',
@@ -167,7 +167,7 @@ function jr_setup_media() {
 			$upload['file']
 		);
 		wp_update_attachment_metadata( $id, wp_generate_attachment_metadata( $id, $upload['file'] ) );
-		update_post_meta( $id, '_wp_attachment_image_alt', 'clinic' === $key ? 'Clinic consultation room' : ( 'doctor' === $key ? 'Dr. Jawaria Rasheed' : 'Dr. Jawaria Rasheed logo' ) );
+		update_post_meta( $id, '_wp_attachment_image_alt', 'clinic' === $key ? 'Doctor consulting a patient' : ( 'doctor' === $key ? 'Dr. Jawaria Rasheed' : 'Dr. Jawaria Rasheed logo' ) );
 		$stored[ $key ] = $id;
 		$out[ $key ]    = array( 'id' => $id, 'url' => $upload['url'] );
 	}

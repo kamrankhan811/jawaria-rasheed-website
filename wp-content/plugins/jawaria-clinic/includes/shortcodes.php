@@ -60,6 +60,32 @@ function jr_icon( $name ) {
 	return isset( $paths[ $name ] ) ? '<svg class="jr-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="' . $paths[ $name ] . '"/></svg>' : '';
 }
 
+/**
+ * Line icon for a service card (key stored in the page's _jr_icon field). Falls back to the text.
+ *
+ * @param string $key Icon key, e.g. "stethoscope".
+ * @return string
+ */
+function jr_service_icon( $key ) {
+	$icons = array(
+		'stethoscope' => '<path d="M6 3v6a4 4 0 0 0 8 0V3"/><path d="M10 13v2a5 5 0 0 0 10 0v-1.5"/><circle cx="20" cy="11" r="2"/>',
+		'heart-pulse' => '<path d="M20.4 12.6 12 21l-8.4-8.4A5 5 0 0 1 12 6a5 5 0 0 1 8.4 6.6z"/><path d="M3.5 12h4l2-3 3 6 2-3h6"/>',
+		'search' => '<circle cx="11" cy="11" r="7"/><path d="m20 20-4-4M11 8v6M8 11h6"/>',
+		'pipette' => '<path d="m14 4 6 6M17 7l-9.5 9.5a2.1 2.1 0 0 1-3-3L14 4"/><path d="M4.5 19.5 3 21"/>',
+		'calendar-dot' => '<rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/><circle cx="12" cy="15.5" r="2"/>',
+		'ovary' => '<circle cx="12" cy="12" r="8.5"/><circle cx="9" cy="10" r="1.8"/><circle cx="14.5" cy="9.5" r="1.4"/><circle cx="13" cy="14.5" r="2"/>',
+		'droplet' => '<path d="M12 3s-6 6.6-6 11a6 6 0 0 0 12 0c0-4.4-6-11-6-11z"/><path d="M9.5 15a2.5 2.5 0 0 0 2.5 2.5"/>',
+		'uterus' => '<path d="M7 6c0 3 2 5 5 5s5-2 5-5"/><path d="M4 5c1.5 0 3 .5 3 1M20 5c-1.5 0-3 .5-3 1"/><path d="M12 11v4"/><path d="M10 15h4v4h-4z"/>',
+		'activity' => '<path d="M3 12h4l3-8 4 16 3-8h4"/>',
+		'thermometer' => '<path d="M14 14.8V4a2 2 0 0 0-4 0v10.8a4 4 0 1 0 4 0z"/><path d="M12 9v8"/>',
+		'clipboard' => '<rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4V3h6v1"/><path d="m9 13 2 2 4-4"/>',
+		'family' => '<circle cx="8" cy="7" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M2.5 20a5.5 5.5 0 0 1 11 0M13 20a4 4 0 0 1 8 0"/>',
+	);
+	return isset( $icons[ $key ] )
+		? '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">' . $icons[ $key ] . '</svg>'
+		: esc_html( $key );
+}
+
 add_shortcode(
 	'jr_cta_buttons',
 	function ( $atts ) {
@@ -192,7 +218,7 @@ add_shortcode(
 			$html .= sprintf(
 				'<a class="jr-service-card" href="%1$s"><span class="jr-service-card__icon" aria-hidden="true">%2$s</span><h3 class="jr-service-card__title">%3$s</h3><p class="jr-service-card__text">%4$s</p><span class="jr-service-card__more">%5$s &rarr;</span></a>',
 				esc_url( get_permalink( $p ) ),
-				esc_html( $icon ),
+				jr_service_icon( $icon ),
 				esc_html( get_the_title( $p ) ),
 				esc_html( wp_strip_all_tags( get_the_excerpt( $p ) ) ),
 				esc_html__( 'Learn more', 'jawaria-clinic' )

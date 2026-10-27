@@ -21,8 +21,8 @@
 	--jr-radius: 14px;
 	--jr-radius-sm: 8px;
 	--jr-shadow: 0 6px 24px rgba(15, 94, 99, 0.08);
-	--jr-font-head: "Plus Jakarta Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
-	--jr-font-body: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+	--jr-font-head: "Fraunces", Georgia, "Times New Roman", serif;
+	--jr-font-body: "Figtree", system-ui, -apple-system, "Segoe UI", sans-serif;
 	--jr-max: 1180px;
 }
 
@@ -672,3 +672,13 @@ a:hover, a:focus { color: var(--jr-primary-dark); }
 .jr-stat__icon { display: grid; place-items: center; width: 58px; height: 58px; margin: 0 auto 10px; border-radius: 50%; background: var(--jr-tint); color: var(--jr-primary); }
 .jr-stat__icon .jr-ico { width: 32px; height: 32px; margin: 0; vertical-align: 0; }
 @media (max-width: 640px) { .jr-stat__icon { width: 42px; height: 42px; margin-bottom: 6px; } .jr-stat__icon .jr-ico { width: 21px; height: 21px; } }
+
+/* ---------- v1.8: less template-like look ---------- */
+/* Serif headings at a lighter weight read warmer and less generic than heavy sans. */
+h1, h2, h3, .elementor-heading-title, .jr-slider .jr-slide__title { font-weight: 600; letter-spacing: -0.01em; }
+.jr-eyebrow .elementor-heading-title, .jr-eyebrow { font-family: var(--jr-font-body) !important; }
+.jr-logo__name { font-weight: 700; }
+.jr-stat__num { font-weight: 600; }
+.jr-btn, .elementor-button { font-family: var(--jr-font-body); }
+/* Service cards: line icon instead of initials */
+.jr-service-card__icon svg { width: 26px; height: 26px; }

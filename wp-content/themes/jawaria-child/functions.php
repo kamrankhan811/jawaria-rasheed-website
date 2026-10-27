@@ -21,7 +21,7 @@ add_action(
 	function () {
 		wp_enqueue_style(
 			'jr-fonts',
-			'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap',
+			'https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&display=swap',
 			array(),
 			null
 		);
