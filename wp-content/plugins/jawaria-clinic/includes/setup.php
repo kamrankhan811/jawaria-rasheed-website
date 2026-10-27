@@ -313,7 +313,7 @@ function jr_menu_specs() {
 					'url'      => '#',
 					'title'    => 'Patient Guide',
 					'class'    => '',
-					'children' => array( $p( 'testimonials', 'Testimonials' ), $p( 'gallery', 'Photo Gallery' ), $p( 'videos', 'Videos' ), $p( 'faqs', 'FAQs' ), $p( 'book-appointment', 'Book Appointment' ) ),
+					'children' => array( $p( 'testimonials', 'Testimonials' ), $p( 'gallery', 'Photo Gallery' ), $p( 'videos', 'Videos' ), $p( 'faqs', 'FAQs' ), $p( 'book-appointment', 'Book an Appointment' ) ),
 				),
 				$p( 'blog', 'Blog' ),
 				$p( 'contact', 'Contact Us' ),
@@ -352,7 +352,7 @@ function jr_menu_specs() {
 		),
 		'jr_footer'          => array(
 			'Footer – Quick Links',
-			array( $p( 'about', 'About Dr. Jawaria' ), $p( 'andrology-iui-lab', 'Andrology & IUI Lab' ), $p( 'blog', 'Blog' ), $p( 'testimonials', 'Testimonials' ), $p( 'gallery', 'Photo Gallery' ), $p( 'videos', 'Videos' ), $p( 'faqs', 'FAQs' ), $p( 'contact', 'Contact Us' ), $p( 'book-appointment', 'Book Appointment' ) ),
+			array( $p( 'about', 'About Dr. Jawaria' ), $p( 'andrology-iui-lab', 'Andrology & IUI Lab' ), $p( 'blog', 'Blog' ), $p( 'testimonials', 'Testimonials' ), $p( 'gallery', 'Photo Gallery' ), $p( 'videos', 'Videos' ), $p( 'faqs', 'FAQs' ), $p( 'contact', 'Contact Us' ), $p( 'book-appointment', 'Book an Appointment' ) ),
 		),
 	);
 }

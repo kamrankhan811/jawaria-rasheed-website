@@ -785,11 +785,11 @@
         "elements": []
        },
        {
-        "id": "0557b75",
+        "id": "d47148e",
         "elType": "widget",
         "widgetType": "shortcode",
         "settings": {
-         "shortcode": "[jr_latest_posts count=\"3\"]"
+         "shortcode": "[jr_latest_posts count=\"4\"]"
         },
         "elements": []
        },
@@ -1223,11 +1223,11 @@
         "elements": []
        },
        {
-        "id": "2a9c706",
+        "id": "92ffafb",
         "elType": "widget",
         "widgetType": "button",
         "settings": {
-         "text": "Book an appointment",
+         "text": "Book an Appointment",
          "link": {
           "url": "/book-appointment/",
           "is_external": "",
@@ -1659,11 +1659,11 @@
         "elements": []
        },
        {
-        "id": "c7e11ca",
+        "id": "5584102",
         "elType": "widget",
         "widgetType": "button",
         "settings": {
-         "text": "Book an appointment",
+         "text": "Book an Appointment",
          "link": {
           "url": "/book-appointment/",
           "is_external": "",
@@ -2415,11 +2415,11 @@
         "elements": []
        },
        {
-        "id": "60daf81",
+        "id": "ccef647",
         "elType": "widget",
         "widgetType": "button",
         "settings": {
-         "text": "Book an appointment",
+         "text": "Book an Appointment",
          "link": {
           "url": "/book-appointment/",
           "is_external": "",
@@ -3019,11 +3019,11 @@
         "elements": []
        },
        {
-        "id": "1053838",
+        "id": "bb2d914",
         "elType": "widget",
         "widgetType": "button",
         "settings": {
-         "text": "Book an appointment",
+         "text": "Book an Appointment",
          "link": {
           "url": "/book-appointment/",
           "is_external": "",
@@ -3642,11 +3642,11 @@
         "elements": []
        },
        {
-        "id": "d083ac5",
+        "id": "8fb1b22",
         "elType": "widget",
         "widgetType": "button",
         "settings": {
-         "text": "Book an appointment",
+         "text": "Book an Appointment",
          "link": {
           "url": "/book-appointment/",
           "is_external": "",
@@ -4267,11 +4267,11 @@
         "elements": []
        },
        {
-        "id": "af57348",
+        "id": "6e7441b",
         "elType": "widget",
         "widgetType": "button",
         "settings": {
-         "text": "Book an appointment",
+         "text": "Book an Appointment",
          "link": {
           "url": "/book-appointment/",
           "is_external": "",
@@ -4853,11 +4853,11 @@
         "elements": []
        },
        {
-        "id": "dae14a0",
+        "id": "c99b0fe",
         "elType": "widget",
         "widgetType": "button",
         "settings": {
-         "text": "Book an appointment",
+         "text": "Book an Appointment",
          "link": {
           "url": "/book-appointment/",
           "is_external": "",
@@ -5455,11 +5455,11 @@
         "elements": []
        },
        {
-        "id": "6cfb083",
+        "id": "6569463",
         "elType": "widget",
         "widgetType": "button",
         "settings": {
-         "text": "Book an appointment",
+         "text": "Book an Appointment",
          "link": {
           "url": "/book-appointment/",
           "is_external": "",
@@ -6109,11 +6109,11 @@
         "elements": []
        },
        {
-        "id": "befad96",
+        "id": "d9a40e2",
         "elType": "widget",
         "widgetType": "button",
         "settings": {
-         "text": "Book an appointment",
+         "text": "Book an Appointment",
          "link": {
           "url": "/book-appointment/",
           "is_external": "",
@@ -6724,11 +6724,11 @@
         "elements": []
        },
        {
-        "id": "d9f009b",
+        "id": "0780ce5",
         "elType": "widget",
         "widgetType": "button",
         "settings": {
-         "text": "Book an appointment",
+         "text": "Book an Appointment",
          "link": {
           "url": "/book-appointment/",
           "is_external": "",
@@ -7347,11 +7347,11 @@
         "elements": []
        },
        {
-        "id": "3748e5b",
+        "id": "2d68ae1",
         "elType": "widget",
         "widgetType": "button",
         "settings": {
-         "text": "Book an appointment",
+         "text": "Book an Appointment",
          "link": {
           "url": "/book-appointment/",
           "is_external": "",
@@ -7980,11 +7980,11 @@
         "elements": []
        },
        {
-        "id": "f6b43f0",
+        "id": "c21a7e7",
         "elType": "widget",
         "widgetType": "button",
         "settings": {
-         "text": "Book an appointment",
+         "text": "Book an Appointment",
          "link": {
           "url": "/book-appointment/",
           "is_external": "",
@@ -8600,11 +8600,11 @@
         "elements": []
        },
        {
-        "id": "c7243cc",
+        "id": "0cf625a",
         "elType": "widget",
         "widgetType": "button",
         "settings": {
-         "text": "Book an appointment",
+         "text": "Book an Appointment",
          "link": {
           "url": "/book-appointment/",
           "is_external": "",
@@ -9207,11 +9207,11 @@
         "elements": []
        },
        {
-        "id": "569cf54",
+        "id": "5b4c336",
         "elType": "widget",
         "widgetType": "button",
         "settings": {
-         "text": "Book an appointment",
+         "text": "Book an Appointment",
          "link": {
           "url": "/book-appointment/",
           "is_external": "",
@@ -10453,11 +10453,11 @@
         "elements": []
        },
        {
-        "id": "3227d38",
+        "id": "43496f1",
         "elType": "widget",
         "widgetType": "heading",
         "settings": {
-         "title": "Book an appointment",
+         "title": "Book an Appointment",
          "header_size": "h1"
         },
         "elements": []
@@ -10614,7 +10614,7 @@
     "isInner": false
    }
   ],
-  "fallback": "<p>Appointments</p>\n<h1>Book an appointment</h1>\n<p>Fill in the short form below and our team will contact you on WhatsApp to confirm the date and time.</p>\n<h3>Prefer WhatsApp?</h3>\n<p>You can also message the clinic directly on WhatsApp.</p>\n<h3>Clinic timings</h3>\n<h3>What to bring</h3>\n<ul><li>Previous reports and ultrasound scans</li><li>A list of medicines you take</li><li>For fertility visits: both partners, if possible</li></ul>"
+  "fallback": "<p>Appointments</p>\n<h1>Book an Appointment</h1>\n<p>Fill in the short form below and our team will contact you on WhatsApp to confirm the date and time.</p>\n<h3>Prefer WhatsApp?</h3>\n<p>You can also message the clinic directly on WhatsApp.</p>\n<h3>Clinic timings</h3>\n<h3>What to bring</h3>\n<ul><li>Previous reports and ultrasound scans</li><li>A list of medicines you take</li><li>For fertility visits: both partners, if possible</li></ul>"
  },
  {
   "slug": "privacy-policy",

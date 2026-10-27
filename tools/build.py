@@ -150,7 +150,7 @@ def home():
         section([
             heading("Health articles", "p", "jr-eyebrow jr-center"),
             heading("Featured articles", "h2", "jr-h2 jr-center"),
-            shortcode('[jr_latest_posts count="3"]'),
+            shortcode('[jr_latest_posts count="4"]'),
             button("View all articles", "/blog/", "jr-btn-ghost", "center"),
         ], "jr-section jr-section--surface"),
 
@@ -235,7 +235,7 @@ def about():
             column([
                 heading("Qualifications & experience", "h3"),
                 text("<p>[jr_qualifications]</p><ul><li>[jr_experience]+ years in gynecology and women’s health</li><li>Add hospital appointments here</li><li>Add professional memberships here</li><li>Add training / certifications (e.g. IUI, ultrasound) here</li></ul>", "jr-prose"),
-                button("Book an appointment", "/book-appointment/", "jr-btn-primary"),
+                button("Book an Appointment", "/book-appointment/", "jr-btn-primary"),
             ], 40, "jr-card"),
         ], "jr-section"),
 
@@ -302,7 +302,7 @@ def service_page(s):
     right = [
         heading("Book a consultation", "h3"),
         text("<p>See <strong>Dr. Jawaria Rasheed</strong>, Consultant Gynecologist &amp; IUI Specialist, in Bahawalpur.</p>"),
-        button("Book an appointment", "/book-appointment/", "jr-btn-primary"),
+        button("Book an Appointment", "/book-appointment/", "jr-btn-primary"),
         shortcode('[jr_cta_buttons book="0"]'),
         heading("Related services", "h3"),
         text(f'<ul class="jr-related-links">{rel_links}</ul>'),
@@ -369,7 +369,7 @@ def andrology():
             column([
                 heading("Book a test or consultation", "h3"),
                 text("<p>Book a semen analysis or a fertility consultation with <strong>Dr. Jawaria Rasheed</strong> in Bahawalpur.</p>"),
-                button("Book an appointment", "/book-appointment/", "jr-btn-primary"),
+                button("Book an Appointment", "/book-appointment/", "jr-btn-primary"),
                 shortcode('[jr_cta_buttons book="0"]'),
                 heading("Clinic timings", "h3"),
                 shortcode("[jr_hours]"),
@@ -423,7 +423,7 @@ def contact():
 
 def book():
     return [
-        page_hero("Appointments", "Book an appointment",
+        page_hero("Appointments", "Book an Appointment",
                   "Fill in the short form below and our team will contact you on WhatsApp to confirm the date and time.", buttons=False),
         section([
             column([shortcode("[jr_appointment_form]")], 62),
@@ -564,6 +564,28 @@ MAP_SRC = "https://maps.google.com/maps?q=" + _q("House No. 1/1, Gulzar-e-Sadiq 
 MAP_LINK = "https://www.google.com/maps/search/?api=1&amp;query=House+No.+1%2F1+Gulzar-e-Sadiq+Road+Bahawalpur"
 
 
+ICO_PATHS = {'pin': 'M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z', 'mail': 'M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1zm1 2.3V17h16V7.3l-8 5.2-8-5.2zM5.2 7l6.8 4.4L18.8 7H5.2z', 'clock': 'M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm0 18a8 8 0 1 1 0-16 8 8 0 0 1 0 16zm1-13h-2v6l5 3 1-1.7-4-2.4V7z', 'user': 'M12 12a5 5 0 1 0 0-10 5 5 0 0 0 0 10zm0 2c-4.4 0-8 2.2-8 5v3h16v-3c0-2.8-3.6-5-8-5z', 'calendar': 'M7 2h2v2h6V2h2v2h3a1 1 0 0 1 1 1v15a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h3V2zm12 8H5v9h14v-9zM7 12h2v2H7v-2zm4 0h2v2h-2v-2zm4 0h2v2h-2v-2zm-8 4h2v2H7v-2zm4 0h2v2h-2v-2z'}
+
+
+def ico(name):
+    return f'<svg class="jr-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="{ICO_PATHS[name]}"/></svg>'
+
+
+def footer_info():
+    s = SAMPLE
+    rows = [(ico("pin"), s["address"]), (WA_ICON, f'<a href="{WA_URL}" target="_blank" rel="noopener">{s["whatsapp"]}</a>'),
+            (ico("mail"), f'<a href="mailto:{s["email"]}">{s["email"]}</a>'), (ico("clock"), s["hours_short"])]
+    return '<ul class="jr-info jr-info--icons">' + "".join(f'<li><span class="jr-info__ico">{i}</span><span>{t}</span></li>' for i, t in rows) + '</ul>'
+
+
+def post_cards(posts):
+    img = "../wp-content/plugins/jawaria-clinic/assets/images/post-placeholder.jpg"
+    return '<div class="jr-posts-grid">' + "".join(
+        f'<article class="jr-post-card"><a class="jr-post-card__img" href="#" tabindex="-1" aria-hidden="true"><img src="{img}" alt="" loading="lazy"></a>'
+        f'<h3 class="jr-post-card__title"><a href="#">{p["title"]}</a></h3>'
+        f'<p class="jr-post-card__meta"><span>{ico("user")}Dr. Jawaria Rasheed</span><span>{ico("calendar")}Draft</span></p></article>' for p in posts) + '</div>'
+
+
 def map_html(cls=""):
     return f'<div class="jr-map {cls}"><iframe src="{MAP_SRC}" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Clinic location map"></iframe></div>'
 
@@ -580,7 +602,7 @@ def fake_shortcode(name, args, pages):
         center = ' jr-center' if 'align="center"' in args else ''
         out = f'<div class="jr-btn-row{center}">'
         if 'book="0"' not in args:
-            out += btn("jr-btn--light" if light else "jr-btn--primary", "Book an appointment")
+            out += btn("jr-btn--light" if light else "jr-btn--primary", "Book an Appointment")
         out += f'<a class="jr-btn jr-btn--whatsapp" href="{WA_URL}" target="_blank" rel="noopener">{WA_ICON}WhatsApp</a>'
         return out + "</div>"
     if name == "jr_stats":
@@ -595,10 +617,7 @@ def fake_shortcode(name, args, pages):
                     '<span class="jr-service-card__more">Learn more &rarr;</span></a>')
         return out + "</div>"
     if name == "jr_latest_posts":
-        out = '<div class="jr-posts-grid">'
-        for p in POSTS[:3]:
-            out += f'<article class="jr-post-card"><div class="jr-post-card__body"><h3 class="jr-post-card__title"><a href="#">{p["title"]}</a></h3><p class="jr-post-card__meta">Draft article</p><p>{p["excerpt"]}</p></div></article>'
-        return out + "</div>"
+        return post_cards(POSTS[:4])
     if name == "jr_clinic_info":
         return (f'<ul class="jr-info"><li><strong>Address</strong>{s["address"]}<br><a href="{MAP_LINK}" target="_blank" rel="noopener">Get directions</a></li>'
                 f'<li><strong>WhatsApp</strong><a class="jr-info__wa" href="{WA_URL}" target="_blank" rel="noopener">{WA_ICON}{s["whatsapp"]}</a></li>'
@@ -648,7 +667,7 @@ def fake_shortcode(name, args, pages):
 # Menus for the preview — mirror jr_menu_specs() in includes/setup.php.
 _T = {sv["slug"]: sv["title"] for sv in SERVICES}
 _T.update({"about": "About Dr. Jawaria", "andrology-iui-lab": "Andrology & IUI Lab", "testimonials": "Testimonials", "gallery": "Photo Gallery", "blog": "Health Articles", "videos": "Videos",
-           "faqs": "FAQs", "contact": "Contact Us", "book-appointment": "Book Appointment", "services": "Services"})
+           "faqs": "FAQs", "contact": "Contact Us", "book-appointment": "Book an Appointment", "services": "Services"})
 
 
 def P(slug, title=None, cls="", children=None):
@@ -700,21 +719,21 @@ PREVIEW_SHELL = """<!doctype html><html lang="en"><head><meta charset="utf-8"><m
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"><link rel="stylesheet" href="preview-base.css?v={v_base}"><link rel="stylesheet" href="../wp-content/themes/jawaria-child/assets/css/site.css?v={v_css}">
 </head><body>
 <div class="jr-pv-banner">Design preview — the real site is built in WordPress. Contact details as set for the clinic.</div>
-<div class="jr-topbar"><div class="jr-topbar__inner"><span class="jr-topbar__item">Bahawalpur · Mon – Fri, 3:00 pm – 7:00 pm</span><span class="jr-topbar__links"><a class="jr-topbar__wa" href="{wa_url}" target="_blank" rel="noopener">{wa_icon} WhatsApp 0300 0610903</a><a href="mailto:info@drjawariarasheed.com">info@drjawariarasheed.com</a></span></div></div>
+<div class="jr-topbar"><div class="jr-topbar__inner"><span class="jr-topbar__item">{ico_pin}Bahawalpur · Mon – Fri, 3:00 pm – 7:00 pm</span><span class="jr-topbar__links"><a class="jr-topbar__wa" href="{wa_url}" target="_blank" rel="noopener">{wa_icon} WhatsApp 0300 0610903</a><a href="mailto:info@drjawariarasheed.com">{ico_mail} info@drjawariarasheed.com</a></span></div></div>
 <header class="jr-header" data-jr-header>
  <div class="jr-header__main">
   <div class="jr-header__brand"><a class="jr-logo" href="index.html"><img class="jr-logo__img" src="../wp-content/themes/jawaria-child/assets/images/logo-mark.png" alt="Dr. Jawaria Rasheed logo"><span class="jr-logo__text"><span class="jr-logo__name">Dr. Jawaria Rasheed</span><span class="jr-logo__tag">Consultant Gynecologist &amp; IUI Specialist</span></span></a></div>
   <nav class="jr-nav jr-nav--top">{menu_top}</nav>
-  <div class="jr-header__actions"><a class="jr-header__wa" href="{wa_url}" target="_blank" rel="noopener" aria-label="WhatsApp the clinic on 0300 0610903"><span class="jr-header__wa-icon">{wa_icon}</span><span class="jr-header__wa-text"><span class="jr-header__wa-num">0300 0610903</span></span></a><a class="jr-btn jr-btn--primary jr-btn--sm" href="book-appointment.html">Book<span class="jr-hide-sm">An Appointment</span></a><button class="jr-burger" type="button" aria-expanded="false" aria-label="Menu" data-jr-burger><span></span><span></span><span></span></button></div>
+  <div class="jr-header__actions"><a class="jr-header__wa" href="{wa_url}" target="_blank" rel="noopener" aria-label="WhatsApp the clinic on 0300 0610903"><span class="jr-header__wa-icon">{wa_icon}</span><span class="jr-header__wa-text"><span class="jr-header__wa-num">0300 0610903</span></span></a><a class="jr-btn jr-btn--primary jr-btn--sm" href="book-appointment.html">Book<span class="jr-hide-sm">an Appointment</span></a><button class="jr-burger" type="button" aria-expanded="false" aria-label="Menu" data-jr-burger><span></span><span></span><span></span></button></div>
  </div>
  <div class="jr-header__services"><nav class="jr-nav jr-nav--services">{menu_services}</nav></div>
 </header>
 <main>{body}</main>
 <footer class="jr-footer"><div class="jr-footer__grid">
- <div class="jr-footer__col jr-footer__brand"><img class="jr-footer__logo" src="../wp-content/themes/jawaria-child/assets/images/logo-mark-white.png" alt=""><p class="jr-footer__name">Dr. Jawaria Rasheed</p><p class="jr-footer__tag">Consultant Gynecologist &amp; IUI Specialist</p><p class="jr-footer__about">Compassionate, personalised care in gynecology, women’s health and fertility, including IUI — at every stage of life.</p><div class="jr-social"><a class="jr-social__link jr-social__link--facebook" href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a><a class="jr-social__link jr-social__link--instagram" href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a><a class="jr-social__link jr-social__link--youtube" href="https://www.youtube.com/@jawariainfertilityclinic3964" target="_blank" rel="noopener" aria-label="YouTube"><i class="fab fa-youtube"></i></a><a class="jr-social__link jr-social__link--tiktok" href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a></div></div>
+ <div class="jr-footer__col jr-footer__brand"><div class="jr-footer__brandrow"><img class="jr-footer__logo" src="../wp-content/themes/jawaria-child/assets/images/logo-mark-white.png" alt=""><p class="jr-footer__name">Dr. Jawaria Rasheed</p></div><p class="jr-footer__tag">Consultant Gynecologist &amp; IUI Specialist</p><p class="jr-footer__about">Compassionate, personalised care in gynecology, women’s health and fertility, including IUI — at every stage of life.</p><div class="jr-social"><a class="jr-social__link jr-social__link--facebook" href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a><a class="jr-social__link jr-social__link--instagram" href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a><a class="jr-social__link jr-social__link--youtube" href="https://www.youtube.com/@jawariainfertilityclinic3964" target="_blank" rel="noopener" aria-label="YouTube"><i class="fab fa-youtube"></i></a><a class="jr-social__link jr-social__link--tiktok" href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a></div></div>
  <div class="jr-footer__col"><p class="jr-footer__heading">Our Services</p>{foot_services}</div>
  <div class="jr-footer__col"><p class="jr-footer__heading">Quick Links</p>{foot_links}</div>
- <div class="jr-footer__col"><p class="jr-footer__heading">Get In Touch</p>{info}{footer_map}<p><a class="jr-btn jr-btn--light jr-btn--sm" href="book-appointment.html">Book Online</a></p></div>
+ <div class="jr-footer__col"><p class="jr-footer__heading">Get In Touch</p>{info}{footer_map}</div>
 </div>
 <div class="jr-footer__legal"><p class="jr-footer__note">Information on this website is for general education and does not replace a consultation. In an emergency, go to the nearest hospital emergency department.</p>
 <div class="jr-footer__bottom"><span>&copy; 2026 Dr. Jawaria Rasheed. All rights reserved.</span><span class="jr-footer__policies"><a href="privacy-policy.html">Privacy Policy</a><a href="medical-disclaimer.html">Medical Disclaimer</a><a href="#">Sitemap</a></span></div></div></footer>
@@ -749,7 +768,7 @@ VERS = {}
 
 
 def write_preview(pages):
-    VERS.update(wa_url=WA_URL, wa_icon=WA_ICON, footer_map=map_html("jr-map--footer"), v_css=_ver("wp-content/themes/jawaria-child/assets/css/site.css"), v_nav=_ver("wp-content/themes/jawaria-child/assets/js/nav.js"),
+    VERS.update(ico_pin=ico("pin"), ico_mail=ico("mail"), wa_url=WA_URL, wa_icon=WA_ICON, footer_map=map_html("jr-map--footer"), v_css=_ver("wp-content/themes/jawaria-child/assets/css/site.css"), v_nav=_ver("wp-content/themes/jawaria-child/assets/js/nav.js"),
                 v_sl=_ver("wp-content/plugins/jawaria-clinic/assets/js/slider.js"), v_gal=_ver("wp-content/plugins/jawaria-clinic/assets/js/gallery.js"), v_base=_ver("preview/preview-base.css"))
     out_dir = os.path.join(ROOT, "preview")
     os.makedirs(out_dir, exist_ok=True)
@@ -762,21 +781,19 @@ def write_preview(pages):
         name = "index" if p["slug"] == "home" else p["slug"]
         body = render_preview(p["elementor"], sc, media)
         body = re.sub(r'href="/(?:services/)?([a-z-]+)/"', lambda m: f'href="{m.group(1)}.html"', body)
-        html_doc = PREVIEW_SHELL.format(title=p["title"], body=body, info=sc("jr_clinic_info", ""), menu_top=menu_html(MENU_TOP), menu_services=menu_html(MENU_SERVICES), foot_services=menu_html(MENU_FOOT_SERVICES, "jr-footer__links"), foot_links=menu_html(MENU_FOOT_LINKS, "jr-footer__links"), **VERS)
+        html_doc = PREVIEW_SHELL.format(title=p["title"], body=body, info=footer_info(), menu_top=menu_html(MENU_TOP), menu_services=menu_html(MENU_SERVICES), foot_services=menu_html(MENU_FOOT_SERVICES, "jr-footer__links"), foot_links=menu_html(MENU_FOOT_LINKS, "jr-footer__links"), **VERS)
         with open(os.path.join(out_dir, name + ".html"), "w", encoding="utf-8") as f:
             f.write(html_doc)
 
 
 def write_blog_preview():
-    cards = "".join(
-        f'<article class="jr-post-card"><div class="jr-post-card__body"><h3 class="jr-post-card__title"><a href="#">{p["title"]}</a></h3>'
-        f'<p class="jr-post-card__meta">{", ".join(p["categories"])} · Draft</p><p>{p["excerpt"]}</p></div></article>' for p in POSTS)
+    cards = post_cards(POSTS)
     body = (f'<section class="elementor-section jr-page-hero"><div class="elementor-container"><div class="elementor-column" style="--pv-w:100%"><div class="elementor-widget-wrap">'
             f'<div class="elementor-widget jr-eyebrow"><div class="elementor-widget-container"><p class="elementor-heading-title">Blog</p></div></div>'
             f'<div class="elementor-widget"><div class="elementor-widget-container"><h1 class="elementor-heading-title">Health articles</h1></div></div></div></div></div></section>'
-            f'<section class="elementor-section jr-section"><div class="elementor-container"><div class="elementor-column" style="--pv-w:100%"><div class="elementor-widget-wrap"><div class="jr-posts-grid">{cards}</div></div></div></div></section>')
+            f'<section class="elementor-section jr-section"><div class="elementor-container"><div class="elementor-column" style="--pv-w:100%"><div class="elementor-widget-wrap">{cards}</div></div></div></section>')
     sc = lambda n, a: fake_shortcode(n, a, [])
-    html_doc = PREVIEW_SHELL.format(title="Blog", body=body, info=sc("jr_clinic_info", ""), menu_top=menu_html(MENU_TOP), menu_services=menu_html(MENU_SERVICES), foot_services=menu_html(MENU_FOOT_SERVICES, "jr-footer__links"), foot_links=menu_html(MENU_FOOT_LINKS, "jr-footer__links"), **VERS)
+    html_doc = PREVIEW_SHELL.format(title="Blog", body=body, info=footer_info(), menu_top=menu_html(MENU_TOP), menu_services=menu_html(MENU_SERVICES), foot_services=menu_html(MENU_FOOT_SERVICES, "jr-footer__links"), foot_links=menu_html(MENU_FOOT_LINKS, "jr-footer__links"), **VERS)
     with open(os.path.join(ROOT, "preview", "blog.html"), "w", encoding="utf-8") as f:
         f.write(html_doc)
 

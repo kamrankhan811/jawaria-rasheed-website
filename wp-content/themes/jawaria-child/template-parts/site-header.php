@@ -50,7 +50,7 @@ $jr_has = function_exists( 'jr_opt' );
 			<?php if ( $jr_has && jr_opt( 'video_consult_url' ) ) : ?>
 				<a class="jr-btn jr-btn--ghost jr-btn--sm" href="<?php echo esc_url( jr_opt( 'video_consult_url' ) ); ?>"><?php esc_html_e( 'Video Consultation', 'jawaria-child' ); ?></a>
 			<?php endif; ?>
-			<a class="jr-btn jr-btn--primary jr-btn--sm" href="<?php echo esc_url( home_url( '/book-appointment/' ) ); ?>"><?php esc_html_e( 'Book', 'jawaria-child' ); ?><span class="jr-hide-sm"><?php esc_html_e( 'An Appointment', 'jawaria-child' ); ?></span></a>
+			<a class="jr-btn jr-btn--primary jr-btn--sm" href="<?php echo esc_url( home_url( '/book-appointment/' ) ); ?>"><?php esc_html_e( 'Book', 'jawaria-child' ); ?><span class="jr-hide-sm"><?php esc_html_e( 'an Appointment', 'jawaria-child' ); ?></span></a>
 			<button class="jr-burger" type="button" aria-expanded="false" aria-controls="jr-services-nav" data-jr-burger>
 				<span></span><span></span><span></span>
 				<span class="screen-reader-text"><?php esc_html_e( 'Menu', 'jawaria-child' ); ?></span>

@@ -6,7 +6,7 @@ SLIDES = [
         "eyebrow": "Consultant Gynecologist · Bahawalpur",
         "title": "Expert gynecology care for every stage of a woman’s life",
         "text": "Private, respectful consultations with Dr. Jawaria Rasheed — more than 15 years of experience in women’s health and IUI.",
-        "b1_label": "Book an appointment", "b1_url": "/book-appointment/",
+        "b1_label": "Book an Appointment", "b1_url": "/book-appointment/",
         "b2_label": "WhatsApp us", "b2_url": "whatsapp",
     },
     {
