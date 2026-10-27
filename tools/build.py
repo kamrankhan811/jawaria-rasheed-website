@@ -399,7 +399,7 @@ def contact():
         page_hero("Contact", "Contact the clinic", "Message us on WhatsApp or visit the clinic. For appointments, you can also send a request online.", buttons=False),
         section([
             column([
-                heading("Clinic details", "h2", "jr-h2"),
+                heading("Clinic Details", "h2", "jr-h2"),
                 shortcode('[jr_clinic_info icons="1"]'),
                 shortcode("[jr_cta_buttons]"),
             ], 50, "jr-card"),

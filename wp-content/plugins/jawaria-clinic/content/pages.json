@@ -10223,11 +10223,11 @@
       },
       "elements": [
        {
-        "id": "0e037e6",
+        "id": "4e0cf47",
         "elType": "widget",
         "widgetType": "heading",
         "settings": {
-         "title": "Clinic details",
+         "title": "Clinic Details",
          "header_size": "h2",
          "_css_classes": "jr-h2"
         },
@@ -10413,7 +10413,7 @@
     "isInner": false
    }
   ],
-  "fallback": "<p>Contact</p>\n<h1>Contact the clinic</h1>\n<p>Message us on WhatsApp or visit the clinic. For appointments, you can also send a request online.</p>\n<h2>Clinic details</h2>\n<h2>Timings</h2>\n<p class=\"jr-small\">Timings may change on public holidays. Please WhatsApp the clinic to confirm before visiting.</p>\n<h2>Areas we serve</h2>\n<p>Dr. Jawaria Rasheed sees patients from Bahawalpur and across South Punjab.</p>\n<p><strong>Emergency?</strong> This clinic does not provide emergency care. If you have heavy bleeding, severe pain or another emergency, please go to the nearest hospital emergency department.</p>"
+  "fallback": "<p>Contact</p>\n<h1>Contact the clinic</h1>\n<p>Message us on WhatsApp or visit the clinic. For appointments, you can also send a request online.</p>\n<h2>Clinic Details</h2>\n<h2>Timings</h2>\n<p class=\"jr-small\">Timings may change on public holidays. Please WhatsApp the clinic to confirm before visiting.</p>\n<h2>Areas we serve</h2>\n<p>Dr. Jawaria Rasheed sees patients from Bahawalpur and across South Punjab.</p>\n<p><strong>Emergency?</strong> This clinic does not provide emergency care. If you have heavy bleeding, severe pain or another emergency, please go to the nearest hospital emergency department.</p>"
  },
  {
   "slug": "book-appointment",
