@@ -667,3 +667,8 @@ a:hover, a:focus { color: var(--jr-primary-dark); }
 .jr-visit { align-items: start; }
 .jr-visit .jr-info--icons li { font-size: 1.05rem; padding: 12px 0; }
 .jr-visit .jr-map iframe { height: 320px; }
+
+/* Highlight cards: icon in a soft circle above the number */
+.jr-stat__icon { display: grid; place-items: center; width: 58px; height: 58px; margin: 0 auto 10px; border-radius: 50%; background: var(--jr-tint); color: var(--jr-primary); }
+.jr-stat__icon .jr-ico { width: 32px; height: 32px; margin: 0; vertical-align: 0; }
+@media (max-width: 640px) { .jr-stat__icon { width: 42px; height: 42px; margin-bottom: 6px; } .jr-stat__icon .jr-ico { width: 21px; height: 21px; } }

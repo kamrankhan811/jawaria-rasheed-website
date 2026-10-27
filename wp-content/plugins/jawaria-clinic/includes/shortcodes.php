@@ -42,7 +42,7 @@ function jr_wa_icon() {
 /**
  * Small inline SVG icon (decorative; text beside it carries the meaning).
  *
- * @param string $name pin|mail|clock|user|calendar.
+ * @param string $name pin|mail|clock|user|calendar|award|heart|flower|shield.
  * @return string
  */
 function jr_icon( $name ) {
@@ -51,6 +51,10 @@ function jr_icon( $name ) {
 		'mail'     => 'M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1zm1 2.3V17h16V7.3l-8 5.2-8-5.2zM5.2 7l6.8 4.4L18.8 7H5.2z',
 		'clock'    => 'M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm0 18a8 8 0 1 1 0-16 8 8 0 0 1 0 16zm1-13h-2v6l5 3 1-1.7-4-2.4V7z',
 		'user'     => 'M12 12a5 5 0 1 0 0-10 5 5 0 0 0 0 10zm0 2c-4.4 0-8 2.2-8 5v3h16v-3c0-2.8-3.6-5-8-5z',
+		'award'    => 'M12 2a7 7 0 0 0-4 12.7V22l4-2 4 2v-7.3A7 7 0 0 0 12 2zm0 2a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2.2-.9 1.9-2.1.3 1.5 1.5-.4 2.1 1.9-1 1.9 1-.4-2.1 1.5-1.5-2.1-.3-.9-1.9z',
+		'heart'    => 'M12 21s-7.5-4.6-9.6-9.1C.9 8.6 2.7 4.5 6.6 4.5c2.2 0 3.6 1.2 4.4 2.5.8-1.3 2.2-2.5 4.4-2.5 3.9 0 5.7 4.1 4.2 7.4C19.5 16.4 12 21 12 21z',
+		'flower'   => 'M12 2a3 3 0 0 1 3 3v.5a3 3 0 1 1 2.6 4.5 3 3 0 1 1-2.6 4.5V15a3 3 0 1 1-6 0v-.5A3 3 0 1 1 6.4 10 3 3 0 1 1 9 5.5V5a3 3 0 0 1 3-3zm0 7a3 3 0 1 0 0 6 3 3 0 0 0 0-6zm-1 13h2v-4h-2v4z',
+		'shield'   => 'M12 2 4 5v6c0 5 3.4 9.3 8 11 4.6-1.7 8-6 8-11V5l-8-3zm-1.2 13.6-3.5-3.5 1.4-1.4 2.1 2.1 4.6-4.6 1.4 1.4-6 6z',
 		'calendar' => 'M7 2h2v2h6V2h2v2h3a1 1 0 0 1 1 1v15a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h3V2zm12 8H5v9h14v-9zM7 12h2v2H7v-2zm4 0h2v2h-2v-2zm4 0h2v2h-2v-2zm-8 4h2v2H7v-2zm4 0h2v2h-2v-2z',
 	);
 	return isset( $paths[ $name ] ) ? '<svg class="jr-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="' . $paths[ $name ] . '"/></svg>' : '';

@@ -19,9 +19,10 @@ add_shortcode(
 		if ( ! $rows ) {
 			return '';
 		}
-		$html = '<div class="jr-stats">';
-		foreach ( $rows as $r ) {
-			$html .= '<div class="jr-stat"><span class="jr-stat__num">' . esc_html( $r[0] ) . '</span><span class="jr-stat__label">' . esc_html( $r[1] ) . '</span></div>';
+		$icons = array( 'award', 'heart', 'flower', 'shield' ); // one per card, in order.
+		$html  = '<div class="jr-stats">';
+		foreach ( $rows as $i => $r ) {
+			$html .= '<div class="jr-stat"><span class="jr-stat__icon">' . jr_icon( $icons[ $i % 4 ] ) . '</span><span class="jr-stat__num">' . esc_html( $r[0] ) . '</span><span class="jr-stat__label">' . esc_html( $r[1] ) . '</span></div>';
 		}
 		return $html . '</div>';
 	}
