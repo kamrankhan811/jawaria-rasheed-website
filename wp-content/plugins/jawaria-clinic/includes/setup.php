@@ -44,7 +44,7 @@ function jr_render_setup_page() {
 		<ul>
 			<li><?php echo $astra ? '✅' : '❌'; ?> <?php esc_html_e( 'Astra theme installed and "Jawaria Rasheed Clinic" child theme active', 'jawaria-clinic' ); ?></li>
 			<li><?php echo $elementor ? '✅' : '❌'; ?> <?php esc_html_e( 'Elementor plugin active', 'jawaria-clinic' ); ?></li>
-			<li><?php echo jr_opt( 'phone' ) && jr_opt( 'whatsapp' ) ? '✅' : '⚠️'; ?> <a href="<?php echo esc_url( admin_url( 'options-general.php?page=jr-clinic-info' ) ); ?>"><?php esc_html_e( 'Clinic Info filled in (can be done later)', 'jawaria-clinic' ); ?></a></li>
+			<li><?php echo jr_opt( 'whatsapp' ) && jr_opt( 'address' ) ? '✅' : '⚠️'; ?> <a href="<?php echo esc_url( admin_url( 'options-general.php?page=jr-clinic-info' ) ); ?>"><?php esc_html_e( 'Clinic Info filled in (can be done later)', 'jawaria-clinic' ); ?></a></li>
 		</ul>
 
 		<?php if ( is_array( $report ) ) : ?>
@@ -308,7 +308,7 @@ function jr_menu_specs() {
 		'jr_top'             => array(
 			'Header – top row',
 			array(
-				$p( 'about', 'About Dr. Jawaria' ),
+				$p( 'andrology-iui-lab', 'Andrology & IUI Lab' ),
 				array(
 					'url'      => '#',
 					'title'    => 'Patient Guide',
@@ -343,7 +343,6 @@ function jr_menu_specs() {
 				$p( 'endometriosis', 'Endometriosis' ),
 				$p( 'fibroids', 'Fibroids' ),
 				$p( 'menopause', 'Menopause' ),
-				$p( 'about', 'Dr. Jawaria Rasheed', 'jr-menu-doctor' ),
 			),
 		),
 		'jr_footer_services' => array(
@@ -352,7 +351,7 @@ function jr_menu_specs() {
 		),
 		'jr_footer'          => array(
 			'Footer – Quick Links',
-			array( $p( 'about', 'About Dr. Jawaria' ), $p( 'blog', 'Blog' ), $p( 'reviews', 'Patient Reviews' ), $p( 'videos', 'Videos' ), $p( 'faqs', 'FAQs' ), $p( 'contact', 'Contact Us' ), $p( 'book-appointment', 'Book Appointment' ) ),
+			array( $p( 'about', 'About Dr. Jawaria' ), $p( 'andrology-iui-lab', 'Andrology & IUI Lab' ), $p( 'blog', 'Blog' ), $p( 'reviews', 'Patient Reviews' ), $p( 'videos', 'Videos' ), $p( 'faqs', 'FAQs' ), $p( 'contact', 'Contact Us' ), $p( 'book-appointment', 'Book Appointment' ) ),
 		),
 	);
 }

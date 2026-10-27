@@ -1,6 +1,6 @@
 <?php
 /**
- * Four-column footer + bottom bar + floating call/WhatsApp buttons.
+ * Four-column footer + clinic map + bottom bar (floating WhatsApp button comes from the plugin).
  *   1. Brand, short intro, social links
  *   2. Our Services   (menu: "Footer – Our Services")
  *   3. Quick Links    (menu: "Footer – Quick Links")
@@ -61,6 +61,7 @@ $jr_has = function_exists( 'jr_opt' );
 			<p class="jr-footer__heading"><?php esc_html_e( 'Get In Touch', 'jawaria-child' ); ?></p>
 			<?php if ( $jr_has ) : ?>
 				<?php echo jr_clinic_info_html(); // phpcs:ignore WordPress.Security.EscapeOutput -- escaped inside. ?>
+				<?php echo jr_map_html( 'jr-map--footer' ); // phpcs:ignore WordPress.Security.EscapeOutput -- escaped inside. ?>
 			<?php endif; ?>
 			<p><a class="jr-btn jr-btn--light jr-btn--sm" href="<?php echo esc_url( home_url( '/book-appointment/' ) ); ?>"><?php esc_html_e( 'Book Online', 'jawaria-child' ); ?></a></p>
 		</div>

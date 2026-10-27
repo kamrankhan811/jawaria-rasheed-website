@@ -1,7 +1,7 @@
 <?php
 /**
  * Two-row site header (replaces Astra's header):
- *   Row 1: logo · top menu (About, Patient Guide, Contact) · call + Book buttons
+ *   Row 1: logo · top menu (Andrology & IUI Lab, Patient Guide, Blog, Contact) · WhatsApp + Book buttons
  *   Row 2: services menu with dropdowns / mega menu
  * Menus are edited in Appearance → Menus ("Header – top row", "Header – services row").
  *
@@ -39,10 +39,13 @@ $jr_has = function_exists( 'jr_opt' );
 		</nav>
 
 		<div class="jr-header__actions">
-			<?php if ( $jr_has && jr_opt( 'phone' ) ) : ?>
-				<a class="jr-header__call" href="<?php echo esc_url( jr_tel_url() ); ?>">
-					<span class="jr-header__call-label"><?php esc_html_e( 'Call us', 'jawaria-child' ); ?></span>
-					<span class="jr-header__call-num"><?php echo esc_html( jr_opt( 'phone' ) ); ?></span>
+			<?php if ( $jr_has && jr_opt( 'whatsapp' ) ) : ?>
+				<a class="jr-header__wa" href="<?php echo esc_url( jr_whatsapp_url() ); ?>" target="_blank" rel="noopener" aria-label="<?php echo esc_attr( sprintf( /* translators: %s: number */ __( 'WhatsApp the clinic on %s', 'jawaria-child' ), jr_opt( 'whatsapp' ) ) ); ?>">
+					<span class="jr-header__wa-icon"><?php echo jr_wa_icon(); // phpcs:ignore WordPress.Security.EscapeOutput -- static SVG. ?></span>
+					<span class="jr-header__wa-text">
+						<span class="jr-header__wa-label"><?php esc_html_e( 'WhatsApp', 'jawaria-child' ); ?></span>
+						<span class="jr-header__wa-num"><?php echo esc_html( jr_opt( 'whatsapp' ) ); ?></span>
+					</span>
 				</a>
 			<?php endif; ?>
 			<?php if ( $jr_has && jr_opt( 'video_consult_url' ) ) : ?>

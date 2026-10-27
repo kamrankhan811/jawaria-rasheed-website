@@ -107,7 +107,7 @@ add_action(
 );
 
 /**
- * Resolve a button link: "whatsapp", "call", absolute or site-relative URL.
+ * Resolve a button link: "whatsapp", absolute or site-relative URL.
  *
  * @param string $url Raw value.
  * @return string
@@ -118,7 +118,7 @@ function jr_slide_link( $url ) {
 		return jr_whatsapp_url();
 	}
 	if ( 'call' === strtolower( $url ) ) {
-		return jr_tel_url();
+		return jr_whatsapp_url(); // No call buttons on this site: "call" opens WhatsApp.
 	}
 	if ( 0 === strpos( $url, '/' ) ) {
 		return home_url( $url );

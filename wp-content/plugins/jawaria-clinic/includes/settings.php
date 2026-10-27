@@ -24,11 +24,10 @@ function jr_settings_fields() {
 		'Clinic & contact' => array(
 			'city'         => array( 'City', 'text', '' ),
 			'address'      => array( 'Clinic address', 'textarea', 'Full address. Use one line per clinic if she sits at more than one.' ),
-			'phone'        => array( 'Phone (calls)', 'text', 'As patients should see it, e.g. 0300 1234567.' ),
-			'whatsapp'     => array( 'WhatsApp number', 'text', 'e.g. 0300 1234567 or 923001234567.' ),
+			'whatsapp'     => array( 'WhatsApp number', 'text', 'The clinic number shown on the website (WhatsApp only — there are no call buttons). e.g. 0300 0610903.' ),
 			'email'        => array( 'Public email', 'text', '' ),
-			'map_link'     => array( 'Google Maps link', 'text', 'The "Share → Copy link" URL from Google Maps.' ),
-			'map_embed'    => array( 'Google Maps embed URL', 'text', 'Only the src="…" part of Google Maps "Share → Embed a map".' ),
+			'map_link'     => array( 'Google Maps link', 'text', 'The "Share → Copy link" URL from Google Maps (used for "Get directions").' ),
+			'map_embed'    => array( 'Google Maps embed URL', 'text', 'Optional. Only the src="…" part of Google Maps "Share → Embed a map". If empty, the map shows the clinic address.' ),
 		),
 		'Timings'         => array(
 			'hours'       => array( 'Clinic timings', 'textarea', 'One line per row: Day | Time. Example: Monday – Saturday | 5:00 pm – 9:00 pm' ),
@@ -39,8 +38,11 @@ function jr_settings_fields() {
 			'notify_email' => array( 'Send new appointment requests to', 'text', 'Staff email. Defaults to the site admin email.' ),
 			'wa_message'   => array( 'WhatsApp greeting', 'textarea', 'Pre-filled text when a patient taps the WhatsApp button.' ),
 			'wa_float'     => array( 'Show floating WhatsApp button', 'checkbox', '' ),
-			'call_float'   => array( 'Show floating Call button', 'checkbox', '' ),
 			'video_consult_url' => array( 'Video consultation link', 'url', 'Optional. If filled, a "Video Consultation" button appears in the header.' ),
+		),
+		'Google reCAPTCHA (booking form)' => array(
+			'recaptcha_site'   => array( 'reCAPTCHA site key', 'text', 'Create free keys at https://www.google.com/recaptcha/admin — choose "reCAPTCHA v2 → I\'m not a robot" and add your domain. The tick box appears on the booking form once both keys are filled.' ),
+			'recaptcha_secret' => array( 'reCAPTCHA secret key', 'password', 'Kept private; never shown on the website.' ),
 		),
 		'Homepage'        => array(
 			'slider_seconds' => array( 'Banner slider: seconds per slide', 'text', 'Default 6. Slides themselves are edited under Home Slides.' ),
@@ -119,7 +121,7 @@ function jr_sanitize_options( $input ) {
 	$out['notify_email'] = sanitize_email( $out['notify_email'] );
 	$out['map_link']     = esc_url_raw( $out['map_link'] );
 	$out['map_embed']    = esc_url_raw( $out['map_embed'] );
-	if ( $out['map_embed'] && ! preg_match( '#^https://(www\.)?google\.[a-z.]+/maps/embed#', $out['map_embed'] ) ) {
+	if ( $out['map_embed'] && ! preg_match( '#^https://(www\.|maps\.)?google\.[a-z.]+/maps(/embed|\?)#', $out['map_embed'] ) ) {
 		add_settings_error( JR_OPTION, 'jr_map', __( 'The map embed URL must start with https://www.google.com/maps/embed — it was cleared.', 'jawaria-clinic' ) );
 		$out['map_embed'] = '';
 	}
@@ -151,6 +153,8 @@ function jr_render_settings_page() {
 							<td>
 								<?php if ( 'textarea' === $def[1] ) : ?>
 									<textarea id="<?php echo esc_attr( $id ); ?>" name="<?php echo esc_attr( JR_OPTION . '[' . $key . ']' ); ?>" rows="4" class="large-text"><?php echo esc_textarea( $opts[ $key ] ); ?></textarea>
+								<?php elseif ( 'password' === $def[1] ) : ?>
+									<input type="password" id="<?php echo esc_attr( $id ); ?>" name="<?php echo esc_attr( JR_OPTION . '[' . $key . ']' ); ?>" value="<?php echo esc_attr( $opts[ $key ] ); ?>" class="regular-text" autocomplete="off">
 								<?php elseif ( 'checkbox' === $def[1] ) : ?>
 									<input type="checkbox" id="<?php echo esc_attr( $id ); ?>" name="<?php echo esc_attr( JR_OPTION . '[' . $key . ']' ); ?>" value="1" <?php checked( $opts[ $key ], '1' ); ?>>
 								<?php else : ?>
@@ -180,7 +184,7 @@ add_action(
 			return;
 		}
 		$missing = array();
-		foreach ( array( 'phone' => 'phone', 'whatsapp' => 'WhatsApp number', 'address' => 'address', 'qualifications' => 'qualifications' ) as $k => $label ) {
+		foreach ( array( 'whatsapp' => 'WhatsApp number', 'address' => 'address', 'qualifications' => 'qualifications' ) as $k => $label ) {
 			if ( '' === jr_opt( $k ) ) {
 				$missing[] = $label;
 			}

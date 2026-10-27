@@ -79,7 +79,7 @@ function jr_render_appointment_form() {
 	// phpcs:disable WordPress.Security.NonceVerification.Recommended -- read-only display state.
 	if ( isset( $_GET['jr_booked'] ) ) {
 		$msg = '<div class="jr-alert jr-alert--ok" role="status"><strong>' . esc_html__( 'Thank you — your request has been received.', 'jawaria-clinic' ) . '</strong><br>' .
-			esc_html__( 'This is not yet a confirmed appointment. Our team will call or WhatsApp you to confirm the date and time.', 'jawaria-clinic' ) . '</div>';
+			esc_html__( 'This is not yet a confirmed appointment. Our team will contact you on WhatsApp to confirm the date and time.', 'jawaria-clinic' ) . '</div>';
 		return $msg . do_shortcode( '[jr_cta_buttons book="0"]' );
 	}
 	if ( isset( $_GET['jr_t'] ) ) {
@@ -146,7 +146,7 @@ function jr_render_appointment_form() {
 			<div class="jr-form__full">
 				<label for="jr_note"><?php esc_html_e( 'Anything we should know to arrange the visit? (optional)', 'jawaria-clinic' ); ?></label>
 				<textarea id="jr_note" name="jr_note" maxlength="300"><?php echo esc_textarea( $val( 'note' ) ); ?></textarea>
-				<p class="jr-form__hint"><?php esc_html_e( 'e.g. first visit or follow-up, best time to call. Please do not share medical details here — the doctor will discuss them with you in private.', 'jawaria-clinic' ); ?></p>
+				<p class="jr-form__hint"><?php esc_html_e( 'e.g. first visit or follow-up, best time to reach you. Please do not share medical details here — the doctor will discuss them with you in private.', 'jawaria-clinic' ); ?></p>
 			</div>
 			<div class="jr-form__full">
 				<label class="jr-form__consent">
@@ -154,6 +154,12 @@ function jr_render_appointment_form() {
 					<span><?php esc_html_e( 'I agree that the clinic may contact me by phone or WhatsApp about this appointment.', 'jawaria-clinic' ); ?> <span class="jr-req">*</span></span>
 				</label>
 			</div>
+			<?php if ( jr_recaptcha_enabled() ) : ?>
+				<div class="jr-form__full jr-form__captcha">
+					<div class="g-recaptcha" data-sitekey="<?php echo esc_attr( jr_opt( 'recaptcha_site' ) ); ?>"></div>
+				</div>
+				<?php wp_enqueue_script( 'jr-recaptcha', 'https://www.google.com/recaptcha/api.js', array(), null, array( 'strategy' => 'async', 'in_footer' => true ) ); // phpcs:ignore WordPress.WP.EnqueuedResourceParameters.MissingVersion ?>
+			<?php endif; ?>
 			<div class="jr-form__full">
 				<button type="submit" class="jr-btn jr-btn--primary"><?php esc_html_e( 'Send appointment request', 'jawaria-clinic' ); ?></button>
 				<p class="jr-form__hint"><?php esc_html_e( 'Your appointment is confirmed only after the clinic contacts you.', 'jawaria-clinic' ); ?></p>
@@ -197,11 +203,19 @@ function jr_handle_booking() {
 
 	$errors = jr_validate_booking( $old );
 
+	// Google reCAPTCHA (only when keys are set in Clinic Info).
+	if ( ! $errors && jr_recaptcha_enabled() ) {
+		$token = isset( $_POST['g-recaptcha-response'] ) ? sanitize_text_field( wp_unslash( $_POST['g-recaptcha-response'] ) ) : '';
+		if ( ! jr_recaptcha_verify( $token ) ) {
+			$errors[] = __( 'Please tick "I\'m not a robot" before sending.', 'jawaria-clinic' );
+		}
+	}
+
 	// Simple rate limit: 5 requests per hour per visitor.
 	$ip_key = 'jr_rl_' . md5( isset( $_SERVER['REMOTE_ADDR'] ) ? sanitize_text_field( wp_unslash( $_SERVER['REMOTE_ADDR'] ) ) : 'x' );
 	$count  = (int) get_transient( $ip_key );
 	if ( $count >= 5 ) {
-		$errors[] = __( 'Too many requests from this device. Please call or WhatsApp the clinic instead.', 'jawaria-clinic' );
+		$errors[] = __( 'Too many requests from this device. Please message the clinic on WhatsApp instead.', 'jawaria-clinic' );
 	}
 
 	if ( $errors ) {
@@ -486,3 +500,44 @@ add_action(
 		}
 	}
 );
+
+/* -------------------------------------------------------------------------
+ * Google reCAPTCHA v2 ("I'm not a robot")
+ * ---------------------------------------------------------------------- */
+
+/**
+ * True when both reCAPTCHA keys are filled in under Settings → Clinic Info.
+ *
+ * @return bool
+ */
+function jr_recaptcha_enabled() {
+	return '' !== jr_opt( 'recaptcha_site' ) && '' !== jr_opt( 'recaptcha_secret' );
+}
+
+/**
+ * Check a reCAPTCHA token with Google.
+ *
+ * @param string $token Value of g-recaptcha-response.
+ * @return bool
+ */
+function jr_recaptcha_verify( $token ) {
+	if ( '' === $token ) {
+		return false;
+	}
+	$res = wp_remote_post(
+		'https://www.google.com/recaptcha/api/siteverify',
+		array(
+			'timeout' => 10,
+			'body'    => array(
+				'secret'   => jr_opt( 'recaptcha_secret' ),
+				'response' => $token,
+				'remoteip' => isset( $_SERVER['REMOTE_ADDR'] ) ? sanitize_text_field( wp_unslash( $_SERVER['REMOTE_ADDR'] ) ) : '',
+			),
+		)
+	);
+	if ( is_wp_error( $res ) ) {
+		return false;
+	}
+	$data = json_decode( wp_remote_retrieve_body( $res ), true );
+	return is_array( $data ) && ! empty( $data['success'] );
+}

@@ -2,8 +2,8 @@
 /**
  * Shortcodes used inside Elementor pages (Shortcode or Text Editor widgets).
  *
- * [jr_doctor_name] [jr_qualifications] [jr_experience] [jr_phone]
- * [jr_cta_buttons book="1" call="1" whatsapp="1" style="default|light" align="left|center"]
+ * [jr_doctor_name] [jr_qualifications] [jr_experience] [jr_phone] (WhatsApp number)
+ * [jr_cta_buttons book="1" whatsapp="1" style="default|light" align="left|center"]
  * [jr_clinic_info] [jr_hours] [jr_map] [jr_stats]
  * [jr_services_grid limit="0"] [jr_latest_posts count="3"]
  * [jr_appointment_form]  (see appointments.php)
@@ -25,8 +25,8 @@ add_shortcode(
 add_shortcode(
 	'jr_phone',
 	function () {
-		$p = jr_opt( 'phone' );
-		return $p ? '<a href="' . esc_url( jr_tel_url() ) . '">' . esc_html( $p ) . '</a>' : '';
+		$p = jr_opt( 'whatsapp' );
+		return $p ? '<a href="' . esc_url( jr_whatsapp_url() ) . '" target="_blank" rel="noopener">' . esc_html( $p ) . '</a>' : '';
 	}
 );
 
@@ -45,7 +45,6 @@ add_shortcode(
 		$a     = shortcode_atts(
 			array(
 				'book'     => '1',
-				'call'     => '1',
 				'whatsapp' => '1',
 				'style'    => 'default',
 				'align'    => 'left',
@@ -59,9 +58,6 @@ add_shortcode(
 		}
 		if ( '1' === $a['whatsapp'] && jr_whatsapp_url() ) {
 			$html .= '<a class="jr-btn jr-btn--whatsapp" href="' . esc_url( jr_whatsapp_url() ) . '" target="_blank" rel="noopener">' . jr_wa_icon() . esc_html__( 'WhatsApp', 'jawaria-clinic' ) . '</a>';
-		}
-		if ( '1' === $a['call'] && jr_tel_url() ) {
-			$html .= '<a class="jr-btn ' . ( $light ? 'jr-btn--light' : 'jr-btn--ghost' ) . '" href="' . esc_url( jr_tel_url() ) . '">' . esc_html__( 'Call', 'jawaria-clinic' ) . ' ' . esc_html( jr_opt( 'phone' ) ) . '</a>';
 		}
 		return $html . '</div>';
 	}
@@ -81,11 +77,8 @@ function jr_clinic_info_html() {
 		}
 		$rows[] = array( __( 'Address', 'jawaria-clinic' ), $addr );
 	}
-	if ( jr_opt( 'phone' ) ) {
-		$rows[] = array( __( 'Phone', 'jawaria-clinic' ), '<a href="' . esc_url( jr_tel_url() ) . '">' . esc_html( jr_opt( 'phone' ) ) . '</a>' );
-	}
 	if ( jr_opt( 'whatsapp' ) ) {
-		$rows[] = array( __( 'WhatsApp', 'jawaria-clinic' ), '<a href="' . esc_url( jr_whatsapp_url() ) . '" target="_blank" rel="noopener">' . esc_html( jr_opt( 'whatsapp' ) ) . '</a>' );
+		$rows[] = array( __( 'WhatsApp', 'jawaria-clinic' ), '<a class="jr-info__wa" href="' . esc_url( jr_whatsapp_url() ) . '" target="_blank" rel="noopener">' . jr_wa_icon() . esc_html( jr_opt( 'whatsapp' ) ) . '</a>' );
 	}
 	if ( jr_opt( 'email' ) ) {
 		$rows[] = array( __( 'Email', 'jawaria-clinic' ), '<a href="mailto:' . esc_attr( antispambot( jr_opt( 'email' ) ) ) . '">' . esc_html( antispambot( jr_opt( 'email' ) ) ) . '</a>' );
@@ -119,14 +112,24 @@ add_shortcode(
 	}
 );
 
+/**
+ * Google Map of the clinic (Clinic Info embed link, or the address).
+ *
+ * @param string $class Extra CSS class.
+ * @return string
+ */
+function jr_map_html( $class = '' ) {
+	$src = jr_map_src();
+	if ( ! $src ) {
+		return '';
+	}
+	return '<div class="jr-map ' . esc_attr( $class ) . '"><iframe src="' . esc_url( $src ) . '" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="' . esc_attr__( 'Clinic location map', 'jawaria-clinic' ) . '"></iframe></div>';
+}
+
 add_shortcode(
 	'jr_map',
 	function () {
-		$src = jr_opt( 'map_embed' );
-		if ( ! $src ) {
-			return '';
-		}
-		return '<div class="jr-map"><iframe src="' . esc_url( $src ) . '" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="' . esc_attr__( 'Clinic location map', 'jawaria-clinic' ) . '"></iframe></div>';
+		return jr_map_html();
 	}
 );
 

@@ -1,7 +1,7 @@
 <?php
 /**
  * Homepage extras: highlight numbers, Google rating, patient reviews,
- * YouTube videos, social links and floating Call / WhatsApp buttons.
+ * YouTube videos, social links and floating WhatsApp button.
  *
  * [jr_stats] [jr_rating] [jr_reviews count="3"] [jr_videos count="3"] [jr_social]
  *
@@ -250,9 +250,6 @@ add_action(
 	'wp_footer',
 	function () {
 		$html = '';
-		if ( '1' === jr_opt( 'call_float' ) && jr_tel_url() ) {
-			$html .= '<a class="jr-float jr-float--call" href="' . esc_url( jr_tel_url() ) . '" aria-label="' . esc_attr__( 'Call the clinic', 'jawaria-clinic' ) . '"><span aria-hidden="true">&#9742;</span></a>';
-		}
 		if ( '1' === jr_opt( 'wa_float' ) && jr_whatsapp_url() ) {
 			$html .= '<a class="jr-float jr-float--wa" href="' . esc_url( jr_whatsapp_url() ) . '" target="_blank" rel="noopener" aria-label="' . esc_attr__( 'Chat with the clinic on WhatsApp', 'jawaria-clinic' ) . '">' . jr_wa_icon() . '</a>';
 		}

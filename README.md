@@ -32,7 +32,7 @@ It is built with WordPress, the free **Astra** theme and free **Elementor**. Pag
    **Plugins:** activate **Jawaria Clinic Toolkit**.
 5. **Settings → Clinic Info:** add the phone, WhatsApp, address, timings and qualifications. You can also do this later, and every page updates automatically.
 6. **Tools → Clinic Site Setup → "Create website pages & menus".** This creates:
-   - Home, About, Services plus 12 service pages, Patient Reviews, Videos, FAQs, Contact, Book an Appointment, Health Articles (blog), Privacy Policy and Medical Disclaimer
+   - Home, About, Andrology & IUI Lab, Services plus 12 service pages, Patient Reviews, Videos, FAQs, Contact, Book an Appointment, Health Articles (blog), Privacy Policy and Medical Disclaimer
    - the main menu and footer menu, the home page and blog settings, and clean URLs
    - 3 draft health articles (in **Posts → Drafts**, to review before publishing)
 7. Visit `http://jawaria.local`.
@@ -40,13 +40,14 @@ It is built with WordPress, the free **Astra** theme and free **Elementor**. Pag
 ## Day-to-day editing
 
 - **Page text and images:** open the page, click **Edit with Elementor**, click any text or image, change it, then **Update**.
-- **Phone, WhatsApp, address, timings:** **Settings → Clinic Info** (one place updates the whole site).
+- **WhatsApp, email, address, timings, map:** **Settings → Clinic Info** (one place updates the whole site). The site has no call buttons — patients contact the clinic on WhatsApp.
+- **Booking form spam protection:** create free Google reCAPTCHA v2 ("I'm not a robot") keys at https://www.google.com/recaptcha/admin for the clinic domain, and paste both keys in **Settings → Clinic Info → Google reCAPTCHA**. The tick box then appears on the Book an Appointment form.
 - **Add a new service:** **Pages → Add New**, set **Parent = Services**, write a short **Excerpt**, and publish. It appears automatically on the Services page and the booking form. The quickest way is to duplicate an existing service page in Elementor.
 - **Logo:** **Appearance → Customize → Site Identity → Logo** (replaces the "JR" badge in the header).
 - **Menus:** **Appearance → Menus** — "Header – top row", "Header – services row" (add the CSS class `jr-mega` to a top item to show its sub-items as a 3-column mega menu), "Footer – Our Services", "Footer – Quick Links".
 - **Patient reviews:** **Patient Reviews → Add New** — only shown when "patient gave permission" is ticked.
 - **Videos, highlight numbers, Google rating, social links:** **Settings → Clinic Info**.
-- **Appointment requests:** the **Appointments** menu. Phone and WhatsApp links are built in, so call the patient and then set the **Status** to *Confirmed* with the date and time.
+- **Appointment requests:** the **Appointments** menu. Phone and WhatsApp links are built in, so contact the patient and then set the **Status** to *Confirmed* with the date and time.
 
 ## Everything is managed in WordPress
 
@@ -55,7 +56,7 @@ It is built with WordPress, the free **Astra** theme and free **Elementor**. Pag
 | Page text, images, sections | Pages → Edit with Elementor |
 | Add or remove a service page | Pages → Add New (Parent: Services) |
 | Blog articles | Posts → Add New |
-| Phone, WhatsApp, address, timings, areas served, social links, videos, highlight numbers | Settings → Clinic Info |
+| WhatsApp, email, address, timings, footer map, areas served, social links, YouTube videos, highlight numbers, reCAPTCHA keys | Settings → Clinic Info |
 | Header and footer menus | Appearance → Menus |
 | Logo and site icon | Appearance → Customize → Site Identity |
 | Appointment requests | Appointments |

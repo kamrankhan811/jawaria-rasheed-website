@@ -146,7 +146,7 @@ def render_preview(sections, shortcode_fn, media):
             body = re.sub(r"\[(jr_[a-z_]+)([^\]]*)\]", lambda m: shortcode_fn(m.group(1), m.group(2)), s["editor"])
         elif w == "button":
             al = f' style="text-align:{s["align"]}"' if s.get("align") else ""
-            body = f'<div class="elementor-button-wrapper"{al}><a class="elementor-button" href="#">{html.escape(s["text"])}</a></div>'
+            body = f'<div class="elementor-button-wrapper"{al}><a class="elementor-button" href="{html.escape(s["link"]["url"])}">{html.escape(s["text"])}</a></div>'
         elif w == "image":
             key = s["image"]["url"].split(":")[1]
             body = f'<img src="{media[key]}" alt="{html.escape(s["image"].get("alt",""))}">'

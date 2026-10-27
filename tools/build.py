@@ -324,9 +324,71 @@ def service_page(s):
     return secs
 
 
+def andrology():
+    """Andrology & IUI Lab — draft text for Dr. Jawaria to review."""
+    return [
+        page_hero("Andrology & IUI Lab · Bahawalpur", "Andrology & IUI Lab",
+                  "Semen analysis and sperm preparation for IUI, done at Dr. Jawaria Rasheed’s clinic so couples can complete fertility tests and treatment in one place."),
+        section([
+            column([
+                heading("What the lab does", "h2", "jr-h2"),
+                text("<p>Male factors play a part in many couples’ difficulty conceiving, so a fertility check always looks at <strong>both partners</strong>. The clinic’s andrology lab tests the semen sample and prepares sperm for IUI, and Dr. Jawaria explains every report to you in person.</p>", "jr-prose"),
+                checklist([
+                    "Semen analysis (count, movement and shape of sperm)",
+                    "Repeat and follow-up semen tests",
+                    "Sperm washing and preparation for IUI",
+                    "Same-day IUI with the prepared sample",
+                    "Reports explained clearly by the doctor",
+                ]),
+                heading("Semen analysis", "h2", "jr-h2"),
+                text("<p>A semen analysis is a simple, painless test. The lab looks at:</p><ul><li><strong>Volume</strong> — how much semen there is</li><li><strong>Sperm concentration</strong> — how many sperm there are per millilitre</li><li><strong>Motility</strong> — how well the sperm move</li><li><strong>Morphology</strong> — the shape of the sperm</li><li>Other checks when needed, such as vitality or signs of infection</li></ul><p>Results are compared with the reference values in the World Health Organization (WHO) laboratory manual for semen examination. Sperm quality naturally changes from one sample to the next, so <strong>one abnormal result does not mean infertility</strong> — the test is usually repeated after a few weeks before any decision is made.</p>", "jr-prose"),
+                heading("How to prepare for the test", "h2", "jr-h2"),
+                text("<ul><li>Avoid ejaculation for <strong>2 to 7 days</strong> before the test.</li><li>The sample is collected by masturbation into a clean container given by the lab, in a private room at the clinic.</li><li>Do not use lubricants, saliva or a condom — they can harm the sperm.</li><li>Collect the whole sample; if any part is lost, tell the lab staff.</li><li>Tell the doctor about any fever or illness in the last 3 months and any medicines you take, as these can affect the result.</li><li>If you were asked to collect the sample at home, bring it to the lab within about an hour, kept close to body temperature. Please ask the clinic first.</li></ul>", "jr-prose"),
+                heading("Sperm preparation for IUI", "h2", "jr-h2"),
+                text("<p>On the day of IUI, the husband gives a fresh sample at the clinic. In the lab, the sample is <strong>washed and concentrated</strong>: the seminal fluid is removed and the healthiest, most active sperm are separated into a small volume. Dr. Jawaria then places this prepared sample directly into the uterus with a thin, soft catheter. Preparation takes a short while, so couples usually wait at the clinic.</p>", "jr-prose"),
+                heading("Your IUI day, step by step", "h2", "jr-h2"),
+                text('<div class="jr-steps">' + "".join(f'<div class="jr-step"><h3>{t}</h3><p>{d}</p></div>' for t, d in [
+                    ("1. Fertility check", "Both partners are assessed, including a semen analysis."),
+                    ("2. Follicle monitoring", "Ultrasound scans track the growing egg follicle."),
+                    ("3. Timing", "IUI is planned for the time of ovulation."),
+                    ("4. Sample & preparation", "A fresh sample is given and prepared in the lab."),
+                    ("5. IUI", "The prepared sperm are placed in the uterus. It takes a few minutes."),
+                    ("6. Pregnancy test", "A test is done about two weeks later, as advised."),
+                ]) + "</div>"),
+                heading("Privacy and safety", "h2", "jr-h2"),
+                text("<p>Every sample is labelled and checked against the couple’s identity at each step. Collection is private, and results are shared only with you and your doctor.</p>", "jr-prose"),
+            ], 64),
+            column([
+                heading("Book a test or consultation", "h3"),
+                text("<p>Book a semen analysis or a fertility consultation with <strong>Dr. Jawaria Rasheed</strong> in Bahawalpur.</p>"),
+                button("Book an appointment", "/book-appointment/", "jr-btn-primary"),
+                shortcode('[jr_cta_buttons book="0"]'),
+                heading("Clinic timings", "h3"),
+                shortcode("[jr_hours]"),
+                heading("Related services", "h3"),
+                text('<ul class="jr-related-links"><li><a href="/services/iui-treatment/">IUI Treatment</a></li><li><a href="/services/infertility-evaluation/">Infertility Evaluation</a></li><li><a href="/services/ovulation-induction/">Ovulation Induction</a></li></ul>'),
+            ], 36, "jr-card jr-sticky"),
+        ], "jr-section"),
+        section([
+            heading("Frequently asked questions", "h2", "jr-h2"),
+            toggle([
+                ("Is a semen analysis painful?", "<p>No. The sample is collected privately by the man himself. There is no needle or procedure.</p>"),
+                ("Does one abnormal report mean we cannot have a baby?", "<p>No. Sperm results vary from sample to sample. The test is usually repeated, and many couples with abnormal results still conceive with the right treatment.</p>"),
+                ("How long should I abstain before the test?", "<p>Usually 2 to 7 days without ejaculation. The clinic will confirm what is right for you.</p>"),
+                ("When will I get the report?", "<p>The clinic will tell you when your report is ready, and Dr. Jawaria will explain it to you.</p>"),
+                ("Does the husband need to come on the IUI day?", "<p>Yes, in most cases, because a fresh sample is needed for sperm preparation shortly before the IUI.</p>"),
+            ]),
+        ], "jr-section jr-section--tint"),
+        section([
+            text("<p><em>This page is general information and does not replace a consultation. Content reviewed by Dr. Jawaria Rasheed.</em></p>", "jr-small"),
+        ], "jr-section jr-section--tight"),
+        cta_band(),
+    ]
+
+
 def contact():
     return [
-        page_hero("Contact", "Contact the clinic", "Call, WhatsApp or visit us. For appointments, you can also send a request online.", buttons=False),
+        page_hero("Contact", "Contact the clinic", "Message us on WhatsApp or visit the clinic. For appointments, you can also send a request online.", buttons=False),
         section([
             column([
                 heading("Clinic details", "h2", "jr-h2"),
@@ -336,7 +398,7 @@ def contact():
             column([
                 heading("Timings", "h2", "jr-h2"),
                 shortcode("[jr_hours]"),
-                text("<p class=\"jr-small\">Timings may change on public holidays. Please call or WhatsApp to confirm before visiting.</p>"),
+                text("<p class=\"jr-small\">Timings may change on public holidays. Please WhatsApp the clinic to confirm before visiting.</p>"),
             ], 50, "jr-card"),
         ], "jr-section"),
         section([shortcode("[jr_map]")], "jr-section jr-section--tight"),
@@ -354,12 +416,12 @@ def contact():
 def book():
     return [
         page_hero("Appointments", "Book an appointment",
-                  "Fill in the short form below and our team will call or WhatsApp you to confirm the date and time.", buttons=False),
+                  "Fill in the short form below and our team will contact you on WhatsApp to confirm the date and time.", buttons=False),
         section([
             column([shortcode("[jr_appointment_form]")], 62),
             column([
-                heading("Prefer to talk?", "h3"),
-                text("<p>You can also call or message the clinic directly.</p>"),
+                heading("Prefer WhatsApp?", "h3"),
+                text("<p>You can also message the clinic directly on WhatsApp.</p>"),
                 shortcode('[jr_cta_buttons book="0"]'),
                 heading("Clinic timings", "h3"),
                 shortcode("[jr_hours]"),
@@ -376,7 +438,7 @@ def book():
 
 def faqs():
     pairs = [
-        ("How do I book an appointment?", "<p>Use the <a href=\"/book-appointment/\">online request form</a>, call the clinic or send a WhatsApp message. The clinic will confirm your date and time.</p>"),
+        ("How do I book an appointment?", "<p>Use the <a href=\"/book-appointment/\">online request form</a> or send a WhatsApp message. The clinic will confirm your date and time.</p>"),
         ("Is my appointment confirmed when I submit the form?", "<p>Not yet. The form sends a request. Your appointment is confirmed when the clinic contacts you.</p>"),
         ("Can my husband or a family member come with me?", "<p>Yes. For fertility consultations it is especially helpful if both partners attend.</p>"),
         ("What should I bring to my first visit?", "<p>Previous reports and scans, a list of your medicines and the date of your last period.</p>"),
@@ -403,7 +465,7 @@ PRIVACY = """
 <h2>What we collect</h2>
 <ul>
 <li><strong>Appointment requests:</strong> name, mobile number, reason for visit, preferred date and time, and any short note you add.</li>
-<li><strong>Messages you send us</strong> by phone, WhatsApp or email.</li>
+<li><strong>Messages you send us</strong> on WhatsApp or by email.</li>
 <li><strong>Basic technical data</strong> such as browser type and pages visited, if analytics is enabled.</li>
 </ul>
 <h2>How we use it</h2>
@@ -449,6 +511,9 @@ def build_pages():
         seo_desc="Dr. Jawaria Rasheed is a consultant gynecologist with 15+ years’ experience in women’s health, fertility evaluation and IUI. Book an appointment online or on WhatsApp.")
     add("about", "About Dr. Jawaria Rasheed", about(), order=1,
         seo_desc="About Dr. Jawaria Rasheed — consultant gynecologist and IUI specialist with over 15 years of experience in women’s health and fertility care.")
+    add("andrology-iui-lab", "Andrology & IUI Lab", andrology(), order=2,
+        seo_title="Andrology & IUI Lab in Bahawalpur | Semen Analysis | Dr. Jawaria Rasheed",
+        seo_desc="Semen analysis and sperm preparation for IUI at Dr. Jawaria Rasheed’s clinic in Bahawalpur. How to prepare, what the test checks and your IUI day step by step.")
     add("services", "Services", services_hub(), order=2,
         seo_desc="Gynecology, pregnancy care, infertility evaluation, IUI, PCOS, menopause and more with Dr. Jawaria Rasheed.")
     for i, s in enumerate(SERVICES):
@@ -458,8 +523,8 @@ def build_pages():
     add("faqs", "FAQs", faqs(), order=3, seo_desc="Answers to common questions about appointments, IUI and women’s health care with Dr. Jawaria Rasheed.")
     add("reviews", "Patient Reviews", reviews_page(), order=3, seo_desc="Patient reviews for Dr. Jawaria Rasheed, consultant gynecologist and IUI specialist.")
     add("videos", "Videos", videos_page(), order=3, seo_desc="Health videos by Dr. Jawaria Rasheed on women’s health, fertility, IUI and pregnancy.")
-    add("contact", "Contact", contact(), order=4, seo_desc="Clinic address, phone, WhatsApp and timings for Dr. Jawaria Rasheed.")
-    add("book-appointment", "Book an Appointment", book(), order=5, seo_desc="Request an appointment with Dr. Jawaria Rasheed online. The clinic will call or WhatsApp you to confirm.")
+    add("contact", "Contact", contact(), order=4, seo_desc="Clinic address, WhatsApp, email and timings for Dr. Jawaria Rasheed in Bahawalpur.")
+    add("book-appointment", "Book an Appointment", book(), order=5, seo_desc="Request an appointment with Dr. Jawaria Rasheed online. The clinic will contact you on WhatsApp to confirm.")
     add("privacy-policy", "Privacy Policy", legal("Privacy policy", PRIVACY), order=8)
     add("medical-disclaimer", "Medical Disclaimer", legal("Medical disclaimer", DISCLAIMER), order=9)
     # Blog page: no Elementor layout — WordPress lists posts on it.
@@ -471,15 +536,32 @@ def build_pages():
 
 # ------------------------------------------------------------------ preview
 
+from urllib.parse import quote as _q
+
+WA_ICON = '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3z"/></svg>'
 SAMPLE = {
     "doctor_name": "Dr. Jawaria Rasheed", "experience": "15", "qualifications": "MBBS, FCPS (Obstetrics &amp; Gynaecology) — sample, replace",
-    "phone": "0300 0000000", "address": "Clinic address, Bahawalpur (sample)", "hours": [("Monday – Saturday", "5:00 pm – 9:00 pm (sample)"), ("Sunday", "Closed")],
+    "whatsapp": "0300 0610903", "email": "info@drjawariarasheed.com",
+    "address": "House No. 1/1, Gulzar-e-Sadiq Road, Bahawalpur",
+    "hours": [("Monday – Friday", "3:00 pm – 7:00 pm"), ("Saturday – Sunday", "Closed")], "hours_short": "Mon – Fri, 3:00 pm – 7:00 pm",
+    "youtube": "https://www.youtube.com/@jawariainfertilityclinic3964",
+    "videos": [("ymCmeTBZ0AI", "Tubal Factor Infertility | Causes & Treatment of infertility"),
+               ("NdDlTrg_EA0", "What is Polycystic ovarian Syndrome? | Causes & Treatment"),
+               ("ymCmeTBZ0AI", "Tubal Factor Infertility | Causes & Treatment of infertility")],
+    "slots": ["Any time (3:00 pm – 7:00 pm)", "3:00 pm – 4:00 pm", "4:00 pm – 5:00 pm", "5:00 pm – 6:00 pm", "6:00 pm – 7:00 pm"],
 }
+WA_URL = "https://wa.me/923000610903?text=" + _q("Assalam o Alaikum, I would like to book an appointment with Dr. Jawaria Rasheed.")
+MAP_SRC = "https://maps.google.com/maps?q=" + _q("House No. 1/1, Gulzar-e-Sadiq Road, Bahawalpur") + "&amp;z=16&amp;output=embed"
+MAP_LINK = "https://www.google.com/maps/search/?api=1&amp;query=House+No.+1%2F1+Gulzar-e-Sadiq+Road+Bahawalpur"
+
+
+def map_html(cls=""):
+    return f'<div class="jr-map {cls}"><iframe src="{MAP_SRC}" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Clinic location map"></iframe></div>'
 
 
 def fake_shortcode(name, args, pages):
     s = SAMPLE
-    btn = lambda c, t: f'<a class="jr-btn {c}" href="#">{t}</a>'
+    btn = lambda c, t, h="book-appointment.html": f'<a class="jr-btn {c}" href="{h}">{t}</a>'
     if name == "jr_experience":
         return s["experience"]
     if name == "jr_qualifications":
@@ -490,8 +572,7 @@ def fake_shortcode(name, args, pages):
         out = f'<div class="jr-btn-row{center}">'
         if 'book="0"' not in args:
             out += btn("jr-btn--light" if light else "jr-btn--primary", "Book an appointment")
-        out += btn("jr-btn--whatsapp", "WhatsApp")
-        out += btn("jr-btn--light" if light else "jr-btn--ghost", f"Call {s['phone']}")
+        out += f'<a class="jr-btn jr-btn--whatsapp" href="{WA_URL}" target="_blank" rel="noopener">{WA_ICON}WhatsApp</a>'
         return out + "</div>"
     if name == "jr_stats":
         rows = [("15+", "Years of experience"), ("IUI", "Fertility treatment offered"), ("PCOS", "Specialised care"), ("1:1", "Private consultations")]
@@ -510,9 +591,10 @@ def fake_shortcode(name, args, pages):
             out += f'<article class="jr-post-card"><div class="jr-post-card__body"><h3 class="jr-post-card__title"><a href="#">{p["title"]}</a></h3><p class="jr-post-card__meta">Draft article</p><p>{p["excerpt"]}</p></div></article>'
         return out + "</div>"
     if name == "jr_clinic_info":
-        return (f'<ul class="jr-info"><li><strong>Address</strong>{s["address"]}<br><a href="#">Get directions</a></li>'
-                f'<li><strong>Phone</strong><a href="#">{s["phone"]}</a></li><li><strong>WhatsApp</strong><a href="#">{s["phone"]}</a></li>'
-                '<li><strong>Timings</strong>Mon – Sat, by appointment</li></ul>')
+        return (f'<ul class="jr-info"><li><strong>Address</strong>{s["address"]}<br><a href="{MAP_LINK}" target="_blank" rel="noopener">Get directions</a></li>'
+                f'<li><strong>WhatsApp</strong><a class="jr-info__wa" href="{WA_URL}" target="_blank" rel="noopener">{WA_ICON}{s["whatsapp"]}</a></li>'
+                f'<li><strong>Email</strong><a href="mailto:{s["email"]}">{s["email"]}</a></li>'
+                f'<li><strong>Timings</strong>{s["hours_short"]}</li></ul>')
     if name == "jr_hours":
         return '<table class="jr-hours"><tbody>' + "".join(f"<tr><td>{a}</td><td>{b}</td></tr>" for a, b in s["hours"]) + "</tbody></table>"
     if name == "jr_slider":
@@ -524,19 +606,24 @@ def fake_shortcode(name, args, pages):
     if name == "jr_reviews":
         return '<div class="jr-reviews">' + "".join('<figure class="jr-review jr-review--empty"><span class="jr-review__stars">★★★★★</span><p class="jr-review__head">Real patient review</p><blockquote class="jr-review__text"><p>Reviews are added under Patient Reviews, only with the patient’s permission.</p></blockquote><figcaption class="jr-review__name">Patient name</figcaption></figure>' for _ in range(3)) + '</div>'
     if name == "jr_videos":
-        return '<div class="jr-videos">' + "".join(f'<a class="jr-video" href="#"><span class="jr-video__thumb jr-video__thumb--empty"><span class="jr-video__play">▶</span></span><span class="jr-video__title">YouTube video {i} (add link in Clinic Info)</span></a>' for i in (1, 2, 3)) + '</div><p class="jr-center"><a class="jr-btn jr-btn--ghost" href="#">Visit our YouTube channel</a></p>'
+        import html as _h
+        return ('<div class="jr-videos">' + "".join(
+            f'<a class="jr-video" href="https://www.youtube.com/watch?v={vid}" target="_blank" rel="noopener"><span class="jr-video__thumb"><img src="https://i.ytimg.com/vi/{vid}/hqdefault.jpg" alt="" loading="lazy"><span class="jr-video__play" aria-hidden="true">▶</span></span><span class="jr-video__title">{_h.escape(t)}</span></a>'
+            for vid, t in s["videos"]) + f'</div><p class="jr-center"><a class="jr-btn jr-btn--ghost" href="{s["youtube"]}" target="_blank" rel="noopener">Visit our YouTube channel</a></p>')
     if name == "jr_map":
-        return '<div class="jr-map"><div style="height:280px;border-radius:14px;background:#e3eeee;display:grid;place-items:center;color:#5b6b70">Google Map appears here once the embed link is added in Clinic Info</div></div>'
+        return map_html()
     if name == "jr_appointment_form":
-        opts = "".join(f"<option>{x}</option>" for x in ["General gynecology consultation"] + [sv["title"] for sv in SERVICES] + ["Other / not sure"])
+        opts = "".join(f"<option>{x}</option>" for x in ["General gynecology consultation"] + [sv["title"] for sv in SERVICES] + ["Semen analysis (Andrology &amp; IUI Lab)", "Other / not sure"])
+        slots = "".join(f"<option>{x}</option>" for x in s["slots"])
         return f'''<form class="jr-form" onsubmit="return false"><div class="jr-form__grid">
 <div><label>Patient name <span class="jr-req">*</span></label><input type="text"></div>
 <div><label>Mobile / WhatsApp number <span class="jr-req">*</span></label><input type="tel" placeholder="03xx xxxxxxx"></div>
 <div class="jr-form__full"><label>Reason for visit</label><select>{opts}</select></div>
 <div><label>Preferred date <span class="jr-req">*</span></label><input type="date"></div>
-<div><label>Preferred time</label><select><option>Any time</option><option>Morning</option><option>Afternoon</option><option>Evening</option></select></div>
-<div class="jr-form__full"><label>Anything we should know to arrange the visit? (optional)</label><textarea></textarea><p class="jr-form__hint">e.g. first visit or follow-up, best time to call. Please do not share medical details here — the doctor will discuss them with you in private.</p></div>
+<div><label>Preferred time</label><select>{slots}</select></div>
+<div class="jr-form__full"><label>Anything we should know to arrange the visit? (optional)</label><textarea></textarea><p class="jr-form__hint">e.g. first visit or follow-up, best time to reach you. Please do not share medical details here — the doctor will discuss them with you in private.</p></div>
 <div class="jr-form__full"><label class="jr-form__consent"><input type="checkbox"><span>I agree that the clinic may contact me by phone or WhatsApp about this appointment. <span class="jr-req">*</span></span></label></div>
+<div class="jr-form__full jr-form__captcha"><div class="g-recaptcha" data-sitekey="6LeIxAcTAAAAAJcZVRqyHh1cvl8-ui3oSWw7Ijcc"></div><script src="https://www.google.com/recaptcha/api.js" async defer></script><p class="jr-form__hint">Preview uses Google’s test key. The real site uses your own reCAPTCHA keys from Settings → Clinic Info.</p></div>
 <div class="jr-form__full"><button type="submit" class="jr-btn jr-btn--primary">Send appointment request</button><p class="jr-form__hint">Your appointment is confirmed only after the clinic contacts you.</p></div>
 </div></form>'''
     return ""
@@ -544,7 +631,7 @@ def fake_shortcode(name, args, pages):
 
 # Menus for the preview — mirror jr_menu_specs() in includes/setup.php.
 _T = {sv["slug"]: sv["title"] for sv in SERVICES}
-_T.update({"about": "About Dr. Jawaria", "reviews": "Patient Reviews", "blog": "Health Articles", "videos": "Videos",
+_T.update({"about": "About Dr. Jawaria", "andrology-iui-lab": "Andrology & IUI Lab", "reviews": "Patient Reviews", "blog": "Health Articles", "videos": "Videos",
            "faqs": "FAQs", "contact": "Contact Us", "book-appointment": "Book Appointment", "services": "Services"})
 
 
@@ -556,7 +643,7 @@ def H(title, children):
     return ("#", title, "jr-col-head", children)
 
 
-MENU_TOP = [P("about"), ("#", "Patient Guide", "", [P("reviews"), P("videos"), P("faqs"), P("book-appointment")]), ("blog.html", "Blog", "", []), P("contact")]
+MENU_TOP = [P("andrology-iui-lab"), ("#", "Patient Guide", "", [P("reviews"), P("videos"), P("faqs"), P("book-appointment")]), ("blog.html", "Blog", "", []), P("contact")]
 MENU_SERVICES = [
     P("services", "Gynecology", "", [P("gynecology-consultation"), P("menstrual-problems"), P("cervical-screening"), P("family-planning"), P("menopause")]),
     P("infertility-evaluation", "Fertility & IUI", "jr-mega", [
@@ -565,10 +652,10 @@ MENU_SERVICES = [
         H("Related Conditions", [P("pcos"), P("endometriosis"), P("fibroids")]),
     ]),
     P("pregnancy-care", "Pregnancy Care"), P("pcos", "PCOS"), P("endometriosis", "Endometriosis"),
-    P("fibroids", "Fibroids"), P("menopause", "Menopause"), P("about", "Dr. Jawaria Rasheed", "jr-menu-doctor"),
+    P("fibroids", "Fibroids"), P("menopause", "Menopause"),
 ]
 MENU_FOOT_SERVICES = [P("iui-treatment", "IUI Treatment"), P("infertility-evaluation"), P("pcos"), P("pregnancy-care"), P("endometriosis"), P("fibroids"), P("menopause"), P("cervical-screening")]
-MENU_FOOT_LINKS = [P("about"), ("blog.html", "Blog", "", []), P("reviews"), P("videos"), P("faqs"), P("contact"), P("book-appointment")]
+MENU_FOOT_LINKS = [P("about"), P("andrology-iui-lab"), ("blog.html", "Blog", "", []), P("reviews"), P("videos"), P("faqs"), P("contact"), P("book-appointment")]
 
 
 def menu_html(items, cls="jr-menu", sub=False):
@@ -596,26 +683,26 @@ PREVIEW_SHELL = """<!doctype html><html lang="en"><head><meta charset="utf-8"><m
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"><link rel="stylesheet" href="preview-base.css?v={v_base}"><link rel="stylesheet" href="../wp-content/themes/jawaria-child/assets/css/site.css?v={v_css}">
 </head><body>
-<div class="jr-pv-banner">Design preview — the real site is built in WordPress. Sample contact details shown.</div>
-<div class="jr-topbar"><div class="jr-topbar__inner"><span class="jr-topbar__item">Bahawalpur · Mon – Sat, by appointment</span><span class="jr-topbar__links"><a href="#">&#9742; Call 0300 0000000</a><a href="#">WhatsApp 0300 0000000</a></span></div></div>
+<div class="jr-pv-banner">Design preview — the real site is built in WordPress. Contact details as set for the clinic.</div>
+<div class="jr-topbar"><div class="jr-topbar__inner"><span class="jr-topbar__item">Bahawalpur · Mon – Fri, 3:00 pm – 7:00 pm</span><span class="jr-topbar__links"><a class="jr-topbar__wa" href="{wa_url}" target="_blank" rel="noopener">{wa_icon} WhatsApp 0300 0610903</a><a href="mailto:info@drjawariarasheed.com">info@drjawariarasheed.com</a></span></div></div>
 <header class="jr-header" data-jr-header>
  <div class="jr-header__main">
   <div class="jr-header__brand"><a class="jr-logo" href="index.html"><img class="jr-logo__img" src="../wp-content/themes/jawaria-child/assets/images/logo-mark.png" alt="Dr. Jawaria Rasheed logo"><span class="jr-logo__text"><span class="jr-logo__name">Dr. Jawaria Rasheed</span><span class="jr-logo__tag">Consultant Gynecologist &amp; IUI Specialist</span></span></a></div>
   <nav class="jr-nav jr-nav--top">{menu_top}</nav>
-  <div class="jr-header__actions"><a class="jr-header__call" href="#"><span class="jr-header__call-label">Call us</span><span class="jr-header__call-num">0300 0000000</span></a><a class="jr-btn jr-btn--primary jr-btn--sm" href="book-appointment.html">Book<span class="jr-hide-sm">An Appointment</span></a><button class="jr-burger" type="button" aria-expanded="false" data-jr-burger><span></span><span></span><span></span></button></div>
+  <div class="jr-header__actions"><a class="jr-header__wa" href="{wa_url}" target="_blank" rel="noopener" aria-label="WhatsApp the clinic on 0300 0610903"><span class="jr-header__wa-icon">{wa_icon}</span><span class="jr-header__wa-text"><span class="jr-header__wa-label">WhatsApp</span><span class="jr-header__wa-num">0300 0610903</span></span></a><a class="jr-btn jr-btn--primary jr-btn--sm" href="book-appointment.html">Book<span class="jr-hide-sm">An Appointment</span></a><button class="jr-burger" type="button" aria-expanded="false" data-jr-burger><span></span><span></span><span></span></button></div>
  </div>
  <div class="jr-header__services"><nav class="jr-nav jr-nav--services">{menu_services}</nav></div>
 </header>
 <main>{body}</main>
 <footer class="jr-footer"><div class="jr-footer__grid">
- <div class="jr-footer__col jr-footer__brand"><img class="jr-footer__logo" src="../wp-content/themes/jawaria-child/assets/images/logo-mark-white.png" alt=""><p class="jr-footer__name">Dr. Jawaria Rasheed</p><p class="jr-footer__tag">Consultant Gynecologist &amp; IUI Specialist</p><p class="jr-footer__about">Compassionate, personalised care in gynecology, women’s health and fertility, including IUI — at every stage of life.</p><div class="jr-social"><a class="jr-social__link jr-social__link--facebook" href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a><a class="jr-social__link jr-social__link--instagram" href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a><a class="jr-social__link jr-social__link--youtube" href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a><a class="jr-social__link jr-social__link--tiktok" href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a></div></div>
+ <div class="jr-footer__col jr-footer__brand"><img class="jr-footer__logo" src="../wp-content/themes/jawaria-child/assets/images/logo-mark-white.png" alt=""><p class="jr-footer__name">Dr. Jawaria Rasheed</p><p class="jr-footer__tag">Consultant Gynecologist &amp; IUI Specialist</p><p class="jr-footer__about">Compassionate, personalised care in gynecology, women’s health and fertility, including IUI — at every stage of life.</p><div class="jr-social"><a class="jr-social__link jr-social__link--facebook" href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a><a class="jr-social__link jr-social__link--instagram" href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a><a class="jr-social__link jr-social__link--youtube" href="https://www.youtube.com/@jawariainfertilityclinic3964" target="_blank" rel="noopener" aria-label="YouTube"><i class="fab fa-youtube"></i></a><a class="jr-social__link jr-social__link--tiktok" href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a></div></div>
  <div class="jr-footer__col"><p class="jr-footer__heading">Our Services</p>{foot_services}</div>
  <div class="jr-footer__col"><p class="jr-footer__heading">Quick Links</p>{foot_links}</div>
- <div class="jr-footer__col"><p class="jr-footer__heading">Get In Touch</p>{info}<p><a class="jr-btn jr-btn--light jr-btn--sm" href="book-appointment.html">Book Online</a></p></div>
+ <div class="jr-footer__col"><p class="jr-footer__heading">Get In Touch</p>{info}{footer_map}<p><a class="jr-btn jr-btn--light jr-btn--sm" href="book-appointment.html">Book Online</a></p></div>
 </div>
 <div class="jr-footer__legal"><p class="jr-footer__note">Information on this website is for general education and does not replace a consultation. In an emergency, go to the nearest hospital emergency department.</p>
 <div class="jr-footer__bottom"><span>&copy; 2026 Dr. Jawaria Rasheed. All rights reserved.</span><span class="jr-footer__policies"><a href="privacy-policy.html">Privacy Policy</a><a href="medical-disclaimer.html">Medical Disclaimer</a><a href="#">Sitemap</a></span></div></div></footer>
-<div class="jr-floats"><a class="jr-float jr-float--call" href="#"><span>&#9742;</span></a><a class="jr-float jr-float--wa" href="#"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2z"/></svg></a></div>
+<div class="jr-floats"><a class="jr-float jr-float--wa" href="{wa_url}" target="_blank" rel="noopener" aria-label="Chat with the clinic on WhatsApp">{wa_icon}</a></div>
 <script src="../wp-content/themes/jawaria-child/assets/js/nav.js?v={v_nav}"></script>
 <script src="../wp-content/plugins/jawaria-clinic/assets/js/slider.js?v={v_sl}"></script>
 </body></html>"""
@@ -625,7 +712,7 @@ def render_slider_preview():
     import html as _h
     out = '<section class="jr-slider" data-jr-slider data-interval="6000" aria-roledescription="carousel" aria-label="Highlights"><div class="jr-slider__track">'
     for i, sl in enumerate(SLIDES):
-        link = lambda u: "#" if u in ("whatsapp", "call") else (u.strip("/").split("/")[-1] + ".html" if u != "/" else "index.html")
+        link = lambda u: WA_URL if u in ("whatsapp", "call") else (u.strip("/").split("/")[-1] + ".html" if u != "/" else "index.html")
         tag = "h1" if i == 0 else "h2"
         b2cls = "jr-btn--whatsapp" if sl["b2_url"] == "whatsapp" else "jr-btn--light"
         out += (f'<div class="jr-slide{" is-active" if i == 0 else ""}"{"" if i == 0 else " aria-hidden=\"true\""}>'
@@ -644,7 +731,7 @@ VERS = {}
 
 
 def write_preview(pages):
-    VERS.update(v_css=_ver("wp-content/themes/jawaria-child/assets/css/site.css"), v_nav=_ver("wp-content/themes/jawaria-child/assets/js/nav.js"),
+    VERS.update(wa_url=WA_URL, wa_icon=WA_ICON, footer_map=map_html("jr-map--footer"), v_css=_ver("wp-content/themes/jawaria-child/assets/css/site.css"), v_nav=_ver("wp-content/themes/jawaria-child/assets/js/nav.js"),
                 v_sl=_ver("wp-content/plugins/jawaria-clinic/assets/js/slider.js"), v_base=_ver("preview/preview-base.css"))
     out_dir = os.path.join(ROOT, "preview")
     os.makedirs(out_dir, exist_ok=True)
