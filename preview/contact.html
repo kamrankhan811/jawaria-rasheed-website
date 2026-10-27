@@ -2,9 +2,16 @@
 <title>Contact — Preview</title>
 <link rel="icon" href="../wp-content/themes/jawaria-child/assets/images/favicon-32.png">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Carlito:ital,wght@0,400;0,700;1,400&display=swap">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"><link rel="stylesheet" href="preview-base.css?v=2b7b0fa5"><link rel="stylesheet" href="../wp-content/themes/jawaria-child/assets/css/site.css?v=21e068d7">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"><link rel="stylesheet" href="preview-base.css?v=2b7b0fa5"><link rel="stylesheet" href="../wp-content/themes/jawaria-child/assets/css/site.css?v=d108033b">
 </head><body>
-<div class="jr-pv-banner">Design preview — the real site is built in WordPress. Contact details as set for the clinic.</div>
+<div class="jr-pv-banner">Design preview — the real site is built in WordPress. <label>Try a font: <select id="jr-pv-font" style="font:inherit;padding:2px 6px;border-radius:6px">
+<option value="">Calibri (current)</option><option value="Nunito">A · Nunito</option><option value="Poppins">B · Poppins</option><option value="Quicksand">C · Quicksand</option><option value="Mulish">D · Mulish</option></select></label></div>
+<script>/* preview only: switch the site font to compare options; remembered while browsing pages */
+(function(){var sel=document.getElementById('jr-pv-font'),f='';try{f=localStorage.getItem('jrPvFont')||'';}catch(e){}
+function apply(n){var r=document.documentElement.style;if(!n){r.removeProperty('--jr-font-head');r.removeProperty('--jr-font-body');return;}
+var id='jr-pv-gf';var l=document.getElementById(id);if(!l){l=document.createElement('link');l.id=id;l.rel='stylesheet';document.head.appendChild(l);}
+l.href='https://fonts.googleapis.com/css2?family='+n+':wght@400;600;700;800&display=swap';var v='"'+n+'", system-ui, sans-serif';r.setProperty('--jr-font-head',v);r.setProperty('--jr-font-body',v);}
+sel.value=f;apply(f);sel.addEventListener('change',function(){try{localStorage.setItem('jrPvFont',sel.value);}catch(e){}apply(sel.value);});})();</script>
 <div class="jr-topbar"><div class="jr-topbar__inner"><span class="jr-topbar__item"><svg class="jr-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>Bahawalpur · Mon – Fri, 3:00 pm – 7:00 pm</span><span class="jr-topbar__links"><a class="jr-topbar__wa" href="https://wa.me/923000610903?text=Assalam%20o%20Alaikum%2C%20I%20would%20like%20to%20book%20an%20appointment%20with%20Dr.%20Jawaria%20Rasheed." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3z"/></svg> WhatsApp 0300 0610903</a><a href="mailto:info@drjawariarasheed.com"><svg class="jr-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1zm1 2.3V17h16V7.3l-8 5.2-8-5.2zM5.2 7l6.8 4.4L18.8 7H5.2z"/></svg> info@drjawariarasheed.com</a></span></div></div>
 <header class="jr-header" data-jr-header>
  <div class="jr-header__main">

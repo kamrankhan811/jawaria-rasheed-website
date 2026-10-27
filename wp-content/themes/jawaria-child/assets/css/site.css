@@ -652,7 +652,7 @@ a:hover, a:focus { color: var(--jr-primary-dark); }
 	.jr-logo__name { font-size: .92rem; }
 	.jr-logo__img { width: 42px; height: 42px; }
 }
-@media (max-width: 374px) {
+@media (max-width: 389px) {
 	/* Very narrow phones: calendar icon only; the word "Book" stays for screen readers. */
 	.jr-header__actions .jr-btn--sm { font-size: 0; gap: 0; min-width: 44px; padding: 8px 12px; }
 	.jr-header__actions .jr-btn--sm::after { width: 18px; height: 20px; -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 2h2v2h6V2h2v2h3a1 1 0 0 1 1 1v15a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h3V2zm12 8H5v9h14v-9zM7 12h2v2H7v-2zm4 0h2v2h-2v-2zm4 0h2v2h-2v-2zm-8 4h2v2H7v-2zm4 0h2v2h-2v-2z'/%3E%3C/svg%3E") center / 18px 18px no-repeat; mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 2h2v2h6V2h2v2h3a1 1 0 0 1 1 1v15a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h3V2zm12 8H5v9h14v-9zM7 12h2v2H7v-2zm4 0h2v2h-2v-2zm4 0h2v2h-2v-2zm-8 4h2v2H7v-2zm4 0h2v2h-2v-2z'/%3E%3C/svg%3E") center / 18px 18px no-repeat; }
@@ -683,3 +683,19 @@ h1, h2, h3, .elementor-heading-title, .jr-slider .jr-slide__title { font-weight:
 .jr-btn, .elementor-button { font-family: var(--jr-font-body); }
 /* Service cards: line icon instead of initials */
 .jr-service-card__icon svg { width: 26px; height: 26px; }
+/* Header copes with wider fonts: sizes follow the screen width on laptops. */
+@media (min-width: 1025px) {
+	.jr-nav--top .jr-menu > li > a { font-size: clamp(14px, 1.05vw, 17px) !important; padding-left: clamp(5px, .55vw, 12px) !important; padding-right: clamp(5px, .55vw, 12px) !important; }
+	.jr-nav--services .jr-menu > li > a { font-size: clamp(13.5px, 1.1vw, 17px) !important; padding-left: clamp(3px, .45vw, 10px) !important; padding-right: clamp(3px, .45vw, 10px) !important; }
+	.jr-header__actions .jr-btn--sm { font-size: clamp(13px, 1vw, 16px); padding-left: clamp(12px, 1.2vw, 22px); padding-right: clamp(12px, 1.2vw, 22px); }
+	.jr-logo__name { font-size: clamp(17px, 1.35vw, 22px); }
+	.jr-logo__tag { font-size: clamp(12.5px, .95vw, 14.5px); }
+}
+@media (min-width: 1025px) and (max-width: 1799px) { .jr-logo__tag { display: none; } }
+@media (min-width: 1025px) and (max-width: 1279px) { .jr-header__wa-text { display: none !important; } }
+@media (min-width: 1280px) { .jr-header__wa-text { display: flex !important; } }
+@media (max-width: 1024px) { .jr-logo__tag { display: none; } }
+@media (max-width: 520px) { .jr-logo__name { font-size: clamp(13px, 3.9vw, 16.5px) !important; } }
+@media (max-width: 360px) { .jr-topbar__links a { white-space: normal; overflow-wrap: anywhere; } .jr-topbar { font-size: 14px; } }
+.jr-btn-row .jr-btn, .elementor-button { max-width: 100%; white-space: normal; text-align: center; }
+.jr-info a, .jr-info span { overflow-wrap: anywhere; }
