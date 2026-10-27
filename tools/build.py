@@ -754,7 +754,7 @@ def render_slider_preview():
         tag = "h1" if i == 0 else "h2"
         b2cls = "jr-btn--whatsapp" if sl["b2_url"] == "whatsapp" else "jr-btn--light"
         out += (f'<div class="jr-slide{" is-active" if i == 0 else ""}"{"" if i == 0 else " aria-hidden=\"true\""}>'
-                f'<img class="jr-slide__img" src="../wp-content/plugins/jawaria-clinic/assets/images/{sl["image"]}" alt="" loading="{"eager" if i == 0 else "lazy"}">'
+                f'<img class="jr-slide__img" src="../wp-content/plugins/jawaria-clinic/assets/images/{sl["image"]}?v={_ver("wp-content/plugins/jawaria-clinic/assets/images/" + sl["image"])}" alt="" loading="{"eager" if i == 0 else "lazy"}">'
                 f'<div class="jr-slide__inner"><div class="jr-slide__content"><p class="jr-slide__eyebrow">{_h.escape(sl["eyebrow"])}</p>'
                 f'<{tag} class="jr-slide__title">{_h.escape(sl["title"])}</{tag}><p class="jr-slide__text">{_h.escape(sl["text"])}</p>'
                 f'<div class="jr-btn-row"><a class="jr-btn jr-btn--primary" href="{link(sl["b1_url"])}">{_h.escape(sl["b1_label"])}</a>'
