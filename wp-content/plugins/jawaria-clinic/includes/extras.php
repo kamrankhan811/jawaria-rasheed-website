@@ -183,7 +183,7 @@ add_shortcode(
 				return '<p class="jr-center"><a class="jr-btn jr-btn--ghost" href="' . esc_url( jr_opt( 'google_reviews' ) ) . '" target="_blank" rel="noopener">' . esc_html__( 'Read patient reviews on Google', 'jawaria-clinic' ) . '</a></p>';
 			}
 			// Visitors: an empty marker lets CSS hide the whole home section until real testimonials exist.
-			return current_user_can( 'edit_pages' ) ? '<p class="jr-empty jr-center">' . esc_html__( 'Add testimonials under Testimonials (only with the patient’s permission) and they will appear here.', 'jawaria-clinic' ) . '</p>' : '<span class="jr-reviews-empty" hidden></span>';
+			return current_user_can( 'edit_pages' ) ? '<p class="jr-empty jr-center">' . esc_html__( 'Add testimonials under Testimonials (only with the patient’s permission) and they will appear here.', 'jawaria-clinic' ) . '</p>' : '<span class="jr-reviews-empty" hidden></span><style>.jr-section:has(.jr-reviews-empty){display:none}</style>'; // style here too so it works without a theme update
 		}
 		$html = '<div class="jr-reviews">';
 		foreach ( $posts as $p ) {
