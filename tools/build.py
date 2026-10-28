@@ -84,7 +84,7 @@ def home():
         # 5. Feature: fertility & IUI
         section([
             column([
-                                heading("Trying to conceive? Start with clear answers.", "h2", "jr-h2"),
+                                heading("Fertility care for couples, step by step", "h2", "jr-h2"),
                 text("<p>Fertility concerns can feel overwhelming. Dr. Jawaria evaluates both partners, then recommends the simplest step that can work, such as ovulation support, follicle monitoring or IUI. When another option such as IVF is more suitable, she will explain why and guide you.</p>"),
                 button("Learn about IUI", "/services/iui-treatment/", "jr-btn-primary"),
             ], 55),
@@ -218,7 +218,7 @@ def about():
             ], 60),
             column([
                 heading("Qualifications & experience", "h3"),
-                text("<p>[jr_qualifications]</p><ul><li>[jr_experience]+ years in gynecology and women’s health</li><li>Add hospital appointments here</li><li>Add professional memberships here</li><li>Add training / certifications (e.g. IUI, ultrasound) here</li></ul>", "jr-prose"),
+                text("<p>[jr_qualifications]</p><ul><li>[jr_experience]+ years in gynecology and women’s health</li><li>Fertility care including IUI and an on-site andrology lab</li><li>Consultations in Bahawalpur for patients across South Punjab</li></ul>", "jr-prose"),
                 button("Book an Appointment", "/book-appointment/", "jr-btn-primary"),
             ], 40, "jr-card"),
         ], "jr-section"),
@@ -309,7 +309,7 @@ def service_page(s):
             text(f'<div class="jr-services-grid">{cards}</div>'),
         ], "jr-section"))
     secs.append(section([
-        text("<p><em>This page is general information and does not replace a consultation. Your treatment plan depends on your individual examination and test results. Content reviewed by Dr. Jawaria Rasheed.</em></p>", "jr-small"),
+        text("<p><em>This page is general information and does not replace a consultation. Your treatment plan depends on your individual examination and test results. Content reviewed by Dr. Jawaria Rasheed, October 2026.</em></p>", "jr-small"),
     ], "jr-section jr-section--tight"))
     secs.append(cta_band())
     return secs
@@ -354,7 +354,7 @@ def andrology():
                 text("<p>Book a semen analysis or a fertility consultation with <strong>Dr. Jawaria Rasheed</strong> in Bahawalpur.</p>"),
                 button("Book an Appointment", "/book-appointment/", "jr-btn-primary"),
                 shortcode('[jr_cta_buttons book="0"]'),
-                heading("Clinic timings", "h3"),
+                heading("Clinic Timings", "h3"),
                 shortcode("[jr_hours]"),
                 heading("Related services", "h3"),
                 text('<ul class="jr-related-links"><li><a href="/services/iui-treatment/">IUI Treatment</a></li><li><a href="/services/infertility-evaluation/">Infertility Evaluation</a></li><li><a href="/services/ovulation-induction/">Ovulation Induction</a></li></ul>'),
@@ -371,7 +371,7 @@ def andrology():
             ]),
         ], "jr-section jr-section--tint"),
         section([
-            text("<p><em>This page is general information and does not replace a consultation. Content reviewed by Dr. Jawaria Rasheed.</em></p>", "jr-small"),
+            text("<p><em>This page is general information and does not replace a consultation. Content reviewed by Dr. Jawaria Rasheed, October 2026.</em></p>", "jr-small"),
         ], "jr-section jr-section--tight"),
         cta_band(),
     ]
@@ -414,7 +414,7 @@ def book():
                 heading("Prefer WhatsApp?", "h3"),
                 text("<p>You can also message the clinic directly on WhatsApp.</p>"),
                 shortcode('[jr_cta_buttons book="0"]'),
-                heading("Clinic timings", "h3"),
+                heading("Clinic Timings", "h3"),
                 shortcode("[jr_hours]"),
                 heading("What to bring", "h3"),
                 checklist([
@@ -446,13 +446,13 @@ def faqs():
 
 def legal(title, body):
     return [
-        page_hero("Legal", title, "Last updated: please add the date when finalised.", buttons=False),
+        page_hero("Legal", title, "Last updated: 28 October 2026", buttons=False),
         section([text(body, "jr-prose jr-narrow")], "jr-section"),
     ]
 
 
 PRIVACY = """
-<p>This policy explains what information this website collects and how it is used. <strong>Draft — please have it reviewed before publishing.</strong></p>
+<p>This policy explains what information this website collects and how it is used.</p>
 <h2>What we collect</h2>
 <ul>
 <li><strong>Appointment requests:</strong> name, mobile number, reason for visit, preferred date and time, and any short note you add.</li>
@@ -498,25 +498,25 @@ def build_pages():
         })
 
     home_secs, _ = home()
-    add("home", "Home", home_secs, seo_title="Dr. Jawaria Rasheed | Consultant Gynecologist & IUI Specialist",
+    add("home", "Home", home_secs, seo_title="Dr. Jawaria Rasheed | Gynecologist & IUI Specialist in Bahawalpur",
         seo_desc="Dr. Jawaria Rasheed is a consultant gynecologist with 15+ years’ experience in women’s health, fertility evaluation and IUI. Book an appointment online or on WhatsApp.")
-    add("about", "About Dr. Jawaria Rasheed", about(), order=1,
+    add("about", "About Dr. Jawaria Rasheed", about(), order=1, seo_title="About Dr. Jawaria Rasheed | Gynecologist & IUI Specialist in Bahawalpur",
         seo_desc="About Dr. Jawaria Rasheed — consultant gynecologist and IUI specialist with over 15 years of experience in women’s health and fertility care.")
     add("andrology-iui-lab", "Andrology & IUI Lab", andrology(), order=2,
         seo_title="Andrology & IUI Lab in Bahawalpur | Semen Analysis | Dr. Jawaria Rasheed",
         seo_desc="Semen analysis and sperm preparation for IUI at Dr. Jawaria Rasheed’s clinic in Bahawalpur. How to prepare, what the test checks and your IUI day step by step.")
-    add("services", "Services", services_hub(), order=2,
+    add("services", "Services", services_hub(), seo_title="Gynecology & Fertility Services in Bahawalpur | Dr. Jawaria Rasheed", order=2,
         seo_desc="Gynecology, pregnancy care, infertility evaluation, IUI, PCOS, menopause and more with Dr. Jawaria Rasheed.")
     for i, s in enumerate(SERVICES):
         add(s["slug"], s["title"], service_page(s), parent="services", order=i, excerpt=s["excerpt"], icon=ICON_BY_SLUG.get(s["slug"], s["icon"]),
             seo_title=s["seo_title"],
             seo_desc=s["excerpt"] + " Consultant gynecologist Dr. Jawaria Rasheed in Bahawalpur.")
-    add("faqs", "FAQs", faqs(), order=3, seo_desc="Answers to common questions about appointments, IUI and women’s health care with Dr. Jawaria Rasheed.")
+    add("faqs", "FAQs", faqs(), seo_title="FAQs | Dr. Jawaria Rasheed, Gynecologist in Bahawalpur", order=3, seo_desc="Answers to common questions about appointments, IUI and women’s health care with Dr. Jawaria Rasheed.")
     add("testimonials", "Testimonials", reviews_page(), order=3, seo_desc="Patient testimonials for Dr. Jawaria Rasheed, consultant gynecologist and IUI specialist in Bahawalpur.")
     add("gallery", "Photo Gallery", gallery_page(), order=3, seo_desc="Photos of Dr. Jawaria Rasheed’s gynecology and IUI clinic in Bahawalpur.")
     add("videos", "Videos", videos_page(), order=3, seo_desc="Health videos by Dr. Jawaria Rasheed on women’s health, fertility, IUI and pregnancy.")
-    add("contact", "Contact", contact(), order=4, seo_desc="Clinic address, WhatsApp, email and timings for Dr. Jawaria Rasheed in Bahawalpur.")
-    add("book-appointment", "Book an Appointment", book(), order=5, seo_desc="Request an appointment with Dr. Jawaria Rasheed online. The clinic will contact you on WhatsApp to confirm.")
+    add("contact", "Contact", contact(), seo_title="Contact Dr. Jawaria Rasheed | Gynecologist in Bahawalpur", order=4, seo_desc="Clinic address, WhatsApp, email and timings for Dr. Jawaria Rasheed in Bahawalpur.")
+    add("book-appointment", "Book an Appointment", book(), seo_title="Book an Appointment | Dr. Jawaria Rasheed, Bahawalpur", order=5, seo_desc="Request an appointment with Dr. Jawaria Rasheed online. The clinic will contact you on WhatsApp to confirm.")
     add("privacy-policy", "Privacy Policy", legal("Privacy policy", PRIVACY), order=8)
     add("medical-disclaimer", "Medical Disclaimer", legal("Medical disclaimer", DISCLAIMER), order=9)
     # Blog page: no Elementor layout — WordPress lists posts on it.

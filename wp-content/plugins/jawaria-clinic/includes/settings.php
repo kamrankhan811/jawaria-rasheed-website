@@ -32,6 +32,7 @@ function jr_settings_fields() {
 		'Timings'         => array(
 			'hours'       => array( 'Clinic timings', 'textarea', 'One line per row: Day | Time. Example: Monday – Saturday | 5:00 pm – 9:00 pm' ),
 			'hours_short' => array( 'Short timings (top bar)', 'text', '' ),
+			'opening_hours' => array( 'Opening hours for Google', 'text', 'Search-engine format, e.g. Mo-Fr 15:00-19:00 (comma between groups: Mo-Fr 15:00-19:00, Sa 10:00-13:00).' ),
 			'time_slots'  => array( 'Time choices on the booking form', 'textarea', 'One per line.' ),
 		),
 		'Appointments & WhatsApp' => array(

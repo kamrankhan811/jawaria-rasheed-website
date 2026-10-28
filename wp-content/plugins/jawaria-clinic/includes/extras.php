@@ -79,6 +79,11 @@ add_action(
 	function () {
 		if ( wp_style_is( 'elementor-icons-fa-brands', 'registered' ) ) {
 			wp_enqueue_style( 'elementor-icons-fa-brands' );
+		} elseif ( defined( 'ELEMENTOR_URL' ) ) {
+			// Elementor 4.x no longer registers the handle up front; load its bundled files directly.
+			$fa = ELEMENTOR_URL . 'assets/lib/font-awesome/css/';
+			wp_enqueue_style( 'jr-fa-core', $fa . 'fontawesome.min.css', array(), '5.15.3' );
+			wp_enqueue_style( 'jr-fa-brands', $fa . 'brands.min.css', array( 'jr-fa-core' ), '5.15.3' );
 		}
 	},
 	30
@@ -177,7 +182,8 @@ add_shortcode(
 			if ( jr_opt( 'google_reviews' ) ) {
 				return '<p class="jr-center"><a class="jr-btn jr-btn--ghost" href="' . esc_url( jr_opt( 'google_reviews' ) ) . '" target="_blank" rel="noopener">' . esc_html__( 'Read patient reviews on Google', 'jawaria-clinic' ) . '</a></p>';
 			}
-			return current_user_can( 'edit_pages' ) ? '<p class="jr-empty jr-center">' . esc_html__( 'Add testimonials under Testimonials (only with the patient’s permission) and they will appear here.', 'jawaria-clinic' ) . '</p>' : '';
+			// Visitors: an empty marker lets CSS hide the whole home section until real testimonials exist.
+			return current_user_can( 'edit_pages' ) ? '<p class="jr-empty jr-center">' . esc_html__( 'Add testimonials under Testimonials (only with the patient’s permission) and they will appear here.', 'jawaria-clinic' ) . '</p>' : '<span class="jr-reviews-empty" hidden></span>';
 		}
 		$html = '<div class="jr-reviews">';
 		foreach ( $posts as $p ) {

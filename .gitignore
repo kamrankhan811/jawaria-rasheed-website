@@ -16,3 +16,4 @@ wp-content/uploads/
 *.sql
 *.log
 slide-photos/
+upload-to-wordpress/

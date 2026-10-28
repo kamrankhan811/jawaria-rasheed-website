@@ -46,6 +46,7 @@ add_action(
 					return;
 				}
 				header( 'X-Content-Type-Options: nosniff' );
+				header_remove( 'X-Powered-By' );
 				header( 'X-Frame-Options: SAMEORIGIN' );
 				header( 'Referrer-Policy: strict-origin-when-cross-origin' );
 				header( 'Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=()' );

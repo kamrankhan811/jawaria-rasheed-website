@@ -81,7 +81,9 @@ def spacer(px=16):
 # ---------------------------------------------------------------- layout
 
 def column(widgets, size=100, cls=""):
-    s = {"_column_size": size, "_inline_size": None}
+    # Elementor only has CSS for its preset widths; any other width needs _inline_size or it is ignored.
+    preset = size in (10, 20, 25, 30, 33, 40, 50, 60, 66, 70, 75, 80, 90, 100)
+    s = {"_column_size": size, "_inline_size": None if preset else size}
     if cls:
         s["css_classes"] = cls
     return {"id": eid("col"), "elType": "column", "settings": s, "elements": widgets, "isInner": False}

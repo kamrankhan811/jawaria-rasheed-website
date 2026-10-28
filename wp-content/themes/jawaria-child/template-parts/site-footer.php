@@ -75,7 +75,7 @@ $jr_has = function_exists( 'jr_opt' );
 			<span class="jr-footer__policies">
 				<a href="<?php echo esc_url( home_url( '/privacy-policy/' ) ); ?>"><?php esc_html_e( 'Privacy Policy', 'jawaria-child' ); ?></a>
 				<a href="<?php echo esc_url( home_url( '/medical-disclaimer/' ) ); ?>"><?php esc_html_e( 'Medical Disclaimer', 'jawaria-child' ); ?></a>
-				<a href="<?php echo esc_url( home_url( '/sitemap_index.xml' ) ); ?>"><?php esc_html_e( 'Sitemap', 'jawaria-child' ); ?></a>
+				<a href="<?php echo esc_url( home_url( defined( 'RANK_MATH_VERSION' ) ? '/sitemap_index.xml' : '/wp-sitemap.xml' ) ); ?>"><?php esc_html_e( 'Sitemap', 'jawaria-child' ); ?></a>
 			</span>
 		</div>
 	</div>
