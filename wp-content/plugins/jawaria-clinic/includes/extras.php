@@ -265,3 +265,26 @@ add_action(
 		}
 	}
 );
+
+/**
+ * Show the doctor's name as the post author (the login name "drjawaria_admin" is not for visitors).
+ */
+add_filter( 'the_author', 'jr_author_display_name' );
+add_filter( 'get_the_author_display_name', 'jr_author_display_name' );
+function jr_author_display_name( $name ) {
+	return is_admin() ? $name : jr_opt( 'doctor_name' );
+}
+
+/**
+ * Single posts: show the featured image at the top of the article (Astra was not printing it).
+ */
+add_filter(
+	'the_content',
+	function ( $content ) {
+		if ( ! is_singular( 'post' ) || ! in_the_loop() || ! is_main_query() || ! has_post_thumbnail() ) {
+			return $content;
+		}
+		return '<figure class="jr-post-hero">' . get_the_post_thumbnail( null, 'large', array( 'alt' => get_post_meta( get_post_thumbnail_id(), '_wp_attachment_image_alt', true ) ) ) . '</figure>' . $content;
+	},
+	5
+);

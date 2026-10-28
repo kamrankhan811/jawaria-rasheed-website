@@ -1,0 +1,76 @@
+<?php
+/**
+ * Two-row site header (replaces Astra's header):
+ *   Row 1: logo · top menu (Andrology & IUI Lab, Patient Guide, Blog, Contact) · WhatsApp + Book buttons
+ *   Row 2: services menu with dropdowns / mega menu
+ * Menus are edited in Appearance → Menus ("Header – top row", "Header – services row").
+ *
+ * @package jawaria-child
+ */
+
+defined( 'ABSPATH' ) || exit;
+
+$jr_has = function_exists( 'jr_opt' );
+?>
+<header class="jr-header" id="masthead" data-jr-header>
+	<div class="jr-header__main">
+		<div class="jr-header__brand">
+			<a class="jr-logo" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+				<img class="jr-logo__img" src="<?php echo esc_url( jr_child_logo_url() ); ?>" width="56" height="56" alt="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?> logo">
+				<span class="jr-logo__text">
+					<span class="jr-logo__name"><?php echo esc_html( $jr_has ? jr_opt( 'doctor_name' ) : get_bloginfo( 'name' ) ); ?></span>
+					<span class="jr-logo__tag"><?php echo esc_html( get_bloginfo( 'description' ) ); ?></span>
+				</span>
+			</a>
+		</div>
+
+		<nav class="jr-nav jr-nav--top" aria-label="<?php esc_attr_e( 'Main', 'jawaria-child' ); ?>">
+			<?php
+			wp_nav_menu(
+				array(
+					'theme_location' => 'jr_top',
+					'container'      => false,
+					'menu_class'     => 'jr-menu',
+					'fallback_cb'    => false,
+					'depth'          => 2,
+				)
+			);
+			?>
+		</nav>
+
+		<div class="jr-header__actions">
+			<?php if ( $jr_has && jr_opt( 'whatsapp' ) ) : ?>
+				<a class="jr-header__wa" href="<?php echo esc_url( jr_whatsapp_url() ); ?>" target="_blank" rel="noopener" aria-label="<?php echo esc_attr( sprintf( /* translators: %s: number */ __( 'WhatsApp the clinic on %s', 'jawaria-child' ), jr_opt( 'whatsapp' ) ) ); ?>">
+					<span class="jr-header__wa-icon"><?php echo jr_wa_icon(); // phpcs:ignore WordPress.Security.EscapeOutput -- static SVG. ?></span>
+					<span class="jr-header__wa-text">
+						<span class="jr-header__wa-num"><?php echo esc_html( jr_opt( 'whatsapp' ) ); ?></span>
+					</span>
+				</a>
+			<?php endif; ?>
+			<?php if ( $jr_has && jr_opt( 'video_consult_url' ) ) : ?>
+				<a class="jr-btn jr-btn--ghost jr-btn--sm" href="<?php echo esc_url( jr_opt( 'video_consult_url' ) ); ?>"><?php esc_html_e( 'Video Consultation', 'jawaria-child' ); ?></a>
+			<?php endif; ?>
+			<a class="jr-btn jr-btn--primary jr-btn--sm" href="<?php echo esc_url( home_url( '/book-appointment/' ) ); ?>"><?php esc_html_e( 'Book', 'jawaria-child' ); ?><span class="jr-hide-sm"><?php esc_html_e( 'an Appointment', 'jawaria-child' ); ?></span></a>
+			<button class="jr-burger" type="button" aria-expanded="false" aria-controls="jr-services-nav" data-jr-burger>
+				<span></span><span></span><span></span>
+				<span class="screen-reader-text"><?php esc_html_e( 'Menu', 'jawaria-child' ); ?></span>
+			</button>
+		</div>
+	</div>
+
+	<div class="jr-header__services" id="jr-services-nav">
+		<nav class="jr-nav jr-nav--services" aria-label="<?php esc_attr_e( 'Services', 'jawaria-child' ); ?>">
+			<?php
+			wp_nav_menu(
+				array(
+					'theme_location' => 'jr_services',
+					'container'      => false,
+					'menu_class'     => 'jr-menu',
+					'fallback_cb'    => false,
+					'depth'          => 3,
+				)
+			);
+			?>
+		</nav>
+	</div>
+</header>
