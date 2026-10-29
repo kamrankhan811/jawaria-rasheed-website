@@ -530,19 +530,30 @@ def build_pages():
 
 from urllib.parse import quote as _q
 
+def _t12(m):
+    h, mm = divmod(m, 60)
+    suf = "PM" if h >= 12 else "AM"
+    h12 = h % 12 or 12
+    return f"{h12}:{mm:02d} {suf}"
+
+
 WA_ICON = '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3z"/></svg>'
 SAMPLE = {
     "doctor_name": "Dr. Jawaria Rasheed", "experience": "15", "qualifications": "MBBS, FCPS (Obstetrics &amp; Gynaecology)<br>ICMT, PGD, DipLM, &amp; PGDip Sexual and Reproductive Medicine",
-    "whatsapp": "0300 0610903", "email": "info@drjawariarasheed.com",
+    "whatsapp": "0300 0620903", "email": "info@drjawariarasheed.com",
     "address": "House No. 1/1, Gulzar-e-Sadiq Road, Bahawalpur",
-    "hours": [("Monday – Friday", "3:00 pm – 7:00 pm"), ("Saturday – Sunday", "Closed")], "hours_short": "Mon – Fri, 3:00 pm – 7:00 pm",
+    # Mirrors the "Clinic locations" setting (includes/clinics.php).
+    "clinics": [("Jawaria Andrology Lab &amp; Infertility Clinic", "Bahawalpur", "House No. 1/1, Gulzar-e-Sadiq Road, Bahawalpur", "Mon – Fri", "3:00 PM – 7:00 PM"),
+                ("Rasheed Surgical Hospital", "Lodhran", "Rasheed Surgical Hospital, Lodhran", "Mon – Sat", "7:00 PM – 9:00 PM")],
+    "hours": [("Bahawalpur · Mon – Fri", "3:00 PM – 7:00 PM"), ("Lodhran · Mon – Sat", "7:00 PM – 9:00 PM")],
+    "hours_lines": ["Bahawalpur : Mon – Fri, 3:00 PM – 7:00 PM", "Lodhran : Mon – Sat, 7:00 PM – 9:00 PM"],
     "youtube": "https://www.youtube.com/@jawariainfertilityclinic3964",
     "videos": [("ymCmeTBZ0AI", "Tubal Factor Infertility | Causes & Treatment of infertility"),
                ("NdDlTrg_EA0", "What is Polycystic ovarian Syndrome? | Causes & Treatment"),
                ("ymCmeTBZ0AI", "Tubal Factor Infertility | Causes & Treatment of infertility")],
-    "slots": ["Any time (3:00 pm – 7:00 pm)", "3:00 pm – 4:00 pm", "4:00 pm – 5:00 pm", "5:00 pm – 6:00 pm", "6:00 pm – 7:00 pm"],
+    "slots": ["Any time (3:00 PM – 7:00 PM)"] + [f"{_t12(m)} – {_t12(m + 15)}" for m in range(15 * 60, 19 * 60, 15)],
 }
-WA_URL = "https://wa.me/923000610903?text=" + _q("Assalam o Alaikum, I would like to book an appointment with Dr. Jawaria Rasheed.")
+WA_URL = "https://wa.me/923000620903?text=" + _q("Assalam o Alaikum, I would like to book an appointment with Dr. Jawaria Rasheed.")
 MAP_SRC = "https://maps.google.com/maps?q=" + _q("House No. 1/1, Gulzar-e-Sadiq Road, Bahawalpur") + "&amp;z=16&amp;output=embed"
 MAP_LINK = "https://www.google.com/maps/search/?api=1&amp;query=House+No.+1%2F1+Gulzar-e-Sadiq+Road+Bahawalpur"
 
@@ -556,8 +567,10 @@ def ico(name):
 
 def footer_info():
     s = SAMPLE
-    rows = [(ico("pin"), s["address"]), (WA_ICON, f'<a href="{WA_URL}" target="_blank" rel="noopener">{s["whatsapp"]}</a>'),
-            (ico("mail"), f'<a href="mailto:{s["email"]}">{s["email"]}</a>'), (ico("clock"), s["hours_short"])]
+    rows = [(ico("pin"), addr) for _n, _c, addr, _d, _t in s["clinics"]]
+    rows += [(WA_ICON, f'<a href="{WA_URL}" target="_blank" rel="noopener">{s["whatsapp"]}</a>'),
+             (ico("mail"), f'<a href="mailto:{s["email"]}">{s["email"]}</a>')]
+    rows += [(ico("clock"), line) for line in s["hours_lines"]]
     return '<ul class="jr-info jr-info--icons">' + "".join(f'<li><span class="jr-info__ico">{i}</span><span>{t}</span></li>' for i, t in rows) + '</ul>'
 
 
@@ -604,10 +617,12 @@ def fake_shortcode(name, args, pages):
     if name == "jr_clinic_info" and 'icons=' in args:
         return footer_info()
     if name == "jr_clinic_info":
-        return (f'<ul class="jr-info"><li><strong>Address</strong>{s["address"]}<br><a href="{MAP_LINK}" target="_blank" rel="noopener">Get directions</a></li>'
+        addrs = "".join(f'<li><strong>Address — {city}</strong>{addr}<br><a href="{MAP_LINK}" target="_blank" rel="noopener">Get directions</a></li>'
+                        for _n, city, addr, _d, _t in s["clinics"])
+        return (f'<ul class="jr-info">{addrs}'
                 f'<li><strong>WhatsApp</strong><a class="jr-info__wa" href="{WA_URL}" target="_blank" rel="noopener">{WA_ICON}{s["whatsapp"]}</a></li>'
                 f'<li><strong>Email</strong><a href="mailto:{s["email"]}">{s["email"]}</a></li>'
-                f'<li><strong>Timings</strong>{s["hours_short"]}</li></ul>')
+                f'<li><strong>Timings</strong>{"<br>".join(s["hours_lines"])}</li></ul>')
     if name == "jr_hours":
         return '<table class="jr-hours"><tbody>' + "".join(f"<tr><td>{a}</td><td>{b}</td></tr>" for a, b in s["hours"]) + "</tbody></table>"
     if name == "jr_slider":
@@ -635,9 +650,11 @@ def fake_shortcode(name, args, pages):
     if name == "jr_appointment_form":
         opts = "".join(f"<option>{x}</option>" for x in ["General gynecology consultation"] + [sv["title"] for sv in SERVICES] + ["Semen analysis (Andrology &amp; IUI Lab)", "Other / not sure"])
         slots = "".join(f"<option>{x}</option>" for x in s["slots"])
+        clinic_opts = "".join(f"<option>{n} — {c}</option>" for n, c, _a, _d, _t in s["clinics"])
         return f'''<form class="jr-form" onsubmit="return false"><div class="jr-form__grid">
 <div><label>Patient name <span class="jr-req">*</span></label><input type="text"></div>
 <div><label>Mobile / WhatsApp number <span class="jr-req">*</span></label><input type="tel" placeholder="03xx xxxxxxx"></div>
+<div class="jr-form__full"><label>Which clinic? <span class="jr-req">*</span></label><select>{clinic_opts}</select><p class="jr-form__hint">Bahawalpur: Mon – Fri, 3:00 PM – 7:00 PM</p></div>
 <div class="jr-form__full"><label>Reason for visit</label><select>{opts}</select></div>
 <div><label>Preferred date <span class="jr-req">*</span></label><input type="date"></div>
 <div><label>Preferred time</label><select>{slots}</select></div>
@@ -663,7 +680,7 @@ def H(title, children):
     return ("#", title, "jr-col-head", children)
 
 
-MENU_TOP = [P("andrology-iui-lab"), ("#", "Patient Guide", "", [P("testimonials"), P("gallery"), P("videos"), P("faqs"), P("book-appointment")]), ("blog.html", "Blog", "", []), P("contact")]
+MENU_TOP = [("index.html", "Home", "", []), P("about", "About"),  P("andrology-iui-lab"), ("#", "Patient Guide", "", [P("testimonials"), P("gallery"), P("videos"), P("faqs"), P("book-appointment")]), ("blog.html", "Blog", "", []), P("contact")]
 MENU_SERVICES = [
     P("services", "Gynecology", "", [P("gynecology-consultation"), P("menstrual-problems"), P("cervical-screening"), P("family-planning"), P("menopause")]),
     P("infertility-evaluation", "Fertility & IUI", "jr-mega", [
@@ -704,12 +721,12 @@ PREVIEW_SHELL = """<!doctype html><html lang="en"><head><meta charset="utf-8"><m
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"><link rel="stylesheet" href="preview-base.css?v={v_base}"><link rel="stylesheet" href="../wp-content/themes/jawaria-child/assets/css/site.css?v={v_css}">
 </head><body>
 <div class="jr-pv-banner">Design preview — the real site is built in WordPress.</div>
-<div class="jr-topbar"><div class="jr-topbar__inner"><span class="jr-topbar__item">{ico_pin}Bahawalpur · Mon – Fri, 3:00 pm – 7:00 pm</span><span class="jr-topbar__links"><a class="jr-topbar__wa" href="{wa_url}" target="_blank" rel="noopener">{wa_icon} WhatsApp 0300 0610903</a><a href="mailto:info@drjawariarasheed.com">{ico_mail} info@drjawariarasheed.com</a></span></div></div>
+<div class="jr-topbar"><div class="jr-topbar__inner"><span class="jr-topbar__item">{ico_clock}<span class="jr-topbar__hours">Bahawalpur : Mon – Fri, 3:00 PM – 7:00 PM</span><span class="jr-topbar__sep" aria-hidden="true">|</span><span class="jr-topbar__hours">Lodhran : Mon – Sat, 7:00 PM – 9:00 PM</span></span><span class="jr-topbar__links"><a class="jr-topbar__wa" href="{wa_url}" target="_blank" rel="noopener">{wa_icon} 0300 0620903</a><a href="mailto:info@drjawariarasheed.com">{ico_mail} info@drjawariarasheed.com</a></span></div></div>
 <header class="jr-header" data-jr-header>
  <div class="jr-header__main">
   <div class="jr-header__brand"><a class="jr-logo" href="index.html"><img class="jr-logo__img" src="../wp-content/themes/jawaria-child/assets/images/logo-mark.png" alt="Dr. Jawaria Rasheed logo"><span class="jr-logo__text"><span class="jr-logo__name">Dr. Jawaria Rasheed</span><span class="jr-logo__tag">Consultant Gynecologist &amp; IUI Specialist</span></span></a></div>
   <nav class="jr-nav jr-nav--top">{menu_top}</nav>
-  <div class="jr-header__actions"><a class="jr-header__wa" href="{wa_url}" target="_blank" rel="noopener" aria-label="WhatsApp the clinic on 0300 0610903"><span class="jr-header__wa-icon">{wa_icon}</span><span class="jr-header__wa-text"><span class="jr-header__wa-num">0300 0610903</span></span></a><a class="jr-btn jr-btn--primary jr-btn--sm" href="book-appointment.html">Book<span class="jr-hide-sm">an Appointment</span></a><button class="jr-burger" type="button" aria-expanded="false" aria-label="Menu" data-jr-burger><span></span><span></span><span></span></button></div>
+  <div class="jr-header__actions"><a class="jr-header__wa" href="{wa_url}" target="_blank" rel="noopener" aria-label="WhatsApp the clinic on 0300 0620903"><span class="jr-header__wa-icon">{wa_icon}</span><span class="jr-header__wa-text"><span class="jr-header__wa-num">0300 0620903</span></span></a><a class="jr-btn jr-btn--primary jr-btn--sm" href="book-appointment.html">Book<span class="jr-hide-sm">an Appointment</span></a><button class="jr-burger" type="button" aria-expanded="false" aria-label="Menu" data-jr-burger><span></span><span></span><span></span></button></div>
  </div>
  <div class="jr-header__services"><nav class="jr-nav jr-nav--services">{menu_services}</nav></div>
 </header>
@@ -753,7 +770,7 @@ VERS = {}
 
 
 def write_preview(pages):
-    VERS.update(ico_pin=ico("pin"), ico_mail=ico("mail"), wa_url=WA_URL, wa_icon=WA_ICON, footer_map=map_html("jr-map--footer"), v_css=_ver("wp-content/themes/jawaria-child/assets/css/site.css"), v_nav=_ver("wp-content/themes/jawaria-child/assets/js/nav.js"),
+    VERS.update(ico_pin=ico("pin"), ico_clock=ico("clock"), ico_mail=ico("mail"), wa_url=WA_URL, wa_icon=WA_ICON, footer_map=map_html("jr-map--footer"), v_css=_ver("wp-content/themes/jawaria-child/assets/css/site.css"), v_nav=_ver("wp-content/themes/jawaria-child/assets/js/nav.js"),
                 v_sl=_ver("wp-content/plugins/jawaria-clinic/assets/js/slider.js"), v_gal=_ver("wp-content/plugins/jawaria-clinic/assets/js/gallery.js"), v_base=_ver("preview/preview-base.css"))
     out_dir = os.path.join(ROOT, "preview")
     os.makedirs(out_dir, exist_ok=True)
