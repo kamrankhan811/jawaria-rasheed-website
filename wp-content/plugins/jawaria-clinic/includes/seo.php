@@ -128,7 +128,7 @@ function jr_schema_graph() {
 			'email'            => jr_opt( 'email' ),
 			'address'          => $address,
 			'hasMap'           => jr_opt( 'map_link' ),
-			'openingHours'     => jr_opt( 'opening_hours' ) ? array_map( 'trim', explode( ',', jr_opt( 'opening_hours' ) ) ) : null,
+			'openingHours'     => jr_clinic_schema_hours( jr_clinics()[0] ),
 			'areaServed'       => $areas,
 			'medicalSpecialty' => array( 'Gynecologic', 'Obstetric' ),
 			'image'            => $logo,
@@ -146,6 +146,33 @@ function jr_schema_graph() {
 	}
 
 	$graph = array( $doctor, $clinic );
+
+	// Extra locations (Lodhran and any city added later) as their own clinic nodes.
+	$all = jr_clinics();
+	foreach ( array_slice( $all, 1 ) as $i => $branch ) {
+		$graph[] = array_filter(
+			array(
+				'@type'                => array( 'MedicalClinic', 'LocalBusiness' ),
+				'@id'                  => $home . '#clinic-' . ( $i + 2 ),
+				'name'                 => $branch['name'],
+				'url'                  => $home,
+				'telephone'            => jr_intl_number(),
+				'address'              => $branch['address'] ? array_filter(
+					array(
+						'@type'           => 'PostalAddress',
+						'streetAddress'   => $branch['address'],
+						'addressLocality' => $branch['city'],
+						'addressRegion'   => 'Punjab',
+						'addressCountry'  => 'PK',
+					)
+				) : null,
+				'hasMap'               => $branch['map'],
+				'openingHours'         => jr_clinic_schema_hours( $branch ),
+				'medicalSpecialty'     => array( 'Gynecologic', 'Obstetric' ),
+				'parentOrganization'   => array( '@id' => $cl_id ),
+			)
+		);
+	}
 
 	if ( is_singular( 'page' ) && ! is_front_page() ) {
 		$id     = get_queried_object_id();
@@ -315,10 +342,10 @@ function jr_llms_txt() {
 	foreach (
 		array(
 			'Qualifications' => $clean( str_replace( "\n", '; ', jr_opt( 'qualifications' ) ) ),
-			'Address'        => $clean( jr_opt( 'address' ) ),
+			'Clinics'        => implode( ' | ', array_map( fn( $c ) => $c['name'] . ( $c['address'] ? ', ' . $c['address'] : '' ), jr_clinics() ) ),
 			'WhatsApp'       => jr_opt( 'whatsapp' ),
 			'Email'          => jr_opt( 'email' ),
-			'Timings'        => jr_opt( 'hours_short' ),
+			'Timings'        => implode( ' | ', jr_hours_lines() ),
 			'Areas served'   => implode( ', ', jr_areas() ),
 			'Book online'    => home_url( '/book-appointment/' ),
 		) as $label => $val

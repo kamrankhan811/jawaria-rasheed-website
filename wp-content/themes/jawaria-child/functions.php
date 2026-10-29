@@ -11,7 +11,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'JR_CHILD_VERSION', '1.1.10' );
+define( 'JR_CHILD_VERSION', '1.2.3' );
 
 /**
  * Fonts, parent style, design system, header script.

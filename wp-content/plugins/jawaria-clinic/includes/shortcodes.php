@@ -119,8 +119,10 @@ add_shortcode(
 function jr_clinic_info_html( $icons = false ) {
 	if ( $icons ) {
 		$rows = array();
-		if ( jr_opt( 'address' ) ) {
-			$rows[] = array( 'pin', esc_html( preg_replace( '/\s+/', ' ', jr_opt( 'address' ) ) ) );
+		foreach ( jr_clinics() as $c ) {
+			if ( $c['address'] ) {
+				$rows[] = array( 'pin', esc_html( preg_replace( '/\s+/', ' ', $c['address'] ) ) );
+			}
 		}
 		if ( jr_opt( 'whatsapp' ) ) {
 			$rows[] = array( 'wa', '<a href="' . esc_url( jr_whatsapp_url() ) . '" target="_blank" rel="noopener">' . esc_html( jr_opt( 'whatsapp' ) ) . '</a>' );
@@ -128,8 +130,8 @@ function jr_clinic_info_html( $icons = false ) {
 		if ( jr_opt( 'email' ) ) {
 			$rows[] = array( 'mail', '<a href="mailto:' . esc_attr( antispambot( jr_opt( 'email' ) ) ) . '">' . esc_html( antispambot( jr_opt( 'email' ) ) ) . '</a>' );
 		}
-		if ( jr_opt( 'hours_short' ) ) {
-			$rows[] = array( 'clock', esc_html( jr_opt( 'hours_short' ) ) );
+		foreach ( jr_hours_lines() as $line ) {
+			$rows[] = array( 'clock', esc_html( $line ) );
 		}
 		$html = '<ul class="jr-info jr-info--icons">';
 		foreach ( $rows as $r ) {
@@ -137,13 +139,19 @@ function jr_clinic_info_html( $icons = false ) {
 		}
 		return $html . '</ul>';
 	}
-	$rows = array();
-	if ( jr_opt( 'address' ) ) {
-		$addr = nl2br( esc_html( jr_opt( 'address' ) ) );
-		if ( jr_opt( 'map_link' ) ) {
-			$addr .= '<br><a href="' . esc_url( jr_opt( 'map_link' ) ) . '" target="_blank" rel="noopener">' . esc_html__( 'Get directions', 'jawaria-clinic' ) . '</a>';
+	$rows   = array();
+	$multi  = count( jr_clinics() ) > 1;
+	foreach ( jr_clinics() as $c ) {
+		if ( ! $c['address'] ) {
+			continue;
 		}
-		$rows[] = array( __( 'Address', 'jawaria-clinic' ), $addr );
+		$addr = nl2br( esc_html( $c['address'] ) );
+		$map  = $c['map'] ? $c['map'] : jr_opt( 'map_link' );
+		if ( $map ) {
+			$addr .= '<br><a href="' . esc_url( $map ) . '" target="_blank" rel="noopener">' . esc_html__( 'Get directions', 'jawaria-clinic' ) . '</a>';
+		}
+		$label = $multi && $c['city'] ? sprintf( /* translators: %s: city */ __( 'Address — %s', 'jawaria-clinic' ), $c['city'] ) : __( 'Address', 'jawaria-clinic' );
+		$rows[] = array( $label, $addr );
 	}
 	if ( jr_opt( 'whatsapp' ) ) {
 		$rows[] = array( __( 'WhatsApp', 'jawaria-clinic' ), '<a class="jr-info__wa" href="' . esc_url( jr_whatsapp_url() ) . '" target="_blank" rel="noopener">' . jr_wa_icon() . esc_html( jr_opt( 'whatsapp' ) ) . '</a>' );
@@ -151,8 +159,9 @@ function jr_clinic_info_html( $icons = false ) {
 	if ( jr_opt( 'email' ) ) {
 		$rows[] = array( __( 'Email', 'jawaria-clinic' ), '<a href="mailto:' . esc_attr( antispambot( jr_opt( 'email' ) ) ) . '">' . esc_html( antispambot( jr_opt( 'email' ) ) ) . '</a>' );
 	}
-	if ( jr_opt( 'hours_short' ) ) {
-		$rows[] = array( __( 'Timings', 'jawaria-clinic' ), esc_html( jr_opt( 'hours_short' ) ) );
+	$lines = jr_hours_lines();
+	if ( $lines ) {
+		$rows[] = array( __( 'Timings', 'jawaria-clinic' ), implode( '<br>', array_map( 'esc_html', $lines ) ) );
 	}
 	if ( ! $rows ) {
 		return current_user_can( 'manage_options' ) ? '<p class="jr-empty">' . esc_html__( 'Add clinic details under Settings → Clinic Info.', 'jawaria-clinic' ) . '</p>' : '';
@@ -168,13 +177,17 @@ add_shortcode( 'jr_clinic_info', fn( $atts ) => jr_clinic_info_html( ! empty( $a
 add_shortcode(
 	'jr_hours',
 	function () {
-		$rows = jr_pairs( jr_opt( 'hours' ) );
-		if ( ! $rows ) {
-			return '';
-		}
 		$html = '<table class="jr-hours"><tbody>';
-		foreach ( $rows as $r ) {
-			$html .= '<tr><td>' . esc_html( $r[0] ) . '</td><td>' . esc_html( $r[1] ) . '</td></tr>';
+		$any  = false;
+		foreach ( jr_clinics() as $c ) {
+			foreach ( $c['groups'] as $g ) {
+				$any   = true;
+				$where = jr_clinic_short( $c );
+				$html .= '<tr><td>' . esc_html( $where . ' · ' . jr_days_label( $g['days'] ) ) . '</td><td>' . esc_html( jr_time_12( $g['start'] ) . ' – ' . jr_time_12( $g['end'] ) ) . '</td></tr>';
+			}
+		}
+		if ( ! $any ) {
+			return '';
 		}
 		return $html . '</tbody></table>';
 	}

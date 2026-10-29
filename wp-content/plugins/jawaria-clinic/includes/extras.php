@@ -288,3 +288,13 @@ add_filter(
 	},
 	5
 );
+
+/**
+ * Default social-share image (WhatsApp/Facebook link preview) when a page has no featured image.
+ */
+add_filter( 'rank_math/opengraph/facebook/image', 'jr_og_default_image' );
+add_filter( 'rank_math/opengraph/twitter/image', 'jr_og_default_image' );
+function jr_og_default_image( $img ) {
+	return $img ? $img : JR_CLINIC_URL . 'assets/images/og-card.jpg';
+}
+add_filter( 'rank_math/opengraph/facebook/image_dimensions', function () { return array( 1200, 630 ); } );

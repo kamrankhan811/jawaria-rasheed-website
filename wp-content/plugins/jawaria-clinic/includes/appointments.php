@@ -92,8 +92,11 @@ function jr_render_appointment_form() {
 
 	$old   = $state['old'];
 	$val   = fn( $k ) => isset( $old[ $k ] ) ? $old[ $k ] : '';
-	$today = current_time( 'Y-m-d' );
-	$max   = gmdate( 'Y-m-d', strtotime( $today . ' +90 days' ) );
+	$today     = current_time( 'Y-m-d' );
+	$max       = gmdate( 'Y-m-d', strtotime( $today . ' +90 days' ) );
+	$jr_list   = jr_clinics();
+	$jr_first  = $jr_list[0]['key'];
+	$jr_sel    = jr_clinic( $val( 'clinic' ) ) ? jr_clinic( $val( 'clinic' ) ) : $jr_list[0];
 
 	ob_start();
 	?>
@@ -124,6 +127,17 @@ function jr_render_appointment_form() {
 				<input type="tel" id="jr_phone" name="jr_phone" required maxlength="20" autocomplete="tel" inputmode="tel" placeholder="03xx xxxxxxx" value="<?php echo esc_attr( $val( 'phone' ) ); ?>">
 			</div>
 			<div class="jr-form__full">
+				<label for="jr_clinic"><?php esc_html_e( 'Which clinic?', 'jawaria-clinic' ); ?> <span class="jr-req">*</span></label>
+				<select id="jr_clinic" name="jr_clinic" required data-jr-clinic>
+					<?php foreach ( jr_clinics() as $jr_c ) : ?>
+						<option value="<?php echo esc_attr( $jr_c['key'] ); ?>" <?php selected( $jr_sel['key'], $jr_c['key'] ); ?>>
+							<?php echo esc_html( $jr_c['city'] ? $jr_c['name'] . ' — ' . $jr_c['city'] : $jr_c['name'] ); ?>
+						</option>
+					<?php endforeach; ?>
+				</select>
+				<p class="jr-form__hint" data-jr-clinic-hours></p>
+			</div>
+			<div class="jr-form__full">
 				<label for="jr_service"><?php esc_html_e( 'Reason for visit', 'jawaria-clinic' ); ?></label>
 				<select id="jr_service" name="jr_service">
 					<?php foreach ( jr_service_choices() as $choice ) : ?>
@@ -134,11 +148,12 @@ function jr_render_appointment_form() {
 			<div>
 				<label for="jr_date"><?php esc_html_e( 'Preferred date', 'jawaria-clinic' ); ?> <span class="jr-req">*</span></label>
 				<input type="date" id="jr_date" name="jr_date" required min="<?php echo esc_attr( $today ); ?>" max="<?php echo esc_attr( $max ); ?>" value="<?php echo esc_attr( $val( 'date' ) ); ?>">
+				<p class="jr-form__hint jr-form__hint--warn" data-jr-date-warn hidden></p>
 			</div>
 			<div>
 				<label for="jr_time"><?php esc_html_e( 'Preferred time', 'jawaria-clinic' ); ?></label>
-				<select id="jr_time" name="jr_time">
-					<?php foreach ( jr_lines( jr_opt( 'time_slots' ) ) as $slot ) : ?>
+				<select id="jr_time" name="jr_time" data-jr-time>
+					<?php foreach ( jr_clinic_slot_choices( $jr_sel ) as $slot ) : ?>
 						<option value="<?php echo esc_attr( $slot ); ?>" <?php selected( $val( 'time' ), $slot ); ?>><?php echo esc_html( $slot ); ?></option>
 					<?php endforeach; ?>
 				</select>
@@ -166,6 +181,54 @@ function jr_render_appointment_form() {
 			</div>
 		</div>
 	</form>
+	<script>
+	(function () {
+		var C = <?php echo wp_json_encode( jr_clinics_for_js() ); ?>;
+		var form = document.currentScript.previousElementSibling;
+		var sel = form.querySelector('[data-jr-clinic]'),
+			time = form.querySelector('[data-jr-time]'),
+			date = form.querySelector('#jr_date'),
+			hours = form.querySelector('[data-jr-clinic-hours]'),
+			warn = form.querySelector('[data-jr-date-warn]');
+		if (!sel || !C[sel.value]) { return; }
+		var DAYS = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+		function current() { return C[sel.value]; }
+		function fillTimes() {
+			var c = current(), keep = time.value, i;
+			time.innerHTML = '';
+			for (i = 0; i < c.slots.length; i++) {
+				var o = document.createElement('option');
+				o.value = c.slots[i];
+				o.textContent = c.slots[i];
+				if (c.slots[i] === keep) { o.selected = true; }
+				time.appendChild(o);
+			}
+		}
+		function showHours() {
+			var c = current();
+			hours.textContent = c.hours ? c.label + ': ' + c.hours : '';
+		}
+		function checkDate() {
+			var c = current();
+			if (!date.value || !c.weekdays.length) { warn.hidden = true; date.setCustomValidity(''); return; }
+			var parts = date.value.split('-');
+			var day = new Date(+parts[0], +parts[1] - 1, +parts[2]).getDay();
+			var open = c.weekdays.indexOf(day) > -1;
+			if (open) {
+				warn.hidden = true;
+				date.setCustomValidity('');
+			} else {
+				var names = c.weekdays.slice().sort().map(function (d) { return DAYS[d]; }).join(', ');
+				warn.textContent = c.label + ' is closed on ' + DAYS[day] + '. Open on: ' + names + '.';
+				warn.hidden = false;
+				date.setCustomValidity('This clinic is closed on that day.');
+			}
+		}
+		sel.addEventListener('change', function () { fillTimes(); showHours(); checkDate(); });
+		date.addEventListener('change', checkDate);
+		fillTimes(); showHours(); checkDate();
+	})();
+	</script>
 	<?php
 	return ob_get_clean();
 }
@@ -194,6 +257,7 @@ function jr_handle_booking() {
 	$old = array(
 		'name'    => isset( $_POST['jr_name'] ) ? sanitize_text_field( wp_unslash( $_POST['jr_name'] ) ) : '',
 		'phone'   => isset( $_POST['jr_phone'] ) ? sanitize_text_field( wp_unslash( $_POST['jr_phone'] ) ) : '',
+		'clinic'  => isset( $_POST['jr_clinic'] ) ? sanitize_text_field( wp_unslash( $_POST['jr_clinic'] ) ) : '',
 		'service' => isset( $_POST['jr_service'] ) ? sanitize_text_field( wp_unslash( $_POST['jr_service'] ) ) : '',
 		'date'    => isset( $_POST['jr_date'] ) ? sanitize_text_field( wp_unslash( $_POST['jr_date'] ) ) : '',
 		'time'    => isset( $_POST['jr_time'] ) ? sanitize_text_field( wp_unslash( $_POST['jr_time'] ) ) : '',
@@ -242,6 +306,9 @@ function jr_handle_booking() {
 	update_post_meta( $id, '_jr_phone', jr_normalize_phone( $old['phone'] ) );
 	update_post_meta( $id, '_jr_name', $old['name'] );
 	update_post_meta( $id, '_jr_service', $old['service'] );
+	$jr_c = jr_clinic( $old['clinic'] );
+	update_post_meta( $id, '_jr_clinic', $old['clinic'] );
+	update_post_meta( $id, '_jr_clinic_name', $jr_c ? $jr_c['name'] . ( $jr_c['city'] ? ' — ' . $jr_c['city'] : '' ) : '' );
 	update_post_meta( $id, '_jr_pref_date', $old['date'] );
 	update_post_meta( $id, '_jr_pref_time', $old['time'] );
 	update_post_meta( $id, '_jr_note', $old['note'] );
@@ -287,9 +354,23 @@ function jr_validate_booking( array $d ) {
 	if ( $d['service'] && ! in_array( $d['service'], jr_service_choices(), true ) ) {
 		$e[] = __( 'Please choose a reason for visit from the list.', 'jawaria-clinic' );
 	}
-	$slots = jr_lines( jr_opt( 'time_slots' ) );
-	if ( $d['time'] && $slots && ! in_array( $d['time'], $slots, true ) ) {
-		$e[] = __( 'Please choose a preferred time from the list.', 'jawaria-clinic' );
+	$clinic = jr_clinic( $d['clinic'] );
+	if ( ! $clinic ) {
+		$e[] = __( 'Please choose which clinic you want to visit.', 'jawaria-clinic' );
+	} else {
+		$slots = jr_clinic_slot_choices( $clinic );
+		if ( $d['time'] && ! in_array( $d['time'], $slots, true ) ) {
+			$e[] = __( 'Please choose a preferred time from the list.', 'jawaria-clinic' );
+		}
+		$open = jr_clinic_weekdays( $clinic );
+		if ( isset( $date ) && $date && $open && ! in_array( (int) $date->format( 'w' ), $open, true ) ) {
+			$e[] = sprintf(
+				/* translators: 1: clinic city or name, 2: its opening days and times */
+				__( '%1$s is closed on the date you chose. Open: %2$s.', 'jawaria-clinic' ),
+				jr_clinic_short( $clinic ),
+				jr_clinic_hours_label( $clinic )
+			);
+		}
 	}
 	if ( '1' !== $d['consent'] ) {
 		$e[] = __( 'Please tick the box so the clinic can contact you.', 'jawaria-clinic' );
@@ -325,9 +406,10 @@ function jr_notify_staff( $id ) {
 	}
 	$subject = sprintf( /* translators: %d: request number */ __( 'New appointment request #%d', 'jawaria-clinic' ), $id );
 	$body    = sprintf(
-		"A new appointment request was received on the website.\n\nName: %s\nPhone: %s\nPreferred date: %s (%s)\n\nOpen it in the dashboard to see the details and update the status:\n%s\n",
+		"A new appointment request was received on the website.\n\nName: %s\nPhone: %s\nClinic: %s\nPreferred date: %s (%s)\n\nOpen it in the dashboard to see the details and update the status:\n%s\n",
 		get_post_meta( $id, '_jr_name', true ),
 		get_post_meta( $id, '_jr_phone', true ),
+		get_post_meta( $id, '_jr_clinic_name', true ),
 		get_post_meta( $id, '_jr_pref_date', true ),
 		get_post_meta( $id, '_jr_pref_time', true ),
 		admin_url( 'post.php?post=' . $id . '&action=edit' )
@@ -346,6 +428,7 @@ add_filter(
 			'cb'           => '<input type="checkbox">',
 			'title'        => __( 'Patient', 'jawaria-clinic' ),
 			'jr_phone'     => __( 'Phone', 'jawaria-clinic' ),
+			'jr_clinic'    => __( 'Clinic', 'jawaria-clinic' ),
 			'jr_service'   => __( 'Reason', 'jawaria-clinic' ),
 			'jr_pref'      => __( 'Preferred', 'jawaria-clinic' ),
 			'jr_status'    => __( 'Status', 'jawaria-clinic' ),
@@ -364,6 +447,9 @@ add_action(
 				if ( $p ) {
 					printf( '<a href="tel:+%1$s">+%1$s</a> &middot; <a href="https://wa.me/%1$s" target="_blank" rel="noopener">WhatsApp</a>', esc_attr( $p ) );
 				}
+				break;
+			case 'jr_clinic':
+				echo esc_html( get_post_meta( $id, '_jr_clinic_name', true ) );
 				break;
 			case 'jr_service':
 				echo esc_html( get_post_meta( $id, '_jr_service', true ) );
@@ -431,6 +517,7 @@ function jr_render_appt_box( $post ) {
 	$fields = array(
 		'_jr_name'      => array( __( 'Patient name', 'jawaria-clinic' ), 'text' ),
 		'_jr_phone'     => array( __( 'Phone (92…)', 'jawaria-clinic' ), 'text' ),
+		'_jr_clinic_name' => array( __( 'Clinic', 'jawaria-clinic' ), 'text' ),
 		'_jr_service'   => array( __( 'Reason for visit', 'jawaria-clinic' ), 'text' ),
 		'_jr_pref_date' => array( __( 'Preferred date', 'jawaria-clinic' ), 'date' ),
 		'_jr_pref_time' => array( __( 'Preferred time', 'jawaria-clinic' ), 'text' ),
@@ -474,7 +561,7 @@ add_action(
 		if ( ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) || ! current_user_can( 'edit_post', $id ) ) {
 			return;
 		}
-		foreach ( array( '_jr_name', '_jr_service', '_jr_pref_date', '_jr_pref_time' ) as $k ) {
+		foreach ( array( '_jr_name', '_jr_clinic_name', '_jr_service', '_jr_pref_date', '_jr_pref_time' ) as $k ) {
 			if ( isset( $_POST[ $k ] ) ) {
 				update_post_meta( $id, $k, sanitize_text_field( wp_unslash( $_POST[ $k ] ) ) );
 			}

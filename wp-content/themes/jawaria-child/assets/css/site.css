@@ -718,3 +718,46 @@ body .entry-meta .posted-on { --jr-meta-icon: url("data:image/svg+xml,%3Csvg xml
 /* Blog/archive cards are narrower than a post page: slightly smaller so the meta line still fits on one line. */
 body.blog .entry-meta, body.archive .entry-meta { gap: 4px 8px; }
 body.blog .entry-meta .posted-by, body.blog .entry-meta .posted-on, body.archive .entry-meta .posted-by, body.archive .entry-meta .posted-on { font-size: 12.5px !important; gap: 4px; }
+
+/* Menu pill "Dr. Jawaria Rasheed": keep roomy side padding (the generic nav rule above squeezed it). */
+@media (min-width: 1025px) {
+	.jr-nav--services .jr-menu > li.jr-menu-doctor > a { padding: 8px clamp(16px, 1.4vw, 22px) !important; margin-left: 6px; margin-right: 6px; }
+}
+
+/* ---------- v1.2.0: multi-clinic timings, equal form field heights ---------- */
+/* Top bar: "Bahawalpur : Mon – Fri, 3:00 PM – 7:00 PM | Lodhran : Mon – Sat, 7:00 PM – 9:00 PM" */
+.jr-topbar__sep { opacity: .55; margin: 0 2px; }
+.jr-topbar__hours { white-space: nowrap; }
+@media (max-width: 900px) {
+	.jr-topbar__item { align-items: flex-start; }
+	.jr-topbar__sep { display: none; }
+	.jr-topbar__hours { display: block; white-space: normal; }
+}
+
+/* Every field the same height as the select, so the form reads as one block. */
+body .jr-form input[type="text"],
+body .jr-form input[type="tel"],
+body .jr-form input[type="date"],
+body .jr-form select {
+	height: 52px; min-height: 52px; padding: 12px 14px; line-height: 1.4;
+}
+body .jr-form textarea { min-height: 104px; padding: 12px 14px; line-height: 1.4; }
+body .jr-form input[type="date"] { -webkit-appearance: none; appearance: none; }
+.jr-form__hint--warn { color: #9a3412; font-weight: 600; }
+
+/* v1.2.1: the top row now carries Home and About too — tighten it on laptops
+   so the Book button is never pushed off the right edge. */
+@media (min-width: 1025px) and (max-width: 1699px) {
+	.jr-nav--top .jr-menu > li > a { font-size: clamp(13px, .94vw, 15.5px) !important; padding-left: clamp(3px, .36vw, 8px) !important; padding-right: clamp(3px, .36vw, 8px) !important; }
+	/* The number is already in the bar directly above, so the icon alone is enough here. */
+	.jr-header__wa-text { display: none !important; }
+	.jr-header__actions { gap: 8px; }
+}
+
+/* v1.2.3: clinic timings matter on a phone too — show them, stacked and compact. */
+@media (max-width: 640px) {
+	.jr-topbar__inner { flex-direction: column; align-items: center; gap: 2px; }
+	.jr-topbar__item { display: flex !important; align-items: flex-start; gap: 6px; text-align: left; }
+	.jr-topbar__item .jr-ico { margin-top: 3px; flex: 0 0 auto; }
+	.jr-topbar__hours { display: block; font-size: 12.5px; line-height: 1.5; }
+}

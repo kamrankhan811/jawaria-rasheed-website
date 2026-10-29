@@ -64,6 +64,8 @@ function jr_render_setup_page() {
 			<p><label><input type="checkbox" name="jr_overwrite" value="1"> <?php esc_html_e( 'Overwrite pages that already exist (your edits to those pages will be replaced)', 'jawaria-clinic' ); ?></label></p>
 			<p><label><input type="checkbox" name="jr_clean" value="1" checked> <?php esc_html_e( 'Remove WordPress sample content ("Sample Page", "Hello world!")', 'jawaria-clinic' ); ?></label></p>
 			<?php submit_button( __( 'Create website pages & menus', 'jawaria-clinic' ), 'primary', 'submit', true, $elementor ? array() : array( 'disabled' => 'disabled' ) ); ?>
+			<p><button type="submit" name="jr_menus_only" value="1" class="button"><?php esc_html_e( 'Rebuild menus only', 'jawaria-clinic' ); ?></button>
+			<span class="description"><?php esc_html_e( 'Rebuilds the header and footer menus from the plugin. Page content is left untouched.', 'jawaria-clinic' ); ?></span></p>
 			<?php if ( ! $elementor ) : ?>
 				<p class="description"><?php esc_html_e( 'Activate Elementor first.', 'jawaria-clinic' ); ?></p>
 			<?php endif; ?>
@@ -83,6 +85,14 @@ function jr_run_setup() {
 	}
 	$overwrite = ! empty( $_POST['jr_overwrite'] );
 	$report    = array();
+
+	// "Rebuild menus only": leave pages, posts and slides exactly as they are.
+	if ( ! empty( $_POST['jr_menus_only'] ) ) {
+		$report = jr_setup_menus( true );
+		set_transient( 'jr_setup_report_' . get_current_user_id(), $report, 5 * MINUTE_IN_SECONDS );
+		wp_safe_redirect( admin_url( 'tools.php?page=jr-site-setup' ) );
+		exit;
+	}
 
 	if ( ! empty( $_POST['jr_clean'] ) ) {
 		$report = array_merge( $report, jr_setup_remove_samples() );
@@ -308,6 +318,8 @@ function jr_menu_specs() {
 		'jr_top'             => array(
 			'Header – top row',
 			array(
+				$p( 'home', 'Home' ),
+				$p( 'about', 'About' ),
 				$p( 'andrology-iui-lab', 'Andrology & IUI Lab' ),
 				array(
 					'url'      => '#',
