@@ -761,3 +761,16 @@ body .jr-form input[type="date"] { -webkit-appearance: none; appearance: none; }
 	.jr-topbar__item .jr-ico { margin-top: 3px; flex: 0 0 auto; }
 	.jr-topbar__hours { display: block; font-size: 12.5px; line-height: 1.5; }
 }
+
+/* v1.2.4: side-by-side cards sat edge to edge — give them a real gutter
+   without moving the row's outer edges. */
+@media (min-width: 768px) {
+	.elementor-column.jr-card:has(+ .jr-card) > .elementor-widget-wrap,
+	.elementor-column.jr-card:has(+ .jr-card) > .elementor-column-wrap { margin-right: 12px; }
+	.jr-card + .elementor-column.jr-card > .elementor-widget-wrap,
+	.jr-card + .elementor-column.jr-card > .elementor-column-wrap { margin-left: 12px; }
+}
+@media (max-width: 767px) {
+	.jr-card + .elementor-column.jr-card > .elementor-widget-wrap,
+	.jr-card + .elementor-column.jr-card > .elementor-column-wrap { margin-top: 18px; }
+}
